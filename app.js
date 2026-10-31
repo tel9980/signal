@@ -697,6 +697,18 @@ function fallbackCopy(text) {
 }
 
 function setAppState() { document.body.setAttribute('data-state', 'normal'); }
-function togglePwaDrawer() { var d = $('pwa-drawer'); d.style.display = d.style.display === 'none' ? 'block' : 'none'; }
+function togglePwaDrawer() { var d = $('pwa-drawer'); d.style.display = d.style.display === 'none' ? 'block' : 'none'; pwaHowto(); }
+// 网页没法自己把自己装到主屏（苹果不允许），只能按设备告诉用户点哪里
+var SHARE_ICON = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;" aria-label="分享"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+function pwaHowto() {
+  var ua = navigator.userAgent, ios = /iPhone|iPad|iPod/.test(ua), h;
+  if (window.navigator.standalone || (window.matchMedia && matchMedia('(display-mode: standalone)').matches)) h = '已经在主屏幕上了。';
+  else if (/MicroMessenger/i.test(ua)) h = '微信里加不了。先点右上角「···」→「在浏览器打开」' + (ios ? '（用 Safari）' : '') + '，再按那边的提示加。';
+  else if (ios && /CriOS|FxiOS|EdgiOS/.test(ua)) h = 'iPhone 只有 Safari 能加到主屏。请用 Safari 打开 signal.zentaox.com。';
+  else if (ios) h = '① 点屏幕底部中间的分享按钮 ' + SHARE_ICON + '<br>② 往下滑，点「添加到主屏幕」<br>③ 点右上角「添加」';
+  else if (/Android/i.test(ua)) h = '点浏览器右上角菜单「⋮」→「添加到主屏幕」或「安装应用」。';
+  else h = '在手机上打开 signal.zentaox.com 再添加：iPhone 用 Safari 点分享 → 添加到主屏幕；安卓在浏览器菜单里选添加到主屏幕。';
+  $('pwa-howto').innerHTML = h;
+}
 
 route();

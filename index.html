@@ -14,7 +14,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Signal">
   <title>Signal · A股研究线索</title>
-  <link rel="stylesheet" href="style.css?v=20261031i">
+  <link rel="stylesheet" href="style.css?v=20261031j">
 </head>
 <body data-state="normal">
 
@@ -61,15 +61,10 @@
     <div class="site-wrap">
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; align-items:center;">
         <div style="display:flex; align-items:center; gap:14px; padding:12px; background:var(--panel-subtle); border-radius:var(--radius-card); border:1px solid var(--line);">
-          <svg width="48" height="48" viewBox="0 0 64 64" style="border-radius:12px; flex-shrink:0; border:1px solid var(--line);">
-            <rect width="64" height="64" fill="#17161a"/>
-            <text x="11" y="42" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#efece6">S</text>
-            <text x="28" y="42" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#e2a662">n</text>
-            <circle cx="50" cy="20" r="4" fill="#e2a662"/>
-          </svg>
+          <img src="assets/apple-touch-icon.png" width="48" height="48" alt="" style="border-radius:12px; flex-shrink:0;">
           <div style="flex:1;">
             <div style="font-weight:600; font-size:0.88rem;">放到手机主屏幕</div>
-            <div style="font-size:0.76rem; color:var(--ink-3);">iPhone：用 Safari 打开，点底部「分享」→「添加到主屏幕」。安卓：浏览器菜单里选「添加到主屏幕」。</div>
+            <div style="font-size:0.78rem; color:var(--ink-2); line-height:1.6;" id="pwa-howto">iPhone：用 Safari 打开，点底部「分享」→「添加到主屏幕」。安卓：浏览器菜单里选「添加到主屏幕」。</div>
           </div>
         </div>
         <div style="padding:12px 16px; background:var(--panel-subtle); border-radius:var(--radius-card); border:1px solid var(--line);">
@@ -582,6 +577,6 @@
   <!-- 底部轻量 Toast 提示 -->
   <div id="pixel-toast" class="pixel-toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js?v=20261031i"></script>
+  <script src="app.js?v=20261031j"></script>
 </body>
 </html>
