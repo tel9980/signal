@@ -6,8 +6,15 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#f7f7f5" id="meta-theme-color">
+  <!-- 加到手机主屏幕（10-31）：iPhone 用 Safari「分享 → 添加到主屏幕」，从主屏打开没有地址栏 -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Signal">
   <title>Signal · A股研究线索</title>
-  <link rel="stylesheet" href="style.css?v=20261031h">
+  <link rel="stylesheet" href="style.css?v=20261031i">
 </head>
 <body data-state="normal">
 
@@ -575,6 +582,6 @@
   <!-- 底部轻量 Toast 提示 -->
   <div id="pixel-toast" class="pixel-toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js?v=20261031h"></script>
+  <script src="app.js?v=20261031i"></script>
 </body>
 </html>
