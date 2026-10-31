@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <!-- 内容安全策略：只允许本站自己的脚本、样式、数据；禁止向外部发送数据。frame-ancestors 只能由服务器头设置，这里不写 -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f5" id="meta-theme-color">
+  <title>Signal · A股研究线索</title>
+  <link rel="stylesheet" href="style.css?v=20261031e">
+</head>
+<body data-state="normal">
+
+  <!-- 顶部主导航栏 -->
+  <header class="site-header">
+    <div class="site-wrap header-inner">
+      <div style="display:flex; align-items:baseline;">
+        <a href="#index" class="brand-logo" aria-label="Signal 首页">
+          <span class="sig">Sig</span><span class="nal">nal</span>
+        </a>
+        <span class="brand-sub">安静的 A 股研究线索与事实台账</span>
+      </div>
+
+      <!-- 电脑端顶部导航 -->
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="#index" class="nav-link active" data-nav="index">首页</a>
+        <a href="#research" class="nav-link" data-nav="research">研究榜</a>
+        <a href="#theme" class="nav-link" data-nav="theme">主题</a>
+        <a href="#pool" class="nav-link" data-nav="pool">持仓池</a>
+        <a href="#seats" class="nav-link" data-nav="seats">席位</a>
+        <a href="#ledger" class="nav-link" data-nav="ledger">台账</a>
+      </nav>
+
+      <!-- 右侧：新鲜度胶囊 + 推送开关入口 + 深浅色手动切换 -->
+      <div class="header-actions">
+        <a href="#health" class="freshness-pill" title="点击查看数据源体检表">
+          <span class="status-dot" id="header-health-dot"></span>
+          <span class="num" id="header-update-text">—</span>
+        </a>
+
+        <button class="icon-btn" onclick="togglePwaDrawer()" title="PWA 主屏幕与推送设置" aria-label="通知与安装设置">
+          <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </button>
+
+        <button class="icon-btn" id="theme-toggle-btn" onclick="cycleTheme()" title="切换浅色/深色模式" aria-label="切换主题">
+          <svg id="theme-icon-sun" viewBox="0 0 24 24" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg id="theme-icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="pwa-drawer" style="display:none; background-color:var(--panel); border-bottom:1px solid var(--line); padding:16px 0;">
+    <div class="site-wrap">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; align-items:center;">
+        <div style="display:flex; align-items:center; gap:14px; padding:12px; background:var(--panel-subtle); border-radius:var(--radius-card); border:1px solid var(--line);">
+          <svg width="48" height="48" viewBox="0 0 64 64" style="border-radius:12px; flex-shrink:0; border:1px solid var(--line);">
+            <rect width="64" height="64" fill="#17161a"/>
+            <text x="11" y="42" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#efece6">S</text>
+            <text x="28" y="42" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#e2a662">n</text>
+            <circle cx="50" cy="20" r="4" fill="#e2a662"/>
+          </svg>
+          <div style="flex:1;">
+            <div style="font-weight:600; font-size:0.88rem;">放到手机主屏幕</div>
+            <div style="font-size:0.76rem; color:var(--ink-3);">iPhone：用 Safari 打开，点底部「分享」→「添加到主屏幕」。安卓：浏览器菜单里选「添加到主屏幕」。</div>
+          </div>
+        </div>
+        <div style="padding:12px 16px; background:var(--panel-subtle); border-radius:var(--radius-card); border:1px solid var(--line);">
+          <div style="font-weight:600; font-size:0.88rem;">消息推送</div>
+          <div style="font-size:0.76rem; color:var(--ink-3);">建设中。做好以后，研究榜新上榜和重大公告会推送到手机。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主体内容容器 -->
+  <main class="site-wrap">
+
+    <!-- 示例数据红条：只在本机加 ?sample 时出现 -->
+    <div class="sample-banner" id="sample-banner" style="display:none">示例数据，不是真的：本机调页面用，数字都是编的</div>
+
+    <!-- 全局过期警告条 (当 body[data-state="expired"] 时自动显示) -->
+    <div class="stale-banner" role="alert">
+      <div>
+        <span class="dot-amber"></span> <strong>数据可能过期：</strong>最后更新于 <span class="num" id="stale-date">—</span>，比最近一个交易日晚。</div>
+      <a href="#health" class="chip" style="min-height:28px; padding:2px 10px;">查看体检表 →</a>
+    </div>
+
+    <!-- 全局共用：骨架屏状态与空数据状态 -->
+    <div class="skeleton-wrap">
+      <div class="sk-box" style="height: 52px; width: 100%; border-radius: 999px;"></div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+        <div class="sk-box" style="height: 150px;"></div>
+        <div class="sk-box" style="height: 150px;"></div>
+        <div class="sk-box" style="height: 150px;"></div>
+      </div>
+      <div class="sk-box" style="height: 220px; width: 100%;"></div>
+    </div>
+
+    <div class="empty-wrap">
+      <div class="serif" style="font-size:1.05rem; color:var(--ink); margin-bottom:6px;">当前筛选条件下暂无匹配的股票线索</div>
+      <p style="font-size:0.84rem; margin-bottom:16px;">可以放宽筛选条件再试。</p>
+      <button class="chip active" onclick="setAppState('normal', document.querySelector('.debug-btn'))">重置筛选条件</button>
+    </div>
+
+    <!-- ===================================================================
+         [页面 1] 首页 index.html (section[data-page="index"])
+         =================================================================== -->
+    <section data-page="index" class="page-section p-index active">
+      <div class="normal-content">
+        <div class="search-hero">
+          <form class="search-capsule" id="home-search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--ink-3); margin-right:10px; flex-shrink:0;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="q" autocomplete="off" placeholder="股票代码、名字，或者一个逻辑" aria-label="搜索股票">
+            <button type="submit" class="search-btn">查这只票</button>
+          </form>
+          <div class="search-res" id="search-res"></div>
+          <div class="search-subbar">
+            <div class="quick-links" id="recent-row" style="display:none"></div>
+            <button type="button" class="random-btn" id="random-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+              随便看一只
+            </button>
+          </div>
+        </div>
+
+        <div class="sec-head">
+          <h2 class="sec-title">市场状态 <span class="voice-badge voice-machine"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg> 机器客观快照</span></h2>
+          <span class="sec-meta">不作趋势预测</span>
+        </div>
+        <div id="market-box"><div class="card" style="margin-bottom:18px;"><p style="font-size:0.86rem; color:var(--ink-2);">建设中。这里以后会放：上证、创业板指、科创50 今日涨跌和离近一年高点有多远；今日涨跌前五的行业；隔夜纳斯达克、今日日经 225、韩国 KOSPI、恒生科技。只陈述状态，不做预测。</p></div></div>
+
+        <div id="home-research" style="display:none;">
+          <div class="sec-head"><h2 class="sec-title">研究榜前 5</h2><a class="sec-meta" href="#research">看全部 →</a></div>
+          <div class="card top5" id="home-research-list" style="margin-bottom:18px;"></div>
+        </div>
+
+        
+        <div class="sec-head">
+          <h2 class="sec-title">常用线索标签</h2>
+          <span class="sec-meta" id="tags-upd">读取中…</span>
+        </div>
+        <div id="home-tags" style="margin-bottom: 18px;"></div>
+
+        <div class="honest-notice" style="margin-bottom: 24px;">
+          <strong>诚实提示：</strong>机构成本是估算的：按它持股那个季度的量价均价算。季报滞后一到两个月，它可能早已离场。只能当参考，不是买入理由。
+        </div>
+
+        <div class="sec-head">
+          <h2 class="sec-title">核心研究台</h2>
+          <span class="sec-meta" id="scan-count"></span>
+        </div>
+        <div class="portal-grid">
+          <a href="#research" class="portal-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="serif" style="font-size:1.1rem; font-weight:700;">研究榜</span>
+                <span class="fact-tag" id="portal-research-tag">建设中</span>
+              </div>
+              <p style="font-size:0.83rem; color:var(--ink-2);">机器按公开事实打分挑出候选票，排序规则全部公开。</p>
+            </div>
+            <div style="margin-top:16px; font-size:0.78rem; color:var(--accent); font-weight:600;">看看样子 →</div>
+          </a>
+          <a href="#theme" class="portal-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="serif" style="font-size:1.1rem; font-weight:700;">主题</span>
+                <span class="fact-tag">公告核实</span>
+              </div>
+              <p style="font-size:0.83rem; color:var(--ink-2);">人形机器人、AI 基建：每家在链上做什么、公告原文、现在是涨潮还是退潮。</p>
+            </div>
+            <div style="margin-top:16px; font-size:0.78rem; color:var(--accent); font-weight:600;">看主题 →</div>
+          </a>
+          <a href="#pool" class="portal-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="serif" style="font-size:1.1rem; font-weight:700;">机构持仓池</span>
+                <span class="fact-tag">每日更新</span>
+              </div>
+              <p style="font-size:0.83rem; color:var(--ink-2);">巴克莱、大摩、小摩、高盛、瑞银等通道账户的持仓与现价偏离。</p>
+            </div>
+            <div style="margin-top:16px; font-size:0.78rem; color:var(--accent); font-weight:600;">查看 <span class="num" id="portal-pool-count">—</span> 条持仓记录 →</div>
+          </a>
+          <a href="#ledger" class="portal-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="serif" style="font-size:1.1rem; font-weight:700;">研究台账</span>
+                <span class="fact-tag">看错不删</span>
+              </div>
+              <p style="font-size:0.83rem; color:var(--ink-2);">每只票的触发事实、等待节点、证伪条件与到期对账。</p>
+            </div>
+            <div style="margin-top:16px; font-size:0.78rem; color:var(--accent); font-weight:600;">查阅对账单 →</div>
+          </a>
+          <a href="#stock" class="portal-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="serif" style="font-size:1.1rem; font-weight:700;">查一只票</span>
+                <span class="fact-tag">含复制给 AI</span>
+              </div>
+              <p style="font-size:0.83rem; color:var(--ink-2);">按时间线串联公告白话、审核进度、外资进出与龙虎榜。</p>
+            </div>
+            <div style="margin-top:16px; font-size:0.78rem; color:var(--accent); font-weight:600;">看看样子 →</div>
+          </a>
+          <a href="#seats" class="portal-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="serif" style="font-size:1.1rem; font-weight:700;">龙虎榜席位</span>
+                <span class="fact-tag">近 180 天</span>
+              </div>
+              <p style="font-size:0.83rem; color:var(--ink-2);">每个营业部、机构专用、北向席位上榜多少次，买后 5 日、10 日平均涨跌。</p>
+            </div>
+            <div style="margin-top:16px; font-size:0.78rem; color:var(--accent); font-weight:600;">查看席位统计 →</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section data-page="tag" class="page-section p-pool">
+      <div class="normal-content">
+        <div class="sec-head">
+          <div>
+            <h1 class="sec-title" style="font-size:1.35rem;" id="tag-title">标签</h1>
+            <p style="font-size:0.83rem; color:var(--ink-2); margin-top:2px;" id="tag-rule"></p>
+          </div>
+          <span class="sec-meta" id="tag-upd"></span>
+        </div>
+        <details class="filter-block" id="tag-switch"><summary class="group-label" style="cursor:pointer; min-height:44px; display:flex; align-items:center;">换一个标签 ▾</summary><div id="tag-chips" style="margin-top:6px;"></div></details>
+        <p class="list-meta" id="tag-meta"></p>
+        <div class="pool-table-wrap">
+          <table class="data-table"><thead><tr><th>代码 / 名称</th><th>为什么</th><th>其他标签</th></tr></thead><tbody id="tag-tbody"></tbody></table>
+        </div>
+        <div class="pool-mobile-cards" id="tag-cards"></div>
+        <button class="chip more-btn" id="tag-more" style="display:none"></button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         [页面 2] 研究榜 research.html (section[data-page="research"])
+         =================================================================== -->
+    <section data-page="research" class="page-section p-research">
+      <div class="normal-content">
+        <div class="sec-head">
+          <div>
+            <h1 class="sec-title" style="font-size:1.35rem;">研究榜</h1>
+            <p style="font-size:0.83rem; color:var(--ink-2); margin-top:2px;">机器按公开事实打分挑出候选票，规则全部写在下面；不提供买卖指令</p>
+          </div>
+          <span class="sec-meta" id="research-upd">读取中…</span>
+        </div>
+        <div class="card build-card" id="research-empty" style="display:none;"><p>建设中。这里以后会放：</p><ul><li>系统每天从全市场挑出值得研究的候选票，按公开事实打分排序，规则全部写在页面上</li><li>每只票三样分开：机器给的上榜理由、AI 研究报告、站主判定</li><li>首次上榜日期永久留档</li></ul></div>
+        <div class="split" id="research-body" style="display:none;">
+        <div class="split-side">
+        <section class="filter-card" aria-label="研究榜筛选">
+          <div class="filter-group">
+            <div class="group-head"><span class="group-label">状态</span><span class="group-hint">每天前 30 名</span></div>
+            <div class="cells seg-m" id="research-st" style="--n:2" role="radiogroup" aria-label="状态"></div>
+          </div>
+        </section>
+        </div>
+        <div class="split-main">
+        <div class="result-sort-bar">
+          <span id="research-meta"></span>
+          <div class="sort-select-wrap">
+            <select class="sort-select" id="research-sort" aria-label="排序方式"></select>
+            <svg class="sort-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="research-grid" id="research-list"></div>
+        <details class="rules-box"><summary>打分规则（全部公开）</summary><div id="research-rules"></div></details>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         [页面] 主题 #theme / #theme/主题名
+         =================================================================== -->
+    <section data-page="theme" class="page-section p-theme">
+      <div class="normal-content">
+        <div class="sec-head">
+          <div>
+            <h1 class="sec-title" style="font-size:1.35rem;" id="theme-title">主题</h1>
+            <p style="font-size:0.83rem; color:var(--ink-2); margin-top:2px;" id="theme-sub">每家在链上做什么、公告原文怎么写、现在是涨潮还是退潮</p>
+          </div>
+          <span class="sec-meta" id="theme-upd">读取中…</span>
+        </div>
+        <div class="card build-card" id="theme-empty" style="display:none;"><p>建设中。这里以后会放：</p><ul><li>人形机器人（含灵巧手）、AI 基建，按产业链分段</li><li>每家公司：在链上做什么、公告原文一句、到哪一步（研发 / 验证 / 定点 / 量产）</li><li>潮水状态：量能比平时、离高点多远、近期涨停；第一次在公告里出现的公司单独标出</li><li>外资通道在这条链上出现在几家、哪几家是新进</li></ul></div>
+        <div id="theme-body" style="display:none;">
+          <div class="cells" id="theme-pick" style="--n:2; margin-bottom:16px;" role="radiogroup" aria-label="主题"></div>
+          <div id="theme-segs"></div>
+          <div class="sec-head" style="margin-top:22px;"><h2 class="sec-title">外资通道在这条链上</h2><span class="sec-meta">只认最新季度</span></div>
+          <div class="honest-notice" style="margin-bottom:12px;">看的是同一通道在同一条链上集中出现，不是“某只票有外资”。外资通道不等于聪明钱，季报滞后一到两个月，只当线索。</div>
+          <div id="theme-channels"></div>
+          <details class="rules-box"><summary>角色、进度、潮水怎么定</summary><div>角色：整机 / 零件 / 只是提到，只按公告原文定。进度：研发、验证、送样、定点、量产，取公告里写到的最远一步。潮水：量能＝近 5 日成交额比近 60 日平均；离高点＝现价比近一年最高价；涨停＝近 5 日涨停次数。“新”＝近 30 天第一次在公告里提到这个主题。</div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         [页面 3] 查一只票 stock.html (section[data-page="stock"])
+         =================================================================== -->
+    <section data-page="stock" class="page-section p-stock">
+      <div class="normal-content">
+        <div class="card" id="stock-empty"><p style="font-size:0.9rem; color:var(--ink-2);">在首页搜索框输入代码或名字，或者从标签、持仓池里点一只票进来。</p></div>
+        <div id="stock-body" style="display:none;">
+          <div class="stock-hero"><div>
+            <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
+              <h1 class="serif" id="stock-title-name" style="font-size:1.65rem; font-weight:700;"></h1>
+              <span class="num t-muted" id="stock-title-code" style="font-size:1.1rem;"></span>
+            </div>
+            <div id="stock-tags" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;"></div>
+          </div></div>
+
+          <div class="card" style="border-style:dashed; margin:14px 0;">
+            <span class="voice-badge voice-ai"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3z"/></svg> 研究报告：待研究</span>
+            <p style="font-size:0.86rem; color:var(--ink-2); margin:10px 0 12px;">这只票还没有研究报告。点下面的按钮，把这页上所有公开事实打包复制，粘贴给任何 AI 自己研究。</p>
+            <button type="button" class="copy-ai-btn" id="copy-ai-btn">复制给 AI 研究（打包全部事实）</button>
+          </div>
+          <div class="card" style="margin-bottom:14px;" id="stock-verdict"><span class="voice-badge voice-owner"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.5 7.5"/></svg> 站主判定：暂无</span></div>
+
+          <div id="stock-audit-wrap" style="display:none;">
+            <div class="sec-head"><h2 class="sec-title">定增 / 重组审核 <span class="voice-badge voice-machine"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg> 交易所公开状态</span></h2><span class="sec-meta" id="stock-audit-meta"></span></div>
+            <div class="stepper-scroll"><div class="stepper" id="stock-stepper"></div></div>
+          </div>
+
+          <div class="sec-head"><h2 class="sec-title">为什么带这些标签 <span class="voice-badge voice-machine"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg> 机器按规则判定</span></h2></div>
+          <div class="card" id="stock-why" style="margin-bottom:14px;"></div>
+
+          <div class="sec-head"><h2 class="sec-title">时间线 <span class="voice-badge voice-machine"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg> 公告、龙虎榜、解禁、外资</span></h2><span class="sec-meta" id="stock-tl-meta"></span></div>
+          <div class="tl-card" id="stock-tl"></div>
+          <button class="chip more-btn" id="stock-tl-more" style="display:none"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         [页面 4] 机构持仓池 list.html#pool (section[data-page="pool"])
+         电脑端严谨表格，手机端自动切换为流式卡片，支持分页加载更多
+         =================================================================== -->
+    <section data-page="pool" class="page-section p-pool">
+      <div class="normal-content">
+        <div class="sec-head">
+          <div>
+            <h1 class="sec-title" style="font-size:1.35rem;">机构持仓池</h1>
+            <p style="font-size:0.83rem; color:var(--ink-2); margin-top:2px;">外资通道账户出现在十大流通股东里的票，以及现价相对它估算成本的位置</p>
+          </div>
+          <span class="sec-meta" id="pool-upd">读取中…</span>
+        </div>
+        <div class="honest-notice honest-fold" id="pool-honest" style="margin-bottom: 16px;">
+          机构成本是估算的，只能当参考，不是买入理由。<span class="fold-txt">按它持股那个季度的量价均价算；季报滞后一到两个月，它可能早已离场。</span><button type="button" class="fold-btn" id="pool-honest-btn">为什么</button>
+        </div>
+        <div class="fchips" id="pool-chips" role="group" aria-label="持仓池筛选条件"></div>
+        <div class="split">
+        <div class="split-side">
+        <section class="filter-card" id="pool-filter" aria-label="持仓池筛选">
+          <div class="sheet-head" id="pool-sheet-head"><span class="sheet-handle"></span><strong id="pool-sheet-title">筛选</strong><button type="button" class="sheet-close" id="pool-sheet-close">完成</button></div>
+          <div class="filter-group" data-g="period">
+            <div class="group-head"><span class="group-label">报告期</span><span class="group-hint num" id="pool-q-hint"></span></div>
+            <div class="cells" id="pool-period" style="--n:2" role="radiogroup" aria-label="报告期"></div>
+            <button type="button" class="more-periods" id="pool-hist-toggle"></button>
+            <div class="cells" id="pool-hist" style="--n:2; display:none;" role="radiogroup" aria-label="往期报告"></div>
+          </div>
+          <div class="filter-group" data-g="holder">
+            <div class="group-head"><span class="group-label">外资通道</span><span class="group-hint">数字＝记录数</span></div>
+            <div class="cells" id="pool-holder" style="--n:4" role="radiogroup" aria-label="外资通道"></div>
+          </div>
+          <div class="filter-group" data-g="band">
+            <div class="group-head"><span class="group-label">现价较估算成本</span><span class="group-hint">绿线＝低于成本</span></div>
+            <div class="cells" id="pool-band" style="--n:3" role="radiogroup" aria-label="现价较估算成本"></div>
+          </div>
+        </section>
+        </div>
+        <div class="split-main">
+        <div class="result-sort-bar">
+          <span id="pool-meta"></span>
+          <div class="sort-select-wrap">
+            <select class="sort-select" id="pool-sort" aria-label="排序方式"></select>
+            <svg class="sort-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="pool-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>代码 / 名称</th><th>持仓机构</th><th>变动</th><th class="text-right">现价</th><th class="text-right">估算成本</th><th class="text-right">现价偏离成本</th><th class="text-right">占流通股</th></tr></thead>
+            <tbody id="pool-tbody"></tbody>
+          </table>
+        </div>
+        <div class="pool-mobile-cards" id="pool-cards"></div>
+        <button class="chip more-btn" id="pool-more" style="display:none"></button>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         [页面 5] 台账 ledger.html (section[data-page="ledger"])
+         记录 5 件事 + 新增「到期日」与「对账结果（看对了/看错了/未到期）」，看错保留不删
+         =================================================================== -->
+    <section data-page="seats" class="page-section p-pool p-seats">
+      <div class="normal-content">
+        <div class="sec-head">
+          <div>
+            <h1 class="sec-title" style="font-size:1.35rem;">龙虎榜席位</h1>
+            <p style="font-size:0.83rem; color:var(--ink-2); margin-top:2px;" id="seats-sub"></p>
+          </div>
+          <span class="sec-meta" id="seats-upd">读取中…</span>
+        </div>
+        <div class="seat-tiles" id="seats-tiles"></div>
+        <div class="honest-notice" style="margin-bottom: 16px;">按买入笔数加权。四个数都是负的：跟着龙虎榜买、持有 5 个交易日，平均跑输，差别只在亏多亏少。散户聚集的席位亏得最多。</div>
+        <div class="split">
+        <div class="split-side">
+        <section class="filter-card" aria-label="席位筛选">
+          <div class="filter-group">
+            <div class="group-head"><span class="group-label">席位类型</span><span class="group-hint" id="seats-type-hint"></span></div>
+            <div class="seg" id="seats-type" role="radiogroup" aria-label="席位类型"></div>
+          </div>
+          <div class="filter-group">
+            <div class="group-head"><span class="group-label">上榜频次</span><span class="group-hint" id="seats-min-hint"></span></div>
+            <div class="seg" id="seats-min" role="radiogroup" aria-label="上榜频次"></div>
+          </div>
+        </section>
+        </div>
+        <div class="split-main">
+        <div class="result-sort-bar">
+          <span id="seats-meta"></span>
+          <div class="sort-select-wrap">
+            <select class="sort-select" id="seats-sort" aria-label="排序方式"></select>
+            <svg class="sort-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="pool-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>席位（点开看最近买了什么）</th><th class="text-right">上榜次数</th><th class="text-right">买入(亿)</th><th class="text-right">净买入(亿)</th><th class="text-right">次日均涨</th><th class="text-right">5日均涨</th><th class="text-right">10日均涨</th><th class="text-right">5日胜率</th></tr></thead>
+            <tbody id="seats-tbody"></tbody>
+          </table>
+        </div>
+        <div class="pool-mobile-cards" id="seats-cards"></div>
+        <button class="chip more-btn" id="seats-more" style="display:none"></button>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-page="ledger" class="page-section p-ledger">
+      <div class="normal-content">
+        <div class="sec-head">
+          <div>
+            <h1 class="sec-title" style="font-size:1.35rem;">研究台账</h1>
+            <p style="font-size:0.83rem; color:var(--ink-2); margin-top:2px;">站主判定“值得研究”的票记五件事，到期对账；看错的保留并标注，不删</p>
+          </div>
+          <span class="sec-meta" id="ledger-upd">读取中…</span>
+        </div>
+        <div class="card build-card" id="ledger-empty" style="display:none;"><p>建设中。这里以后会放：</p><ul><li>站主判定「值得研究」的票自动进入</li><li>每条记：进入日期、触发事实、在等哪个节点、什么情况算看错、到期日</li><li>到期对账：看对了、看错了、还没到时候。看错的保留并标注，不删</li></ul></div>
+        <div class="split" id="ledger-body" style="display:none;">
+        <div class="split-side">
+        <section class="filter-card" aria-label="台账筛选">
+          <div class="filter-group">
+            <div class="group-head"><span class="group-label">对账结果</span><span class="group-hint">看错不删</span></div>
+            <div class="cells seg-m" id="ledger-res" style="--n:2" role="radiogroup" aria-label="对账结果"></div>
+          </div>
+        </section>
+        </div>
+        <div class="split-main">
+        <div class="result-sort-bar">
+          <span id="ledger-meta"></span>
+          <div class="sort-select-wrap">
+            <select class="sort-select" id="ledger-sort" aria-label="排序方式"></select>
+            <svg class="sort-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div id="ledger-list"></div>
+        <details class="rules-box"><summary>台账怎么记</summary><div>站主在 TG 发“值得”后自动建一条：进入日期和当天价格、触发事实（取上榜理由）、在等哪个节点、什么情况算看错、到期日（默认 90 天）。到期后对账，结果只有三种：看对了、看错了、还没到时候。看错的永久保留。</div></details>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         [页面 6] 体检表 health.html (section[data-page="health"])
+         朴素表格：名称、最后更新时间、应该多久更新一次、状态（绿/黄/红）
+         =================================================================== -->
+    <section data-page="health" class="page-section p-health">
+      <div class="normal-content">
+        <div class="sec-head">
+          <div>
+            <h1 class="sec-title" style="font-size:1.35rem;">体检表</h1>
+            <p style="font-size:0.83rem; color:var(--ink-2); margin-top:2px;">每份数据最后一次更新的时间；绿＝正常，黄＝快过期，红＝已停更</p>
+          </div>
+          <span class="sec-meta" id="health-upd">读取中…</span>
+        </div>
+        <div class="card build-card" id="health-empty" style="display:none;"><p>建设中。这里以后会放：</p><ul><li>每个数据源最后一次更新的时间、应该多久更新一次</li><li>正常绿、快过期黄、已停更红</li></ul></div>
+        <div id="health-body" style="display:none;">
+          <div class="pool-table-wrap">
+            <table class="data-table"><thead><tr><th>数据</th><th>最后更新</th><th>应该多久更新</th><th>状态</th></tr></thead><tbody id="health-tbody"></tbody></table>
+          </div>
+          <div class="pool-mobile-cards" id="health-cards"></div>
+          <details class="rules-box"><summary>状态怎么判</summary><div>超过应更新时间算黄，超过两倍算红。每次自动任务跑完都记一笔，这张表由运行记录汇总生成。</div></details>
+        </div>
+      </div>
+    </section>
+
+  <div class="sheet-backdrop" id="sheet-backdrop"></div>
+</main>
+
+  <!-- 页脚（严格保留站主指定文案、体检表绿/红点小入口、赞助占位与四个链接） -->
+  <footer class="site-footer">
+    <div class="site-wrap">
+
+      <!-- 赞助区：按纲领要求设置 -->
+      <div class="sponsor-box">
+        <div>
+          <div class="serif" style="font-size:0.98rem; font-weight:700; color:var(--ink); margin-bottom:4px;">支持 Signal 保持安静与独立</div>
+          <p style="font-size:0.84rem; color:var(--ink-2);">数据免费；赞助用于接入 AI 自动研究。</p>
+        </div>
+        <div class="qr-pair" id="qr-pair">
+          <button type="button" class="qr-reveal" id="qr-reveal">点开扫码</button>
+          <figure class="qr"><img src="assets/qr-wechat.png" width="120" height="120" alt="微信收款码"><figcaption>微信</figcaption></figure>
+          <figure class="qr"><img src="assets/qr-alipay.png" width="120" height="120" alt="支付宝收款码"><figcaption>支付宝</figcaption></figure>
+        </div>
+      </div>
+
+      <!-- 站主指定页脚文案与四个链接 -->
+      <div class="footer-row">
+        <div>
+          <p style="color:var(--ink-2); margin-bottom:4px;">
+            数据来自交易所公告、十大流通股东名册、龙虎榜 · 研究记录，不构成投资建议
+          </p>
+          <p style="font-size:0.75rem; color:var(--ink-3);">
+            免责声明：只整理公开信息，不构成投资建议。全站不出现目标价与买卖指令。
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#health" style="display:inline-flex; align-items:center; gap:5px;">
+            <span class="status-dot" id="footer-health-dot"></span> 体检表
+          </a>
+          <a href="https://github.com/zentaox/signal/blob/main/docs/CONTRIBUTING.md" target="_blank" rel="noopener">投稿规矩</a>
+          <a href="https://github.com/zentaox/signal/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">变更记录</a>
+          <a href="https://github.com/zentaox/signal/issues" target="_blank" rel="noopener">提意见</a>
+          <a href="https://github.com/zentaox/signal" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 手机端 375px 底部固定导航栏 (首页 / 研究榜 / 主题 / 持仓池 / 台账；查一只票从搜索框进，席位从首页卡片进) -->
+  <nav class="mobile-bottom-nav" aria-label="手机端底部导航">
+    <a href="#index" class="mob-nav-item active" data-mob-nav="index">
+      <div class="mob-nav-pill">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      </div>
+      <span>首页</span>
+    </a>
+    <a href="#research" class="mob-nav-item" data-mob-nav="research">
+      <div class="mob-nav-pill">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      </div>
+      <span>研究榜</span>
+    </a>
+    <a href="#theme" class="mob-nav-item" data-mob-nav="theme">
+      <div class="mob-nav-pill">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+      </div>
+      <span>主题</span>
+    </a>
+    <a href="#pool" class="mob-nav-item" data-mob-nav="pool">
+      <div class="mob-nav-pill">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+      </div>
+      <span>持仓池</span>
+    </a>
+    <a href="#ledger" class="mob-nav-item" data-mob-nav="ledger">
+      <div class="mob-nav-pill">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+      </div>
+      <span>台账</span>
+    </a>
+  </nav>
+
+  <!-- 底部轻量 Toast 提示 -->
+  <div id="pixel-toast" class="pixel-toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js?v=20261031e"></script>
+</body>
+</html>
