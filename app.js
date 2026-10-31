@@ -165,12 +165,12 @@ load('tags.json').then(function (t) {
 // 标签：数据里的原名不改（老系统和网址都用它），页面上按这张表显示、分组
 var TAG_SHOW = { '低于机构估算成本': '低于机构成本', '外资扎堆': '外资同季扎堆', '季末拉升': '近月强势拉升', '国资新进': '国资当期新进',
   '国家级产业基金': '国家产业基金', '定增在途': '定增推进中', '重组在途': '并购重组在途', '重整在途': '破产重整在途',
-  '摘帽在途': '申请摘帽在途', '解禁压力': '远期解禁压力', '近月解禁': '30天内解禁' };
+  '摘帽在途': '申请摘帽在途', '解禁压力': '远期解禁压力', '近月解禁': '30天内解禁', '减持在途': '股东减持在途' };
 var TAG_GROUPS = [
   ['资金与筹码', ['低于机构估算成本', '外资扎堆', '龙虎榜常客', '季末拉升']],
   ['国资与产业定点', ['国资在十大股东', '国资新进', '国家级产业基金', '大厂定点']],
   ['资本运作在途（近 90 天公告未终止）', ['定增在途', '重组在途', '重整在途', '摘帽在途']],
-  ['限售解禁风险', ['解禁压力', '近月解禁']]
+  ['解禁与减持风险', ['解禁压力', '近月解禁', '减持在途']]
 ];
 function tagName(k) { return TAG_SHOW[k] || k; }
 function tagGroupsHtml(cnt, active) {        // 没归进任何组的新标签放进"其他"，不会被漏掉
@@ -195,7 +195,9 @@ function tagCounts(t) {
 // ---------- 标签列表页 ----------
 var TAG = { name: '', limit: 50 };
 function drawTag(name) {
-  load('tags.json').then(function (t) {
+  Promise.all([load('tags.json'), load('names.json')]).then(function (r) {
+    var t = r[0];
+    if (r[1]) Object.assign(NAMES, r[1]);           // 只因公告事件进标签的票，tags.json 里可能没名字
     if (!t) { $('tag-meta').textContent = '标签数据暂不可用'; return; }
     var cnt = tagCounts(t), names = Object.keys(t.rules).filter(function (k) { return cnt[k]; });
     if (name !== TAG.name) TAG.limit = 50;
@@ -210,14 +212,14 @@ function drawTag(name) {
     $('tag-meta').textContent = '共 ' + all.length + ' 只，显示前 ' + rows.length + ' 只';
     $('tag-tbody').innerHTML = rows.map(function (c) {
       var v = t.stocks[c];
-      return '<tr onclick="location.hash=\'#stock/' + c + '\'" style="cursor:pointer;"><td><strong class="serif">' + esc(v.name) +
+      return '<tr onclick="location.hash=\'#stock/' + c + '\'" style="cursor:pointer;"><td><strong class="serif">' + esc(v.name || NAMES[c] || '') +
         '</strong> <span class="num t-muted">' + c + '</span></td><td>' + esc(v.why[TAG.name] || '') + '</td><td>' +
         esc(v.tags.filter(function (x) { return x !== TAG.name; }).map(tagName).join('、')) + '</td></tr>';
     }).join('');
     $('tag-cards').innerHTML = rows.map(function (c) {
       var v = t.stocks[c], others = v.tags.filter(function (x) { return x !== TAG.name; });
       return '<div class="card" onclick="location.hash=\'#stock/' + c + '\'"><div style="margin-bottom:6px;"><strong class="serif" style="font-size:1.05rem;">' +
-        esc(v.name) + '</strong> <span class="num t-muted" style="font-size:0.82rem;">' + c + '</span></div>' +
+        esc(v.name || NAMES[c] || '') + '</strong> <span class="num t-muted" style="font-size:0.82rem;">' + c + '</span></div>' +
         '<div style="font-size:0.84rem; color:var(--ink-2); margin-bottom:8px;">' + esc(v.why[TAG.name] || '') + '</div>' +
         (others.length ? '<div style="display:flex; flex-wrap:wrap; gap:6px;">' + others.map(function (x) { return '<span class="fact-tag">' + esc(tagName(x)) + '</span>'; }).join('') + '</div>' : '') +
         '</div>';
@@ -519,7 +521,8 @@ function drawResearch() {
         '<div class="r-footer"><span class="voice-badge voice-ai">' + (x.report ? 'AI 报告 ' + '★'.repeat(x.report.stars) : 'AI 报告：待研究') + '</span><a href="#stock/' + x.code + '" style="color:var(--accent); font-weight:600;">查看详情 →</a></div></article>';
     }).join('');
     $('research-rules').innerHTML = '<table class="rules-table">' + R.rules.map(function (r) { return '<tr><td>' + esc(r.fact) + '</td><td>' + esc(r.score) + '</td></tr>'; }).join('') +
-      '</table><p style="margin-top:8px;">候选：带线索标签的票加上近 5 日涨停的票。每天留前 30 名，第一次进前 30 记为“新上榜”，首次上榜日期永久保留。权重会调，调之前先回放历史。</p>';
+      '</table><p style="margin-top:8px;">候选：带线索标签的票加上近 5 日涨停的票。每天留前 30 名，第一次进前 30 记为“新上榜”，首次上榜日期永久保留。</p>' +
+      '<p style="margin-top:6px;">成绩：用 2026-09-23 的数据回放，这套规则还挑不出之后一个月大涨的票，所以这里只是线索排序，不是预测。每天的前 30 名都存档，满一个月起公布它们后来的表现，权重照成绩调。</p>';
   });
 }
 
