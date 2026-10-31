@@ -318,12 +318,15 @@ function drawPool() {
     tg.onclick = function () { POOL.histOpen = !POOL.histOpen; drawPool(); };
     $('pool-hist').style.display = POOL.histOpen && hist.length ? '' : 'none';
     btnSet('pool-hist', 'cell-btn', hist.map(function (q) { return { v: q, label: qText(q) }; }), POOL.q, function (v) { POOL.q = v; }, poolRedraw);
-    $('pool-q-hint').innerHTML = POOL.q === 'snap' ? '回购公告附带 · 不定期'
+    // 季后快照只认最近一个季末之后的（10 月看 9-30 之后，1 月看 12-31 之后），更早的已被季报取代
+    var bj = bjToday(), qm = Math.floor(bj.getMonth() / 3) * 3;
+    var qEnd = qm === 0 ? (bj.getFullYear() - 1) + '-12-31' : bj.getFullYear() + ['', '', '', '-03-31', '', '', '-06-30', '', '', '-09-30'][qm];
+    $('pool-q-hint').innerHTML = POOL.q === 'snap' ? qEnd.slice(5) + ' 之后 · 回购公告附带'
       : (disclosing(POOL.q) ? '<span class="dot-amber"></span>披露中 · ' + dueDate(POOL.q).slice(5) + ' 截止' : '已披露完毕');
     var inView;                                    // 当前视图要用哪些原始记录
     if (POOL.q === 'snap') {
       var lastSnap = {};
-      R.forEach(function (r) { if (r.kind === '快照' && (!lastSnap[r.code] || r.q > lastSnap[r.code])) lastSnap[r.code] = r.q; });
+      R.forEach(function (r) { if (r.kind === '快照' && r.q > qEnd && (!lastSnap[r.code] || r.q > lastSnap[r.code])) lastSnap[r.code] = r.q; });
       inView = function (r) { return r.kind === '快照' && r.q === lastSnap[r.code]; };
     } else inView = function (r) { return r.q === POOL.q && r.kind !== '快照'; };
     var hc = {};
