@@ -1433,3 +1433,16 @@ details.seat-card summary::-webkit-details-marker{display:none}
 @media (min-width: 1024px) and (max-width: 1099px) {
   .p-seats .data-table th:nth-child(7), .p-seats .data-table td:nth-child(7) { display: none; }   /* 窄电脑屏再藏 10 日均涨 */
 }
+
+/* 单只票：在途事件进度、主题阶段（11-01，新站第 31、32 项） */
+.t-amber { color: var(--amber) !important; }
+.chain { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.chain:first-child { padding-top: 2px; }
+.chain:last-child { border-bottom: none; padding-bottom: 2px; }
+.chain-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; font-size: .9rem; }
+.chain-head a { color: inherit; }
+.chain-state { font-size: .8rem; color: var(--ink-2); }
+.chain-foot { font-size: .78rem; color: var(--ink-3); line-height: 1.6; margin-top: 4px; overflow-wrap: anywhere; }
+.p-stock .step-node .step-date { font-size: .72rem; margin-top: 4px; color: var(--ink-3); font-weight: 400; }
+.p-stock .step-node.stopped { background: var(--rise-bg); border-color: var(--rise); }
+.chain-head a { display: inline-flex; align-items: center; min-height: 32px; }

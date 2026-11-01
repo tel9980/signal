@@ -452,7 +452,7 @@ function drawSeats() {
 function ready(name, ok) { $(name + '-empty').style.display = ok ? 'none' : ''; $(name + '-body').style.display = ok ? '' : 'none'; }
 function tideHtml(t) {
   if (!t) return '';
-  return '<span class="tide"><span>量能 <b>' + t.vol_ratio + '×</b></span><span>离高点 <b class="' + (t.from_high < 0 ? 'down' : '') + '">' +
+  return '<span class="tide"><span>量能 <b>' + (t.vol_ratio == null ? '—' : t.vol_ratio + '×') + '</b></span><span>离高点 <b class="' + (t.from_high < 0 ? 'down' : '') + '">' +
     pct(t.from_high) + '</b></span><span>近 5 日涨停 <b>' + t.limit_ups + '</b></span></span>';
 }
 var PEN = '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.5 7.5"/></svg>';
@@ -616,8 +616,83 @@ var ICON = {
 };
 function icon(k) { return '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICON[k] + '</svg>'; }
 
+// ---------- 进度条：每类在途事件走过哪几步、现在在哪、后面还有哪几步 ----------
+// 每一步认公告标题里的字眼；一条公告从最后一步往前比，认最靠后的那一步。公告事件只收了近 3 个月，更早的步骤标“早于收录”
+var CHAINS = {
+  '重组在途': { name: '重组', steps: [['筹划', /筹划|停牌/], ['预案', /预案/], ['草案', /草案|重组报告书|购买资产.{0,20}报告书/], ['受理', /受理/],
+    ['问询', /问询/], ['上会', /上会稿|会议安排/], ['审核通过', /审核通过|审议会议结果|重组委.{0,10}(审议|通过)/],
+    ['提交注册', /提交注册|报送.{0,8}注册/], ['同意注册', /同意.{0,40}注册|注册的批复|注册批复|注册生效|核准/],
+    ['实施过户', /过户|交割|实施进展/], ['新股上市', /新增股份上市|上市公告书|实施情况暨|限售股.{0,4}上市流通/]] },
+  '定增在途': { name: '定增', steps: [['预案', /预案|方案|论证分析|可行性分析|摊薄即期/], ['受理', /受理/], ['问询', /问询/],
+    ['审核通过', /审核通过|上市审核委员会|上市委/], ['提交注册', /提交注册|报送.{0,8}注册/], ['同意注册', /同意.{0,40}注册|注册的批复|注册批复|注册生效/],
+    ['发行', /发行情况报告|发行过程和认购对象|认购资金验资|缴款|发行结果|竞价结果/], ['新股上市', /新增股份上市|上市公告书|限售股.{0,4}上市流通|专户.{0,6}(销户|注销)/]] },
+  '减持在途': { name: '股东减持', steps: [['计划披露', /预披露|拟.{0,4}减持|减持.{0,8}计划(的)?(提示性)?公告|减持.{0,8}计划$/],
+    ['实施中', /进展|过半|实施情况(?!.*届满)/], ['结束', /结果|实施完毕|完成|届满|到期|终止/]], reset: 0 },
+  '重整在途': { name: '重整', steps: [['被申请', /申请.{0,12}重整|自查/], ['预重整', /预重整/], ['法院受理', /裁定受理|受理.{0,10}重整申请|进入重整程序/],
+    ['重整计划', /重整计划.{0,4}草案|债权人会议|出资人.{0,4}会议/], ['法院批准', /裁定批准|批准.{0,8}重整计划/], ['执行完毕', /执行完毕/]],
+    note: function (L) { return L.some(function (e) { return /子公司|控股股东|第一大股东|大股东/.test(e.title); }) ? '有的公告主体是子公司或股东，不是公司本身，以原文为准' : ''; } },
+  '摘帽在途': { name: '摘帽', steps: [['申请撤销', /申请撤销/], ['已撤销', /^(?!.*申请撤销).*撤销.{0,6}风险警示/]],
+    note: function (L) { return L.some(function (e) { return /继续被实施/.test(e.title); }) ? '撤销后仍有其他风险警示，以原文为准' : ''; } },
+  '大厂定点': { name: '大厂定点', steps: [['只是意向'], ['验厂'], ['送样试制'], ['定点'], ['量产']], noEarly: true }   // 阶段名取老系统 ann_scan 的原样；“未说明”不上进度条
+};
+// 交易所审核状态 → 定增/重组链上的哪一步（交易所数据比公告标题准，取两者里靠后的）
+var AUDIT_AT = { '已受理': '受理', '已问询': '问询', '已回复': '问询', '审核通过': '审核通过', '上市委会议通过': '审核通过', '提交注册': '提交注册', '注册生效': '同意注册', '注册结果': '同意注册' };
+var AUDIT_STOP = /终止|撤回|不予注册|未通过/;
+var THEME_STEPS = [['提到'], ['研发'], ['验证'], ['定点'], ['量产']];
+function stepOf(steps, e) {
+  if (!steps[0][1]) { for (var j = 0; j < steps.length; j++) if (steps[j][0] === e.stage) return j; return -1; }   // 大厂定点、主题：直接给了阶段
+  for (var i = steps.length - 1; i >= 0; i--) if (steps[i][1].test(e.title)) return i;
+  return -1;
+}
+// 一类事件 → {name, steps, at, hit[i]=该步第一条公告, stop, note}
+function auditKind(au) { return /发行股份|购买资产|重组/.test(au.name) ? '重组在途' : '定增在途'; }   // 交易所这条审核是定增还是重组
+function buildChain(kind, L, au) {
+  var C = CHAINS[kind], steps = C.steps, list = L.slice().sort(function (a, b) { return a.date.localeCompare(b.date); });
+  if (C.reset === 0) {                    // 减持：一轮计划一条链，只看最近一轮
+    var start = -1; list.forEach(function (e, i) { if (stepOf(steps, e) === 0) start = i; });
+    if (start > 0) list = list.slice(start);
+  }
+  var hit = [], at = -1, stop = null;
+  list.forEach(function (e) {
+    var i = stepOf(steps, e);
+    if (e.stop && kind !== '减持在途') { stop = e; return; }
+    if (i < 0) return;
+    if (!hit[i]) hit[i] = e;
+    if (i >= at) at = i;
+  });
+  var src = '公告标题';
+  if (au && kind === auditKind(au)) {
+    if (AUDIT_STOP.test(au.st)) stop = stop || { date: au.updt, title: au.ex + '审核状态：' + au.st };
+    var ai = -1; steps.forEach(function (s, i) { if (s[0] === AUDIT_AT[au.st]) ai = i; });
+    if (ai >= at) { at = ai; hit[ai] = hit[ai] || { date: au.updt, title: au.ex + '审核状态：' + au.st }; src = au.ex + '审核状态＋公告标题'; }
+  }
+  if (stop && at >= 0 && hit[at] && hit[at].date > stop.date) stop = null;   // 终止之后又重新启动，看新的
+  var last = list[list.length - 1];
+  return { name: C.name, steps: steps, at: at, hit: hit, stop: stop, last: last, n: L.length, src: src,
+    done: at === steps.length - 1, note: C.note ? C.note(L) : '', noEarly: C.noEarly };
+}
+function stepperHtml(ch) {
+  var n = ch.steps.length;
+  return '<div class="stepper-scroll"><div class="stepper" style="grid-template-columns:repeat(' + n + ', minmax(84px, 1fr)); min-width:' + (n * 90) + 'px;">' +
+    ch.steps.map(function (s, i) {
+      var h = ch.hit[i], cls = i < ch.at || (i === ch.at && ch.done) ? ' done' : i === ch.at ? ' current' : '';
+      if (ch.stop && i === ch.at) cls = ' current stopped';
+      var d = h ? esc(h.date) : i < ch.at && !ch.noEarly ? '早于收录' : '';
+      return '<div class="step-node' + cls + '"><div>' + (i + 1) + '. ' + esc(s[0]) + '</div>' + (d ? '<div class="num step-date">' + d + '</div>' : '') + '</div>';
+    }).join('') + '</div></div>';
+}
+function chainState(ch) {
+  if (ch.stop) return '已终止（' + ch.stop.date + '）';
+  if (ch.at < 0) return '标题看不出走到哪一步，看原文';
+  return (ch.done ? '已走完：' : '现在：') + ch.steps[ch.at][0] + (ch.hit[ch.at] ? '（' + ch.hit[ch.at].date + '）' : '');
+}
+function chainBlock(title, ch, foot) {
+  return '<div class="chain"><div class="chain-head"><strong>' + esc(title) + '</strong><span class="chain-state' + (ch.stop ? ' t-rise' : ch.done ? ' t-muted' : '') + '">' + esc(chainState(ch)) + '</span></div>' +
+    stepperHtml(ch) + '<div class="chain-foot">' + foot + '</div></div>';
+}
+function daysTo(d) { var t = bjToday(), p = function (n) { return (n < 10 ? '0' : '') + n; }; return Math.round((Date.parse(d) - Date.parse(t.getFullYear() + '-' + p(t.getMonth() + 1) + '-' + p(t.getDate()))) / 864e5); }
+
 // 数据按代码最后一位分成 10 份（s0—s9），只下载这只票所在的那一份
-var STEPS = [['已受理', /受理/], ['问询', /问询|回复/], ['审核通过', /通过|上市委|审议/], ['提交注册', /提交注册/], ['注册生效', /注册生效|注册结果/]];
 var CUR = null;                        // 当前这只票的全部事实，给"复制给 AI"用
 function showStock(code) {
   $('stock-empty').style.display = 'none';
@@ -634,18 +709,50 @@ function showStock(code) {
     $('stock-why').innerHTML = t
       ? t.tags.map(function (x) { return '<p style="font-size:0.86rem; margin:4px 0;"><strong>' + esc(tagName(x)) + '</strong>：' + esc(t.why[x] || '') + '</p>'; }).join('')
       : '<p style="font-size:0.86rem; color:var(--ink-3);">这只票目前没有触发任何线索标签。</p>';
-    // 审核进度
-    if (au) {
-      $('stock-audit-wrap').style.display = '';
-      $('stock-audit-meta').textContent = au.ex + ' · 状态更新 ' + (au.updt || '');
-      var at = -1; STEPS.forEach(function (s, i) { if (s[1].test(au.st)) at = i; });
-      $('stock-stepper').innerHTML = at < 0
-        ? '<div class="step-node current"><div>' + esc(au.st) + '</div></div>'
-        : STEPS.map(function (s, i) {
-            return '<div class="step-node' + (i < at ? ' done' : i === at ? ' current' : '') + '"><div>' + (i + 1) + '. ' + s[0] + '</div>' +
-              (i === at ? '<div class="num t-muted" style="font-size:0.72rem; margin-top:4px;">' + esc(au.updt || '') + '</div>' : '') + '</div>';
-          }).join('');
-    } else $('stock-audit-wrap').style.display = 'none';
+    // 在途事件进度：每类一条进度条；正在走的排前面，走完、终止的排后面
+    var byKind = {};
+    ev.forEach(function (e) { if (CHAINS[e.kind]) (byKind[e.kind] = byKind[e.kind] || []).push(e); });
+    if (au && !byKind[auditKind(au)]) byKind[auditKind(au)] = [];
+    var chains = Object.keys(byKind).map(function (k) {
+      var ch = buildChain(k, byKind[k], au);
+      var last = ch.last ? '最近一条：' + esc(ch.last.date) + ' ' + esc(ch.last.title) : '';
+      var foot = [last, '近 3 个月相关公告 ' + ch.n + ' 条，依据' + esc(ch.src), ch.note ? '<span class="t-amber">' + esc(ch.note) + '</span>' : ''].filter(Boolean).join('<br>');
+      return { ch: ch, html: chainBlock(ch.name, ch, foot), key: (ch.stop || ch.done ? '0' : '1') + (ch.last ? ch.last.date : au ? au.updt : '') };
+    });
+    var futLift = lift.filter(function (e) { return daysTo(e.date) >= 0; }).sort(function (a, b) { return a.date.localeCompare(b.date); });
+    CUR.chains = chains.map(function (c) { return c.ch.name + '：' + chainState(c.ch); });
+    var liftHtml = '';
+    if (futLift.length) {
+      var y = futLift.filter(function (e) { return daysTo(e.date) <= 365; }).reduce(function (a, e) { return a + e.free_ratio; }, 0);
+      var nx = futLift[0];
+      liftHtml = '<div class="chain"><div class="chain-head"><strong>限售解禁</strong><span class="chain-state">下一次还有 ' + daysTo(nx.date) + ' 天</span></div>' +
+        '<div class="chain-foot">下一次 ' + esc(nx.date) + '，占流通股 ' + nx.free_ratio + '%；未来 12 个月合计约占流通股 ' + (Math.round(y * 100) / 100) + '%（共 ' + futLift.length + ' 次）</div></div>';
+      CUR.chains.push('限售解禁：下一次 ' + nx.date + '（还有 ' + daysTo(nx.date) + ' 天），占流通 ' + nx.free_ratio + '%');
+    }
+    chains.sort(function (a, b) { return b.key.localeCompare(a.key); });
+    $('stock-progress-wrap').style.display = chains.length || liftHtml ? '' : 'none';
+    $('stock-progress').innerHTML = chains.map(function (c) { return c.html; }).join('') + liftHtml;
+    setTimeout(function () { [].forEach.call(document.querySelectorAll('#stock-progress .stepper-scroll'), function (sc) {   // 进度条太宽时，滚到当前那一步（等页面排好版再量）
+      var cur = sc.querySelector('.current'); if (!cur) return;
+      var a = sc.getBoundingClientRect(), b = cur.getBoundingClientRect();
+      sc.scrollLeft = Math.max(0, sc.scrollLeft + b.left - a.left - (a.width - b.width) / 2);
+    }); }, 60);
+    // 主题：在哪条链、哪一段、什么角色、走到哪个阶段、公告原文
+    $('stock-theme-wrap').style.display = 'none'; $('stock-theme').innerHTML = '';
+    load('themes.json').then(function (T) {
+      var hits = [];
+      (T ? T.themes : []).forEach(function (th) { th.segments.forEach(function (g) { g.items.forEach(function (x) { if (x.code === code) hits.push({ th: th.name, seg: g.name, x: x }); }); }); });
+      if (!hits.length || !CUR || CUR.code !== code) return;
+      CUR.themes = hits.map(function (h) { return h.th + ' · ' + h.seg + '（' + h.x.role + '，' + h.x.stage + '）：' + h.x.evidence.date + ' “' + h.x.evidence.quote + '”'; });
+      $('stock-theme-wrap').style.display = '';
+      $('stock-theme').innerHTML = hits.map(function (h) {
+        var e = h.x.evidence, u = safeUrl(e.url), at = THEME_STEPS.map(function (s) { return s[0]; }).indexOf(h.x.stage);
+        var ch = { steps: THEME_STEPS, at: at, hit: [], done: at === THEME_STEPS.length - 1, noEarly: true };   // 主题阶段只有一条证据，前面几步不标日期
+        ch.hit[at] = { date: e.date };
+        return chainBlock('', ch, '<div class="quote">“' + esc(e.quote) + '”' + (u ? '<a href="' + u + '" target="_blank" rel="noopener">' + esc(e.date) + ' ' + esc(e.title) + ' ↗</a>' : '') + '</div>')
+          .replace('<strong></strong>', '<a href="#theme/' + encodeURIComponent(h.th) + '"><strong>' + esc(h.th) + ' · ' + esc(h.seg) + '</strong></a> <span class="fact-tag">' + esc(h.x.role) + '</span>');
+      }).join('');
+    });
     // 时间线：公告事件、龙虎榜、解禁、外资、国资，按日期倒序
     var tl = [];
     ev.forEach(function (e) { tl.push({ d: e.date, ic: 'doc', tone: 'accent', k: '公告 · ' + tagName(e.kind), x: e.title + (e.stop ? '（已终止）' : '') }); });
@@ -668,6 +775,13 @@ function showStock(code) {
     load('research.json').then(function (R) {
       var it = R && R.items.filter(function (x) { return x.code === code; })[0];
       $('stock-verdict').innerHTML = verdictHtml(it && it.verdict);
+      if (!CUR || CUR.code !== code) return;
+      CUR.research = it ? '研究榜第 ' + it.rank + ' 名，' + it.score + ' 分：' + it.reasons.map(function (r) { return r.text + '（' + (r.score > 0 ? '+' : '') + r.score + '）'; }).join('；') : '';
+      $('stock-research').innerHTML = !R ? '<p class="t-muted" style="font-size:0.84rem;">研究榜暂不可用。</p>'
+        : !it ? '<p class="t-muted" style="font-size:0.84rem;">不在研究榜前 ' + R.items.length + ' 名（' + esc(R.updated) + '）。</p>'
+        : '<div class="chain-head"><a href="#research"><strong>研究榜第 ' + it.rank + ' 名</strong></a><span class="num"><b>' + it.score + '</b> 分 · ' + esc(R.updated) + (it.is_new ? ' <span class="new-dot">新</span>' : '') + '</span></div>' +
+          it.reasons.map(function (r) { return '<p style="font-size:0.84rem; margin:6px 0;"><span class="num ' + (r.score > 0 ? '' : 't-amber') + '">' + (r.score > 0 ? '+' : '') + r.score + '</span> ' + esc(r.text) + '</p>'; }).join('') +
+          (it.tide ? '<div style="margin-top:8px;">' + tideHtml(it.tide) + '</div>' : '');
     });
     var rc = recent().filter(function (c) { return c !== code; });
     rc.unshift(code); store('signal_recent', JSON.stringify(rc.slice(0, 4)));
@@ -682,6 +796,9 @@ $('copy-ai-btn').addEventListener('click', function () {
   if (c.au) L.push('审核状态：' + c.au.ex + ' ' + c.au.st + '，更新 ' + c.au.updt + (c.au.acpt ? '，受理 ' + c.au.acpt : ''));
   c.pool.forEach(function (e) { L.push('外资：' + e.q + ' ' + e.holder + ' ' + e.chg + '，第' + e.rank + '名，占流通' + e.ratio + '%，估算成本' + e.cost + '（估算值，季报滞后）'); });
   c.soe.forEach(function (e) { L.push('国资：' + e.q + ' ' + e.holder + ' ' + e.chg + '，占流通' + e.ratio + '%'); });
+  if (c.research) L.push(c.research);
+  (c.chains || []).forEach(function (x) { L.push('进度：' + x); });
+  (c.themes || []).forEach(function (x) { L.push('主题：' + x); });
   c.ev.slice(0, 8).forEach(function (e) { L.push('公告：' + e.date + ' ' + e.title); });
   c.lhb.slice(0, 5).forEach(function (e) { L.push('龙虎榜：' + e.date + ' ' + e.explain); });
   c.lift.forEach(function (e) { L.push('解禁：' + e.date + '，占流通' + e.free_ratio + '%'); });

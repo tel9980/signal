@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-01 16:38",
+ "checked": "2026-11-01 17:25",
  "sources": [
   {
    "name": "收盘行情（持仓池现价）",
@@ -80,14 +80,14 @@
   },
   {
    "name": "主题公告检索",
-   "last": "2026-10-31 22:03",
+   "last": "2026-11-01 16:39",
    "every": "每周六早上",
    "status": "warn",
    "note": "上次失败：Blocked: IncompleteRead: IncompleteRead("
   },
   {
    "name": "网站发布",
-   "last": "2026-11-01 07:30",
+   "last": "2026-11-01 16:38",
    "every": "每个交易日 5 次",
    "status": "ok",
    "note": ""
