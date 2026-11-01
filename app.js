@@ -552,7 +552,7 @@ function drawTheme(name) {
         }).join('') + '</div></div>';
     }).join('');
     $('theme-channels').innerHTML = '<div class="card" style="padding:4px 16px;">' + th.channels.map(function (c) {
-      return '<div class="top5-row"><strong>' + esc(c.holder) + '</strong><span class="why">出现在 ' + c.count + ' 家' + (c.new.length ? '，新进：' + c.new.map(function (k) { return esc(k); }).join('、') : '') + '</span></div>';
+      return '<div class="top5-row wrap"><strong>' + esc(c.holder) + '</strong><span class="why">出现在 ' + c.count + ' 家' + (c.new.length ? '，新进：' + c.new.map(function (k) { return esc(k); }).join('、') : '') + '</span></div>';
     }).join('') + '</div>';
   });
 }

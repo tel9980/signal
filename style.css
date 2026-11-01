@@ -1322,6 +1322,9 @@ details.seat-card summary::-webkit-details-marker{display:none}
 .top5-row { display: flex; align-items: center; gap: 10px; min-height: 44px; border-bottom: 1px solid var(--line); font-size: .86rem; }
 .top5-row:last-child { border-bottom: none; }
 .top5-row .why { flex: 1; min-width: 0; color: var(--ink-3); font-size: .78rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.top5-row.wrap { align-items: baseline; padding: 12px 0; }   /* 主题页外资通道：新进名单要看全，折行不省略 */
+.top5-row.wrap strong { flex: none; }
+.top5-row.wrap .why { white-space: normal; line-height: 1.55; }
 /* 潮水小字：量能、离高点、涨停 */
 .tide { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; font-size: .76rem; color: var(--ink-3); }
 .tide b { font-family: var(--font-mono); font-weight: 600; color: var(--ink-2); }

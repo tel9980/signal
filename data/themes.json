@@ -1,0 +1,4216 @@
+{
+ "updated": "2026-11-01",
+ "themes": [
+  {
+   "name": "人形机器人",
+   "intro": "按产业链分段：灵巧手、丝杠与执行器、减速器与关节、电机与传感。公司名单来自公告原文，写了不等于赚到钱。",
+   "segments": [
+    {
+     "name": "灵巧手",
+     "items": [
+      {
+       "code": "002979",
+       "name": "雷赛智能",
+       "role": "整只手",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-07-09",
+        "title": "容诚会计师事务所(特殊普通合伙)关于深圳市雷赛智能控制股份有限公司申请向特定对象",
+        "quote": "发行人的无框力矩电机、关节模组及高自由度灵巧手实现规模化供货，已获得数十家主流机器人客户订单",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-09/1225414828.PDF"
+       },
+       "first_seen": "2026-03-13",
+       "tide": {
+        "vol_ratio": 1.47,
+        "from_high": -34.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300953",
+       "name": "震裕科技",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-06-09",
+        "title": "中汇会计师事务所(特殊普通合伙)关于深圳证券交易所《关于宁波震裕科技股份有限公司",
+        "quote": "（2）灵巧手零部件灵巧手产业链方面，随着触觉感知、精密驱动与轻量化材料技术的持续突破，灵巧手正从实验室样品向规模化工业品跨越",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-06-09/1225359216.PDF"
+       },
+       "first_seen": "2025-12-24",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -55.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688678",
+       "name": "福立旺",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-05-20",
+        "title": "中信证券股份有限公司关于福立旺精密机电（中国）股份有限公司向特定对象发行股票之上",
+        "quote": "司已成功研发出多款不同直径规格的微型行星滚柱丝杠并送样多家客户，同时在灵巧手关节零部件",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-20/1225315762.PDF"
+       },
+       "first_seen": "2026-03-18",
+       "tide": {
+        "vol_ratio": 1.16,
+        "from_high": -46.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688499",
+       "name": "利元亨",
+       "role": "用或测",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-27",
+        "title": "广东利元亨智能装备股份有限公司向特定对象发行股票证券募集说明书（申报稿）",
+        "quote": "，可进行关节模组、头颈、臂、灵巧手、躯体、腿、整机组装及测试",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512131.PDF"
+       },
+       "first_seen": "2026-04-16",
+       "tide": {
+        "vol_ratio": 1.0,
+        "from_high": -45.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300660",
+       "name": "江苏雷利",
+       "role": "整只手",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-05-18",
+        "title": "江苏雷利电机股份有限公司向不特定对象发行可转换公司债券募集说明书（申报稿）（更新",
+        "quote": "15主动自由度仿肌腱连接绳驱灵巧手的研发进行灵巧手实际场景应用测试工作及规模化生产准备工作通过端侧",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-18/1225313503.PDF"
+       },
+       "first_seen": "2025-12-09",
+       "tide": {
+        "vol_ratio": 1.71,
+        "from_high": -48.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300756",
+       "name": "金马游乐",
+       "role": "用或测",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-11",
+        "title": "关于广东金马游乐股份有限公司申请向特定对象发行股票的第二轮审核问询函的回复",
+        "quote": "前在做步态及算法的测试，预计2026年12月完成开发基于双力控臂和触觉灵巧手的通用装配机器人项目开发阶段",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-11/1225468870.PDF"
+       },
+       "first_seen": "2026-06-23",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -64.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688306",
+       "name": "均普智能",
+       "role": "用或测",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-27",
+        "title": "宁波均普智能制造股份有限公司关于2026年度提质增效重回报专项行动方案的半年度评",
+        "quote": "精灵G2轮式具身智能机器人开展灵巧手集成与装配场景验证",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512307.PDF"
+       },
+       "first_seen": "2026-03-07",
+       "tide": {
+        "vol_ratio": 1.67,
+        "from_high": -29.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300952",
+       "name": "恒辉安防",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "2026年半年度报告",
+        "quote": "、工业级灵巧手、多自由度机械臂等不同负载场景的传动需求，目前已与多家具身智能机器人企业开展灵巧手适配验证合作",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501122.PDF"
+       },
+       "first_seen": "2026-04-22",
+       "tide": {
+        "vol_ratio": 1.92,
+        "from_high": -54.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603728",
+       "name": "鸣志电器",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2025-11-05",
+        "title": "关于2025年第三季度网上业绩说明会召开情况的公告",
+        "quote": "目前，公司已向国内外上百家整机与灵巧手部件厂商送样，并持续获得批量订单",
+        "url": "https://static.cninfo.com.cn/finalpage/2025-11-05/1224785407.PDF"
+       },
+       "first_seen": "2025-11-05",
+       "tide": {
+        "vol_ratio": 1.46,
+        "from_high": -25.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "003033",
+       "name": "征和工业",
+       "role": "整只手",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-17",
+        "title": "青岛征和工业股份有限公司向特定对象发行股票募集说明书（注册稿）",
+        "quote": "型链系统软硬件一体化研发制造项目达产后，公司将形成年产4,800只三指灵巧手、3,500只五指灵巧手",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-17/1225567279.PDF"
+       },
+       "first_seen": "2026-03-10",
+       "tide": {
+        "vol_ratio": 1.58,
+        "from_high": -25.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "003021",
+       "name": "兆威机电",
+       "role": "整只手",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-15",
+        "title": "2026年半年度报告",
+        "quote": "灵巧手仿生机器人灵巧手集结构、软硬件系统研发于一体，构建了A17、B21、B06、C06多层次产品矩阵",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225475350.PDF"
+       },
+       "first_seen": "2025-12-11",
+       "tide": {
+        "vol_ratio": 1.46,
+        "from_high": -33.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300912",
+       "name": "凯龙高科",
+       "role": "用或测",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-02-09",
+        "title": "关于股票交易异常波动及股票交易严重异常波动的公告",
+        "quote": "2、公司布局具身智能赛道，目前推出的“惠灵嘉”系列机器人和灵巧手操作力智能检测设备等产品仍处于市场开拓阶段",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-02-09/1224973179.PDF"
+       },
+       "first_seen": "2025-11-21",
+       "tide": {
+        "vol_ratio": 1.65,
+        "from_high": -67.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300918",
+       "name": "南山智尚",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-16",
+        "title": "关于“质量回报双提升”行动方案的进展公告",
+        "quote": "展，布局超高分子量聚乙烯纤维、锦纶纤维等新材料领域，成功开发人形机器人灵巧手腱绳",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-16/1225105693.PDF"
+       },
+       "first_seen": "2026-04-16",
+       "tide": {
+        "vol_ratio": 1.62,
+        "from_high": -49.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301325",
+       "name": "曼恩斯特",
+       "role": "整只手",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "2025年年度报告",
+        "quote": "规模化应用经验，落实机器人灵巧手相关产品布局，推动公司多元化业务发展",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225248446.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 0.73,
+        "from_high": -62.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301112",
+       "name": "信邦智能",
+       "role": "用或测",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "广州信邦智能装备股份有限公司发行股份及支付现金购买资产并募集配套资金暨关联交易报",
+        "quote": "摘要（修订稿）0-4-85制造的核心环节，跟踪传统机械臂与末端执行器向灵巧手方向演进的产业趋势",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518447.PDF"
+       },
+       "first_seen": "2026-01-09",
+       "tide": {
+        "vol_ratio": 1.49,
+        "from_high": -59.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301368",
+       "name": "丰立智能",
+       "role": "零件",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "2026年半年度报告",
+        "quote": "、传动效率高灵巧手模组灵巧手模组蜗轮蜗杆方案结构轻巧、传动效率高灵巧手模组灵巧手模组伞齿方案结构轻巧、",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501106.PDF"
+       },
+       "first_seen": "2025-12-15",
+       "tide": {
+        "vol_ratio": 1.39,
+        "from_high": -50.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002009",
+       "name": "天奇股份",
+       "role": "用或测",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-09-09",
+        "title": "天奇自动化工程股份有限公司2025年度向特定对象发行A股股票募集说明书(注册稿)",
+        "quote": "设备投入主要包括具身智能机器人、训练服务器、存储服务器、遥操设备、定制灵巧手",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-09/1225552961.PDF"
+       },
+       "first_seen": "2026-04-14",
+       "tide": {
+        "vol_ratio": 2.98,
+        "from_high": -54.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301631",
+       "name": "壹连科技",
+       "role": "零件",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-09-08",
+        "title": "向不特定对象发行可转换公司债券募集说明书（上会稿）",
+        "quote": "，集成柔性压力传感器等部件助力机器人实现触觉反馈、环境探测等功能，满足灵巧手",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-08/1225554166.PDF"
+       },
+       "first_seen": "2026-06-11",
+       "tide": {
+        "vol_ratio": 1.25,
+        "from_high": -54.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "001208",
+       "name": "华菱线缆",
+       "role": "零件",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-19",
+        "title": "湖南华菱线缆股份有限公司发行可转换公司债券购买资产并募集配套资金暨关联交易报告书",
+        "quote": "人形机器人灵巧手连接器排布如下：2-1-236（二）行业竞争格局1、工业控制连接器由于技术壁垒较高，工控连接器市场目前主要被海外巨头主导",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-19/1225480797.PDF"
+       },
+       "first_seen": "2025-12-17",
+       "tide": {
+        "vol_ratio": 4.0,
+        "from_high": -60.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600114",
+       "name": "东睦股份",
+       "role": "零件",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "东睦股份2026年半年度报告（更正后）",
+        "quote": "随着AI算力和机器人的快速发展，也为MIM技术在机器人精密零部件（如灵巧手精密复杂零部件等）、",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519542.PDF"
+       },
+       "first_seen": "2025-11-12",
+       "tide": {
+        "vol_ratio": 1.31,
+        "from_high": -52.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "601689",
+       "name": "拓普集团",
+       "role": "灵巧手相关",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "拓普集团2026年半年度报告",
+        "quote": "报告期内，公司机器人业务取得重要进展：直线执行器、旋转执行器及灵巧手电机已进入小批量交付阶段",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225521853.PDF"
+       },
+       "first_seen": "2026-03-24",
+       "tide": {
+        "vol_ratio": 1.1,
+        "from_high": -49.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688320",
+       "name": "禾川科技",
+       "role": "灵巧手相关",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "浙江禾川科技股份有限公司2026年半年度报告",
+        "quote": "公司自研关节、电机、灵巧手等核心部件已通过多客户验证并落地稳定小批量订单，产业化基础不断夯实",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519146.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.22,
+        "from_high": -34.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603683",
+       "name": "晶华新材",
+       "role": "灵巧手相关",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-22",
+        "title": "晶华新材2026年半年度报告",
+        "quote": "目前公司已与具身智能、灵巧手领域多家头部企业达成深度合作，开展联合研发工作，相关产品已实现小批量量产，",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491260.PDF"
+       },
+       "first_seen": "2026-04-17",
+       "tide": {
+        "vol_ratio": 1.37,
+        "from_high": -52.3,
+        "limit_ups": 1
+       }
+      },
+      {
+       "code": "300709",
+       "name": "精研科技",
+       "role": "灵巧手相关",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "2026年半年度报告",
+        "quote": "在此基础上，公司战略布局机器人及灵巧手领域的产品应用，积极推进相关产品的研发与验证",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225532717.PDF"
+       },
+       "first_seen": "2026-04-27",
+       "tide": {
+        "vol_ratio": 1.05,
+        "from_high": -52.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301310",
+       "name": "鑫宏业",
+       "role": "灵巧手相关",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-17",
+        "title": "2025年度董事会工作报告",
+        "quote": "，公司陆续参与多家行业头部企业产品送样、试制工作，为其关节驱动系统以及灵巧手等关键部位提供高度定制化的线缆解决方案",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-17/1225109448.PDF"
+       },
+       "first_seen": "2026-04-17",
+       "tide": {
+        "vol_ratio": 0.77,
+        "from_high": -30.4,
+        "limit_ups": 0
+       }
+      }
+     ]
+    },
+    {
+     "name": "丝杠与执行器",
+     "items": [
+      {
+       "code": "300953",
+       "name": "震裕科技",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-03",
+        "title": "关于宁波震裕科技股份有限公司向不特定对象发行可转换公司债券的审核问询函的回复报告",
+        "quote": "完成【此处已豁免】等客户验证、已实现小规模销售行星滚柱丝杠关节模组56万套行星滚柱丝杠是直线模组中的核心零部件",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-03/1225078424.PDF"
+       },
+       "first_seen": "2025-12-24",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -55.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688678",
+       "name": "福立旺",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-05-20",
+        "title": "中信证券股份有限公司关于福立旺精密机电（中国）股份有限公司向特定对象发行股票之上",
+        "quote": "在具身智能机器人领域，公司已成功研发出多款不同直径规格的微型行星滚柱丝杠并送样多家客户，同时在灵巧手关节零部件",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-20/1225315762.PDF"
+       },
+       "first_seen": "2026-03-18",
+       "tide": {
+        "vol_ratio": 1.16,
+        "from_high": -46.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300660",
+       "name": "江苏雷利",
+       "role": "整只手",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "2026年半年度报告",
+        "quote": "旋转关节模组处于量产阶段，空心杯电机、精密齿轮箱、T型丝杆、滚珠丝杠、行星滚柱丝杠等产品处于样机测试及客户送样阶段",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225529862.PDF"
+       },
+       "first_seen": "2025-12-09",
+       "tide": {
+        "vol_ratio": 1.71,
+        "from_high": -48.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300756",
+       "name": "金马游乐",
+       "role": "用或测",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-04",
+        "title": "致同会计师事务所（特殊普通合伙）关于广东金马游乐股份有限公司申请向特定对象发行股",
+        "quote": "人核心零部件及整机本体研发、制造与销售，核心产品涵盖高精度谐波减速器、行星滚柱丝杠",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-04/1225549407.PDF"
+       },
+       "first_seen": "2026-06-23",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -64.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300912",
+       "name": "凯龙高科",
+       "role": "用或测",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-02-04",
+        "title": "凯龙高科技股份有限公司发行股份及支付现金购买资产并募集配套资金暨关联交易预案",
+        "quote": "目前，金旺达具备灵巧手用微型滚珠丝杠量产能力，并自主研发行星滚柱丝杠",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-02-04/1224965418.PDF"
+       },
+       "first_seen": "2026-02-04",
+       "tide": {
+        "vol_ratio": 1.65,
+        "from_high": -67.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "003033",
+       "name": "征和工业",
+       "role": "整只手",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-05-22",
+        "title": "发行人及保荐机构关于青岛征和工业股份有限公司申请向特定对象发行股票的审核问询函的",
+        "quote": "春具身智能机器人和汽车智驾核心零部件研发与产业化项目可实现年产98万套行星滚柱丝杠",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-22/1225323355.PDF"
+       },
+       "first_seen": "2026-05-22",
+       "tide": {
+        "vol_ratio": 1.58,
+        "from_high": -25.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "605133",
+       "name": "嵘泰股份",
+       "role": "零件",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-04-15",
+        "title": "嵘泰股份2025年年度报告",
+        "quote": "合作方润孚动力已在军工级行星滚柱丝杠领域实现技术突破，并具备批量供货能力，技术底蕴深厚",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-15/1225101273.PDF"
+       },
+       "first_seen": "2026-04-15",
+       "tide": {
+        "vol_ratio": 1.17,
+        "from_high": -40.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "605018",
+       "name": "长华集团",
+       "role": "零件",
+       "stage": "定点",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "长华集团2026年半年度报告",
+        "quote": "目前公司行星滚柱丝杠产品仍处于研发阶段，尚未获得客户定点，也未实现营业收入，对业绩不构成影响",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519504.PDF"
+       },
+       "first_seen": "2025-11-08",
+       "tide": {
+        "vol_ratio": 0.66,
+        "from_high": -50.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688017",
+       "name": "绿的谐波",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-18",
+        "title": "中信证券股份有限公司关于苏州绿的谐波传动科技股份有限公司2026年半年度持续督导",
+        "quote": "提出狭小空间机电集成和机电耦合评估方法，最终研制出微型行星滚柱丝杠电缸样机",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-18/1225570187.PDF"
+       },
+       "first_seen": "2026-04-23",
+       "tide": {
+        "vol_ratio": 1.49,
+        "from_high": -48.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603040",
+       "name": "新坐标",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-05-14",
+        "title": "新坐标2025年年度股东会会议资料",
+        "quote": "在大承载反向式行星滚柱丝杠、微型循环式以及微型反向式行星滚柱丝杠领域，公司完成了从产品设计、工艺开发到内部试验验证的全流程开发工作",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-14/1225305066.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.43,
+        "from_high": -58.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688556",
+       "name": "高测股份",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-03-31",
+        "title": "2025年年度报告",
+        "quote": "公司年初开始布局人形机器人行星滚柱丝杠磨削设备，报告期内研发进展顺利，目前已推出内螺纹磨床及外螺纹磨床样机",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225063026.PDF"
+       },
+       "first_seen": "2026-03-31",
+       "tide": {
+        "vol_ratio": 1.53,
+        "from_high": -64.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300580",
+       "name": "贝斯特",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-07-06",
+        "title": "关于股票交易异常波动公告",
+        "quote": "器人零部件业务仍在样品阶段，经统计，2026年上半年，公司人形机器人用行星滚柱丝杠相关样品实现营收",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-06/1225409765.PDF"
+       },
+       "first_seen": "2026-03-31",
+       "tide": {
+        "vol_ratio": 1.26,
+        "from_high": -45.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688577",
+       "name": "浙海德曼",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "浙海德曼2026年半年度报告",
+        "quote": "500.00274.45340.88样机试制阶段该产品是针对人形机器人行星滚柱丝杠螺母高效加工开发的一款专用设备",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518186.PDF"
+       },
+       "first_seen": "2026-08-01",
+       "tide": {
+        "vol_ratio": 1.48,
+        "from_high": -61.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300258",
+       "name": "精锻科技",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度报告",
+        "quote": "报告期内，公司机器人关节业务分别完成了摆线针轮减速器、行星减速器以及行星滚柱丝杠三个项目零部件的样品开发和客户交付",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498487.PDF"
+       },
+       "first_seen": "2026-04-21",
+       "tide": {
+        "vol_ratio": 1.27,
+        "from_high": -51.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603583",
+       "name": "捷昌驱动",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-28",
+        "title": "2026年度“提质增效重回报”行动方案",
+        "quote": "成量产落地，旋转模组通过可靠性验证并进入整机厂3多场景测试阶段，反向式行星滚柱丝杠持续推进工艺优化与材料创新",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225203790.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "tide": {
+        "vol_ratio": 1.49,
+        "from_high": -34.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300695",
+       "name": "兆丰股份",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-03-27",
+        "title": "2025年年度报告",
+        "quote": "3）行星滚柱丝杠副承载特性分析与有限元计算4）行星滚柱丝杠副零件加工与样机研发进行中1)通过创新结构设计",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225037234.PDF"
+       },
+       "first_seen": "2025-12-31",
+       "tide": {
+        "vol_ratio": 4.57,
+        "from_high": -56.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "601100",
+       "name": "恒立液压",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-21",
+        "title": "江苏恒立液压股份有限公司2025年年度报告",
+        "quote": "同时，行星滚柱丝杠已完成送样和初步量产，为公司精密传动业务开拓多元化下游市场",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-21/1225127026.PDF"
+       },
+       "first_seen": "2026-04-21",
+       "tide": {
+        "vol_ratio": 0.97,
+        "from_high": -33.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600889",
+       "name": "*ST京化",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2025-12-20",
+        "title": "中兴华会计师事务所（特殊普通合伙）关于南京化纤股份有限公司重大资产置换、发行股份",
+        "quote": "着新兴产业的提速发展，丝杠产品未来增量市场空间打开，南京工艺凭借其系列行星滚柱丝杠副的研发量产能力，",
+        "url": "https://static.cninfo.com.cn/finalpage/2025-12-20/1224889009.PDF"
+       },
+       "first_seen": "2025-12-09",
+       "tide": {
+        "vol_ratio": 1.28,
+        "from_high": -36.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603667",
+       "name": "五洲新春",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-28",
+        "title": "五洲新春2025年年度报告",
+        "quote": "，成功研发出机器人行星滚柱丝杠、滚珠丝杠、微型丝杠等多款高端产品",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225214708.PDF"
+       },
+       "first_seen": "2025-11-18",
+       "tide": {
+        "vol_ratio": 2.46,
+        "from_high": -48.9,
+        "limit_ups": 1
+       }
+      },
+      {
+       "code": "603009",
+       "name": "北特科技",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-01-30",
+        "title": "中国银河证券股份有限公司关于上海北特科技集团股份有限公司2025年度以简易程序向",
+        "quote": "（一期），达产后年产行星滚柱丝杠80万套",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-01-30/1224955598.PDF"
+       },
+       "first_seen": "2025-12-08",
+       "tide": {
+        "vol_ratio": 1.16,
+        "from_high": -19.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301210",
+       "name": "金杨精密",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-21",
+        "title": "2026年半年度报告",
+        "quote": "其中，国华智能主要从事人形机器人精密传动部件研发制造（含谐波减速器、行星滚柱丝杠等传动系统关键组件）、",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484820.PDF"
+       },
+       "first_seen": "2025-11-25",
+       "tide": {
+        "vol_ratio": 2.8,
+        "from_high": -6.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "001306",
+       "name": "夏厦精密",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "2026年半年度报告",
+        "quote": "报告期内，公司聚焦行星滚柱丝杠核心加工技术研发，各项研发工作稳步推进，取得阶段性关键成效",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501632.PDF"
+       },
+       "first_seen": "2026-04-10",
+       "tide": {
+        "vol_ratio": 1.54,
+        "from_high": -42.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603596",
+       "name": "伯特利",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "伯特利2026年半年度报告",
+        "quote": "、电机等关键零部件领域的产业布局，并组建了专职研发团队，后续将重点突破行星滚柱丝杠、微型丝杠、高性能无刷电机",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225521940.PDF"
+       },
+       "first_seen": "2026-03-28",
+       "tide": {
+        "vol_ratio": 1.16,
+        "from_high": -37.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300946",
+       "name": "恒而达",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-25",
+        "title": "2025年度内部控制评价报告",
+        "quote": "、行星滚柱丝杠）系列产品的研发、生产、销售及服务，用匠心制造精品，以诚心服务市场，锐意进取，追求卓越",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225176512.PDF"
+       },
+       "first_seen": "2026-01-29",
+       "tide": {
+        "vol_ratio": 3.12,
+        "from_high": -47.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300100",
+       "name": "双林股份",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度报告",
+        "quote": "由于人形机器人行星滚柱丝杠与公司核心产品HDM具有技术同源性以及加工工艺方面的相通性，公司积极布局相关产品反向式行星滚柱丝杠",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498971.PDF"
+       },
+       "first_seen": "2026-03-25",
+       "tide": {
+        "vol_ratio": 1.06,
+        "from_high": -52.5,
+        "limit_ups": 0
+       }
+      }
+     ]
+    },
+    {
+     "name": "减速器与关节",
+     "items": [
+      {
+       "code": "300953",
+       "name": "震裕科技",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-02-26",
+        "title": "宁波震裕科技股份有限公司向不特定对象发行可转换公司债券募集说明书（申报稿）",
+        "quote": "建立公司在微小型谐波减速器领域的自主研发体系，形成核心知识产权，补全公司在该领域的空白进行中完成首批样机测试",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-02-26/1224984997.pdf"
+       },
+       "first_seen": "2026-02-26",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -55.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300756",
+       "name": "金马游乐",
+       "role": "用或测",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-04",
+        "title": "致同会计师事务所（特殊普通合伙）关于广东金马游乐股份有限公司申请向特定对象发行股",
+        "quote": "高端人形机器人核心零部件及整机本体研发、制造与销售，核心产品涵盖高精度谐波减速器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-04/1225549407.PDF"
+       },
+       "first_seen": "2026-06-23",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -64.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301368",
+       "name": "丰立智能",
+       "role": "零件",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "国泰海通证券股份有限公司关于浙江丰立智能科技股份有限公司2025年度向特定对象发",
+        "quote": "是，本项目中年产谐波减速器18万台系基于公司现有3.5万台谐波减速器产品的产能扩大",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225508993.PDF"
+       },
+       "first_seen": "2025-12-15",
+       "tide": {
+        "vol_ratio": 1.39,
+        "from_high": -50.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "003033",
+       "name": "征和工业",
+       "role": "整只手",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-05-22",
+        "title": "立信会计师事务所（特殊普通合伙）关于对《青岛征和工业股份有限公司申请向特定对象发",
+        "quote": ",700.0016,000.001.37丰立智能新一代精密传动制造项目谐波减速器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-22/1225323353.PDF"
+       },
+       "first_seen": "2026-05-22",
+       "tide": {
+        "vol_ratio": 1.58,
+        "from_high": -25.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688678",
+       "name": "福立旺",
+       "role": "零件",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-06-13",
+        "title": "关于福立旺精密机电（中国）股份有限公司向特定对象发行股票的审核问询函的回复报告",
+        "quote": "、增加扭矩的机械传动装置，分为行星减速器、谐波减速器和RV减速器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-06-13/1225369163.PDF"
+       },
+       "first_seen": "2026-06-13",
+       "tide": {
+        "vol_ratio": 1.16,
+        "from_high": -46.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600114",
+       "name": "东睦股份",
+       "role": "零件",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "东睦股份2025年年度股东会会议资料",
+        "quote": "、谐波减速器、摆线减速器等多款不同结构的减速机，以满足不同应用场景",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225223650.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.31,
+        "from_high": -52.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "000887",
+       "name": "中鼎股份",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-06-24",
+        "title": "关于安徽中鼎密封件股份有限公司申请向不特定对象发行可转换公司债券的审核问询函之回",
+        "quote": "，目前公司已掌握谐波减速器精密机械加工、热处理及精密装配等核心技术，公司当前谐波减速器样机在传动精度、",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-06-24/1225384412.PDF"
+       },
+       "first_seen": "2025-11-24",
+       "tide": {
+        "vol_ratio": 0.91,
+        "from_high": -32.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300432",
+       "name": "富临精工",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "2025年度环境、社会与公司治理（ESG）报告",
+        "quote": "场）上，公司与重庆大学高端装备机械传动全国重点实验室李俊阳教授团队签订谐波减速器总成系统开发与验证技术开发合同",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225247774.PDF"
+       },
+       "first_seen": "2026-01-14",
+       "tide": {
+        "vol_ratio": 1.34,
+        "from_high": -52.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603270",
+       "name": "金帝股份",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-03-21",
+        "title": "国信证券股份有限公司关于山东金帝精密机械科技股份有限公司向不特定对象发行可转换公",
+        "quote": "尤其半导体散热片和谐波减速器柔轮初坯作为新兴领域产品，其工艺成熟度和市场接受度仍需时间验证，存在短期内效益不达预期的风险",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-21/1225021809.PDF"
+       },
+       "first_seen": "2025-11-15",
+       "tide": {
+        "vol_ratio": 1.19,
+        "from_high": -33.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "001282",
+       "name": "三联锻造",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-05-13",
+        "title": "募集说明书（修订稿）",
+        "quote": "加快推进滚柱丝杠副、谐波减速器、关节模组三类产品试制生产线的建设",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-13/1225302229.PDF"
+       },
+       "first_seen": "2026-04-02",
+       "tide": {
+        "vol_ratio": 1.48,
+        "from_high": -44.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300382",
+       "name": "斯莱克",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "2025年度董事会工作报告",
+        "quote": "（五）深耕核心技术延伸应用，实现谐波减速器柔轮样品开发谐波减速器作为机器人执行机构核心部件之一，其中柔轮是谐波减速器的心脏",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225242568.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.03,
+        "from_high": -56.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "000581",
+       "name": "威孚高科",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-17",
+        "title": "2025年年度报告",
+        "quote": "在具身智能领域推进灵巧手产品开发，实现柔性压力传感器集成应用，稳步开展谐波减速器可靠性验证工作",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-17/1225111397.PDF"
+       },
+       "first_seen": "2026-04-17",
+       "tide": {
+        "vol_ratio": 0.85,
+        "from_high": -32.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603726",
+       "name": "朗迪集团",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-24",
+        "title": "2025年年度报告",
+        "quote": "5个型号，减速器采用谐波减速器，可选配带制动器版本，目前仍处于小批验证阶段，尚未形成销售收入",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225162925.PDF"
+       },
+       "first_seen": "2026-04-24",
+       "tide": {
+        "vol_ratio": 2.96,
+        "from_high": -41.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688017",
+       "name": "绿的谐波",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-18",
+        "title": "中信证券股份有限公司关于苏州绿的谐波传动科技股份有限公司2026年半年度持续督导",
+        "quote": "从研发能力来看，公司设有江苏省谐波减速器工程研究中心、江苏省工业企业技术中心，江苏省精密谐波减速器工程技术研究中心",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-18/1225570187.PDF"
+       },
+       "first_seen": "2026-04-23",
+       "tide": {
+        "vol_ratio": 1.49,
+        "from_high": -48.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301210",
+       "name": "金杨精密",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-21",
+        "title": "2026年半年度报告",
+        "quote": "其中，国华智能主要从事人形机器人精密传动部件研发制造（含谐波减速器、行星滚柱丝杠等传动系统关键组件）、",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484820.PDF"
+       },
+       "first_seen": "2025-11-25",
+       "tide": {
+        "vol_ratio": 2.8,
+        "from_high": -6.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301279",
+       "name": "金道科技",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-08",
+        "title": "关于浙江金道科技股份有限公司向不特定对象发行可转换公司债券审核问询函中有关财务事",
+        "quote": "，并在相关问询回复报告中披露2022年绿的谐波的谐波减速器产能为33万台，募投项第46页",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-08/1225552868.PDF"
+       },
+       "first_seen": "2026-06-02",
+       "tide": {
+        "vol_ratio": 0.91,
+        "from_high": -25.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603319",
+       "name": "美湖股份",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-21",
+        "title": "国金证券股份有限公司关于湖南美湖智造股份有限公司向特定对象发行股票之上市保荐书",
+        "quote": "设项目，公司已具备执行器全流程产品开发及量产能力，其核心功能件（行星/谐波减速器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484385.PDF"
+       },
+       "first_seen": "2026-04-21",
+       "tide": {
+        "vol_ratio": 1.26,
+        "from_high": -51.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301550",
+       "name": "斯菱智驱",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-17",
+        "title": "关于2026年度向特定对象发行股票摊薄即期回报的风险提示及填补回报措施和相关主体",
+        "quote": "同时，目前公司已实现谐波减速器和减速器专用轴承的投产工作，并已完成执行器模组等产品的研发储备，相关技术储备与产业化能力能够有效保障本项目顺利实施",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-17/1225476609.PDF"
+       },
+       "first_seen": "2026-04-22",
+       "tide": {
+        "vol_ratio": 1.06,
+        "from_high": -13.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002164",
+       "name": "宁波东力",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-18",
+        "title": "2026年半年度报告",
+        "quote": "针对高端装备对高精度传动的执行需求，重点布局谐波减速器与精密行星减速器两大核心产品并已实现批量试样及供货",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-18/1225477033.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.82,
+        "from_high": -3.8,
+        "limit_ups": 1
+       }
+      },
+      {
+       "code": "301008",
+       "name": "宏昌科技",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "2026年半年度报告",
+        "quote": "科技有限公司从事无框力矩电机的研发、生产和销售，良质关节是一家专业从事谐波减速器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531592.PDF"
+       },
+       "first_seen": "2026-02-05",
+       "tide": {
+        "vol_ratio": 1.27,
+        "from_high": -47.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002896",
+       "name": "中大力德",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-16",
+        "title": "2025年年度报告",
+        "quote": "现有RV减速器和谐波减速器并不能精准适用，开发一款高速、高刚性、长寿命的减速器十分有必要",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-16/1225108100.PDF"
+       },
+       "first_seen": "2026-04-16",
+       "tide": {
+        "vol_ratio": 1.24,
+        "from_high": -41.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "000795",
+       "name": "英洛华",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-03-21",
+        "title": "关于“质量回报双提升”行动方案的进展公告",
+        "quote": "优势领域的同时积极拓展布局物流、农机、纺织、风机以及机器人等行业，公司谐波减速器在传动精度",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-21/1225022565.PDF"
+       },
+       "first_seen": "2026-03-21",
+       "tide": {
+        "vol_ratio": 1.14,
+        "from_high": -25.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002434",
+       "name": "万里扬",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "2026年半年度报告摘要",
+        "quote": "4、机器人零部件业务报告期内，公司进一步完善了包含谐波减速器、行星减速器、无刷电机及控制器等品类的单品和关节模组的产品平台规划和技术研发",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225500875.PDF"
+       },
+       "first_seen": "2026-04-21",
+       "tide": {
+        "vol_ratio": 4.06,
+        "from_high": -44.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300733",
+       "name": "西菱动力",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-23",
+        "title": "2025年度董事会工作报告",
+        "quote": "2．持续推进空气弹簧、机器人零部件谐波减速器等新产品的研发",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225150688.PDF"
+       },
+       "first_seen": "2026-04-23",
+       "tide": {
+        "vol_ratio": 0.96,
+        "from_high": -21.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002048",
+       "name": "宁波华翔",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-01-31",
+        "title": "关于宁波华翔电子股份有限公司申请向特定对象发行股票的审核问询函之回复报告",
+        "quote": "国内方面，零部件厂商呈现加速追赶态势，例如在谐波减速器方面，绿的谐波依托自主研发的P型齿设计理论，",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-01-31/1224958116.PDF"
+       },
+       "first_seen": "2025-11-27",
+       "tide": {
+        "vol_ratio": 1.84,
+        "from_high": -53.4,
+        "limit_ups": 0
+       }
+      }
+     ]
+    },
+    {
+     "name": "电机与传感",
+     "items": [
+      {
+       "code": "003021",
+       "name": "兆威机电",
+       "role": "整只手",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-08-15",
+        "title": "2026年半年度报告",
+        "quote": "在电机产品上，已完成直流有刷电机、无刷直流电机以及无刷空心杯电机的系列化平台建设，系列化电机均实现量产",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225475350.PDF"
+       },
+       "first_seen": "2026-03-31",
+       "tide": {
+        "vol_ratio": 1.46,
+        "from_high": -33.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002979",
+       "name": "雷赛智能",
+       "role": "整只手",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-07-09",
+        "title": "容诚会计师事务所(特殊普通合伙)关于深圳市雷赛智能控制股份有限公司申请向特定对象",
+        "quote": "、空心杯电机等产品的投入力度，使得销售费用、研发费用有所增长",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-09/1225414828.PDF"
+       },
+       "first_seen": "2026-03-13",
+       "tide": {
+        "vol_ratio": 1.47,
+        "from_high": -34.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300660",
+       "name": "江苏雷利",
+       "role": "整只手",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-05-18",
+        "title": "关于江苏雷利电机股份有限公司向不特定对象发行可转换公司债券申请文件的审核问询函的",
+        "quote": "技术的创新升级，有利于开发出更高性能、高适应度的电机产品，并与公司现有空心杯电机、精密齿轮箱",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-18/1225313506.PDF"
+       },
+       "first_seen": "2025-12-09",
+       "tide": {
+        "vol_ratio": 1.71,
+        "from_high": -48.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301368",
+       "name": "丰立智能",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-06-26",
+        "title": "浙江丰立智能科技股份有限公司2025年度问特定对象发行股票并在创业板上市募集说明",
+        "quote": "自主研发23灵巧手关节传动结构结构由空心杯电机输入扭矩，充分利用空心杯电机的高转速特性（42,000rpm",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-06-26/1225392375.PDF"
+       },
+       "first_seen": "2025-12-15",
+       "tide": {
+        "vol_ratio": 1.39,
+        "from_high": -50.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603728",
+       "name": "鸣志电器",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "关于2026年度“提质增效重回报”行动方案的半年度评估报告的公告",
+        "quote": "新兴产业领域头部客户的应用需求，进一步拓展产品矩阵，人形机器人灵巧手用空心杯电机等核心部件布局持续深化",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505516.PDF"
+       },
+       "first_seen": "2026-04-25",
+       "tide": {
+        "vol_ratio": 1.46,
+        "from_high": -25.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300756",
+       "name": "金马游乐",
+       "role": "用或测",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-11",
+        "title": "关于广东金马游乐股份有限公司申请向特定对象发行股票的审核问询函的回复（二次修订稿",
+        "quote": "机器人研发平台研发硬件人形机器人本体2550.001,250.0041六维力传感器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-11/1225468872.PDF"
+       },
+       "first_seen": "2026-06-23",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -64.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300953",
+       "name": "震裕科技",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-13",
+        "title": "宁波震裕科技股份有限公司向不特定对象发行可转换公司债券募集说明书",
+        "quote": "00新技术开发，提升客户生产效率，提升模具方面的竞争优势，形成新增长点空心杯电机铁芯冲压技术开发主要应用于灵巧手电机领域进行中实现模内成型",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-13/1225470840.PDF"
+       },
+       "first_seen": "2026-06-09",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -55.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688306",
+       "name": "均普智能",
+       "role": "用或测",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-07-28",
+        "title": "宁波均普智能制造股份有限公司2025年度向特定对象发行股票募集说明书（注册稿）",
+        "quote": "34六维力传感器技术自主研发应用于人形机器人的六维力传感器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-28/1225443913.PDF"
+       },
+       "first_seen": "2026-01-16",
+       "tide": {
+        "vol_ratio": 1.67,
+        "from_high": -29.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "003033",
+       "name": "征和工业",
+       "role": "整只手",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-05-22",
+        "title": "北京市金杜律师事务所关于青岛征和工业股份有限公司向特定对象发行A股股票的补充法律",
+        "quote": "目前，公司灵巧手产品采用的空心杯电机作为驱动部件，已能够满足现有产品的性能需求",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-22/1225323354.PDF"
+       },
+       "first_seen": "2026-05-22",
+       "tide": {
+        "vol_ratio": 1.58,
+        "from_high": -25.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300912",
+       "name": "凯龙高科",
+       "role": "用或测",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-02-04",
+        "title": "凯龙高科技股份有限公司发行股份及支付现金购买资产并募集配套资金暨关联交易预案",
+        "quote": "、空心杯电机、关节模组等具身智能机器人核心零部件的企业，积极构建“核心零部件+检测设备+整机产品+场景应用",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-02-04/1224965418.PDF"
+       },
+       "first_seen": "2026-02-04",
+       "tide": {
+        "vol_ratio": 1.65,
+        "from_high": -67.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002009",
+       "name": "天奇股份",
+       "role": "用或测",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-11",
+        "title": "关于天奇自动化工程股份有限公司申请向特定对象发行股票的审核问询函的回复",
+        "quote": "，核心产品包括机器人六维力传感器、智能型关节扭矩传感器等",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-11/1225467081.PDF"
+       },
+       "first_seen": "2026-08-11",
+       "tide": {
+        "vol_ratio": 2.98,
+        "from_high": -54.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002139",
+       "name": "拓邦股份",
+       "role": "零件",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-04-02",
+        "title": "2025年年度报告",
+        "quote": "公司空心杯电机年产能超百万台，具备规模化供货能力",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-02/1225075377.pdf"
+       },
+       "first_seen": "2026-04-02",
+       "tide": {
+        "vol_ratio": 1.36,
+        "from_high": -35.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301413",
+       "name": "安培龙",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "2026年半年度报告",
+        "quote": "一种基于玻璃微熔工艺的六维力传感器及其制备方法》《一种六维力传感器测量数据智能处理方法》《基于数据分析的六维力传感器稳定性测试方法",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225515769.PDF"
+       },
+       "first_seen": "2026-01-08",
+       "tide": {
+        "vol_ratio": 2.49,
+        "from_high": -47.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "000887",
+       "name": "中鼎股份",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-06-02",
+        "title": "安徽承义律师事务所关于安徽中鼎密封件股份有限公司向不特定对象发行可转换公司债券之",
+        "quote": "，公司已完成六维力传感器、扭矩传感器等产品的样机开发，掌握了结构设计、电路补偿与标定等核心技术",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-06-02/1225341908.PDF"
+       },
+       "first_seen": "2025-11-24",
+       "tide": {
+        "vol_ratio": 0.91,
+        "from_high": -32.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002048",
+       "name": "宁波华翔",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-01-31",
+        "title": "上海市锦天城律师事务所关于宁波华翔电子股份有限公司向特定对象发行股票的补充法律意",
+        "quote": "核心部件选型层面，建立国产减速器、力矩电机、传感器性能数据库，利用六维力传感器与高速摄像机捕捉系统，完成传动链匹配测试",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-01-31/1224958118.PDF"
+       },
+       "first_seen": "2025-11-27",
+       "tide": {
+        "vol_ratio": 1.84,
+        "from_high": -53.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002801",
+       "name": "微光股份",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-14",
+        "title": "关于“质量回报双提升”行动方案的进展公告",
+        "quote": "ECU8/10/13/16/22/30空心杯电机送样合格",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-14/1225471591.PDF"
+       },
+       "first_seen": "2026-03-27",
+       "tide": {
+        "vol_ratio": 1.61,
+        "from_high": -34.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688255",
+       "name": "凯尔达",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "关于2026年度“提质增效重回报”行动方案的半年度评估报告",
+        "quote": "部分型号应变式单轴扭矩传感器及应变式六维力传感器已完成技术开发工作，并已有少量型号单轴扭矩传感器和应变式六维力传感器送样",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225520805.PDF"
+       },
+       "first_seen": "2026-04-23",
+       "tide": {
+        "vol_ratio": 1.64,
+        "from_high": -45.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300007",
+       "name": "汉威科技",
+       "role": "零件",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-18",
+        "title": "2025年年度报告摘要",
+        "quote": "嘉兴纳杰采用自有晶圆产线成熟MEMS制程的力敏应变片已向国内六维力传感器客户送样，并在工业及智能汽车领域实现批量应用",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-18/1225118946.PDF"
+       },
+       "first_seen": "2026-04-18",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -48.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301210",
+       "name": "金杨精密",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-21",
+        "title": "2026年半年度报告",
+        "quote": "、六维力传感器等智能传感器的生产、研发与销售242万元2,080.23549.4-243.18",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484820.PDF"
+       },
+       "first_seen": "2025-11-25",
+       "tide": {
+        "vol_ratio": 2.8,
+        "from_high": -6.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600539",
+       "name": "狮头股份",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-07-29",
+        "title": "狮头科技发展股份有限公司发行股份及支付现金购买资产并募集配套资金暨关联交易报告书",
+        "quote": "器人产业发展规划》2021年12月工信部等15部门研制三维视觉传感器、六维力传感器和关节力矩传感器等力觉传感器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-29/1225444603.PDF"
+       },
+       "first_seen": "2025-11-15",
+       "tide": {
+        "vol_ratio": 0.93,
+        "from_high": -45.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603416",
+       "name": "信捷电气",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-17",
+        "title": "无锡信捷电气股份有限公司关于2026年半年度业绩说明会召开情况的公告",
+        "quote": "公司已攻克无框力矩电机、空心杯电机、高性能编码器等关键技术，电感式编码器实现全栈自主可控",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-17/1225567912.PDF"
+       },
+       "first_seen": "2025-12-04",
+       "tide": {
+        "vol_ratio": 2.21,
+        "from_high": -36.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688279",
+       "name": "峰岹科技",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "2026年半年度报告",
+        "quote": "公司与三花控股集团有限公司设立合资公司，聚焦空心杯电机领域研发与产业化，成功实现人形机器人关节核心技术方案的突破",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225521932.PDF"
+       },
+       "first_seen": "2026-03-28",
+       "tide": {
+        "vol_ratio": 1.43,
+        "from_high": -33.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603583",
+       "name": "捷昌驱动",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-28",
+        "title": "2025年年度报告",
+        "quote": "当前，国内线性驱动企业正积极布局人形机器人领域，聚焦线性关节驱动器、空心杯电机等核心产品，凭借定制化与差异化优势",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225203744.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "tide": {
+        "vol_ratio": 1.49,
+        "from_high": -34.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600053",
+       "name": "*ST九鼎",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "九鼎投资2026年半年度报告",
+        "quote": "南京神源生主要从事六维力传感器等机器人核心零部件的研发、生产与销售，在传感器领域具有自主研发能力与技术积累",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498625.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 0.94,
+        "from_high": -75.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300553",
+       "name": "集智股份",
+       "role": "零件",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-06-26",
+        "title": "杭州集智机电股份有限公司相关债券2026年跟踪评级报告",
+        "quote": "表6公司主要研发项目情况项目名称应用方向空心杯电机转子激光去重平衡机项目空心杯转子在机器人的手部等部件中有较大的应用",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-06-26/1225389975.PDF"
+       },
+       "first_seen": "2026-04-22",
+       "tide": {
+        "vol_ratio": 1.21,
+        "from_high": -56.9,
+        "limit_ups": 0
+       }
+      }
+     ]
+    }
+   ],
+   "channels": [
+    {
+     "holder": "高盛",
+     "count": 11,
+     "new": [
+      "三联锻造",
+      "宁波东力",
+      "福立旺",
+      "美湖股份",
+      "金帝股份",
+      "金杨精密"
+     ]
+    },
+    {
+     "holder": "大摩",
+     "count": 5,
+     "new": [
+      "天奇股份",
+      "晶华新材",
+      "金帝股份",
+      "金杨精密",
+      "集智股份"
+     ]
+    },
+    {
+     "holder": "瑞银",
+     "count": 3,
+     "new": [
+      "福立旺"
+     ]
+    },
+    {
+     "holder": "美林",
+     "count": 2,
+     "new": [
+      "*ST九鼎",
+      "金帝股份"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "AI 基建",
+   "intro": "按环节分段：光模块与 CPO、AI 服务器、液冷、服务器电源、高速铜缆。公司名单来自公告原文，写了不等于赚到钱。",
+   "segments": [
+    {
+     "name": "光模块与 CPO",
+     "items": [
+      {
+       "code": "002463",
+       "name": "沪电股份",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-03-25",
+        "title": "2025年度总经理工作报告",
+        "quote": "CPC结构的1.6T产品已完成客户端认证，开始小批量交付,基于NPO和CPO",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-25/1225027842.PDF"
+       },
+       "first_seen": "2025-11-28",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -44.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688172",
+       "name": "燕东微",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "2025年年度报告摘要",
+        "quote": "成为关键路径，头部封测企业已建成先进封装产能并实现量产，凭借倒装封装、CPO（光电共封装",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225238588.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 0.97,
+        "from_high": -68.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603002",
+       "name": "宏昌电子",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-09-12",
+        "title": "宏昌电子关于2026年度向特定对象发行A股股票募集资金使用可行性分析报告",
+        "quote": "通过本项目的实施，公司可形成稳定批量供货能力，面向高速光模块厂商、先进封装产业持续释放的增量采购需求，",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-12/1225561311.PDF"
+       },
+       "first_seen": "2026-09-12",
+       "tide": {
+        "vol_ratio": 1.72,
+        "from_high": -49.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301132",
+       "name": "满坤科技",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "2026年半年度报告",
+        "quote": "，公司光模块产品已陆续进行批量交付",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225504418.PDF"
+       },
+       "first_seen": "2026-08-26",
+       "tide": {
+        "vol_ratio": 1.27,
+        "from_high": -29.4,
+        "limit_ups": 1
+       }
+      },
+      {
+       "code": "000070",
+       "name": "特发信息",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-08-27",
+        "title": "2026年半年度报告",
+        "quote": "年度市属企业“十大原创技术攻关”，项目属于CPO配套技术，该技术研发成果已经实现量产出货",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225509195.PDF"
+       },
+       "first_seen": "2026-04-22",
+       "tide": {
+        "vol_ratio": 1.13,
+        "from_high": -54.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688531",
+       "name": "日联科技",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "日联科技集团股份有限公司发行股份、可转换公司债券及支付现金购买资产并募集配套资金",
+        "quote": "②市场可行性随着CPO商业化进程提速，相关测试设备市场需求强劲",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506970.PDF"
+       },
+       "first_seen": "2026-04-18",
+       "tide": {
+        "vol_ratio": 1.24,
+        "from_high": -64.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "601231",
+       "name": "环旭电子",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-12",
+        "title": "2026年股票期权激励计划",
+        "quote": "向北美客户送样并通过测试（2）于2027年8月31日前，应用于NPO/CPO",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-12/1225561558.PDF"
+       },
+       "first_seen": "2026-04-04",
+       "tide": {
+        "vol_ratio": 2.6,
+        "from_high": -63.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603083",
+       "name": "剑桥科技",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度报告",
+        "quote": "技术：基于100G/L和200G/L的CPO集成硅光引擎和基于大功率激光器的CPO集成光源的预研和样机研发工作",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225496844.PDF"
+       },
+       "first_seen": "2026-03-31",
+       "tide": {
+        "vol_ratio": 1.25,
+        "from_high": -52.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688702",
+       "name": "盛科通信",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-02",
+        "title": "盛科通信2026年度向特定对象发行A股股票募集资金使用的可行性分析报告",
+        "quote": "当前，公司已与国内光芯片、光模块以及先进封装测试厂商达成光电融合技术攻关的一致共识，公司作为国内领先的以太网交换芯片厂商",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-02/1225542795.PDF"
+       },
+       "first_seen": "2026-08-27",
+       "tide": {
+        "vol_ratio": 1.26,
+        "from_high": -64.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688313",
+       "name": "仕佳光子",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-07-16",
+        "title": "2026年度向特定对象发行A股股票方案论证分析报告",
+        "quote": "随着下游高速光模块、数据中心、硅光及CPO等市场需求快速增长，公司现有部分产品产能、封装测试能力、",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-16/1225426961.PDF"
+       },
+       "first_seen": "2026-04-18",
+       "tide": {
+        "vol_ratio": 1.15,
+        "from_high": -55.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688400",
+       "name": "凌云光",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "2026年半年度报告",
+        "quote": "：在光模块自动化测试场景，通过光开关矩阵实现共享高端测试仪表资源，提升测试效率，受益于下游光模块厂商扩产",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225520473.PDF"
+       },
+       "first_seen": "2025-11-20",
+       "tide": {
+        "vol_ratio": 1.75,
+        "from_high": -50.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688808",
+       "name": "联讯仪器",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-12",
+        "title": "中信证券股份有限公司关于苏州联讯仪器股份有限公司2026年半年度持续督导跟踪报告",
+        "quote": "时钟恢复单元、光模块测试仪等核心测试仪器，凭借在光模块测试领域的经验积累，公司逐步向上游的光电子器件测试领域拓展业务版图",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-12/1225561119.PDF"
+       },
+       "first_seen": "2026-04-03",
+       "tide": {
+        "vol_ratio": 1.3,
+        "from_high": -53.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603773",
+       "name": "沃格光电",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-23",
+        "title": "江西沃格光电集团股份有限公司2025年年度报告",
+        "quote": "产品落地方面，通格微面向通信、半导体封装、光模块/CPO、微流控等产品的客户验证工作稳步推进",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225155315.PDF"
+       },
+       "first_seen": "2025-11-01",
+       "tide": {
+        "vol_ratio": 0.68,
+        "from_high": -70.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300757",
+       "name": "罗博特科",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-03-31",
+        "title": "2025年年度报告摘要",
+        "quote": "统高速晶圆测试设备、高速晶粒测试设备、高速芯片测试设备、高速硅光模组/CPO",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059371.PDF"
+       },
+       "first_seen": "2026-03-31",
+       "tide": {
+        "vol_ratio": 1.67,
+        "from_high": -58.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "601138",
+       "name": "工业富联",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "富士康工业互联网股份有限公司2026年第一季度报告",
+        "quote": "季度，800G及以上高速交换机出货量同比增长1.6倍，环比增长46%，CPO全光交换机样机开始出货",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225231598.PDF"
+       },
+       "first_seen": "2026-03-11",
+       "tide": {
+        "vol_ratio": 1.21,
+        "from_high": -46.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300964",
+       "name": "本川智能",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "2026年半年度报告",
+        "quote": "在光模块、卫星通信等新兴高增长领域实现重点突破，公司高频高速产品已在光模块客户中实现小批量出货，并在部分",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501594.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 0.77,
+        "from_high": -40.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002980",
+       "name": "华盛昌",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "2026年半年度报告",
+        "quote": "：包括光模块自动化测试系统、硅光晶圆检测设备，可提供自动化、集成化的系统级测试解决方案，适配光模块规模化量产测试及硅光晶圆级精密检测",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225504296.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "tide": {
+        "vol_ratio": 0.97,
+        "from_high": -50.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300394",
+       "name": "天孚通信",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-08",
+        "title": "2025年年度报告摘要",
+        "quote": "将各种光零组件加工组装得到光器件，光器件封装组测试成可插拔光模块和CPO等",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082704.PDF"
+       },
+       "first_seen": "2026-04-08",
+       "tide": {
+        "vol_ratio": 1.35,
+        "from_high": -60.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300102",
+       "name": "乾照光电",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-03-28",
+        "title": "2025年年度报告",
+        "quote": "ED光通信产品计划推出高速demo样机，持续验证核心性能及应用场景，为CPO",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225043741.PDF"
+       },
+       "first_seen": "2026-03-28",
+       "tide": {
+        "vol_ratio": 4.39,
+        "from_high": -68.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300739",
+       "name": "明阳电路",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "2026年半年度报告",
+        "quote": "目前，公司高速服务器PCB、AI加速卡、800G光模块等核心产品已进入小批量供货阶段",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506255.PDF"
+       },
+       "first_seen": "2026-08-26",
+       "tide": {
+        "vol_ratio": 2.36,
+        "from_high": -46.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688820",
+       "name": "盛合晶微",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-01",
+        "title": "中国国际金融股份有限公司关于盛合晶微半导体有限公司2026年半年度持续督导跟踪报",
+        "quote": "455,488.89调试验证阶段具备厚铜硅基载板结构的制造能力行业领先CPO",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-01/1225538342.PDF"
+       },
+       "first_seen": "2026-08-20",
+       "tide": {
+        "vol_ratio": 1.1,
+        "from_high": -68.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301689",
+       "name": "电科思仪",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-03",
+        "title": "首次公开发行股票并在创业板上市招股说明书",
+        "quote": "光电测量仪器主要应用于光电通信的光芯片、光器件、光模块及其工程应用等测试技术研究，光纤通信系统的施工、",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-03/1225544676.PDF"
+       },
+       "first_seen": "2026-09-03",
+       "tide": {
+        "vol_ratio": 0.54,
+        "from_high": -50.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603638",
+       "name": "艾迪精密",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-31",
+        "title": "艾迪精密2026年半年度报告",
+        "quote": "机器人在服务器整机组装，以及光模块、散热模块、PCB、内存、服务器结构件等零部件制造中的装配、锁付与测试等应用场景显著增多",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534127.PDF"
+       },
+       "first_seen": "2026-08-31",
+       "tide": {
+        "vol_ratio": 0.84,
+        "from_high": -38.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300709",
+       "name": "精研科技",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "2026年半年度报告",
+        "quote": "、光模块液冷、管接头等散热新品的研发与验证",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225532717.PDF"
+       },
+       "first_seen": "2026-08-29",
+       "tide": {
+        "vol_ratio": 1.05,
+        "from_high": -52.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "003018",
+       "name": "金富科技",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "2026年半年度报告",
+        "quote": "截至本报告披露日，公司已获得部分新客户的项目订单，并已实现光模块液冷板产品的小批量供货",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225533163.PDF"
+       },
+       "first_seen": "2026-08-29",
+       "tide": {
+        "vol_ratio": 1.47,
+        "from_high": -51.1,
+        "limit_ups": 0
+       }
+      }
+     ]
+    },
+    {
+     "name": "AI 服务器",
+     "items": [
+      {
+       "code": "603186",
+       "name": "华正新材",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-08-06",
+        "title": "浙江华正新材料股份有限公司2026年度向特定对象发行A股股票募集说明书（申报稿）",
+        "quote": "Ultralowloss等高端材料在AI服务器、交换机、数据中心等场景的批量供货与认证",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-06/1225458921.PDF"
+       },
+       "first_seen": "2026-08-06",
+       "tide": {
+        "vol_ratio": 1.35,
+        "from_high": -45.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688258",
+       "name": "卓易信息",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-08-27",
+        "title": "江苏卓易信息科技股份有限公司2026年度“提质增效重回报”专项行动方案的半年度评",
+        "quote": "同时，公司顺利推动ARM、C86架构信创AI服务器方案在互联网领域实现量产落地",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513086.PDF"
+       },
+       "first_seen": "2026-07-11",
+       "tide": {
+        "vol_ratio": 1.78,
+        "from_high": -59.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301511",
+       "name": "德福科技",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-07-06",
+        "title": "2026年度向特定对象发行A股股票募集资金使用可行性分析报告",
+        "quote": "HVLP1-4系列产品已实现批量供货，主要应用于AI服务器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-06/1225411995.PDF"
+       },
+       "first_seen": "2026-07-06",
+       "tide": {
+        "vol_ratio": 1.05,
+        "from_high": -69.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603806",
+       "name": "福斯特",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-08-20",
+        "title": "福斯特2026年半年度报告",
+        "quote": "紧抓AI服务器高端硬件市场机遇，封装基板用感光材料已完成研发落地并顺利导入重点客户批量供货",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225482040.PDF"
+       },
+       "first_seen": "2026-08-20",
+       "tide": {
+        "vol_ratio": 1.24,
+        "from_high": -40.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002975",
+       "name": "博杰股份",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-19",
+        "title": "北京德恒律师事务所关于珠海博杰电子股份有限公司2026年度向特定对象发行A股股票",
+        "quote": "本次募投项下服务器检测设备，需结合AI服务器硬件的接口定义、测试功能、整机热管理工况开展专项适配开发",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-19/1225572878.PDF"
+       },
+       "first_seen": "2026-07-14",
+       "tide": {
+        "vol_ratio": 1.36,
+        "from_high": -52.3,
+        "limit_ups": 1
+       }
+      },
+      {
+       "code": "601231",
+       "name": "环旭电子",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-12",
+        "title": "2026年股票期权激励计划",
+        "quote": "）AI服务器供电业务，于2027年8月31日前，向北美客户送样并通过验证50%第二个行权期（1）AI数据中心板卡业务",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-12/1225561558.PDF"
+       },
+       "first_seen": "2026-08-27",
+       "tide": {
+        "vol_ratio": 2.6,
+        "from_high": -63.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603002",
+       "name": "宏昌电子",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-22",
+        "title": "宏昌电子2026年半年度报告",
+        "quote": "AI服务器量试（可接样品单）GA-688U（无卤M8）第二代LowDk玻纤布1.Tg≧190",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225489945.PDF"
+       },
+       "first_seen": "2026-08-22",
+       "tide": {
+        "vol_ratio": 1.72,
+        "from_high": -49.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301282",
+       "name": "金禄电子",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-15",
+        "title": "关于“质量回报双提升”行动方案的进展公告",
+        "quote": "应用于人形机器人一体化关节模组、AI数据中心UPS、AI服务器连接器、边缘算力盒子等领域的PCB已由试制转为量产",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225473386.PDF"
+       },
+       "first_seen": "2026-08-15",
+       "tide": {
+        "vol_ratio": 1.23,
+        "from_high": -38.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688469",
+       "name": "芯联集成",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-11",
+        "title": "芯联集成电路制造股份有限公司2026年半年度报告",
+        "quote": "AI服务器电源厂商、国际SST客户送样验证",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-11/1225466534.PDF"
+       },
+       "first_seen": "2026-08-11",
+       "tide": {
+        "vol_ratio": 0.96,
+        "from_high": -37.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688052",
+       "name": "纳芯微",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "2026年“提质增效重回报”行动方案的半年度评估报告",
+        "quote": "在泛能源领域，工控行业随制造业回暖稳健增长，AI服务器电源需求强劲，公司相关驱动、隔离芯片及GaN产品已实现批量出货或头部客户送样",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225521846.PDF"
+       },
+       "first_seen": "2026-08-28",
+       "tide": {
+        "vol_ratio": 1.2,
+        "from_high": -45.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300373",
+       "name": "扬杰科技",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-22",
+        "title": "2026年半年度报告",
+        "quote": "产品覆盖AI服务器DC-DC、热插拔及e-fuse等场景，目前热插拔方案已通过头部服务器客户验证",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491587.PDF"
+       },
+       "first_seen": "2026-07-20",
+       "tide": {
+        "vol_ratio": 0.91,
+        "from_high": -56.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301379",
+       "name": "天山电子",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-11",
+        "title": "关于广西天山电子股份有限公司申请向不特定对象发行可转换公司债券的审核问询函之回复",
+        "quote": "具体应用项目状态TS-XXX-0061A2025年8月数据存储AI服务器样品TS-XMX",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-11/1225561801.PDF"
+       },
+       "first_seen": "2026-09-11",
+       "tide": {
+        "vol_ratio": 1.07,
+        "from_high": -65.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688559",
+       "name": "海目星",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-31",
+        "title": "海目星：2026年半年度报告",
+        "quote": "针对AI产业链，公司提供AI服务器高速连接器线束自动化装备、AI服务器电源自动化测试设备，覆盖从自动上下料",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534653.PDF"
+       },
+       "first_seen": "2026-08-31",
+       "tide": {
+        "vol_ratio": 0.97,
+        "from_high": -61.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300903",
+       "name": "科翔股份",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "2026年半年度报告",
+        "quote": "目前该材料已完成小批量试制，计划在2026年导入AI服务器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518993.PDF"
+       },
+       "first_seen": "2026-08-28",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -44.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600289",
+       "name": "ST信通",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-27",
+        "title": "亿阳信通2026年半年度报告",
+        "quote": "研发迭代层面，针对GPU算力卡、AI服务器及算力集群体系，开展专项性能调优、功能验证与兼容性测试",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225511738.PDF"
+       },
+       "first_seen": "2026-08-27",
+       "tide": {
+        "vol_ratio": 2.72,
+        "from_high": -40.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300868",
+       "name": "杰美特",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度报告",
+        "quote": "凭借长期合作基础，通过AI服务器钻针与PCB设计方案深度绑定、联合项目开发，叠加客户验证周期形成的竞争壁垒",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225494826.PDF"
+       },
+       "first_seen": "2026-08-25",
+       "tide": {
+        "vol_ratio": 1.49,
+        "from_high": -72.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688249",
+       "name": "晶合集成",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "晶合集成2026年半年度报告",
+        "quote": "目前，公司已开展AI服务器相关电源管理芯片研发，产品持续验证中",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498332.PDF"
+       },
+       "first_seen": "2026-08-25",
+       "tide": {
+        "vol_ratio": 1.14,
+        "from_high": -63.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688551",
+       "name": "科威尔",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-22",
+        "title": "2026年半年度报告",
+        "quote": "公司前瞻布局AI服务器电源测试前沿赛道，依托多年大功率源载自研技术积淀，适配AI服务器电源大功率",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490739.PDF"
+       },
+       "first_seen": "2026-08-22",
+       "tide": {
+        "vol_ratio": 1.03,
+        "from_high": -66.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300634",
+       "name": "彩讯股份",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-16",
+        "title": "国泰海通证券股份有限公司关于彩讯科技股份有限公司向不特定对象发行可转换公司债券之",
+        "quote": "（6）AI服务器采购和交付风险本次募投“智算中心建设项目”采购的设备主要是AI服务器，采购行为发生在中国境内",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-16/1225568552.PDF"
+       },
+       "first_seen": "2026-07-27",
+       "tide": {
+        "vol_ratio": 1.09,
+        "from_high": -52.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300842",
+       "name": "帝科股份",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-17",
+        "title": "2026年度向特定对象发行股票之发行保荐书（修订稿）",
+        "quote": "3、重点布局AI算力相关存储产品，把握行业高景气机遇针对AI服务器、端侧AI的需求爆发式增长",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-17/1225477912.PDF"
+       },
+       "first_seen": "2026-07-08",
+       "tide": {
+        "vol_ratio": 1.47,
+        "from_high": -66.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300767",
+       "name": "震安科技",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-19",
+        "title": "信永中和会计师事务所（特殊普通合伙）《关于震安科技股份有限公司申请向特定对象发行",
+        "quote": "、AI服务器机柜、CDU等，重点服务算力行业，是发行人布局算力温控产业的核心载体",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-19/1225572184.PDF"
+       },
+       "first_seen": "2026-07-03",
+       "tide": {
+        "vol_ratio": 0.91,
+        "from_high": -34.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301128",
+       "name": "强瑞技术",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-12",
+        "title": "关于部分募投项目结项并将节余募集资金用于投资新项目的公告",
+        "quote": "AI服务器精密液冷部件产品及服务器自动化组装、检测设备研发与制造项目和高端半导体设备精密零部件生产制造项目的生产运营",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-12/1225469067.PDF"
+       },
+       "first_seen": "2026-08-12",
+       "tide": {
+        "vol_ratio": 1.26,
+        "from_high": -65.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "001339",
+       "name": "智微智能",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-07-18",
+        "title": "2026年半年度报告",
+        "quote": "服务器产品：专注于标准服务器主板及定制型整机研发生产，涵盖AI服务器、AI工作站、AI算力一体机、",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-18/1225430474.PDF"
+       },
+       "first_seen": "2026-07-18",
+       "tide": {
+        "vol_ratio": 1.68,
+        "from_high": -47.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688183",
+       "name": "生益电子",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-15",
+        "title": "生益电子2026年半年度报告",
+        "quote": "”“下一代AI服务器OAM卡印制电路板产品研发”“下一代AI服务器高速光模块印制电路板产品研发",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225474834.PDF"
+       },
+       "first_seen": "2026-08-15",
+       "tide": {
+        "vol_ratio": 1.64,
+        "from_high": -57.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300093",
+       "name": "金刚光伏",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-18",
+        "title": "2026年度向特定对象发行A股股票募集资金使用可行性分析报告（修订稿）",
+        "quote": "本次募投项目的实施，将通过引进高性能AI服务器及相关配套基础设施，按照行业高规格、高标准建设IDC",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-18/1225570208.PDF"
+       },
+       "first_seen": "2026-08-20",
+       "tide": {
+        "vol_ratio": 1.27,
+        "from_high": -43.1,
+        "limit_ups": 0
+       }
+      }
+     ]
+    },
+    {
+     "name": "液冷",
+     "items": [
+      {
+       "code": "300547",
+       "name": "川环科技",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "2025年度董事会工作报告",
+        "quote": "同时大力拓展储能和2数据中心服务器等领域使用的液冷管路系统产品，储能领域液冷管路系统和数据中心服务器领域液冷管路系统均实现了批量供货",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225234862.PDF"
+       },
+       "first_seen": "2026-04-24",
+       "tide": {
+        "vol_ratio": 1.29,
+        "from_high": -55.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301182",
+       "name": "凯旺科技",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "关于2026年度以简易程序向特定对象发行股票摊薄即期回报、采取填补措施及相关主体",
+        "quote": "2026年公司部分液冷产品已实现量产，成功进入液冷服务器供应链体系，本次募投项目系对该业务的产能扩充和高端化升级",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225526784.PDF"
+       },
+       "first_seen": "2026-04-25",
+       "tide": {
+        "vol_ratio": 1.23,
+        "from_high": -66.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301613",
+       "name": "新铝时代",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度报告",
+        "quote": "、重卡，矿卡用电池盒箱体等动力电池系统集成技术，并已量产包括钎焊水冷板液冷集成",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225496600.PDF"
+       },
+       "first_seen": "2026-06-30",
+       "tide": {
+        "vol_ratio": 1.33,
+        "from_high": -53.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002328",
+       "name": "新朋股份",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-09-03",
+        "title": "股票交易异常波动公告",
+        "quote": "2、截至目前公司部分液冷类机柜产品已逐步形成样品订单并进行批量交付，公司液冷新兴产品仍处于市场开拓阶段",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-03/1225543643.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "tide": {
+        "vol_ratio": 0.86,
+        "from_high": -55.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "605111",
+       "name": "新洁能",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度报告",
+        "quote": "报告期内，公司相关产品顺利导入包括E-Fuse、液冷在内的算力服务器细分应用，并逐步实现销售，未来有望成为公司新的成长支撑点",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497887.PDF"
+       },
+       "first_seen": "2026-08-25",
+       "tide": {
+        "vol_ratio": 1.19,
+        "from_high": -65.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300694",
+       "name": "蠡湖股份",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-07-02",
+        "title": "无锡蠡湖增压技术股份有限公司股票交易异常波动公告",
+        "quote": "特别提示：公司近期关注到，有媒体报道公司人形机器人关节壳体、AI液冷接头双赛道业务，称公司已批量供货",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-02/1225407449.PDF"
+       },
+       "first_seen": "2026-07-02",
+       "tide": {
+        "vol_ratio": 1.19,
+        "from_high": -31.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300571",
+       "name": "平治信息",
+       "role": "相关业务",
+       "stage": "量产",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "2025年年度报告",
+        "quote": "，打造多形态液冷已量产研发406G4机塔互换式冷板式液冷服务丰富公司液冷服务器的产品形态，提升绿杭州平治信息技术股份有限公司",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225238822.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.22,
+        "from_high": -69.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "601717",
+       "name": "中创智领",
+       "role": "相关业务",
+       "stage": "定点",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "中创智领（郑州）工业技术集团股份有限公司2025年年度股东会会议资料",
+        "quote": "新能源相关配套业务进展突出，电池冷却板全年完成近30个项目定点，液冷板成功进入主流乘用车客户供应系统",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225230458.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 3.44,
+        "from_high": -41.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002272",
+       "name": "川润股份",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-17",
+        "title": "中信建投证券股份有限公司关于四川川润股份有限公司2026年度向特定对象发行A股股",
+        "quote": "目前，发行人液压、润滑、冷却控制系统产能已接近瓶颈，液冷产品业务仍处于前期规划和小批量生产阶段，现有产能难以满足数据中心液冷",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-17/1225568940.PDF"
+       },
+       "first_seen": "2026-04-23",
+       "tide": {
+        "vol_ratio": 1.76,
+        "from_high": -57.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301018",
+       "name": "申菱环境",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-16",
+        "title": "广东申菱环境系统股份有限公司向不特定对象发行可转换公司债券募集说明书（注册稿）",
+        "quote": "》、《喷淋式直接液冷数据中心设计规范》、《数据中心液冷系统技术规程》、《数据中心冷板式液冷测试验证技术白皮书",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-16/1225568161.PDF"
+       },
+       "first_seen": "2026-04-27",
+       "tide": {
+        "vol_ratio": 1.21,
+        "from_high": -55.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300442",
+       "name": "润泽科技",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "2026年半年度报告",
+        "quote": "液冷技术方面，2021年初公司布局液冷技术并完成合作验证，2023年成功交付业内首例整栋纯液冷智算中心",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225521959.PDF"
+       },
+       "first_seen": "2026-04-23",
+       "tide": {
+        "vol_ratio": 1.02,
+        "from_high": -53.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002975",
+       "name": "博杰股份",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-19",
+        "title": "北京德恒律师事务所关于珠海博杰电子股份有限公司2026年度向特定对象发行A股股票",
+        "quote": "，高功率热流密度测试、液冷回路优化、冷板承压爆破可靠性试验等验证工作受到限制，液冷产品验证效率有待提升",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-19/1225572878.PDF"
+       },
+       "first_seen": "2026-06-05",
+       "tide": {
+        "vol_ratio": 1.36,
+        "from_high": -52.3,
+        "limit_ups": 1
+       }
+      },
+      {
+       "code": "300731",
+       "name": "科创新源",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-07-11",
+        "title": "关于2026年度以简易程序向特定对象发行股票摊薄即期回报的风险提示及填补回报措施",
+        "quote": "市场方面，公司数据中心液冷产品已取得关键的市场验证成果，为本项目的产能落地奠定了明确的市场需求基础",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-11/1225418718.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.71,
+        "from_high": -61.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603270",
+       "name": "金帝股份",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-19",
+        "title": "山东金帝精密机械科技股份有限公司关于2026年半年度业绩说明会召开情况的公告",
+        "quote": "2、数据中心液冷板业务目前处于小批量验证阶段，预计何时能够规模化量产、贡献收入",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-19/1225572250.PDF"
+       },
+       "first_seen": "2026-07-17",
+       "tide": {
+        "vol_ratio": 1.19,
+        "from_high": -33.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603019",
+       "name": "中科曙光",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-05-07",
+        "title": "大信会计师事务所（特殊普通合伙）关于曙光信息产业股份有限公司2026年度向不特定",
+        "quote": "8国产风冷PCIeGPU加速卡研发测试平台用GPU加速卡576.009液冷",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-07/1225280499.PDF"
+       },
+       "first_seen": "2026-04-25",
+       "tide": {
+        "vol_ratio": 1.16,
+        "from_high": -38.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688158",
+       "name": "优刻得",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-06-16",
+        "title": "优刻得科技股份有限公司关于2025年年度报告的信息披露监管问询函的回复公告",
+        "quote": "2026年4月，液冷服务器已测试验收，完成转固",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-06-16/1225371529.PDF"
+       },
+       "first_seen": "2026-06-16",
+       "tide": {
+        "vol_ratio": 1.14,
+        "from_high": -53.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002335",
+       "name": "科华数据",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "广发证券股份有限公司关于科华数据股份有限公司部分募投项目产品结构及内部投资结构调",
+        "quote": "公司已自建MW级液冷测试平台，并与国内外头部互联网企业联合研发液冷CDU产品，公司具备电力及液冷等智算中心集成化产品自主生产能力",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522574.PDF"
+       },
+       "first_seen": "2026-04-27",
+       "tide": {
+        "vol_ratio": 0.76,
+        "from_high": -54.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688530",
+       "name": "欧莱新材",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "欧莱新材2026年半年度报告",
+        "quote": "国产替代，打破国外企业长期垄断格局，同时不断拓展高纯材料应用场景，其中液冷板用高纯无氧铜零部件已送样客户验证",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531534.PDF"
+       },
+       "first_seen": "2026-05-20",
+       "tide": {
+        "vol_ratio": 0.93,
+        "from_high": -63.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688531",
+       "name": "日联科技",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "日联科技集团股份有限公司关于发行股份、可转换公司债券及支付现金购买资产并募集配套",
+        "quote": "的机台架构，程控电源的设计技术，测试信号的生成技术，气冷独立控温技术，液冷独立温控技术等相关技术的研发和储备",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506979.PDF"
+       },
+       "first_seen": "2026-05-12",
+       "tide": {
+        "vol_ratio": 1.24,
+        "from_high": -64.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002870",
+       "name": "香山股份",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-15",
+        "title": "广东香山衡器集团股份有限公司发行股份及支付现金购买资产并募集配套资金预案摘要",
+        "quote": "，通过冷却液吸收并带走设备热量的液冷技术中试产品或技术从实验研发阶段向规模化生产过渡过程中，为验证生产工艺",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-15/1225563566.PDF"
+       },
+       "first_seen": "2026-05-12",
+       "tide": {
+        "vol_ratio": 1.2,
+        "from_high": -34.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300302",
+       "name": "同有科技",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-28",
+        "title": "2025年年度报告",
+        "quote": "在开发过程中成功完成存储插件服务器的设计、试制与全面调测，同步完成配套液冷散热组件和整机测试工装的开发与验证",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225206741.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "tide": {
+        "vol_ratio": 1.28,
+        "from_high": -66.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688411",
+       "name": "海博思创",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-11",
+        "title": "中泰证券股份有限公司关于北京海博思创科技股份有限公司2026年半年度持续督导跟踪",
+        "quote": "截至目前，公司自主研发的液冷组串式PCS产品已通过多项权威认证与测试，包括GB/T34120-2023",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-11/1225558150.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 2.33,
+        "from_high": -67.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688559",
+       "name": "海目星",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-31",
+        "title": "海目星：2026年半年度报告",
+        "quote": "，覆盖电源全流程测试及液冷关键工序，实现电源到液冷系统一体化交付，保障数据中心可靠运行",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534653.PDF"
+       },
+       "first_seen": "2026-04-30",
+       "tide": {
+        "vol_ratio": 0.97,
+        "from_high": -61.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300375",
+       "name": "鹏翎股份",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "2025年年度报告",
+        "quote": "同时，储能模组液冷管路完成技术验证并实现小批量供货，逐步拓宽非车配套场景",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225242686.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.35,
+        "from_high": -41.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002782",
+       "name": "可立克",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-24",
+        "title": "2026年半年度报告",
+        "quote": "2）60kW风冷、液冷平台项目已验证完毕，已批量生产",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-24/1225490915.PDF"
+       },
+       "first_seen": "2026-06-13",
+       "tide": {
+        "vol_ratio": 1.15,
+        "from_high": -62.5,
+        "limit_ups": 0
+       }
+      }
+     ]
+    },
+    {
+     "name": "服务器电源",
+     "items": [
+      {
+       "code": "688711",
+       "name": "宏微科技",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-06-12",
+        "title": "江苏宏微科技股份有限公司相关债券2026年跟踪评级报告",
+        "quote": "芯片650V75mohm芯片研制成功，正向多家战略合作客户送样验证模块服务器电源",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-06-12/1225366162.PDF"
+       },
+       "first_seen": "2026-04-30",
+       "tide": {
+        "vol_ratio": 1.52,
+        "from_high": -60.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688559",
+       "name": "海目星",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-31",
+        "title": "海目星：2026年半年度报告",
+        "quote": "针对AI产业链，公司提供AI服务器高速连接器线束自动化装备、AI服务器电源自动化测试设备，覆盖从自动上下料",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534653.PDF"
+       },
+       "first_seen": "2026-04-30",
+       "tide": {
+        "vol_ratio": 0.97,
+        "from_high": -61.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300964",
+       "name": "本川智能",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-28",
+        "title": "东北证券股份有限公司关于江苏本川智能电路科技股份有限公司向不特定对象发行可转换公",
+        "quote": "板、HDI板等）产品的生产能力，并通过配置新产品试制线，具备面向如AI服务器电源",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225237116.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "tide": {
+        "vol_ratio": 0.77,
+        "from_high": -40.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002851",
+       "name": "麦格米特",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "2025年年度报告",
+        "quote": "超节点服务器电源开发应用于液冷超节点服务器集群的集中式电源类系统验证为国内头部客户定制开发具有双输入",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225238056.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.68,
+        "from_high": -59.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688551",
+       "name": "科威尔",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-22",
+        "title": "2026年半年度报告",
+        "quote": "公司前瞻布局AI服务器电源测试前沿赛道，依托多年大功率源载自研技术积淀，适配AI服务器电源大功率",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490739.PDF"
+       },
+       "first_seen": "2026-08-22",
+       "tide": {
+        "vol_ratio": 1.03,
+        "from_high": -66.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "000066",
+       "name": "中国长城",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "关于2026年1-6月募集资金存放、管理与实际使用情况的专项报告",
+        "quote": "AI服务器电源研发项目",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225525195.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 0.85,
+        "from_high": -57.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301132",
+       "name": "满坤科技",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-06-04",
+        "title": "关于吉安满坤科技股份有限公司申请向不特定对象发行可转换公司债券的审核问询函的回复",
+        "quote": "麦米电气泰国生产基地位于泰国罗勇府泰中罗勇工业园，重点布局服务器电源、通信电源及光储充模块",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-06-04/1225350533.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.27,
+        "from_high": -29.4,
+        "limit_ups": 1
+       }
+      },
+      {
+       "code": "301251",
+       "name": "威尔高",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-28",
+        "title": "2025年度环境、社会及公司治理报告",
+        "quote": "在电源领域，公司完成从一次电源向二次电源的研发转型，核心30LAI服务器电源产品顺利通过第三方实验室可靠性认证",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225202949.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "tide": {
+        "vol_ratio": 0.97,
+        "from_high": -48.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300593",
+       "name": "新雷能",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度募集资金存放、管理与使用情况的专项报告",
+        "quote": "结项并将节余募集资金永久补充流动资金的议案》，同意募投项目“5G通信及服务器电源扩产项目",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225496914.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.21,
+        "from_high": -52.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301002",
+       "name": "崧盛股份",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-20",
+        "title": "2026年半年度报告",
+        "quote": "销售51.00%设立广东省崧盛亿麦数字能源技术有限公司17中山中山AI服务器电源的研发",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225481240.PDF"
+       },
+       "first_seen": "2026-04-25",
+       "tide": {
+        "vol_ratio": 0.72,
+        "from_high": -61.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "603341",
+       "name": "龙旗科技",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-19",
+        "title": "关于资产收购相关事项的监管工作函的回复",
+        "quote": "0870.SZ欧陆通主营业务是开关电源产品的研发、生产与销售主要产品是服务器电源和电源适配器，",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-19/1225572367.PDF"
+       },
+       "first_seen": "2026-09-19",
+       "tide": {
+        "vol_ratio": 0.92,
+        "from_high": -32.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600171",
+       "name": "上海贝岭",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-25",
+        "title": "上海贝岭关于2025年度“提质增效重回报”行动方案的评估报告",
+        "quote": "此外，持续投入研发力量在服务器电源、智能微断、智能插座、随车充、交流充电桩等应用中进行产品的应用开发",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225183089.PDF"
+       },
+       "first_seen": "2026-04-25",
+       "tide": {
+        "vol_ratio": 1.2,
+        "from_high": -46.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600699",
+       "name": "均胜电子",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "均胜电子2026年半年度报告",
+        "quote": "强核心竞争力，重点围绕智能驾驶等智能电动汽车行业前沿技术、新兴智能体、服务器电源等领域加大研发投入",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506436.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "tide": {
+        "vol_ratio": 0.83,
+        "from_high": -43.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301656",
+       "name": "联合动力",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度报告",
+        "quote": "公司聚焦技术协同赋能的新兴赛道，有序布局AI数据中心服务器电源等新业务，培育公司在车载领域外的第二增长曲线",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225495851.PDF"
+       },
+       "first_seen": "2026-08-25",
+       "tide": {
+        "vol_ratio": 1.4,
+        "from_high": -58.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688396",
+       "name": "华润微",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度报告",
+        "quote": "公司同步开发80V、650V平台，产品向新能源汽车、AI服务器电源领域推广",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497330.PDF"
+       },
+       "first_seen": "2026-04-25",
+       "tide": {
+        "vol_ratio": 1.25,
+        "from_high": -55.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688371",
+       "name": "菲沃泰",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "2026年半年度报告",
+        "quote": "700.00139.00355.79量产服务器电源工作时存在高电压、大电流，菲沃泰开发的镀膜方案要在服务器电源类产品内部的电路板",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225527209.PDF"
+       },
+       "first_seen": "2026-08-29",
+       "tide": {
+        "vol_ratio": 0.98,
+        "from_high": -69.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301348",
+       "name": "蓝箭电子",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-27",
+        "title": "2026年半年度报告",
+        "quote": "此外，公司开发新型功率器件，适配新能源电力系统、电动汽车、服务器电源等多类高端需求场景",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514294.PDF"
+       },
+       "first_seen": "2026-08-27",
+       "tide": {
+        "vol_ratio": 1.53,
+        "from_high": -52.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "605111",
+       "name": "新洁能",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度报告",
+        "quote": "与此同时，面向服务器电源、AC-DC电源及家用电器等领域的LLC及PFC控制器正处于研发阶段",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497887.PDF"
+       },
+       "first_seen": "2026-08-25",
+       "tide": {
+        "vol_ratio": 1.19,
+        "from_high": -65.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301328",
+       "name": "维峰电子",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-22",
+        "title": "2026年半年度报告",
+        "quote": "节，而且正持续深化布局，将产品与解决方案深度切入机器人、家用医疗设备、服务器电源控制等高速增长的新兴前沿应用场景之中",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491743.PDF"
+       },
+       "first_seen": "2026-08-22",
+       "tide": {
+        "vol_ratio": 1.0,
+        "from_high": -52.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300623",
+       "name": "捷捷微电",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-20",
+        "title": "2026年半年度报告",
+        "quote": "SiC产品以及面向高频快充与服务器电源的GaN器件均在研发推进中",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225482078.PDF"
+       },
+       "first_seen": "2026-08-20",
+       "tide": {
+        "vol_ratio": 0.93,
+        "from_high": -44.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688183",
+       "name": "生益电子",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-15",
+        "title": "生益电子2026年半年度报告",
+        "quote": "22,652,598.09技术研发研究开发AI能源产品，提升公司在AI服务器电源领域的市场竞争力",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225474834.PDF"
+       },
+       "first_seen": "2026-08-15",
+       "tide": {
+        "vol_ratio": 1.64,
+        "from_high": -57.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002848",
+       "name": "*ST高斯",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-05-30",
+        "title": "关于深圳证券交易所2025年年报问询函回复的公告",
+        "quote": "同行企业除具备规模化经营优势外，产品结构相对优化：欧陆通布局数据中心服务器电源、工业电源等高附加值业务",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-30/1225338106.PDF"
+       },
+       "first_seen": "2026-05-30",
+       "tide": {
+        "vol_ratio": 0.75,
+        "from_high": -29.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002402",
+       "name": "和而泰",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-28",
+        "title": "2025年度环境、社会及公司治理（ESG）报告",
+        "quote": "案例三公司研发高功率密度、高效率的服务器电源控制器解决方案",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225209759.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "tide": {
+        "vol_ratio": 1.6,
+        "from_high": -74.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002185",
+       "name": "华天科技",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-18",
+        "title": "天水华天科技股份有限公司发行股份及支付现金购买资产并募集配套资金暨关联交易报告书",
+        "quote": "、白色家电、AI服务器电源、数据中心、机器人及低空/高空飞行器等领域",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-18/1225477689.PDF"
+       },
+       "first_seen": "2026-06-18",
+       "tide": {
+        "vol_ratio": 1.1,
+        "from_high": -44.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002049",
+       "name": "紫光国微",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-09-12",
+        "title": "发行股份及支付现金购买资产并募集配套资金暨关联交易报告书（草案）（修订稿）",
+        "quote": "、电视电源、适配器电源新能源及汽车：车载充电机工业制造：不间断电源、服务器电源和电信电源标准功率二极管",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-12/1225561820.PDF"
+       },
+       "first_seen": "2026-05-23",
+       "tide": {
+        "vol_ratio": 1.45,
+        "from_high": -49.9,
+        "limit_ups": 0
+       }
+      }
+     ]
+    },
+    {
+     "name": "高速铜缆",
+     "items": [
+      {
+       "code": "600337",
+       "name": "美克家居",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-01-01",
+        "title": "美克国际家居用品股份有限公司发行股份及支付现金购买资产并募集配套资金暨关联交易预",
+        "quote": "（ACC）、有源电缆（AEC）、无源铜缆（DAC）等全系列高速铜缆，配套提供LOOPBACK智能回环测试模块及定制化高速互连方案设计服务",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-01-01/1224913531.PDF"
+       },
+       "first_seen": "2026-01-01",
+       "tide": {
+        "vol_ratio": 0.57,
+        "from_high": -23.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002384",
+       "name": "东山精密",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-22",
+        "title": "2025年年度报告",
+        "quote": "样品制作自研高速铜缆模块，丰富公司模块产品线",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-22/1225139318.PDF"
+       },
+       "first_seen": "2026-04-22",
+       "tide": {
+        "vol_ratio": 1.38,
+        "from_high": -69.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300863",
+       "name": "卡倍亿",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-25",
+        "title": "2025年度董事会工作报告",
+        "quote": "、储能线缆、汽车智能化数据线缆、AI高速铜缆、人形机器人线缆等新的增长方向，实现了营业收入与技术创新双突破",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225192397.PDF"
+       },
+       "first_seen": "2026-04-25",
+       "tide": {
+        "vol_ratio": 1.74,
+        "from_high": -58.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600255",
+       "name": "鑫科材料",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-03-31",
+        "title": "鑫科材料2025年年度报告摘要",
+        "quote": "高性能、高精密度铜合金板带、合金箔、汽车用电线、算力中心用高速铜连接及高速铜缆产品的研发",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225051624.PDF"
+       },
+       "first_seen": "2026-03-31",
+       "tide": {
+        "vol_ratio": 1.37,
+        "from_high": -42.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600869",
+       "name": "远东股份",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-22",
+        "title": "2026年半年度报告",
+        "quote": "依托导体材料与线缆制造领域深厚技术积累，自主研发高速铜缆组件，满足智算集群高带宽、低延迟高速互联的严苛要求",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225493632.PDF"
+       },
+       "first_seen": "2026-04-22",
+       "tide": {
+        "vol_ratio": 0.8,
+        "from_high": -64.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688800",
+       "name": "瑞可达",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-21",
+        "title": "2025年度环境、社会和公司治理（ESG）报告",
+        "quote": "在数据中心与服务器领域，自主研发的AEC高速铜缆连接产品以高带宽",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-21/1225128708.PDF"
+       },
+       "first_seen": "2026-04-21",
+       "tide": {
+        "vol_ratio": 1.71,
+        "from_high": -68.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301439",
+       "name": "泓淋电力",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-15",
+        "title": "2026年半年度报告",
+        "quote": "高速通信电缆方面，公司加快推进高速铜缆业务布局，控股子公司达为互联已具备全系列高速线缆解决方案供应能力",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225473144.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "tide": {
+        "vol_ratio": 1.32,
+        "from_high": -52.7,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300115",
+       "name": "长盈精密",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-27",
+        "title": "2026年半年度报告",
+        "quote": "开展新项目量产前期筹备工作，同时持续加大对具身智能、服务器液冷快接头、高速铜缆等新兴业务的研发与资源投入",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512365.PDF"
+       },
+       "first_seen": "2026-04-23",
+       "tide": {
+        "vol_ratio": 1.51,
+        "from_high": -45.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301285",
+       "name": "鸿日达",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-23",
+        "title": "2025年年度报告",
+        "quote": "高速铜缆QSFPDAC的研发为数据中心、AI算力集群等短距离高速互联场景，提供低成本、低延时、高可靠的无源连接方案",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225153863.PDF"
+       },
+       "first_seen": "2025-12-06",
+       "tide": {
+        "vol_ratio": 0.91,
+        "from_high": -46.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301310",
+       "name": "鑫宏业",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-09-03",
+        "title": "无锡鑫宏业线缆科技股份有限公司向不特定对象发行可转换公司债券募集资金使用可行性分",
+        "quote": "能高速线缆研发中心，通过购置先进的研发实验设备、吸引行业优秀人才，聚焦高速铜缆及数据传输电缆",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-03/1225546893.PDF"
+       },
+       "first_seen": "2026-09-03",
+       "tide": {
+        "vol_ratio": 0.77,
+        "from_high": -30.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002897",
+       "name": "意华股份",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-29",
+        "title": "2025年年度报告",
+        "quote": "行中公司产品的多样化进一步丰富公司产品库QSFP112-NPC3.2T高速铜缆连接器系列产品研发",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233182.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 0.97,
+        "from_high": -62.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002823",
+       "name": "凯中精密",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-04-16",
+        "title": "2025年年度报告",
+        "quote": "LightCounting报告预测，2023-2027年高速铜缆市场年复合增长25%，2027年出货量有望突破",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-16/1225106776.PDF"
+       },
+       "first_seen": "2026-04-16",
+       "tide": {
+        "vol_ratio": 2.38,
+        "from_high": -44.5,
+        "limit_ups": 1
+       }
+      },
+      {
+       "code": "603306",
+       "name": "华懋科技",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "申港证券股份有限公司关于华懋科技发行股份及支付现金购买资产并募集配套资金暨关联交",
+        "quote": "模块厂商、铜缆连接器厂商的主要PCBA供应商，证明了其在高速率光模块、高速铜缆连接器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225532540.PDF"
+       },
+       "first_seen": "2026-01-01",
+       "tide": {
+        "vol_ratio": 1.51,
+        "from_high": -62.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "001208",
+       "name": "华菱线缆",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-19",
+        "title": "湖南华菱线缆股份有限公司发行可转换公司债券购买资产并募集配套资金暨关联交易报告书",
+        "quote": ".483.663华懋科技富创优越57.84%股权主要从事高速率光模块、高速铜缆连接器等高可靠性复杂电子产品核心组件的智能制造",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-19/1225480797.PDF"
+       },
+       "first_seen": "2025-12-17",
+       "tide": {
+        "vol_ratio": 4.0,
+        "from_high": -60.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300252",
+       "name": "金信诺",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "2026年半年度报告",
+        "quote": "核心产品市场地位突出，通信半柔线缆、各类射频线缆、高速铜缆及配套组件等核心品类市场占有率位居行业前列，",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501380.PDF"
+       },
+       "first_seen": "2026-04-14",
+       "tide": {
+        "vol_ratio": 1.12,
+        "from_high": -53.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688392",
+       "name": "骄成超声",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "2026年半年度报告",
+        "quote": "速扩张也为连接器市场带来了新的增长点，数据中心内部服务器与交换机之间的高速铜缆连接需求将显著增长",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225527831.PDF"
+       },
+       "first_seen": "2026-04-11",
+       "tide": {
+        "vol_ratio": 1.27,
+        "from_high": -60.2,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "605277",
+       "name": "新亚电子",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "新亚电子股份有限公司2026年半年度报告",
+        "quote": "公司将依托高速铜缆连接线领域多年沉淀的技术积累与产能优势，在优先服务好现有重要客户的基础上，不断拓展高速铜缆在服务器内外部用线的潜在优质客",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225504984.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.25,
+        "from_high": -40.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300991",
+       "name": "创益通",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-24",
+        "title": "2026年半年度报告",
+        "quote": "通讯产品及组件主要包括高速背板连接器和高速射频连接器、高速高频数据线、高速铜缆连接器等",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-24/1225488494.PDF"
+       },
+       "first_seen": "2026-04-23",
+       "tide": {
+        "vol_ratio": 1.11,
+        "from_high": -71.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300131",
+       "name": "英唐智控",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-07-10",
+        "title": "浙商证券股份有限公司关于公司发行股份及支付现金购买资产并募集配套资金暨关联交易之",
+        "quote": "长芯博创的数据通信、消费及工业互联市场产品主要为MPO连接器、高速铜缆",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-10/1225419472.PDF"
+       },
+       "first_seen": "2026-07-10",
+       "tide": {
+        "vol_ratio": 2.15,
+        "from_high": -59.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "601869",
+       "name": "长飞光纤",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-22",
+        "title": "长飞光纤光缆股份有限公司2026年半年度报告",
+        "quote": "、无源预端接跳线、数通高速铜缆等应用于电信及数通行业的器件产品及服务",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225493215.PDF"
+       },
+       "first_seen": "2026-03-28",
+       "tide": {
+        "vol_ratio": 1.11,
+        "from_high": -57.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301123",
+       "name": "奕东电子",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "2026年半年度报告",
+        "quote": "、先进材料应用、高速铜缆与光互联等技术成为主流方向",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225539819.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "tide": {
+        "vol_ratio": 1.34,
+        "from_high": -68.9,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "002130",
+       "name": "沃尔核材",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-25",
+        "title": "2026年半年度报告",
+        "quote": "在短距离互连场景中，高速铜缆凭借优异的高频性能、高可靠性以及显著的成本优势，适配算力产业发展需求",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225495716.PDF"
+       },
+       "first_seen": "2025-12-17",
+       "tide": {
+        "vol_ratio": 1.17,
+        "from_high": -59.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688668",
+       "name": "鼎通科技",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-05",
+        "title": "2026年半年度报告",
+        "quote": "件高速通讯连接器及其组件主要包括高速背板连接器组件、I/O连接器组件、高速铜缆连接器",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-05/1225457964.PDF"
+       },
+       "first_seen": "2026-03-31",
+       "tide": {
+        "vol_ratio": 1.64,
+        "from_high": -77.3,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600522",
+       "name": "中天科技",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "江苏中天科技股份有限公司2026年半年度报告",
+        "quote": "高速光模块、高速铜缆及MPO等高附加值产品需求持续攀升",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518230.PDF"
+       },
+       "first_seen": "2026-04-25",
+       "tide": {
+        "vol_ratio": 1.47,
+        "from_high": -65.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688629",
+       "name": "华丰科技",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-04-28",
+        "title": "2025年度向特定对象发行A股股票募集说明书（注册稿）",
+        "quote": "hip线模组、线背板模组及其CableTray线模组是把高速连接器采用高速铜缆端接",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225205242.PDF"
+       },
+       "first_seen": "2025-12-03",
+       "tide": {
+        "vol_ratio": 1.05,
+        "from_high": -72.3,
+        "limit_ups": 0
+       }
+      }
+     ]
+    }
+   ],
+   "channels": [
+    {
+     "holder": "高盛",
+     "count": 23,
+     "new": [
+      "*ST高斯",
+      "优刻得",
+      "卡倍亿",
+      "平治信息",
+      "本川智能",
+      "欧莱新材",
+      "沃格光电",
+      "满坤科技",
+      "特发信息",
+      "电科思仪",
+      "金富科技",
+      "金帝股份",
+      "金禄电子",
+      "鹏翎股份"
+     ]
+    },
+    {
+     "holder": "瑞银",
+     "count": 9,
+     "new": [
+      "*ST高斯",
+      "乾照光电",
+      "优刻得",
+      "明阳电路",
+      "欧莱新材"
+     ]
+    },
+    {
+     "holder": "大摩",
+     "count": 7,
+     "new": [
+      "*ST高斯",
+      "优刻得",
+      "新朋股份",
+      "电科思仪",
+      "金帝股份"
+     ]
+    },
+    {
+     "holder": "小摩",
+     "count": 5,
+     "new": [
+      "智微智能",
+      "电科思仪",
+      "蠡湖股份",
+      "鹏翎股份"
+     ]
+    },
+    {
+     "holder": "巴克莱",
+     "count": 5,
+     "new": [
+      "卡倍亿",
+      "同有科技",
+      "电科思仪",
+      "蠡湖股份"
+     ]
+    }
+   ]
+  }
+ ]
+}
