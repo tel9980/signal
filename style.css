@@ -1460,3 +1460,6 @@ details.seat-card summary::-webkit-details-marker{display:none}
     .risk-k { flex: none; min-width: 9.5em; color: var(--ink-2); }
     .risk-note { font-size: 0.76rem; color: var(--ink-3); }
     .risk-foot { font-size: 0.76rem; color: var(--ink-3); margin: 10px 0 0; padding-top: 8px; border-top: 1px solid var(--line); }
+
+    /* 个股页右上角股价 */
+    .p-stock .stock-px { text-align: right; white-space: nowrap; }

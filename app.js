@@ -23,6 +23,10 @@ function load(name) {               // 同一个文件只取一次；失败返�
 }
 function pct(v) { return (v > 0 ? '+' : '') + v.toFixed(1) + '%'; }
 function tone(v) { return v > 0 ? 't-rise' : v < 0 ? 't-fall' : ''; }   // 红涨绿跌
+function pxHtml(p, chg, big) {          // 股价和涨跌一起跟着红涨绿跌；p 为空显示“—”
+  if (p == null) return '<span class="num t-muted">—</span>';
+  return '<span class="num ' + tone(chg) + '"' + (big ? ' style="font-size:1.6rem; font-weight:700;"' : ' style="font-weight:700;"') + '>' + p.toFixed(2) + '</span> <span class="num ' + tone(chg) + '" style="font-size:' + (big ? '1rem' : '0.86rem') + ';">' + pct(chg) + '</span>';
+}
 function store(k, v) {              // 存储可能被禁用，读写都包起来
   try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; }
 }
@@ -195,8 +199,9 @@ function tagCounts(t) {
 // ---------- 标签列表页 ----------
 var TAG = { name: '', limit: 50 };
 function drawTag(name) {
-  Promise.all([load('tags.json'), load('names.json')]).then(function (r) {
-    var t = r[0];
+  Promise.all([load('tags.json'), load('names.json'), load('px.json')]).then(function (r) {
+    var t = r[0], PX = (r[2] && r[2].px) || {};
+    var px = function (c) { var q = PX[c]; return q ? pxHtml(q[0], q[1]) : pxHtml(null); };
     if (r[1]) Object.assign(NAMES, r[1]);           // 只因公告事件进标签的票，tags.json 里可能没名字
     if (!t) { $('tag-meta').textContent = '标签数据暂不可用'; return; }
     var cnt = tagCounts(t), names = Object.keys(t.rules).filter(function (k) { return cnt[k]; });
@@ -213,13 +218,13 @@ function drawTag(name) {
     $('tag-tbody').innerHTML = rows.map(function (c) {
       var v = t.stocks[c];
       return '<tr onclick="location.hash=\'#stock/' + c + '\'" style="cursor:pointer;"><td><strong class="serif">' + esc(v.name || NAMES[c] || '') +
-        '</strong> <span class="num t-muted">' + c + '</span></td><td>' + esc(v.why[TAG.name] || '') + '</td><td>' +
+        '</strong> <span class="num t-muted">' + c + '</span></td><td class="text-right" style="white-space:nowrap;">' + px(c) + '</td><td>' + esc(v.why[TAG.name] || '') + '</td><td>' +
         esc(v.tags.filter(function (x) { return x !== TAG.name; }).map(tagName).join('、')) + '</td></tr>';
     }).join('');
     $('tag-cards').innerHTML = rows.map(function (c) {
       var v = t.stocks[c], others = v.tags.filter(function (x) { return x !== TAG.name; });
-      return '<div class="card" onclick="location.hash=\'#stock/' + c + '\'"><div style="margin-bottom:6px;"><strong class="serif" style="font-size:1.05rem;">' +
-        esc(v.name || NAMES[c] || '') + '</strong> <span class="num t-muted" style="font-size:0.82rem;">' + c + '</span></div>' +
+      return '<div class="card" onclick="location.hash=\'#stock/' + c + '\'"><div style="margin-bottom:6px; display:flex; justify-content:space-between; gap:8px; align-items:baseline;"><span><strong class="serif" style="font-size:1.05rem;">' +
+        esc(v.name || NAMES[c] || '') + '</strong> <span class="num t-muted" style="font-size:0.82rem;">' + c + '</span></span><span style="white-space:nowrap;">' + px(c) + '</span></div>' +
         '<div style="font-size:0.84rem; color:var(--ink-2); margin-bottom:8px;">' + esc(v.why[TAG.name] || '') + '</div>' +
         (others.length ? '<div style="display:flex; flex-wrap:wrap; gap:6px;">' + others.map(function (x) { return '<span class="fact-tag">' + esc(tagName(x)) + '</span>'; }).join('') + '</div>' : '') +
         '</div>';
@@ -540,7 +545,7 @@ function drawResearch() {
     $('research-list').innerHTML = list.map(function (x) {
       return '<article class="card r-card"><div><div class="r-header"><div class="r-name"><span class="rank-num">#' + x.rank + '</span>' + stockLink(x.code, x.name) +
         (x.is_new ? '<span class="status-badge new">● 新上榜</span>' : '<span class="status-badge">首次上榜 ' + esc(x.first_date) + '</span>') + '</div>' +
-        '<div style="text-align:right; white-space:nowrap;"><span class="num" style="font-weight:700;">' + x.price.toFixed(2) + '</span> <span class="num ' + tone(x.chg) + '" style="font-size:0.86rem;">' + pct(x.chg) + '</span></div></div>' +
+        '<div style="text-align:right; white-space:nowrap;">' + pxHtml(x.price, x.chg) + '</div></div>' +
         '<div class="box-machine"><div class="bm-head"><span class="voice-badge voice-machine">机器事实 · 上榜理由</span><span class="num" style="font-size:0.84rem;">综合 <strong>' + x.score + '</strong> 分</span></div>' +
         '<div class="r-reasons">' + x.reasons.map(function (r) { return '<div>' + esc(r.text) + '<span class="sc">' + (r.score > 0 ? '+' : '') + r.score + '</span></div>'; }).join('') + '</div>' +
         '<div class="bm-tide">' + tideHtml(x.tide) + '</div></div>' +
@@ -732,6 +737,14 @@ function showStock(code) {
     CUR = { code: code, name: name, t: t, pool: pool, lhb: lhb, soe: soe, ev: ev, lift: lift, au: au, updated: sh.updated };
     $('stock-title-name').textContent = name;
     $('stock-title-code').textContent = code;
+    $('stock-px').innerHTML = '';
+    load('px.json').then(function (X) {
+      var q = X && X.px[code];
+      if (!CUR || CUR.code !== code) return;
+      $('stock-px').innerHTML = q ? pxHtml(q[0], q[1], true) + '<div class="sec-meta">收盘 ' + esc(X.at.slice(5, 10)) + '</div>'
+        : '<span class="sec-meta">' + (X ? '停牌或暂无行情' : '') + '</span>';
+      if (q) CUR.px = { p: q[0], chg: q[1], at: X.at };
+    });
     $('stock-tags').innerHTML = t ? t.tags.map(function (x) { return '<a class="fact-tag" href="#tag/' + encodeURIComponent(x) + '">' + esc(tagName(x)) + '</a>'; }).join('') : '';
     $('stock-why').innerHTML = t
       ? t.tags.map(function (x) { return '<p style="font-size:0.86rem; margin:4px 0;"><strong>' + esc(tagName(x)) + '</strong>：' + esc(t.why[x] || '') + '</p>'; }).join('')
@@ -838,6 +851,7 @@ $('copy-ai-btn').addEventListener('click', function () {
   if (!CUR) return;
   var c = CUR, L = ['【Signal 公开事实包】请只根据下面的公开事实做独立研究，不要给买卖建议。',
     '标的：' + c.name + '（' + c.code + '），数据日期 ' + (c.updated || '')];
+  if (c.px) L.push('股价：' + c.px.p.toFixed(2) + '，当日 ' + pct(c.px.chg) + '（' + c.px.at + '）');
   if (c.t) L.push('线索标签：' + c.t.tags.map(function (x) { return x + '（' + (c.t.why[x] || '') + '）'; }).join('；'));
   if (c.au) L.push('审核状态：' + c.au.ex + ' ' + c.au.st + '，更新 ' + c.au.updt + (c.au.acpt ? '，受理 ' + c.au.acpt : ''));
   c.pool.forEach(function (e) { L.push('外资：' + e.q + ' ' + e.holder + ' ' + e.chg + '，第' + e.rank + '名，占流通' + e.ratio + '%，估算成本' + e.cost + '（估算值，季报滞后）'); });
