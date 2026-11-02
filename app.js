@@ -456,6 +456,33 @@ function tideHtml(t) {
     pct(t.from_high) + '</b></span><span>近 5 日涨停 <b>' + t.limit_ups + '</b></span></span>';
 }
 var PEN = '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.5 7.5"/></svg>';
+function riskHtml(x) {
+  var n = function (v, u) { return v == null ? '—' : v + (u || ''); };
+  var neg = function (v) { return v != null && v < 0 ? ' class="t-amber"' : ''; };
+  var row = function (k, v, note) { return '<div class="risk-row"><span class="risk-k">' + k + '</span><span class="num">' + v + '</span>' + (note ? '<span class="risk-note">' + note + '</span>' : '') + '</div>'; };
+  var cf = x.cf.map(function (v, i) { return '<span' + neg(v) + '>' + n(v) + '</span>' + '<span class="t-muted">（' + (i ? x.cf_d[i].slice(0, 4) + ' 年' : x.cf_d[0].slice(0, 7) + ' 累计') + '）</span>'; }).join(' · ');
+  return (x.flags.length ? '<div class="risk-flags">' + x.flags.map(function (f) { return '<span class="fact-tag t-amber">⚠ ' + esc(f) + '</span>'; }).join('') + '</div>'
+      : '<p class="t-muted" style="font-size:0.84rem; margin:0 0 8px;">下面几项没有触发雷标。</p>') +
+    row('经营现金流（亿）', cf) +
+    row('净资产（亿）', '<span' + neg(x.equity) + '>' + n(x.equity) + '</span>') +
+    row('资产负债率', n(x.debt, '%'), '金融业天然偏高') +
+    row(x.y + ' 年营收 / 净利（亿）', n(x.rev_y) + ' / <span' + neg(x.np_y) + '>' + n(x.np_y) + '</span>') +
+    row('今年累计营收 / 净利（亿）', n(x.rev) + ' / <span' + neg(x.np) + '>' + n(x.np) + '</span>') +
+    row('股权质押比例', n(x.pledge, '%'), x.pledge_d ? '中登 ' + x.pledge_d : '') +
+    '<p class="risk-foot">只做排雷，不判断好坏。亏损不等于不能碰，A 股常有亏损公司靠资本运作翻身；雷标是提醒你先去看原文。诉讼、立案、问询等法律信息还没接上。</p>';
+}
+function analysisHtml(a) {
+  var src = function (L) { return (L || []).length ? ' <span class="t-muted num">' + L.map(esc).join(' ') + '</span>' : ''; };
+  var row = function (k, v) { return v ? '<p class="an-row"><span class="an-k">' + k + '</span>' + v + '</p>' : ''; };
+  return '<div class="chain-head"><span class="voice-badge voice-ai">Signal 分析</span><span class="num t-muted">基于 ' + esc(a.data_date) + ' 的数据</span></div>' +
+    '<p class="an-one">' + esc(a.one_line) + '</p>' +
+    (a.facts || []).map(function (e) { return row('事实', esc(e.text) + src(e.src)); }).join('') +
+    (a.reads || []).map(function (e) { return row(esc(e.level), esc(e.text) + src(e.src)); }).join('') +
+    row('下一步', esc(a.next)) +
+    (a.risks || []).map(function (r) { return row('风险', '<span class="t-amber">' + esc(r) + '</span>'); }).join('') +
+    row('别误读', esc(a.not_this)) +
+    '<p class="an-foot">研究记录，不是买卖建议。编号对应上面打包的事实；✅ 公告证实 · 🟡 间接迹象 · ❓ 猜测。</p>';
+}
 function verdictHtml(v) {
   if (!v) return '<span class="voice-badge voice-owner">' + PEN + ' 站主判定：暂无</span>';
   return '<span class="voice-badge voice-owner">' + PEN + ' 站主判定：' + esc(v.v) + '</span><span class="num t-muted" style="font-size:0.74rem; margin-left:8px;">' + esc(v.date) + '</span>' +
@@ -772,6 +799,25 @@ function showStock(code) {
     more('stock-tl-more', tl.length - n, function () { drawTl(tl.length); });
     };
     drawTl(TL_SHOW);
+    // 排雷体检：财报四项＋质押，标雷的放最上面；只标、不下结论
+    $('stock-risk-wrap').style.display = 'none'; $('stock-risk').innerHTML = '';
+    load('risk' + code.slice(-1) + '.json').then(function (K) {
+      var x = K && K.stocks[code];
+      if (!x || !CUR || CUR.code !== code) return;
+      CUR.risk = x;
+      $('stock-risk-meta').textContent = '财报 ' + x.period + '（' + x.notice + ' 披露）';
+      $('stock-risk').innerHTML = riskHtml(x);
+      $('stock-risk-wrap').style.display = '';
+    });
+    // Signal 分析（Muse 写、经校验）：放在“复制给 AI”下面，打包时附在最后
+    $('stock-analysis').style.display = 'none'; $('stock-analysis').innerHTML = '';
+    load('analysis.json').then(function (A) {
+      var a = A && A.items && A.items[code];
+      if (!a || !CUR || CUR.code !== code) return;
+      CUR.analysis = a;
+      $('stock-analysis').innerHTML = analysisHtml(a);
+      $('stock-analysis').style.display = '';
+    });
     load('research.json').then(function (R) {
       var it = R && R.items.filter(function (x) { return x.code === code; })[0];
       $('stock-verdict').innerHTML = verdictHtml(it && it.verdict);
@@ -797,12 +843,23 @@ $('copy-ai-btn').addEventListener('click', function () {
   c.pool.forEach(function (e) { L.push('外资：' + e.q + ' ' + e.holder + ' ' + e.chg + '，第' + e.rank + '名，占流通' + e.ratio + '%，估算成本' + e.cost + '（估算值，季报滞后）'); });
   c.soe.forEach(function (e) { L.push('国资：' + e.q + ' ' + e.holder + ' ' + e.chg + '，占流通' + e.ratio + '%'); });
   if (c.research) L.push(c.research);
+  if (c.risk) { var k = c.risk; L.push('排雷（' + k.period + ' 财报）：' + (k.flags.length ? '雷标 ' + k.flags.join('、') + '；' : '无雷标；') + '经营现金流 ' + k.cf.join('/') + ' 亿（今年累计/' + k.cf_d[1].slice(0, 4) + '/' + k.cf_d[2].slice(0, 4) + '），净资产 ' + k.equity + ' 亿，负债率 ' + k.debt + '%，质押比例 ' + (k.pledge == null ? '无' : k.pledge + '%')); }
   (c.chains || []).forEach(function (x) { L.push('进度：' + x); });
   (c.themes || []).forEach(function (x) { L.push('主题：' + x); });
   c.ev.slice(0, 8).forEach(function (e) { L.push('公告：' + e.date + ' ' + e.title); });
   c.lhb.slice(0, 5).forEach(function (e) { L.push('龙虎榜：' + e.date + ' ' + e.explain); });
   c.lift.forEach(function (e) { L.push('解禁：' + e.date + '，占流通' + e.free_ratio + '%'); });
   L.push('请帮我梳理：1) 这些事实说明它处在什么阶段；2) 下一个要等的节点是什么；3) 什么情况算看错。');
+  if (c.analysis) {
+    var a = c.analysis;
+    L.push('', '以上是原始数据。请先独立判断，再看下面这段 Signal 的初步分析，指出你和它哪里不同、它哪里可能错了。',
+      '【Signal 分析（基于 ' + a.data_date + ' 的数据）】' + a.one_line);
+    (a.facts || []).forEach(function (e) { L.push('事实：' + e.text); });
+    (a.reads || []).forEach(function (e) { L.push(e.text + ' ' + e.level); });
+    if (a.next) L.push('下一个节点：' + a.next);
+    (a.risks || []).forEach(function (r) { L.push('风险：' + r); });
+    if (a.not_this) L.push('不是什么：' + a.not_this);
+  }
   var text = L.join('\n');
   var done = function () { showToast('已复制 ' + (L.length - 3) + ' 条事实，可以粘贴给 AI'); };
   if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
