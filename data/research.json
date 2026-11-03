@@ -142,6 +142,37 @@
   },
   {
    "rank": 4,
+   "code": "301082",
+   "name": "久盛电气",
+   "price": 8.24,
+   "chg": -1.2,
+   "score": 8,
+   "first_date": "2026-11-03",
+   "is_new": false,
+   "reasons": [
+    {
+     "text": "2026-09-30 同季 2 家外资新进：大摩、巴克莱",
+     "score": 3
+    },
+    {
+     "text": "现价比 高盛 的估算成本低 19.1%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    },
+    {
+     "text": "定增在途，2026-11-03 已回复",
+     "score": 3
+    }
+   ],
+   "tide": {
+    "vol_ratio": 0.61,
+    "from_high": -52.2,
+    "limit_ups": 0
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 5,
    "code": "002172",
    "name": "澳洋健康",
    "price": 6.8,
@@ -159,7 +190,7 @@
      "score": 3
     },
     {
-     "text": "龙虎榜 2026-11-02：2家机构买入，成功率35.42%",
+     "text": "龙虎榜 2026-11-03：3家机构买入，成功率40.65%",
      "score": 1
     }
    ],
@@ -172,7 +203,7 @@
    "verdict": null
   },
   {
-   "rank": 5,
+   "rank": 6,
    "code": "600371",
    "name": "万向德农",
    "price": 9.86,
@@ -199,7 +230,7 @@
    "verdict": null
   },
   {
-   "rank": 6,
+   "rank": 7,
    "code": "000505",
    "name": "京粮控股",
    "price": 5.55,
@@ -226,7 +257,7 @@
    "verdict": null
   },
   {
-   "rank": 7,
+   "rank": 8,
    "code": "002669",
    "name": "康达新材",
    "price": 10.64,
@@ -257,14 +288,14 @@
    "verdict": null
   },
   {
-   "rank": 8,
+   "rank": 9,
    "code": "001216",
    "name": "华瓷股份",
    "price": 17.81,
    "chg": -4.66,
    "score": 7,
    "first_date": "2026-11-03",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 2 家外资新进：瑞银、高盛",
@@ -288,14 +319,14 @@
    "verdict": null
   },
   {
-   "rank": 9,
+   "rank": 10,
    "code": "688655",
    "name": "迅捷兴",
    "price": 40.0,
    "chg": -9.95,
    "score": 7,
    "first_date": "2026-11-03",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 3 家外资新进：大摩、小摩、高盛",
@@ -319,7 +350,7 @@
    "verdict": null
   },
   {
-   "rank": 10,
+   "rank": 11,
    "code": "002827",
    "name": "高争民爆",
    "price": 62.68,
@@ -350,7 +381,7 @@
    "verdict": null
   },
   {
-   "rank": 11,
+   "rank": 12,
    "code": "000530",
    "name": "冰山冷热",
    "price": 8.6,
@@ -381,7 +412,7 @@
    "verdict": null
   },
   {
-   "rank": 12,
+   "rank": 13,
    "code": "003036",
    "name": "泰坦股份",
    "price": 27.88,
@@ -408,7 +439,7 @@
    "verdict": null
   },
   {
-   "rank": 13,
+   "rank": 14,
    "code": "300721",
    "name": "怡达股份",
    "price": 15.15,
@@ -435,7 +466,7 @@
    "verdict": null
   },
   {
-   "rank": 14,
+   "rank": 15,
    "code": "300534",
    "name": "陇神戎发",
    "price": 9.57,
@@ -462,7 +493,7 @@
    "verdict": null
   },
   {
-   "rank": 15,
+   "rank": 16,
    "code": "300311",
    "name": "任子行",
    "price": 4.76,
@@ -489,7 +520,7 @@
    "verdict": null
   },
   {
-   "rank": 16,
+   "rank": 17,
    "code": "002848",
    "name": "高斯贝尔",
    "price": 12.89,
@@ -516,7 +547,7 @@
    "verdict": null
   },
   {
-   "rank": 17,
+   "rank": 18,
    "code": "000607",
    "name": "华媒控股",
    "price": 3.61,
@@ -543,7 +574,7 @@
    "verdict": null
   },
   {
-   "rank": 18,
+   "rank": 19,
    "code": "601999",
    "name": "出版传媒",
    "price": 6.84,
@@ -570,7 +601,7 @@
    "verdict": null
   },
   {
-   "rank": 19,
+   "rank": 20,
    "code": "603137",
    "name": "恒尚节能",
    "price": 15.15,
@@ -601,7 +632,7 @@
    "verdict": null
   },
   {
-   "rank": 20,
+   "rank": 21,
    "code": "300706",
    "name": "阿石创",
    "price": 34.93,
@@ -632,7 +663,7 @@
    "verdict": null
   },
   {
-   "rank": 21,
+   "rank": 22,
    "code": "300283",
    "name": "温州宏丰",
    "price": 9.26,
@@ -663,7 +694,7 @@
    "verdict": null
   },
   {
-   "rank": 22,
+   "rank": 23,
    "code": "301005",
    "name": "超捷股份",
    "price": 52.83,
@@ -694,7 +725,7 @@
    "verdict": null
   },
   {
-   "rank": 23,
+   "rank": 24,
    "code": "301106",
    "name": "骏成科技",
    "price": 15.51,
@@ -725,14 +756,14 @@
    "verdict": null
   },
   {
-   "rank": 24,
+   "rank": 25,
    "code": "688678",
    "name": "福立旺",
    "price": 17.37,
    "chg": -8.39,
    "score": 6,
    "first_date": "2026-11-03",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 2 家外资新进：瑞银、高盛",
@@ -750,37 +781,6 @@
    "tide": {
     "vol_ratio": 0.8,
     "from_high": -48.3,
-    "limit_ups": 0
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 25,
-   "code": "301082",
-   "name": "久盛电气",
-   "price": 8.24,
-   "chg": -1.2,
-   "score": 6,
-   "first_date": "2026-11-03",
-   "is_new": true,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 2 家外资新进：大摩、巴克莱",
-     "score": 3
-    },
-    {
-     "text": "现价比 高盛 的估算成本低 19.1%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
-     "score": 2
-    },
-    {
-     "text": "定增在途，近 30 天审核无推进",
-     "score": 1
-    }
-   ],
-   "tide": {
-    "vol_ratio": 0.61,
-    "from_high": -52.2,
     "limit_ups": 0
    },
    "report": null,
@@ -825,7 +825,7 @@
    "chg": 9.96,
    "score": 6,
    "first_date": "2026-11-03",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 2 家外资新进：瑞银、高盛",
@@ -836,7 +836,7 @@
      "score": 2
     },
     {
-     "text": "龙虎榜 2026-10-28：2家机构买入，成功率24.97%",
+     "text": "龙虎榜 2026-11-03：1家机构买入，成功率39.76%",
      "score": 1
     }
    ],
