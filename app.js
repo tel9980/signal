@@ -859,7 +859,7 @@ $('copy-ai-btn').addEventListener('click', function () {
   if (c.research) L.push(c.research);
   if (c.risk) { var k = c.risk; L.push('排雷（' + k.period + ' 财报）：' + (k.flags.length ? '雷标 ' + k.flags.join('、') + '；' : '无雷标；') + '经营现金流 ' + k.cf.join('/') + ' 亿（今年累计/' + k.cf_d[1].slice(0, 4) + '/' + k.cf_d[2].slice(0, 4) + '），净资产 ' + k.equity + ' 亿，负债率 ' + k.debt + '%，质押比例 ' + (k.pledge == null ? '无' : k.pledge + '%')); }
   (c.chains || []).forEach(function (x) { L.push('进度：' + x); });
-  (c.themes || []).forEach(function (x) { L.push('主题：' + x); });
+  (c.themes || []).forEach(function (x) { L.push('题材：' + x); });
   c.ev.slice(0, 8).forEach(function (e) { L.push('公告：' + e.date + ' ' + e.title); });
   c.lhb.slice(0, 5).forEach(function (e) { L.push('龙虎榜：' + e.date + ' ' + e.explain); });
   c.lift.forEach(function (e) { L.push('解禁：' + e.date + '，占流通' + e.free_ratio + '%'); });
