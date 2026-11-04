@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <!-- 内容安全策略：只允许本站自己的脚本、样式、数据；禁止向外部发送数据。frame-ancestors 只能由服务器头设置，这里不写 -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#f7f7f5" id="meta-theme-color">
   <!-- 加到手机主屏幕（10-31）：iPhone 用 Safari「分享 → 添加到主屏幕」，从主屏打开没有地址栏 -->
@@ -14,7 +14,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Signal">
   <title>Signal · A股研究线索</title>
-  <link rel="stylesheet" href="style.css?v=20261104a">
+  <link rel="stylesheet" href="style.css?v=20261104c">
 </head>
 <body data-state="normal">
 
@@ -287,11 +287,32 @@
         </div>
         <div class="card build-card" id="theme-empty" style="display:none;"><p>建设中。这里以后会放：</p><ul><li>人形机器人（含灵巧手）、AI 基建，按产业链分段</li><li>每家公司：在链上做什么、公告原文一句、到哪一步（研发 / 验证 / 定点 / 量产）</li><li>潮水状态：量能比平时、离高点多远、近期涨停；第一次在公告里出现的公司单独标出</li><li>外资通道在这条链上出现在几家、哪几家是新进</li></ul></div>
         <div id="theme-body" style="display:none;">
-          <div class="cells" id="theme-pick" style="--n:2; margin-bottom:16px;" role="radiogroup" aria-label="题材"></div>
+          <div class="fchips" id="theme-chips" role="group" aria-label="题材筛选条件"></div>
+          <div class="split">
+          <div class="split-side">
+          <section class="filter-card sheet" id="theme-filter" aria-label="题材筛选">
+            <div class="sheet-head"><span class="sheet-handle"></span><strong>筛选</strong><button type="button" class="sheet-close">完成</button></div>
+            <div class="filter-group" data-g="theme">
+              <div class="group-head"><span class="group-label">题材</span></div>
+              <div class="cells" id="theme-pick" style="--n:2" role="radiogroup" aria-label="题材"></div>
+            </div>
+            <div class="filter-group" data-g="seg">
+              <div class="group-head"><span class="group-label">环节</span><span class="group-hint">数字＝家数</span></div>
+              <div class="cells" id="theme-seg" style="--n:2" role="radiogroup" aria-label="环节"></div>
+            </div>
+            <div class="filter-group" data-g="holder">
+              <div class="group-head"><span class="group-label">外资通道</span><span class="group-hint">只认最新季度</span></div>
+              <div class="cells" id="theme-holder" style="--n:2" role="radiogroup" aria-label="外资通道"></div>
+            </div>
+          </section>
+          </div>
+          <div class="split-main">
+          <div class="result-sort-bar"><span id="theme-meta"></span></div>
           <div id="theme-segs"></div>
-          <div class="sec-head" style="margin-top:22px;"><h2 class="sec-title">外资通道在这条链上</h2><span class="sec-meta">只认最新季度</span></div>
-          <div class="honest-notice" style="margin-bottom:12px;">看的是同一通道在同一条链上集中出现，不是“某只票有外资”。外资通道不等于聪明钱，季报滞后一到两个月，只当线索。</div>
-          <div id="theme-channels"></div>
+          <button class="chip more-btn" id="theme-more" style="display:none"></button>
+          <div class="honest-notice" style="margin:16px 0 12px;">外资通道在同一条链上集中出现才值得看，不是“某只票有外资”。外资通道不等于聪明钱，季报滞后一到两个月，只当线索。</div>
+          </div>
+          </div>
           <details class="rules-box"><summary>角色、进度、潮水怎么定</summary><div>角色：整机 / 零件 / 只是提到，只按公告原文定。进度：研发、验证、送样、定点、量产，取公告里写到的最远一步。潮水：量能＝近 5 日成交额比近 60 日平均；离高点＝现价比近一年最高价；涨停＝近 5 日涨停次数。“新”＝近 30 天第一次在公告里提到这个主题。</div></details>
         </div>
       </div>
@@ -366,8 +387,8 @@
         <div class="fchips" id="pool-chips" role="group" aria-label="持仓池筛选条件"></div>
         <div class="split">
         <div class="split-side">
-        <section class="filter-card" id="pool-filter" aria-label="持仓池筛选">
-          <div class="sheet-head" id="pool-sheet-head"><span class="sheet-handle"></span><strong id="pool-sheet-title">筛选</strong><button type="button" class="sheet-close" id="pool-sheet-close">完成</button></div>
+        <section class="filter-card sheet" id="pool-filter" aria-label="持仓池筛选">
+          <div class="sheet-head"><span class="sheet-handle"></span><strong>筛选</strong><button type="button" class="sheet-close">完成</button></div>
           <div class="filter-group" data-g="period">
             <div class="group-head"><span class="group-label">报告期</span><span class="group-hint num" id="pool-q-hint"></span></div>
             <div class="cells" id="pool-period" style="--n:2" role="radiogroup" aria-label="报告期"></div>
@@ -513,6 +534,10 @@
     </section>
 
   <div class="sheet-backdrop" id="sheet-backdrop"></div>
+  <section class="filter-card sheet sort-sheet" id="sort-sheet" data-show="sort" aria-label="排序">
+    <div class="sheet-head"><span class="sheet-handle"></span><strong>排序</strong><button type="button" class="sheet-close">完成</button></div>
+    <div class="filter-group" data-g="sort"><div class="cells" id="sort-cells" style="--n:1" role="radiogroup" aria-label="排序方式"></div></div>
+  </section>
 </main>
 
   <!-- 页脚（严格保留站主指定文案、体检表绿/红点小入口、赞助占位与四个链接） -->
@@ -590,6 +615,8 @@
   <!-- 底部轻量 Toast 提示 -->
   <div id="pixel-toast" class="pixel-toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js?v=20261104a"></script>
+  <script src="app.js?v=20261104c"></script>
+  <!-- 访问统计（11-04 用户批准）：Cloudflare Web Analytics，只数人次，不放 cookie、不认人 -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "39a53ce8271447cdbaf4d97a99e20e66"}'></script>
 </body>
 </html>

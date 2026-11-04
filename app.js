@@ -270,19 +270,20 @@ function btnSet(id, kind, items, cur, pick, redraw) {
   var ai = 0; items.forEach(function (x, i) { if (x.v === cur) ai = i; });
   $(id).style.setProperty('--i', ai);          // 手机分段条的滑块位置
 }
-// 手机：持仓池筛选从底部弹出，一次只显示一组；电脑上这些都不显示
-var SHEET_TITLE = { period: '报告期', holder: '外资通道', band: '现价较估算成本' };
-function openSheet(g) {
-  var f = $('pool-filter');
-  f.setAttribute('data-show', g); $('pool-sheet-title').textContent = SHEET_TITLE[g];
+// 手机：筛选和排序从底部弹出，一次只显示一组；电脑上这些都不显示（持仓池、题材、各页排序共用，11-04 起）
+var SHEET_TITLE = { period: '报告期', holder: '外资通道', band: '现价较估算成本', theme: '题材', seg: '环节', sort: '排序' };
+var SHEET = null;
+function openSheet(id, g) {
+  var f = $(id); SHEET = f;
+  f.setAttribute('data-show', g); f.querySelector('.sheet-head strong').textContent = SHEET_TITLE[g];
   f.classList.add('open'); $('sheet-backdrop').classList.add('open');
 }
-function closeSheet() { $('pool-filter').classList.remove('open'); $('sheet-backdrop').classList.remove('open'); $('pool-filter').style.transform = ''; }
+function closeSheet() { if (!SHEET) return; SHEET.classList.remove('open'); SHEET.style.transform = ''; $('sheet-backdrop').classList.remove('open'); }
 $('sheet-backdrop').onclick = closeSheet;
-$('pool-sheet-close').onclick = closeSheet;
-$('pool-filter').addEventListener('click', function (e) { if (e.target.closest('.cell-btn')) closeSheet(); });   // 选完一项就收起
-(function () {                                   // 按住顶部小横条往下拉，超过 80px 就关
-  var y0 = null, f = $('pool-filter'), h = $('pool-sheet-head');
+document.querySelectorAll('.filter-card.sheet').forEach(function (f) {
+  f.querySelector('.sheet-close').onclick = closeSheet;
+  f.addEventListener('click', function (e) { if (e.target.closest('.cell-btn')) closeSheet(); });   // 选完一项就收起
+  var y0 = null, h = f.querySelector('.sheet-head');               // 按住顶部小横条往下拉，超过 80px 就关
   h.addEventListener('touchstart', function (e) { y0 = e.touches[0].clientY; f.style.transition = 'none'; }, { passive: true });
   h.addEventListener('touchmove', function (e) { if (y0 != null) f.style.transform = 'translateY(' + Math.max(0, e.touches[0].clientY - y0) + 'px)'; }, { passive: true });
   h.addEventListener('touchend', function (e) {
@@ -290,12 +291,21 @@ $('pool-filter').addEventListener('click', function (e) { if (e.target.closest('
     if (y0 != null && e.changedTouches[0].clientY - y0 > 80) closeSheet(); else f.style.transform = '';
     y0 = null;
   });
-})();
+});
+var DOWN = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>';
 $('pool-honest-btn').onclick = function () { $('pool-honest').classList.add('open'); };
 function sortSelect(id, keys, labels, cur, pick, redraw) {
   var el = $(id);
   el.innerHTML = keys.map(function (k) { return '<option value="' + esc(k) + '"' + (k === cur ? ' selected' : '') + '>' + esc(labels[k]) + '</option>'; }).join('');
   el.onchange = function () { pick(el.value); redraw(); };
+  // 手机：下拉藏起来，旁边放一个按钮，点开从底部弹出选项
+  var w = el.parentNode, b = w.nextElementSibling;
+  if (!b || !b.classList.contains('sort-chip')) { b = document.createElement('button'); b.type = 'button'; b.className = 'sort-chip'; w.parentNode.insertBefore(b, w.nextSibling); }
+  b.innerHTML = esc(labels[cur]) + DOWN;
+  b.onclick = function () {
+    btnSet('sort-cells', 'cell-btn', keys.map(function (k) { return { v: k, label: labels[k].replace('排序：', '') }; }), cur, pick, redraw);
+    openSheet('sort-sheet', 'sort');
+  };
 }
 function poolRedraw() { POOL.limit = 50; drawPool(); }
 function drawPool() {
@@ -346,13 +356,12 @@ function drawPool() {
     btnSet('pool-band', 'cell-btn', Object.keys(BANDS).map(function (k) { return { v: k, label: BAND_TXT[k], cls: BAND_LOW[k] ? 'focus-low' : '' }; }),
       POOL.band, function (v) { POOL.band = v; }, poolRedraw);
     sortSelect('pool-sort', Object.keys(SORTS), SORT_TXT, POOL.sort, function (v) { POOL.sort = v; }, poolRedraw);
-    var DOWN = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>';
     var chip = function (g, on, html) { return '<button type="button" class="fchip' + (on ? ' on' : '') + '" data-g="' + g + '">' + html + DOWN + '</button>'; };
     $('pool-chips').innerHTML =
       chip('period', POOL.q !== quarters[0], (POOL.q !== 'snap' && disclosing(POOL.q) ? '<span class="dot-amber"></span>' : '') + esc(POOL.q === 'snap' ? '季后快照' : qText(POOL.q))) +
       chip('holder', POOL.holder !== '全部', POOL.holder === '全部' ? '全部通道' : esc(POOL.holder) + ' <span class="cnt">' + hc[POOL.holder] + '</span>') +
       chip('band', POOL.band !== '全部', esc(BAND_TXT[POOL.band]));
-    $('pool-chips').querySelectorAll('.fchip').forEach(function (b) { b.onclick = function () { openSheet(b.getAttribute('data-g')); }; });
+    $('pool-chips').querySelectorAll('.fchip').forEach(function (b) { b.onclick = function () { openSheet('pool-filter', b.getAttribute('data-g')); }; });
 
     var g = {};
     R.forEach(function (r) {
@@ -558,34 +567,58 @@ function drawResearch() {
   });
 }
 
-// ---------- 主题 ----------
+// ---------- 题材 ----------
+// 一次只看一个环节（默认第一个），可按外资通道筛；手机上三个按钮点开从底部弹出（11-04 用户提：原来一百多张卡片摞在一起要一直往下滑）
+var TH = { name: null, seg: '', holder: '全部', limit: 25 };
 function drawTheme(name) {
   load('themes.json').then(function (T) {
     ready('theme', !!T); if (!T) { $('theme-upd').textContent = '建设中'; return; }
     var th = T.themes.filter(function (x) { return x.name === name; })[0] || T.themes[0];
+    if (TH.name !== th.name) { TH.name = th.name; TH.seg = th.segments[0].name; TH.holder = '全部'; TH.limit = 25; }
+    var redraw = function () { TH.limit = 25; drawTheme(th.name); };
     $('theme-title').textContent = th.name;
     $('theme-sub').textContent = th.intro;
     $('theme-upd').textContent = '更新于 ' + T.updated;
+    var nOf = function (t) { var u = {}; t.segments.forEach(function (g) { g.items.forEach(function (x) { u[x.code] = 1; }); }); return Object.keys(u).length; };   // 跨环节重复的只算一次
     $('theme-pick').innerHTML = T.themes.map(function (x) {
-      return '<a class="cell-btn' + (x === th ? ' active' : '') + '" href="#theme/' + encodeURIComponent(x.name) + '"><span>' + esc(x.name) + '</span><span class="cnt">' +
-        x.segments.reduce(function (a, g) { return a + g.items.length; }, 0) + '</span></a>';
+      return '<a class="cell-btn' + (x === th ? ' active' : '') + '" href="#theme/' + encodeURIComponent(x.name) + '"><span>' + esc(x.name) + '</span><span class="cnt">' + nOf(x) + '</span></a>';
     }).join('');
+    var segs = TH.seg === '全部' ? th.segments : th.segments.filter(function (g) { return g.name === TH.seg; });
+    var hc = {}, seen = {};                        // 当前环节里每个通道在几家；一家在几个环节都出现只算一次
+    segs.forEach(function (g) { g.items.forEach(function (x) { if (seen[x.code]) return; seen[x.code] = 1; (x.holders || []).forEach(function (h) { hc[h.h] = (hc[h.h] || 0) + 1; }); }); });
+    if (TH.holder !== '全部' && !hc[TH.holder]) TH.holder = '全部';
+    var holders = Object.keys(hc).sort(function (a, b) { return hc[b] - hc[a]; });
+    btnSet('theme-seg', 'cell-btn', [{ v: '全部', label: '全部环节', cnt: nOf(th) }].concat(th.segments.map(function (g) { return { v: g.name, label: g.name, cnt: g.items.length }; })),
+      TH.seg, function (v) { TH.seg = v; }, redraw);
+    btnSet('theme-holder', 'cell-btn', [{ v: '全部', label: '全部通道' }].concat(holders.map(function (h) { return { v: h, label: h, cnt: hc[h] }; })),
+      TH.holder, function (v) { TH.holder = v; }, redraw);
+    var chip = function (g, on, html) { return '<button type="button" class="fchip' + (on ? ' on' : '') + '" data-g="' + g + '">' + html + DOWN + '</button>'; };
+    $('theme-chips').innerHTML = chip('theme', false, esc(th.name)) + chip('seg', TH.seg !== '全部', TH.seg === '全部' ? '全部环节' : esc(TH.seg)) +
+      chip('holder', TH.holder !== '全部', TH.holder === '全部' ? '全部通道' : esc(TH.holder) + ' <span class="cnt">' + hc[TH.holder] + '</span>');
+    $('theme-chips').querySelectorAll('.fchip').forEach(function (b) { b.onclick = function () { openSheet('theme-filter', b.getAttribute('data-g')); }; });
+
     var isNew = function (d) { return d && (Date.parse(T.updated) - Date.parse(d)) / 864e5 <= 30; };
     var ev = function (e) { var u = safeUrl(e.url); return '<div class="quote">“' + esc(e.quote) + '”' + (u ? '<a href="' + u + '" target="_blank" rel="noopener">' + esc(e.date) + ' ' + esc(e.title) + ' ↗</a>' : '<span class="t-muted" style="font-size:0.74rem; margin-left:4px;">' + esc(e.date) + ' ' + esc(e.title) + '</span>') + '</div>'; };
-    $('theme-segs').innerHTML = th.segments.map(function (g) {
-      return '<div class="theme-seg"><div class="sec-head"><h2 class="sec-title">' + esc(g.name) + '</h2><span class="sec-meta">' + g.items.length + ' 家</span></div>' +
+    var chs = function (x) { return (x.holders || []).map(function (h) { return '<span class="ch-tag' + (h.new ? ' new' : '') + '">' + esc(h.h) + (h.new ? ' 新进' : '') + '</span>'; }).join(''); };
+    var keep = function (x) { return TH.holder === '全部' || (x.holders || []).some(function (h) { return h.h === TH.holder; }); };
+    var left = TH.limit, shown = 0, all = 0, uniq = {};
+    $('theme-segs').innerHTML = segs.map(function (g) {
+      var list = g.items.filter(keep); all += list.length; list.forEach(function (x) { uniq[x.code] = 1; });
+      var rows = list.slice(0, Math.max(0, left)); left -= rows.length; shown += rows.length;
+      if (!rows.length) return '';
+      var cut = g.total > g.items.length ? '共 ' + g.total + ' 家，列进度最靠前的 ' + g.items.length + ' 家' : g.items.length + ' 家';
+      return '<div class="theme-seg"><div class="sec-head"><h2 class="sec-title">' + esc(g.name) + '</h2><span class="sec-meta">' + (TH.holder === '全部' ? cut : list.length + ' 家') + '</span></div>' +
         '<div class="pool-table-wrap"><table class="data-table"><thead><tr><th>代码 / 名称</th><th>角色</th><th>进度</th><th>公告原文</th><th>潮水</th></tr></thead><tbody>' +
-        g.items.map(function (x) {
-          return '<tr><td style="white-space:nowrap;">' + stockLink(x.code, x.name) + (isNew(x.first_seen) ? '<span class="new-dot">新</span>' : '') + '</td><td>' + esc(x.role) + '</td><td><span class="fact-tag">' + esc(x.stage) + '</span></td><td>' + ev(x.evidence) + '</td><td>' + tideHtml(x.tide) + '</td></tr>';
+        rows.map(function (x) {
+          return '<tr><td style="white-space:nowrap;">' + stockLink(x.code, x.name) + (isNew(x.first_seen) ? '<span class="new-dot">新</span>' : '') + '<div>' + chs(x) + '</div></td><td>' + esc(x.role) + '</td><td><span class="fact-tag">' + esc(x.stage) + '</span></td><td>' + ev(x.evidence) + '</td><td>' + tideHtml(x.tide) + '</td></tr>';
         }).join('') + '</tbody></table></div><div class="pool-mobile-cards">' +
-        g.items.map(function (x) {
+        rows.map(function (x) {
           return '<div class="card"><div style="display:flex; justify-content:space-between; align-items:baseline; gap:8px; margin-bottom:6px;"><div>' + stockLink(x.code, x.name) + (isNew(x.first_seen) ? '<span class="new-dot">新</span>' : '') + '</div>' +
-            '<span class="fact-tag">' + esc(x.role) + ' · ' + esc(x.stage) + '</span></div>' + ev(x.evidence) + '<div style="margin-top:8px;">' + tideHtml(x.tide) + '</div></div>';
+            '<span class="fact-tag">' + esc(x.role) + ' · ' + esc(x.stage) + '</span></div>' + (chs(x) ? '<div style="margin-bottom:6px;">' + chs(x) + '</div>' : '') + ev(x.evidence) + '<div style="margin-top:8px;">' + tideHtml(x.tide) + '</div></div>';
         }).join('') + '</div></div>';
     }).join('');
-    $('theme-channels').innerHTML = '<div class="card" style="padding:4px 16px;">' + th.channels.map(function (c) {
-      return '<div class="top5-row wrap"><strong>' + esc(c.holder) + '</strong><span class="why">出现在 ' + c.count + ' 家' + (c.new.length ? '，新进：' + c.new.map(function (k) { return esc(k); }).join('、') : '') + '</span></div>';
-    }).join('') + '</div>';
+    $('theme-meta').innerHTML = '共 <strong>' + Object.keys(uniq).length + '</strong> 家' + (TH.holder !== '全部' ? '有' + esc(TH.holder) : '');
+    more('theme-more', all - shown, function () { TH.limit += 25; drawTheme(th.name); });
   });
 }
 

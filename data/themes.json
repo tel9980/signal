@@ -7,6 +7,7 @@
    "segments": [
     {
      "name": "灵巧手",
+     "total": 170,
      "items": [
       {
        "code": "002979",
@@ -20,6 +21,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-09/1225414828.PDF"
        },
        "first_seen": "2026-03-13",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.33,
         "from_high": -32.5,
@@ -38,6 +40,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-06-09/1225359216.PDF"
        },
        "first_seen": "2025-12-24",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.28,
         "from_high": -46.4,
@@ -56,6 +59,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-20/1225315762.PDF"
        },
        "first_seen": "2026-03-18",
+       "holders": [
+        {
+         "h": "瑞银",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.05,
         "from_high": -45.5,
@@ -74,6 +87,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512131.PDF"
        },
        "first_seen": "2026-04-16",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.9,
         "from_high": -39.9,
@@ -92,6 +106,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-18/1225313503.PDF"
        },
        "first_seen": "2025-12-09",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.45,
         "from_high": -46.1,
@@ -110,6 +125,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-11/1225468870.PDF"
        },
        "first_seen": "2026-06-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.4,
         "from_high": -64.7,
@@ -128,6 +144,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512307.PDF"
        },
        "first_seen": "2026-03-07",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.31,
         "from_high": -25.6,
@@ -146,6 +163,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501122.PDF"
        },
        "first_seen": "2026-04-22",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.32,
         "from_high": -52.2,
@@ -164,6 +182,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2025-11-05/1224785407.PDF"
        },
        "first_seen": "2025-11-05",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.23,
         "from_high": -22.3,
@@ -182,6 +201,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-17/1225567279.PDF"
        },
        "first_seen": "2026-03-10",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.93,
         "from_high": -21.0,
@@ -200,6 +220,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225475350.PDF"
        },
        "first_seen": "2025-12-11",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.13,
         "from_high": -32.1,
@@ -218,6 +239,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-02-09/1224973179.PDF"
        },
        "first_seen": "2025-11-21",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.3,
         "from_high": -66.9,
@@ -236,6 +258,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-16/1225105693.PDF"
        },
        "first_seen": "2026-04-16",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.39,
         "from_high": -48.7,
@@ -254,6 +277,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225248446.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.84,
         "from_high": -59.7,
@@ -272,6 +296,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518447.PDF"
        },
        "first_seen": "2026-01-09",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.29,
         "from_high": -56.7,
@@ -290,6 +320,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501106.PDF"
        },
        "first_seen": "2025-12-15",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.5,
         "from_high": -49.5,
@@ -308,6 +339,24 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-09/1225552961.PDF"
        },
        "first_seen": "2026-04-14",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        },
+        {
+         "h": "大摩",
+         "new": true
+        },
+        {
+         "h": "瑞银",
+         "new": false
+        },
+        {
+         "h": "小摩",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.28,
         "from_high": -55.3,
@@ -326,6 +375,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-08/1225554166.PDF"
        },
        "first_seen": "2026-06-11",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.47,
         "from_high": -49.7,
@@ -344,6 +394,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-19/1225480797.PDF"
        },
        "first_seen": "2025-12-17",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.83,
         "from_high": -61.3,
@@ -362,6 +418,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519542.PDF"
        },
        "first_seen": "2025-11-12",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.69,
         "from_high": -54.1,
@@ -380,6 +437,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225521853.PDF"
        },
        "first_seen": "2026-03-24",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.19,
         "from_high": -46.5,
@@ -398,6 +456,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519146.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.79,
         "from_high": -32.9,
@@ -416,6 +475,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491260.PDF"
        },
        "first_seen": "2026-04-17",
+       "holders": [
+        {
+         "h": "大摩",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.37,
         "from_high": -51.0,
@@ -434,6 +499,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225532717.PDF"
        },
        "first_seen": "2026-04-27",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.55,
         "from_high": -50.4,
@@ -452,6 +518,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-17/1225109448.PDF"
        },
        "first_seen": "2026-04-17",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.04,
         "from_high": -34.2,
@@ -462,6 +529,7 @@
     },
     {
      "name": "丝杠与执行器",
+     "total": 67,
      "items": [
       {
        "code": "300953",
@@ -475,6 +543,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-03/1225078424.PDF"
        },
        "first_seen": "2025-12-24",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.28,
         "from_high": -46.4,
@@ -493,6 +562,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-20/1225315762.PDF"
        },
        "first_seen": "2026-03-18",
+       "holders": [
+        {
+         "h": "瑞银",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.05,
         "from_high": -45.5,
@@ -511,6 +590,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225529862.PDF"
        },
        "first_seen": "2025-12-09",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.45,
         "from_high": -46.1,
@@ -529,6 +609,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-04/1225549407.PDF"
        },
        "first_seen": "2026-06-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.4,
         "from_high": -64.7,
@@ -547,6 +628,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-02-04/1224965418.PDF"
        },
        "first_seen": "2026-02-04",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.3,
         "from_high": -66.9,
@@ -565,6 +647,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-22/1225323355.PDF"
        },
        "first_seen": "2026-05-22",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.93,
         "from_high": -21.0,
@@ -583,6 +666,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-15/1225101273.PDF"
        },
        "first_seen": "2026-04-15",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.93,
         "from_high": -40.6,
@@ -601,6 +685,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519504.PDF"
        },
        "first_seen": "2025-11-08",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.73,
         "from_high": -50.8,
@@ -619,6 +704,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-18/1225570187.PDF"
        },
        "first_seen": "2026-04-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.53,
         "from_high": -42.3,
@@ -637,6 +723,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-14/1225305066.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.34,
         "from_high": -56.8,
@@ -655,6 +742,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225063026.PDF"
        },
        "first_seen": "2026-03-31",
+       "holders": [],
        "tide": {
         "vol_ratio": 3.02,
         "from_high": -61.1,
@@ -673,6 +761,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-06/1225409765.PDF"
        },
        "first_seen": "2026-03-31",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.52,
         "from_high": -43.5,
@@ -691,6 +780,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518186.PDF"
        },
        "first_seen": "2026-08-01",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.21,
         "from_high": -60.0,
@@ -709,6 +799,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498487.PDF"
        },
        "first_seen": "2026-04-21",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.23,
         "from_high": -48.7,
@@ -727,6 +818,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225203790.PDF"
        },
        "first_seen": "2026-04-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.39,
         "from_high": -29.1,
@@ -745,6 +837,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225037234.PDF"
        },
        "first_seen": "2025-12-31",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.55,
         "from_high": -60.5,
@@ -763,6 +856,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-21/1225127026.PDF"
        },
        "first_seen": "2026-04-21",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.11,
         "from_high": -29.9,
@@ -781,6 +875,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2025-12-20/1224889009.PDF"
        },
        "first_seen": "2025-12-09",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.04,
         "from_high": -37.5,
@@ -799,6 +894,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225214708.PDF"
        },
        "first_seen": "2025-11-18",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.23,
         "from_high": -44.5,
@@ -817,6 +913,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-01-30/1224955598.PDF"
        },
        "first_seen": "2025-12-08",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.57,
         "from_high": -16.8,
@@ -835,6 +932,20 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484820.PDF"
        },
        "first_seen": "2025-11-25",
+       "holders": [
+        {
+         "h": "大摩",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "瑞银",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 2.02,
         "from_high": -8.2,
@@ -853,6 +964,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501632.PDF"
        },
        "first_seen": "2026-04-10",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.4,
         "from_high": -39.7,
@@ -871,6 +983,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225521940.PDF"
        },
        "first_seen": "2026-03-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.29,
         "from_high": -32.2,
@@ -889,6 +1002,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225176512.PDF"
        },
        "first_seen": "2026-01-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.5,
         "from_high": -47.5,
@@ -907,6 +1021,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498971.PDF"
        },
        "first_seen": "2026-03-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.42,
         "from_high": -50.5,
@@ -917,6 +1032,7 @@
     },
     {
      "name": "减速器与关节",
+     "total": 73,
      "items": [
       {
        "code": "300953",
@@ -930,6 +1046,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-02-26/1224984997.pdf"
        },
        "first_seen": "2026-02-26",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.28,
         "from_high": -46.4,
@@ -948,6 +1065,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-04/1225549407.PDF"
        },
        "first_seen": "2026-06-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.4,
         "from_high": -64.7,
@@ -966,6 +1084,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225508993.PDF"
        },
        "first_seen": "2025-12-15",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.5,
         "from_high": -49.5,
@@ -984,6 +1103,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-22/1225323353.PDF"
        },
        "first_seen": "2026-05-22",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.93,
         "from_high": -21.0,
@@ -1002,6 +1122,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-06-13/1225369163.PDF"
        },
        "first_seen": "2026-06-13",
+       "holders": [
+        {
+         "h": "瑞银",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.05,
         "from_high": -45.5,
@@ -1020,6 +1150,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225223650.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.69,
         "from_high": -54.1,
@@ -1038,6 +1169,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-06-24/1225384412.PDF"
        },
        "first_seen": "2025-11-24",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.22,
         "from_high": -28.6,
@@ -1056,6 +1188,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225247774.PDF"
        },
        "first_seen": "2026-01-14",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.1,
         "from_high": -49.5,
@@ -1074,6 +1207,20 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-03-21/1225021809.PDF"
        },
        "first_seen": "2025-11-15",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "大摩",
+         "new": true
+        },
+        {
+         "h": "美林",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.12,
         "from_high": -32.7,
@@ -1092,6 +1239,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-13/1225302229.PDF"
        },
        "first_seen": "2026-04-02",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.65,
         "from_high": -36.4,
@@ -1110,6 +1263,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225242568.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.44,
         "from_high": -55.1,
@@ -1128,6 +1282,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-17/1225111397.PDF"
        },
        "first_seen": "2026-04-17",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.24,
         "from_high": -29.3,
@@ -1146,6 +1301,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225162925.PDF"
        },
        "first_seen": "2026-04-24",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.46,
         "from_high": -39.5,
@@ -1164,6 +1320,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-18/1225570187.PDF"
        },
        "first_seen": "2026-04-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.53,
         "from_high": -42.3,
@@ -1182,6 +1339,20 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484820.PDF"
        },
        "first_seen": "2025-11-25",
+       "holders": [
+        {
+         "h": "大摩",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "瑞银",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 2.02,
         "from_high": -8.2,
@@ -1200,6 +1371,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-08/1225552868.PDF"
        },
        "first_seen": "2026-06-02",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.53,
         "from_high": -33.0,
@@ -1218,6 +1395,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484385.PDF"
        },
        "first_seen": "2026-04-21",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.29,
         "from_high": -50.3,
@@ -1236,6 +1419,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-17/1225476609.PDF"
        },
        "first_seen": "2026-04-22",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.96,
         "from_high": -13.3,
@@ -1254,6 +1438,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-18/1225477033.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.29,
         "from_high": -10.0,
@@ -1272,6 +1462,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531592.PDF"
        },
        "first_seen": "2026-02-05",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.14,
         "from_high": -45.4,
@@ -1290,6 +1486,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-16/1225108100.PDF"
        },
        "first_seen": "2026-04-16",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.47,
         "from_high": -39.5,
@@ -1308,6 +1505,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-03-21/1225022565.PDF"
        },
        "first_seen": "2026-03-21",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.53,
         "from_high": -23.4,
@@ -1326,6 +1524,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225500875.PDF"
        },
        "first_seen": "2026-04-21",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.83,
         "from_high": -42.5,
@@ -1344,6 +1543,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225150688.PDF"
        },
        "first_seen": "2026-04-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.18,
         "from_high": -15.8,
@@ -1362,6 +1562,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-01-31/1224958116.PDF"
        },
        "first_seen": "2025-11-27",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.69,
         "from_high": -51.8,
@@ -1372,6 +1573,7 @@
     },
     {
      "name": "电机与传感",
+     "total": 69,
      "items": [
       {
        "code": "003021",
@@ -1385,6 +1587,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225475350.PDF"
        },
        "first_seen": "2026-03-31",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.13,
         "from_high": -32.1,
@@ -1403,6 +1606,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-09/1225414828.PDF"
        },
        "first_seen": "2026-03-13",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.33,
         "from_high": -32.5,
@@ -1421,6 +1625,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-18/1225313506.PDF"
        },
        "first_seen": "2025-12-09",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.45,
         "from_high": -46.1,
@@ -1439,6 +1644,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-06-26/1225392375.PDF"
        },
        "first_seen": "2025-12-15",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.5,
         "from_high": -49.5,
@@ -1457,6 +1663,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505516.PDF"
        },
        "first_seen": "2026-04-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.23,
         "from_high": -22.3,
@@ -1475,6 +1682,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-11/1225468872.PDF"
        },
        "first_seen": "2026-06-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.4,
         "from_high": -64.7,
@@ -1493,6 +1701,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-13/1225470840.PDF"
        },
        "first_seen": "2026-06-09",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.28,
         "from_high": -46.4,
@@ -1511,6 +1720,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-28/1225443913.PDF"
        },
        "first_seen": "2026-01-16",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.31,
         "from_high": -25.6,
@@ -1529,6 +1739,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-22/1225323354.PDF"
        },
        "first_seen": "2026-05-22",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.93,
         "from_high": -21.0,
@@ -1547,6 +1758,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-02-04/1224965418.PDF"
        },
        "first_seen": "2026-02-04",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.3,
         "from_high": -66.9,
@@ -1565,6 +1777,24 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-11/1225467081.PDF"
        },
        "first_seen": "2026-08-11",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        },
+        {
+         "h": "大摩",
+         "new": true
+        },
+        {
+         "h": "瑞银",
+         "new": false
+        },
+        {
+         "h": "小摩",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.28,
         "from_high": -55.3,
@@ -1583,6 +1813,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-02/1225075377.pdf"
        },
        "first_seen": "2026-04-02",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.4,
         "from_high": -32.1,
@@ -1601,6 +1832,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225515769.PDF"
        },
        "first_seen": "2026-01-08",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.65,
         "from_high": -44.9,
@@ -1619,6 +1851,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-06-02/1225341908.PDF"
        },
        "first_seen": "2025-11-24",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.22,
         "from_high": -28.6,
@@ -1637,6 +1870,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-01-31/1224958118.PDF"
        },
        "first_seen": "2025-11-27",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.69,
         "from_high": -51.8,
@@ -1655,6 +1889,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-14/1225471591.PDF"
        },
        "first_seen": "2026-03-27",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.31,
         "from_high": -32.1,
@@ -1673,6 +1908,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225520805.PDF"
        },
        "first_seen": "2026-04-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.56,
         "from_high": -46.3,
@@ -1691,6 +1927,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-18/1225118946.PDF"
        },
        "first_seen": "2026-04-18",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.43,
         "from_high": -45.3,
@@ -1709,6 +1946,20 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484820.PDF"
        },
        "first_seen": "2025-11-25",
+       "holders": [
+        {
+         "h": "大摩",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "瑞银",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 2.02,
         "from_high": -8.2,
@@ -1727,6 +1978,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-29/1225444603.PDF"
        },
        "first_seen": "2025-11-15",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.95,
         "from_high": -46.2,
@@ -1745,6 +1997,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-17/1225567912.PDF"
        },
        "first_seen": "2025-12-04",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.91,
         "from_high": -36.0,
@@ -1763,6 +2016,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225521932.PDF"
        },
        "first_seen": "2026-03-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.44,
         "from_high": -24.4,
@@ -1781,6 +2035,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225203744.PDF"
        },
        "first_seen": "2026-04-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.39,
         "from_high": -29.1,
@@ -1799,6 +2054,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498625.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [
+        {
+         "h": "美林",
+         "new": true
+        },
+        {
+         "h": "巴克莱",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.12,
         "from_high": -75.9,
@@ -1817,52 +2082,18 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-06-26/1225389975.PDF"
        },
        "first_seen": "2026-04-22",
+       "holders": [
+        {
+         "h": "大摩",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.01,
         "from_high": -53.9,
         "limit_ups": 0
        }
       }
-     ]
-    }
-   ],
-   "channels": [
-    {
-     "holder": "高盛",
-     "count": 11,
-     "new": [
-      "三联锻造",
-      "宁波东力",
-      "福立旺",
-      "美湖股份",
-      "金帝股份",
-      "金杨精密"
-     ]
-    },
-    {
-     "holder": "大摩",
-     "count": 5,
-     "new": [
-      "天奇股份",
-      "晶华新材",
-      "金帝股份",
-      "金杨精密",
-      "集智股份"
-     ]
-    },
-    {
-     "holder": "瑞银",
-     "count": 3,
-     "new": [
-      "福立旺"
-     ]
-    },
-    {
-     "holder": "美林",
-     "count": 2,
-     "new": [
-      "*ST九鼎",
-      "金帝股份"
      ]
     }
    ]
@@ -1873,6 +2104,7 @@
    "segments": [
     {
      "name": "光模块与 CPO",
+     "total": 253,
      "items": [
       {
        "code": "002463",
@@ -1886,6 +2118,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-03-25/1225027842.PDF"
        },
        "first_seen": "2025-11-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.43,
         "from_high": -45.7,
@@ -1904,6 +2137,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225238588.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.72,
         "from_high": -66.1,
@@ -1922,6 +2156,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-12/1225561311.PDF"
        },
        "first_seen": "2026-09-12",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.19,
         "from_high": -51.3,
@@ -1940,6 +2180,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225504418.PDF"
        },
        "first_seen": "2026-08-26",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "大摩",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.66,
         "from_high": -28.7,
@@ -1958,6 +2208,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225509195.PDF"
        },
        "first_seen": "2026-04-22",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "瑞银",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.32,
         "from_high": -52.7,
@@ -1976,6 +2236,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506970.PDF"
        },
        "first_seen": "2026-04-18",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.71,
         "from_high": -62.5,
@@ -1994,6 +2255,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-12/1225561558.PDF"
        },
        "first_seen": "2026-04-04",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.91,
         "from_high": -62.8,
@@ -2012,6 +2274,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225496844.PDF"
        },
        "first_seen": "2026-03-31",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.61,
         "from_high": -53.8,
@@ -2030,6 +2293,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-02/1225542795.PDF"
        },
        "first_seen": "2026-08-27",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.84,
         "from_high": -61.7,
@@ -2048,6 +2312,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-16/1225426961.PDF"
        },
        "first_seen": "2026-04-18",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.3,
         "from_high": -56.1,
@@ -2066,6 +2331,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225520473.PDF"
        },
        "first_seen": "2025-11-20",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.69,
         "from_high": -47.1,
@@ -2084,6 +2350,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-12/1225561119.PDF"
        },
        "first_seen": "2026-04-03",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.72,
         "from_high": -51.5,
@@ -2102,6 +2369,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225155315.PDF"
        },
        "first_seen": "2025-11-01",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.13,
         "from_high": -69.6,
@@ -2120,6 +2393,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059371.PDF"
        },
        "first_seen": "2026-03-31",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.86,
         "from_high": -57.3,
@@ -2138,6 +2412,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225231598.PDF"
        },
        "first_seen": "2026-03-11",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.68,
         "from_high": -46.3,
@@ -2156,6 +2431,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501594.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 0.73,
         "from_high": -39.2,
@@ -2174,6 +2455,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225504296.PDF"
        },
        "first_seen": "2026-04-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.05,
         "from_high": -48.1,
@@ -2192,6 +2474,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082704.PDF"
        },
        "first_seen": "2026-04-08",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.93,
         "from_high": -63.6,
@@ -2210,6 +2493,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225043741.PDF"
        },
        "first_seen": "2026-03-28",
+       "holders": [
+        {
+         "h": "瑞银",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 2.69,
         "from_high": -66.7,
@@ -2228,6 +2517,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506255.PDF"
        },
        "first_seen": "2026-08-26",
+       "holders": [
+        {
+         "h": "瑞银",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 2.6,
         "from_high": -39.3,
@@ -2246,6 +2545,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-01/1225538342.PDF"
        },
        "first_seen": "2026-08-20",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.61,
         "from_high": -64.6,
@@ -2264,6 +2564,24 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-03/1225544676.PDF"
        },
        "first_seen": "2026-09-03",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "小摩",
+         "new": true
+        },
+        {
+         "h": "大摩",
+         "new": true
+        },
+        {
+         "h": "巴克莱",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.07,
         "from_high": -44.8,
@@ -2282,6 +2600,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534127.PDF"
        },
        "first_seen": "2026-08-31",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.31,
         "from_high": -36.6,
@@ -2300,6 +2619,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225532717.PDF"
        },
        "first_seen": "2026-08-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.55,
         "from_high": -50.4,
@@ -2318,6 +2638,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225533163.PDF"
        },
        "first_seen": "2026-08-29",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.64,
         "from_high": -50.9,
@@ -2328,6 +2654,7 @@
     },
     {
      "name": "AI 服务器",
+     "total": 314,
      "items": [
       {
        "code": "603186",
@@ -2341,6 +2668,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-06/1225458921.PDF"
        },
        "first_seen": "2026-08-06",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.23,
         "from_high": -46.2,
@@ -2359,6 +2692,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513086.PDF"
        },
        "first_seen": "2026-07-11",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.76,
         "from_high": -57.0,
@@ -2377,6 +2711,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-06/1225411995.PDF"
        },
        "first_seen": "2026-07-06",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.03,
         "from_high": -68.3,
@@ -2395,6 +2730,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225482040.PDF"
        },
        "first_seen": "2026-08-20",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.87,
         "from_high": -36.5,
@@ -2413,6 +2749,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-19/1225572878.PDF"
        },
        "first_seen": "2026-07-14",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.32,
         "from_high": -51.0,
@@ -2431,6 +2768,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-12/1225561558.PDF"
        },
        "first_seen": "2026-08-27",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.91,
         "from_high": -62.8,
@@ -2449,6 +2787,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225489945.PDF"
        },
        "first_seen": "2026-08-22",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.19,
         "from_high": -51.3,
@@ -2467,6 +2811,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225473386.PDF"
        },
        "first_seen": "2026-08-15",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.46,
         "from_high": -34.0,
@@ -2485,6 +2835,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-11/1225466534.PDF"
        },
        "first_seen": "2026-08-11",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.47,
         "from_high": -31.9,
@@ -2503,6 +2854,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225521846.PDF"
        },
        "first_seen": "2026-08-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.33,
         "from_high": -42.2,
@@ -2521,6 +2873,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491587.PDF"
        },
        "first_seen": "2026-07-20",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.47,
         "from_high": -51.8,
@@ -2539,6 +2892,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-11/1225561801.PDF"
        },
        "first_seen": "2026-09-11",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.5,
         "from_high": -63.5,
@@ -2557,6 +2911,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534653.PDF"
        },
        "first_seen": "2026-08-31",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.43,
         "from_high": -54.5,
@@ -2575,6 +2930,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518993.PDF"
        },
        "first_seen": "2026-08-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.48,
         "from_high": -33.3,
@@ -2593,6 +2949,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225511738.PDF"
        },
        "first_seen": "2026-08-27",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.3,
         "from_high": -38.2,
@@ -2611,6 +2968,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225494826.PDF"
        },
        "first_seen": "2026-08-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.65,
         "from_high": -71.7,
@@ -2629,6 +2987,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498332.PDF"
        },
        "first_seen": "2026-08-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.48,
         "from_high": -58.9,
@@ -2647,6 +3006,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490739.PDF"
        },
        "first_seen": "2026-08-22",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.34,
         "from_high": -64.4,
@@ -2665,6 +3025,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-16/1225568552.PDF"
        },
        "first_seen": "2026-07-27",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.92,
         "from_high": -47.8,
@@ -2683,6 +3044,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-17/1225477912.PDF"
        },
        "first_seen": "2026-07-08",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.39,
         "from_high": -65.3,
@@ -2701,6 +3063,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-19/1225572184.PDF"
        },
        "first_seen": "2026-07-03",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.96,
         "from_high": -37.4,
@@ -2719,6 +3082,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-12/1225469067.PDF"
        },
        "first_seen": "2026-08-12",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.43,
         "from_high": -64.6,
@@ -2737,6 +3101,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-18/1225430474.PDF"
        },
        "first_seen": "2026-07-18",
+       "holders": [
+        {
+         "h": "小摩",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.57,
         "from_high": -47.9,
@@ -2755,6 +3125,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225474834.PDF"
        },
        "first_seen": "2026-08-15",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.55,
         "from_high": -55.4,
@@ -2773,6 +3144,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-18/1225570208.PDF"
        },
        "first_seen": "2026-08-20",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.97,
         "from_high": -43.7,
@@ -2783,6 +3155,7 @@
     },
     {
      "name": "液冷",
+     "total": 615,
      "items": [
       {
        "code": "300547",
@@ -2796,6 +3169,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225234862.PDF"
        },
        "first_seen": "2026-04-24",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.54,
         "from_high": -53.6,
@@ -2814,6 +3188,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225526784.PDF"
        },
        "first_seen": "2026-04-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.51,
         "from_high": -63.0,
@@ -2832,6 +3207,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225496600.PDF"
        },
        "first_seen": "2026-06-30",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.06,
         "from_high": -49.7,
@@ -2850,6 +3226,20 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-03/1225543643.PDF"
        },
        "first_seen": "2026-04-28",
+       "holders": [
+        {
+         "h": "大摩",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": false
+        },
+        {
+         "h": "瑞银",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.18,
         "from_high": -52.9,
@@ -2868,6 +3258,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497887.PDF"
        },
        "first_seen": "2026-08-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.45,
         "from_high": -63.0,
@@ -2886,6 +3277,20 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-02/1225407449.PDF"
        },
        "first_seen": "2026-07-02",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        },
+        {
+         "h": "小摩",
+         "new": true
+        },
+        {
+         "h": "巴克莱",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.35,
         "from_high": -29.9,
@@ -2904,6 +3309,28 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225238822.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [
+        {
+         "h": "巴克莱",
+         "new": false
+        },
+        {
+         "h": "大摩",
+         "new": false
+        },
+        {
+         "h": "小摩",
+         "new": false
+        },
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "瑞银",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.08,
         "from_high": -67.2,
@@ -2922,6 +3349,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225230458.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.1,
         "from_high": -37.7,
@@ -2940,6 +3368,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-17/1225568940.PDF"
        },
        "first_seen": "2026-04-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.49,
         "from_high": -55.8,
@@ -2958,6 +3387,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-16/1225568161.PDF"
        },
        "first_seen": "2026-04-27",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.52,
         "from_high": -51.6,
@@ -2976,6 +3406,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225521959.PDF"
        },
        "first_seen": "2026-04-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.26,
         "from_high": -51.4,
@@ -2994,6 +3425,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-19/1225572878.PDF"
        },
        "first_seen": "2026-06-05",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.32,
         "from_high": -51.0,
@@ -3012,6 +3444,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-11/1225418718.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.86,
         "from_high": -61.3,
@@ -3030,6 +3463,20 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-19/1225572250.PDF"
        },
        "first_seen": "2026-07-17",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "大摩",
+         "new": true
+        },
+        {
+         "h": "美林",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.12,
         "from_high": -32.7,
@@ -3048,6 +3495,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-07/1225280499.PDF"
        },
        "first_seen": "2026-04-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.32,
         "from_high": -32.1,
@@ -3066,6 +3514,20 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-06-16/1225371529.PDF"
        },
        "first_seen": "2026-06-16",
+       "holders": [
+        {
+         "h": "瑞银",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "大摩",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.18,
         "from_high": -50.5,
@@ -3084,6 +3546,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522574.PDF"
        },
        "first_seen": "2026-04-27",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.07,
         "from_high": -51.1,
@@ -3102,6 +3565,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531534.PDF"
        },
        "first_seen": "2026-05-20",
+       "holders": [
+        {
+         "h": "瑞银",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.81,
         "from_high": -56.7,
@@ -3120,6 +3593,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506979.PDF"
        },
        "first_seen": "2026-05-12",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.71,
         "from_high": -62.5,
@@ -3138,6 +3612,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-15/1225563566.PDF"
        },
        "first_seen": "2026-05-12",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.15,
         "from_high": -34.0,
@@ -3156,6 +3631,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225206741.PDF"
        },
        "first_seen": "2026-04-28",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        },
+        {
+         "h": "巴克莱",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.48,
         "from_high": -65.8,
@@ -3174,6 +3659,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-11/1225558150.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 3.39,
         "from_high": -60.9,
@@ -3192,6 +3678,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534653.PDF"
        },
        "first_seen": "2026-04-30",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.43,
         "from_high": -54.5,
@@ -3210,6 +3697,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225242686.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "小摩",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.53,
         "from_high": -39.8,
@@ -3228,6 +3725,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-24/1225490915.PDF"
        },
        "first_seen": "2026-06-13",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.37,
         "from_high": -60.4,
@@ -3238,6 +3741,7 @@
     },
     {
      "name": "服务器电源",
+     "total": 95,
      "items": [
       {
        "code": "688711",
@@ -3251,6 +3755,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-06-12/1225366162.PDF"
        },
        "first_seen": "2026-04-30",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.16,
         "from_high": -57.8,
@@ -3269,6 +3774,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534653.PDF"
        },
        "first_seen": "2026-04-30",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.43,
         "from_high": -54.5,
@@ -3287,6 +3793,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225237116.PDF"
        },
        "first_seen": "2026-04-28",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 0.73,
         "from_high": -39.2,
@@ -3305,6 +3817,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225238056.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.76,
         "from_high": -58.8,
@@ -3323,6 +3836,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490739.PDF"
        },
        "first_seen": "2026-08-22",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.34,
         "from_high": -64.4,
@@ -3341,6 +3855,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225525195.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.31,
         "from_high": -55.0,
@@ -3359,6 +3874,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-06-04/1225350533.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        },
+        {
+         "h": "大摩",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.66,
         "from_high": -28.7,
@@ -3377,6 +3902,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225202949.PDF"
        },
        "first_seen": "2026-04-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.12,
         "from_high": -44.5,
@@ -3395,6 +3921,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225496914.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.05,
         "from_high": -46.7,
@@ -3413,6 +3940,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225481240.PDF"
        },
        "first_seen": "2026-04-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.97,
         "from_high": -56.5,
@@ -3431,6 +3959,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-19/1225572367.PDF"
        },
        "first_seen": "2026-09-19",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.98,
         "from_high": -29.5,
@@ -3449,6 +3978,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225183089.PDF"
        },
        "first_seen": "2026-04-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.74,
         "from_high": -42.4,
@@ -3467,6 +3997,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506436.PDF"
        },
        "first_seen": "2026-04-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.17,
         "from_high": -38.2,
@@ -3485,6 +4016,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225495851.PDF"
        },
        "first_seen": "2026-08-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.24,
         "from_high": -56.4,
@@ -3503,6 +4035,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497330.PDF"
        },
        "first_seen": "2026-04-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.28,
         "from_high": -50.9,
@@ -3521,6 +4054,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225527209.PDF"
        },
        "first_seen": "2026-08-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.23,
         "from_high": -67.8,
@@ -3539,6 +4073,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514294.PDF"
        },
        "first_seen": "2026-08-27",
+       "holders": [
+        {
+         "h": "瑞银",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.85,
         "from_high": -49.7,
@@ -3557,6 +4097,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497887.PDF"
        },
        "first_seen": "2026-08-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.45,
         "from_high": -63.0,
@@ -3575,6 +4116,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491743.PDF"
        },
        "first_seen": "2026-08-22",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.09,
         "from_high": -49.7,
@@ -3593,6 +4135,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225482078.PDF"
        },
        "first_seen": "2026-08-20",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.39,
         "from_high": -39.9,
@@ -3611,6 +4154,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225474834.PDF"
        },
        "first_seen": "2026-08-15",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.55,
         "from_high": -55.4,
@@ -3629,6 +4173,20 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-05-30/1225338106.PDF"
        },
        "first_seen": "2026-05-30",
+       "holders": [
+        {
+         "h": "大摩",
+         "new": true
+        },
+        {
+         "h": "瑞银",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 0.76,
         "from_high": -26.7,
@@ -3647,6 +4205,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225209759.PDF"
        },
        "first_seen": "2026-04-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.43,
         "from_high": -72.7,
@@ -3665,6 +4224,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-18/1225477689.PDF"
        },
        "first_seen": "2026-06-18",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.38,
         "from_high": -44.1,
@@ -3683,6 +4243,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-12/1225561820.PDF"
        },
        "first_seen": "2026-05-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.29,
         "from_high": -46.6,
@@ -3693,6 +4254,7 @@
     },
     {
      "name": "高速铜缆",
+     "total": 39,
      "items": [
       {
        "code": "600337",
@@ -3706,6 +4268,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-01-01/1224913531.PDF"
        },
        "first_seen": "2026-01-01",
+       "holders": [],
        "tide": {
         "vol_ratio": 0.45,
         "from_high": -21.3,
@@ -3724,6 +4287,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-22/1225139318.PDF"
        },
        "first_seen": "2026-04-22",
+       "holders": [],
        "tide": {
         "vol_ratio": 2.88,
         "from_high": -66.3,
@@ -3742,6 +4306,16 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225192397.PDF"
        },
        "first_seen": "2026-04-25",
+       "holders": [
+        {
+         "h": "巴克莱",
+         "new": true
+        },
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
        "tide": {
         "vol_ratio": 1.25,
         "from_high": -57.9,
@@ -3760,6 +4334,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225051624.PDF"
        },
        "first_seen": "2026-03-31",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.17,
         "from_high": -40.6,
@@ -3778,6 +4358,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225493632.PDF"
        },
        "first_seen": "2026-04-22",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.07,
         "from_high": -63.8,
@@ -3796,6 +4377,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-21/1225128708.PDF"
        },
        "first_seen": "2026-04-21",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.45,
         "from_high": -67.0,
@@ -3814,6 +4396,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225473144.PDF"
        },
        "first_seen": "2026-04-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.2,
         "from_high": -50.9,
@@ -3832,6 +4415,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512365.PDF"
        },
        "first_seen": "2026-04-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.54,
         "from_high": -35.7,
@@ -3850,6 +4434,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225153863.PDF"
        },
        "first_seen": "2025-12-06",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.09,
         "from_high": -42.7,
@@ -3868,6 +4453,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-09-03/1225546893.PDF"
        },
        "first_seen": "2026-09-03",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.04,
         "from_high": -34.2,
@@ -3886,6 +4472,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233182.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.28,
         "from_high": -60.5,
@@ -3904,6 +4491,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-16/1225106776.PDF"
        },
        "first_seen": "2026-04-16",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.15,
         "from_high": -43.4,
@@ -3922,6 +4510,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225532540.PDF"
        },
        "first_seen": "2026-01-01",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.55,
         "from_high": -60.3,
@@ -3940,6 +4529,12 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-19/1225480797.PDF"
        },
        "first_seen": "2025-12-17",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": false
+        }
+       ],
        "tide": {
         "vol_ratio": 1.83,
         "from_high": -61.3,
@@ -3958,6 +4553,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501380.PDF"
        },
        "first_seen": "2026-04-14",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.34,
         "from_high": -52.1,
@@ -3976,6 +4572,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225527831.PDF"
        },
        "first_seen": "2026-04-11",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.84,
         "from_high": -54.8,
@@ -3994,6 +4591,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225504984.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.15,
         "from_high": -39.9,
@@ -4012,6 +4610,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-24/1225488494.PDF"
        },
        "first_seen": "2026-04-23",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.38,
         "from_high": -70.7,
@@ -4030,6 +4629,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-07-10/1225419472.PDF"
        },
        "first_seen": "2026-07-10",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.43,
         "from_high": -58.1,
@@ -4048,6 +4648,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225493215.PDF"
        },
        "first_seen": "2026-03-28",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.72,
         "from_high": -54.7,
@@ -4066,6 +4667,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225539819.PDF"
        },
        "first_seen": "2026-04-29",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.35,
         "from_high": -67.2,
@@ -4084,6 +4686,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225495716.PDF"
        },
        "first_seen": "2025-12-17",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.53,
         "from_high": -56.9,
@@ -4102,6 +4705,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-05/1225457964.PDF"
        },
        "first_seen": "2026-03-31",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.87,
         "from_high": -76.1,
@@ -4120,6 +4724,7 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518230.PDF"
        },
        "first_seen": "2026-04-25",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.66,
         "from_high": -64.5,
@@ -4138,76 +4743,13 @@
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225205242.PDF"
        },
        "first_seen": "2025-12-03",
+       "holders": [],
        "tide": {
         "vol_ratio": 1.38,
         "from_high": -69.7,
         "limit_ups": 0
        }
       }
-     ]
-    }
-   ],
-   "channels": [
-    {
-     "holder": "高盛",
-     "count": 23,
-     "new": [
-      "*ST高斯",
-      "优刻得",
-      "卡倍亿",
-      "平治信息",
-      "本川智能",
-      "欧莱新材",
-      "沃格光电",
-      "满坤科技",
-      "特发信息",
-      "电科思仪",
-      "金富科技",
-      "金帝股份",
-      "金禄电子",
-      "鹏翎股份"
-     ]
-    },
-    {
-     "holder": "瑞银",
-     "count": 9,
-     "new": [
-      "*ST高斯",
-      "乾照光电",
-      "优刻得",
-      "明阳电路",
-      "欧莱新材"
-     ]
-    },
-    {
-     "holder": "大摩",
-     "count": 7,
-     "new": [
-      "*ST高斯",
-      "优刻得",
-      "新朋股份",
-      "电科思仪",
-      "金帝股份"
-     ]
-    },
-    {
-     "holder": "小摩",
-     "count": 5,
-     "new": [
-      "智微智能",
-      "电科思仪",
-      "蠡湖股份",
-      "鹏翎股份"
-     ]
-    },
-    {
-     "holder": "巴克莱",
-     "count": 5,
-     "new": [
-      "卡倍亿",
-      "同有科技",
-      "电科思仪",
-      "蠡湖股份"
      ]
     }
    ]
