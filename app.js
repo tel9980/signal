@@ -315,7 +315,12 @@ function drawPool() {
     $('pool-upd').textContent = '行情 ' + (P.price_date || P.updated);
     // 报告期只列季报；回购公告附带的快照日期很多，合成一个"季报后的快照"
     var quarters = Array.from(new Set(R.filter(function (r) { return r.kind !== '快照'; }).map(function (r) { return r.q; }))).sort().reverse();
-    if (!POOL.q) POOL.q = quarters[0];   // 默认最新一期；切年份时在下面重选
+    // 季后快照只认最近一个季末之后的（10 月看 9-30 之后，1 月看 12-31 之后），更早的已被季报取代
+    var bj = bjToday(), qm = Math.floor(bj.getMonth() / 3) * 3;
+    var qEnd = qm === 0 ? (bj.getFullYear() - 1) + '-12-31' : bj.getFullYear() + ['', '', '', '-03-31', '', '', '-06-30', '', '', '-09-30'][qm];
+    // 默认看最新的季后快照；季初还没有快照时看最新一期季报
+    var defaultQ = R.some(function (r) { return r.kind === '快照' && r.q > qEnd; }) ? 'snap' : quarters[0];
+    if (!POOL.q) POOL.q = defaultQ;
     var deadline = { '03-31': '04-30', '06-30': '08-31', '09-30': '10-31', '12-31': '04-30' };
     var dueDate = function (q) {                  // 披露截止日；年报在次年
       var md = q.slice(5); return (+q.slice(0, 4) + (md === '12-31' ? 1 : 0)) + '-' + deadline[md];
@@ -327,7 +332,7 @@ function drawPool() {
     if (POOL.q !== 'snap' && quarters.indexOf(POOL.q) < 0) POOL.q = quarters[0];
     var hist = quarters.slice(1), inHist = hist.indexOf(POOL.q) >= 0;
     if (inHist) POOL.histOpen = true;                      // 正在看往期时保持展开
-    btnSet('pool-period', 'cell-btn', [{ v: quarters[0], label: qText(quarters[0]) }, { v: 'snap', label: '季后快照' }],
+    btnSet('pool-period', 'cell-btn', [{ v: 'snap', label: '季后快照' }, { v: quarters[0], label: qText(quarters[0]) }],
       POOL.q, function (v) { POOL.q = v; }, poolRedraw);
     var tg = $('pool-hist-toggle');
     tg.style.display = hist.length ? '' : 'none';
@@ -335,9 +340,6 @@ function drawPool() {
     tg.onclick = function () { POOL.histOpen = !POOL.histOpen; drawPool(); };
     $('pool-hist').style.display = POOL.histOpen && hist.length ? '' : 'none';
     btnSet('pool-hist', 'cell-btn', hist.map(function (q) { return { v: q, label: qText(q) }; }), POOL.q, function (v) { POOL.q = v; }, poolRedraw);
-    // 季后快照只认最近一个季末之后的（10 月看 9-30 之后，1 月看 12-31 之后），更早的已被季报取代
-    var bj = bjToday(), qm = Math.floor(bj.getMonth() / 3) * 3;
-    var qEnd = qm === 0 ? (bj.getFullYear() - 1) + '-12-31' : bj.getFullYear() + ['', '', '', '-03-31', '', '', '-06-30', '', '', '-09-30'][qm];
     $('pool-q-hint').innerHTML = POOL.q === 'snap' ? qEnd.slice(5) + ' 之后 · 回购公告附带'
       : (disclosing(POOL.q) ? '<span class="dot-amber"></span>披露中 · ' + dueDate(POOL.q).slice(5) + ' 截止' : '已披露完毕');
     var inView;                                    // 当前视图要用哪些原始记录
@@ -358,7 +360,7 @@ function drawPool() {
     sortSelect('pool-sort', Object.keys(SORTS), SORT_TXT, POOL.sort, function (v) { POOL.sort = v; }, poolRedraw);
     var chip = function (g, on, html) { return '<button type="button" class="fchip' + (on ? ' on' : '') + '" data-g="' + g + '">' + html + DOWN + '</button>'; };
     $('pool-chips').innerHTML =
-      chip('period', POOL.q !== quarters[0], (POOL.q !== 'snap' && disclosing(POOL.q) ? '<span class="dot-amber"></span>' : '') + esc(POOL.q === 'snap' ? '季后快照' : qText(POOL.q))) +
+      chip('period', POOL.q !== defaultQ, (POOL.q !== 'snap' && disclosing(POOL.q) ? '<span class="dot-amber"></span>' : '') + esc(POOL.q === 'snap' ? '季后快照' : qText(POOL.q))) +
       chip('holder', POOL.holder !== '全部', POOL.holder === '全部' ? '全部通道' : esc(POOL.holder) + ' <span class="cnt">' + hc[POOL.holder] + '</span>') +
       chip('band', POOL.band !== '全部', esc(BAND_TXT[POOL.band]));
     $('pool-chips').querySelectorAll('.fchip').forEach(function (b) { b.onclick = function () { openSheet('pool-filter', b.getAttribute('data-g')); }; });
