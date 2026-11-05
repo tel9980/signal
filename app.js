@@ -948,4 +948,36 @@ function pwaHowto() {
   $('pwa-howto').innerHTML = h;
 }
 
+// ---------- 刷新 ----------
+// 数据一次打开只取一份，挂在后台会一直是旧的。先确认连得上再重载，断网时留在当前页；筛选条件存到这次会话里
+var KEEP = { POOL: POOL, SEATS: SEATS, RS: RS, TH: TH, LG: LG, TAG: TAG };
+function saveFilters() {
+  try { sessionStorage.setItem('signal-filters', JSON.stringify(KEEP)); } catch (e) {}
+}
+function restoreFilters() {
+  try {
+    var v = JSON.parse(sessionStorage.getItem('signal-filters') || 'null');
+    sessionStorage.removeItem('signal-filters');
+    if (v) Object.keys(KEEP).forEach(function (k) { Object.assign(KEEP[k], v[k]); });
+  } catch (e) {}
+}
+function refreshPage(manual) {
+  var b = $('refresh-btn');
+  b.classList.add('spin');
+  fetch('data/status.json', { cache: 'no-store' }).then(function (r) {
+    if (!r.ok) throw new Error(r.status);
+    saveFilters();
+    location.reload();
+  }).catch(function () {
+    b.classList.remove('spin');
+    if (manual) alert('网络不通，稍后再试');
+  });
+}
+var hiddenAt = 0;
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) { hiddenAt = Date.now(); return; }
+  if (hiddenAt && Date.now() - hiddenAt > 600000) refreshPage(false);   // 离开超过 10 分钟再回来，自动取新数据
+  hiddenAt = 0;
+});
+restoreFilters();
 route();

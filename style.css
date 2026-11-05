@@ -1483,3 +1483,6 @@ details.seat-card summary::-webkit-details-marker{display:none}
 .p-theme .ch-tag { display: inline-flex; align-items: center; gap: 3px; margin: 2px 4px 0 0; padding: 1px 7px; border-radius: var(--radius-pill); background: var(--panel-subtle); border: 1px solid var(--line); font-size: .72rem; color: var(--ink-2); white-space: nowrap; }
 .p-theme .ch-tag.new { border-color: var(--accent-border); color: var(--accent); }
 .p-theme .result-sort-bar { min-height: 44px; }   /* 没有排序下拉，补齐高度，电脑上左右两栏从同一条线开始 */
+
+#refresh-btn.spin svg { animation: refresh-spin .8s linear infinite; }
+@keyframes refresh-spin { to { transform: rotate(360deg); } }
