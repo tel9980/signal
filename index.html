@@ -14,7 +14,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Signal">
   <title>Signal · A股研究线索</title>
-  <link rel="stylesheet" href="style.css?v=20261104c">
+  <link rel="stylesheet" href="style.css?v=20261105c">
 </head>
 <body data-state="normal">
 
@@ -392,8 +392,6 @@
           <div class="filter-group" data-g="period">
             <div class="group-head"><span class="group-label">报告期</span><span class="group-hint num" id="pool-q-hint"></span></div>
             <div class="cells" id="pool-period" style="--n:2" role="radiogroup" aria-label="报告期"></div>
-            <button type="button" class="more-periods" id="pool-hist-toggle"></button>
-            <div class="cells" id="pool-hist" style="--n:2; display:none;" role="radiogroup" aria-label="往期报告"></div>
           </div>
           <div class="filter-group" data-g="holder">
             <div class="group-head"><span class="group-label">外资通道</span><span class="group-hint">数字＝记录数</span></div>
@@ -402,6 +400,10 @@
           <div class="filter-group" data-g="band">
             <div class="group-head"><span class="group-label">现价较估算成本</span><span class="group-hint">绿线＝低于成本</span></div>
             <div class="cells" id="pool-band" style="--n:3" role="radiogroup" aria-label="现价较估算成本"></div>
+          </div>
+          <div class="filter-group" data-g="more" id="pool-more-group">
+            <button type="button" class="more-periods" id="pool-hist-toggle"></button>
+            <div class="cells" id="pool-hist" style="--n:2; display:none;" role="radiogroup" aria-label="往期报告"></div>
           </div>
         </section>
         </div>
@@ -615,7 +617,7 @@
   <!-- 底部轻量 Toast 提示 -->
   <div id="pixel-toast" class="pixel-toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js?v=20261105a"></script>
+  <script src="app.js?v=20261105b"></script>
   <!-- 访问统计（11-04 用户批准）：Cloudflare Web Analytics，只数人次，不放 cookie、不认人 -->
   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "39a53ce8271447cdbaf4d97a99e20e66"}'></script>
 </body>

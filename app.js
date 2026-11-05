@@ -271,7 +271,7 @@ function btnSet(id, kind, items, cur, pick, redraw) {
   $(id).style.setProperty('--i', ai);          // 手机分段条的滑块位置
 }
 // 手机：筛选和排序从底部弹出，一次只显示一组；电脑上这些都不显示（持仓池、题材、各页排序共用，11-04 起）
-var SHEET_TITLE = { period: '报告期', holder: '外资通道', band: '现价较估算成本', theme: '题材', seg: '环节', sort: '排序' };
+var SHEET_TITLE = { period: '报告期', holder: '外资通道', band: '现价较估算成本', theme: '题材', seg: '环节', sort: '排序', more: '往期报告' };
 var SHEET = null;
 function openSheet(id, g) {
   var f = $(id); SHEET = f;
@@ -334,6 +334,7 @@ function drawPool() {
     if (inHist) POOL.histOpen = true;                      // 正在看往期时保持展开
     btnSet('pool-period', 'cell-btn', [{ v: 'snap', label: '季后快照' }, { v: quarters[0], label: qText(quarters[0]) }],
       POOL.q, function (v) { POOL.q = v; }, poolRedraw);
+    $('pool-more-group').style.display = hist.length ? '' : 'none';
     var tg = $('pool-hist-toggle');
     tg.style.display = hist.length ? '' : 'none';
     tg.textContent = '往期报告（' + hist.length + '）' + (POOL.histOpen ? ' ▴' : ' ▾');
@@ -359,11 +360,20 @@ function drawPool() {
       POOL.band, function (v) { POOL.band = v; }, poolRedraw);
     sortSelect('pool-sort', Object.keys(SORTS), SORT_TXT, POOL.sort, function (v) { POOL.sort = v; }, poolRedraw);
     var chip = function (g, on, html) { return '<button type="button" class="fchip' + (on ? ' on' : '') + '" data-g="' + g + '">' + html + DOWN + '</button>'; };
+    var direct = function (v, html) { return '<button type="button" class="fchip fdirect' + (POOL.q === v ? ' on' : '') + '" data-q="' + v + '">' + html + '</button>'; };
+    // 手机：季后快照、最新一期直接点；往期收进最后的“更多”
     $('pool-chips').innerHTML =
-      chip('period', POOL.q !== defaultQ, (POOL.q !== 'snap' && disclosing(POOL.q) ? '<span class="dot-amber"></span>' : '') + esc(POOL.q === 'snap' ? '季后快照' : qText(POOL.q))) +
+      direct('snap', '季后快照') +
+      direct(quarters[0], (disclosing(quarters[0]) ? '<span class="dot-amber"></span>' : '') + esc(qText(quarters[0]))) +
       chip('holder', POOL.holder !== '全部', POOL.holder === '全部' ? '全部通道' : esc(POOL.holder) + ' <span class="cnt">' + hc[POOL.holder] + '</span>') +
-      chip('band', POOL.band !== '全部', esc(BAND_TXT[POOL.band]));
-    $('pool-chips').querySelectorAll('.fchip').forEach(function (b) { b.onclick = function () { openSheet('pool-filter', b.getAttribute('data-g')); }; });
+      chip('band', POOL.band !== '全部', esc(BAND_TXT[POOL.band])) +
+      (hist.length ? chip('more', inHist, inHist ? esc(qText(POOL.q)) : '更多') : '');
+    $('pool-chips').querySelectorAll('.fchip').forEach(function (b) {
+      b.onclick = function () {
+        var q = b.getAttribute('data-q');
+        if (q) { POOL.q = q; poolRedraw(); } else openSheet('pool-filter', b.getAttribute('data-g'));
+      };
+    });
 
     var g = {};
     R.forEach(function (r) {

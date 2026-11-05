@@ -1410,7 +1410,13 @@ details.seat-card summary::-webkit-details-marker{display:none}
   .filter-card.sheet[data-show] .filter-group { display: none; }
   .filter-card.sheet[data-show="period"] [data-g="period"], .filter-card.sheet[data-show="holder"] [data-g="holder"],
   .filter-card.sheet[data-show="band"] [data-g="band"], .filter-card.sheet[data-show="theme"] [data-g="theme"],
-  .filter-card.sheet[data-show="seg"] [data-g="seg"], .filter-card.sheet[data-show="sort"] [data-g="sort"] { display: flex; }
+  .filter-card.sheet[data-show="seg"] [data-g="seg"], .filter-card.sheet[data-show="sort"] [data-g="sort"],
+  .filter-card.sheet[data-show="more"] [data-g="more"] { display: flex; }
+  #pool-chips { flex-wrap: wrap; overflow: visible; }
+  #pool-chips .fchip { flex: 1 1 auto; min-width: 0; justify-content: center; white-space: nowrap; }
+  #pool-chips .fdirect { flex: 1 1 calc(50% - 3px); }
+  #pool-hist-toggle { display: none; }
+  #pool-hist { display: grid !important; }
   .filter-card.sheet .group-label { display: none; }
   /* 排序：手机上不用系统下拉，换成和筛选一样的按钮＋底部弹出（11-04 用户提） */
   .sort-select-wrap { display: none; }
