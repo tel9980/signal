@@ -1413,8 +1413,10 @@ details.seat-card summary::-webkit-details-marker{display:none}
   .filter-card.sheet[data-show="seg"] [data-g="seg"], .filter-card.sheet[data-show="sort"] [data-g="sort"],
   .filter-card.sheet[data-show="more"] [data-g="more"] { display: flex; }
   #pool-chips { flex-wrap: wrap; overflow: visible; }
-  #pool-chips .fchip { flex: 1 1 auto; min-width: 0; justify-content: center; white-space: nowrap; }
-  #pool-chips .fdirect { flex: 1 1 calc(50% - 3px); }
+  #pool-chips { gap: 4px; }
+  #pool-chips .fchip { flex: 1 1 auto; min-width: 0; justify-content: center; white-space: nowrap; padding: 0 7px; gap: 3px; }
+  #pool-chips .fmore { flex: 0 0 100%; justify-content: flex-end; min-height: 32px; padding: 0 2px; border: 0; background: none; font-size: .8rem; font-weight: 400; color: var(--ink-3); }
+  #pool-chips .fmore.on { color: var(--accent); }
   #pool-hist-toggle { display: none; }
   #pool-hist { display: grid !important; }
   .filter-card.sheet .group-label { display: none; }

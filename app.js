@@ -364,10 +364,10 @@ function drawPool() {
     // 手机：季后快照、最新一期直接点；往期收进最后的“更多”
     $('pool-chips').innerHTML =
       direct('snap', '季后快照') +
-      direct(quarters[0], (disclosing(quarters[0]) ? '<span class="dot-amber"></span>' : '') + esc(qText(quarters[0]))) +
+      direct(quarters[0], (disclosing(quarters[0]) ? '<span class="dot-amber"></span>' : '') + esc(QNAME[quarters[0].slice(5)])) +
       chip('holder', POOL.holder !== '全部', POOL.holder === '全部' ? '全部通道' : esc(POOL.holder) + ' <span class="cnt">' + hc[POOL.holder] + '</span>') +
       chip('band', POOL.band !== '全部', esc(BAND_TXT[POOL.band])) +
-      (hist.length ? chip('more', inHist, inHist ? esc(qText(POOL.q)) : '更多') : '');
+      (hist.length ? chip('more', inHist, inHist ? esc(qText(POOL.q)) : '更多').replace('class="fchip', 'class="fchip fmore') : '');
     $('pool-chips').querySelectorAll('.fchip').forEach(function (b) {
       b.onclick = function () {
         var q = b.getAttribute('data-q');
