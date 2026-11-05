@@ -275,7 +275,7 @@
      "score": 2
     },
     {
-     "text": "龙虎榜 2026-11-04：2家机构买入，成功率20.86%",
+     "text": "龙虎榜 2026-11-05：3家机构买入，成功率25.91%",
      "score": 1
     },
     {
@@ -881,6 +881,37 @@
   },
   {
    "rank": 29,
+   "code": "000603",
+   "name": "盛达资源",
+   "price": 26.05,
+   "chg": 10.01,
+   "score": 6,
+   "first_date": "2026-11-05",
+   "is_new": true,
+   "reasons": [
+    {
+     "text": "现价比 美林 的估算成本低 15.9%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    },
+    {
+     "text": "近 5 个交易日涨停，最高 2 连板",
+     "score": 3
+    },
+    {
+     "text": "龙虎榜 2026-11-05：2家机构买入，成功率20.61%",
+     "score": 1
+    }
+   ],
+   "tide": {
+    "vol_ratio": 2.16,
+    "from_high": -64.5,
+    "limit_ups": 2
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 30,
    "code": "002696",
    "name": "百洋股份",
    "price": 10.93,
@@ -905,37 +936,6 @@
    "tide": {
     "vol_ratio": 1.26,
     "from_high": -15.5,
-    "limit_ups": 1
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 30,
-   "code": "301218",
-   "name": "华是科技",
-   "price": 92.11,
-   "chg": 5.0,
-   "score": 6,
-   "first_date": "2026-11-02",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 2 家外资新进：大摩、瑞银",
-     "score": 3
-    },
-    {
-     "text": "近 5 个交易日涨停，首板",
-     "score": 2
-    },
-    {
-     "text": "龙虎榜 2026-11-02：4家机构买入，成功率33.63%",
-     "score": 1
-    }
-   ],
-   "tide": {
-    "vol_ratio": 1.15,
-    "from_high": -3.5,
     "limit_ups": 1
    },
    "report": null,
