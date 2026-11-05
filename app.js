@@ -315,11 +315,15 @@ function drawPool() {
     $('pool-upd').textContent = '行情 ' + (P.price_date || P.updated);
     // 报告期只列季报；回购公告附带的快照日期很多，合成一个"季报后的快照"
     var quarters = Array.from(new Set(R.filter(function (r) { return r.kind !== '快照'; }).map(function (r) { return r.q; }))).sort().reverse();
+    // 按钮放“最新一期”：新一期记录数到上一期的十分之一才换上来，没到之前排在“更多”第一个
+    var qCnt = {};
+    R.forEach(function (r) { if (r.kind !== '快照') qCnt[r.q] = (qCnt[r.q] || 0) + 1; });
+    var latest = quarters.filter(function (q, i) { var prev = quarters[i + 1]; return !prev || qCnt[q] >= qCnt[prev] * 0.1; })[0];
     // 季后快照只认最近一个季末之后的（10 月看 9-30 之后，1 月看 12-31 之后），更早的已被季报取代
     var bj = bjToday(), qm = Math.floor(bj.getMonth() / 3) * 3;
     var qEnd = qm === 0 ? (bj.getFullYear() - 1) + '-12-31' : bj.getFullYear() + ['', '', '', '-03-31', '', '', '-06-30', '', '', '-09-30'][qm];
     // 默认看最新的季后快照；季初还没有快照时看最新一期季报
-    var defaultQ = R.some(function (r) { return r.kind === '快照' && r.q > qEnd; }) ? 'snap' : quarters[0];
+    var defaultQ = R.some(function (r) { return r.kind === '快照' && r.q > qEnd; }) ? 'snap' : latest;
     if (!POOL.q) POOL.q = defaultQ;
     var deadline = { '03-31': '04-30', '06-30': '08-31', '09-30': '10-31', '12-31': '04-30' };
     var dueDate = function (q) {                  // 披露截止日；年报在次年
@@ -329,10 +333,10 @@ function drawPool() {
     var QNAME = { '03-31': '一季报', '06-30': '半年报', '09-30': '三季报', '12-31': '年报' };   // 正式叫法
     // 报告期：常用的摆出来（最新一期＋季后快照），往期收在"往期报告"里，点开才显示
     var qText = function (q) { return q.slice(0, 4) + ' ' + QNAME[q.slice(5)]; };
-    if (POOL.q !== 'snap' && quarters.indexOf(POOL.q) < 0) POOL.q = quarters[0];
-    var hist = quarters.slice(1), inHist = hist.indexOf(POOL.q) >= 0;
+    if (POOL.q !== 'snap' && quarters.indexOf(POOL.q) < 0) POOL.q = latest;
+    var hist = quarters.filter(function (q) { return q !== latest; }), inHist = hist.indexOf(POOL.q) >= 0;
     if (inHist) POOL.histOpen = true;                      // 正在看往期时保持展开
-    btnSet('pool-period', 'cell-btn', [{ v: 'snap', label: '季后快照' }, { v: quarters[0], label: qText(quarters[0]) }],
+    btnSet('pool-period', 'cell-btn', [{ v: 'snap', label: '季后快照' }, { v: latest, label: qText(latest) }],
       POOL.q, function (v) { POOL.q = v; }, poolRedraw);
     $('pool-more-group').style.display = hist.length ? '' : 'none';
     var tg = $('pool-hist-toggle');
@@ -364,7 +368,7 @@ function drawPool() {
     // 手机：季后快照、最新一期直接点；往期收进最后的“更多”
     $('pool-chips').innerHTML =
       direct('snap', '季后快照') +
-      direct(quarters[0], (disclosing(quarters[0]) ? '<span class="dot-amber"></span>' : '') + esc(QNAME[quarters[0].slice(5)])) +
+      direct(latest, (disclosing(latest) ? '<span class="dot-amber"></span>' : '') + esc(QNAME[latest.slice(5)])) +
       chip('holder', POOL.holder !== '全部', POOL.holder === '全部' ? '全部通道' : esc(POOL.holder) + ' <span class="cnt">' + hc[POOL.holder] + '</span>') +
       chip('band', POOL.band !== '全部', esc(BAND_TXT[POOL.band])) +
       (hist.length ? chip('more', inHist, inHist ? esc(qText(POOL.q)) : '更多').replace('class="fchip', 'class="fchip fmore') : '');
