@@ -49,6 +49,41 @@
  "items": [
   {
    "rank": 1,
+   "code": "002388",
+   "name": "新亚制程",
+   "price": 6.67,
+   "chg": 10.07,
+   "score": 8,
+   "first_date": "2026-11-04",
+   "is_new": false,
+   "reasons": [
+    {
+     "text": "2026-09-30 同季 2 家外资新进：大摩、高盛",
+     "score": 3
+    },
+    {
+     "text": "重组在途，近 30 天审核无推进",
+     "score": 1
+    },
+    {
+     "text": "近 5 个交易日涨停，最高 3 连板",
+     "score": 3
+    },
+    {
+     "text": "龙虎榜 2026-11-06：4家机构买入，成功率32.97%",
+     "score": 1
+    }
+   ],
+   "tide": {
+    "vol_ratio": 1.44,
+    "from_high": -33.4,
+    "limit_ups": 3
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 2,
    "code": "300721",
    "name": "怡达股份",
    "price": 15.69,
@@ -79,14 +114,14 @@
    "verdict": null
   },
   {
-   "rank": 2,
+   "rank": 3,
    "code": "603618",
    "name": "杭电股份",
    "price": 23.17,
    "chg": -2.03,
    "score": 8,
    "first_date": "2026-11-06",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 2 家外资新进：小摩、瑞银",
@@ -110,7 +145,7 @@
    "verdict": null
   },
   {
-   "rank": 3,
+   "rank": 4,
    "code": "600783",
    "name": "鲁信创投",
    "price": 13.03,
@@ -141,7 +176,7 @@
    "verdict": null
   },
   {
-   "rank": 4,
+   "rank": 5,
    "code": "000017",
    "name": "深中华A",
    "price": 6.33,
@@ -172,7 +207,7 @@
    "verdict": null
   },
   {
-   "rank": 5,
+   "rank": 6,
    "code": "300243",
    "name": "瑞丰高材",
    "price": 14.21,
@@ -203,7 +238,7 @@
    "verdict": null
   },
   {
-   "rank": 6,
+   "rank": 7,
    "code": "301082",
    "name": "久盛电气",
    "price": 8.64,
@@ -234,7 +269,7 @@
    "verdict": null
   },
   {
-   "rank": 7,
+   "rank": 8,
    "code": "002172",
    "name": "澳洋健康",
    "price": 5.62,
@@ -265,7 +300,7 @@
    "verdict": null
   },
   {
-   "rank": 8,
+   "rank": 9,
    "code": "000505",
    "name": "京粮控股",
    "price": 5.71,
@@ -292,7 +327,7 @@
    "verdict": null
   },
   {
-   "rank": 9,
+   "rank": 10,
    "code": "300404",
    "name": "博济医药",
    "price": 11.48,
@@ -319,7 +354,7 @@
    "verdict": null
   },
   {
-   "rank": 10,
+   "rank": 11,
    "code": "600371",
    "name": "万向德农",
    "price": 12.39,
@@ -346,7 +381,7 @@
    "verdict": null
   },
   {
-   "rank": 11,
+   "rank": 12,
    "code": "301583",
    "name": "托伦斯",
    "price": 101.4,
@@ -385,7 +420,7 @@
    "verdict": null
   },
   {
-   "rank": 12,
+   "rank": 13,
    "code": "002674",
    "name": "兴业科技",
    "price": 18.2,
@@ -416,7 +451,7 @@
    "verdict": null
   },
   {
-   "rank": 13,
+   "rank": 14,
    "code": "001216",
    "name": "华瓷股份",
    "price": 16.65,
@@ -447,7 +482,7 @@
    "verdict": null
   },
   {
-   "rank": 14,
+   "rank": 15,
    "code": "002669",
    "name": "康达新材",
    "price": 11.09,
@@ -478,7 +513,7 @@
    "verdict": null
   },
   {
-   "rank": 15,
+   "rank": 16,
    "code": "000506",
    "name": "招金黄金",
    "price": 13.97,
@@ -509,7 +544,7 @@
    "verdict": null
   },
   {
-   "rank": 16,
+   "rank": 17,
    "code": "688655",
    "name": "迅捷兴",
    "price": 39.46,
@@ -540,14 +575,14 @@
    "verdict": null
   },
   {
-   "rank": 17,
+   "rank": 18,
    "code": "000889",
    "name": "中嘉博创",
    "price": 3.19,
    "chg": -2.45,
    "score": 7,
    "first_date": "2026-11-06",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 2 家外资新进：大摩、小摩",
@@ -571,7 +606,7 @@
    "verdict": null
   },
   {
-   "rank": 18,
+   "rank": 19,
    "code": "300333",
    "name": "兆日科技",
    "price": 9.57,
@@ -602,7 +637,7 @@
    "verdict": null
   },
   {
-   "rank": 19,
+   "rank": 20,
    "code": "002827",
    "name": "高争民爆",
    "price": 60.99,
@@ -627,37 +662,6 @@
    "tide": {
     "vol_ratio": 1.63,
     "from_high": -23.7,
-    "limit_ups": 3
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 20,
-   "code": "002388",
-   "name": "新亚制程",
-   "price": 6.67,
-   "chg": 10.07,
-   "score": 7,
-   "first_date": "2026-11-04",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 2 家外资新进：大摩、高盛",
-     "score": 3
-    },
-    {
-     "text": "重组在途，近 30 天审核无推进",
-     "score": 1
-    },
-    {
-     "text": "近 5 个交易日涨停，最高 3 连板",
-     "score": 3
-    }
-   ],
-   "tide": {
-    "vol_ratio": 1.44,
-    "from_high": -33.4,
     "limit_ups": 3
    },
    "report": null,
@@ -756,7 +760,7 @@
    "chg": 1.16,
    "score": 7,
    "first_date": "2026-11-06",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 4 家外资新进：大摩、小摩、巴克莱、瑞银",
