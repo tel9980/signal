@@ -202,6 +202,7 @@
   }
 
   function renderAll(q) {
+    if (!SIG || !SIG.stocks) { $('tablewrap').innerHTML = '<div class="empty">行情明细（signals.json）暂不可用，异动榜其余标签页仍可查看。</div>'; return; }
     var arr = Object.keys(SIG.stocks).map(function (code) {
       var s = SIG.stocks[code];
       return { code: code, name: s.n, c: s.c, p: s.p, d20: s.d20, hi: s.hi, vr: s.vr, to: s.to, mn: s.mn };
