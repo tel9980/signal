@@ -1,0 +1,100 @@
+name: 同步上游数据
+
+# signal 站点除了行情层（px / indices，由 signal-data 管线覆盖）之外，
+# 还有 30 多个数据文件来自上游 zentaox/signal（机构持仓、龙虎榜、标签、体检等）。
+# 本工作流每天把上游 data/ 里"有变化"的文件同步到本 fork，避免分叉后数据永久落后。
+
+on:
+  schedule:
+    - cron: '15 21 * * *'   # 每天 UTC 21:15 = 北京时间 05:15（上游通常在凌晨更新）
+  workflow_dispatch:        # 也可以在 Actions 页面手动点一下
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-upstream
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出本仓库
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 抓取并比对上游 data/
+        env:
+          UPSTREAM_REPO: zentaox/signal
+          UPSTREAM_REF: main
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, urllib.request
+
+          repo = os.environ["UPSTREAM_REPO"]
+          ref = os.environ["UPSTREAM_REF"]
+          api = f"https://api.github.com/repos/{repo}/git/trees/{ref}?recursive=1"
+
+          def get(url, raw=False, timeout=30):
+              req = urllib.request.Request(url, headers={
+                  "User-Agent": "signal-data-sync",
+                  "Accept": "application/vnd.github+json",
+              })
+              with urllib.request.urlopen(req, timeout=timeout) as r:
+                  data = r.read()
+              return data if raw else json.loads(data)
+
+          tree = get(api)
+          paths = [t["path"] for t in tree.get("tree", [])
+                   if t.get("type") == "blob" and t["path"].startswith("data/") and t["path"].endswith(".json")]
+          print(f"上游 data/ 共 {len(paths)} 个 json")
+
+          changed, same, failed = [], 0, []
+          for p in paths:
+              url = f"https://raw.githubusercontent.com/{repo}/{ref}/{p}"
+              try:
+                  blob = get(url, raw=True)
+              except Exception as exc:
+                  failed.append(f"{p}: {exc}")
+                  continue
+              local = p if os.path.exists(p) else None
+              if local and open(local, "rb").read() == blob:
+                  same += 1
+                  continue
+              os.makedirs(os.path.dirname(p) or ".", exist_ok=True)
+              with open(p, "wb") as f:
+                  f.write(blob)
+              changed.append(p)
+
+          print(f"有变化 {len(changed)} 个，未变 {same} 个，失败 {len(failed)} 个")
+          for c in changed[:20]:
+              print("  ~", c)
+          for f in failed:
+              print("  !", f)
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write(f"changed={len(changed)}\n")
+          PY
+        id: fetch
+
+      - name: 提交变化
+        if: steps.fetch.outputs.changed != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/
+          MSG="chore: 同步上游数据 $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          # 滚动提交：连续同步只保留一条，避免仓库无限膨胀
+          if git log -1 --pretty=%s | grep -q '^chore: 同步上游数据'; then
+            git commit --amend -m "$MSG"
+          else
+            git commit -m "$MSG"
+          fi
+          git push --force origin HEAD:main
+
+      - name: 汇总
+        run: |
+          echo "### 同步结果" >> "$GITHUB_STEP_SUMMARY"
+          echo "有变化文件数：${{ steps.fetch.outputs.changed }}" >> "$GITHUB_STEP_SUMMARY"
