@@ -37,7 +37,7 @@ function fetchAny(paths, ms) {      // 逐个试，超时/失败换下一个；�
     var url = paths[i++];
     var ctl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
     var timer = ctl ? setTimeout(function () { ctl.abort(); }, ms || 6000) : null;
-    var opt = { cache: 'no-store' };
+    var opt = {};   // 允许浏览器缓存：新鲜度由 CF 边缘 TTL 控制（px/指数 60s）
     if (ctl) opt.signal = ctl.signal;
     return fetch(url, opt).then(function (r) {
       if (timer) clearTimeout(timer);
@@ -84,7 +84,7 @@ function showStale(msg) {           // 顶部黄色提示条，只出现一次
 function load(name) {               // 同一个文件只取一次；失败返回 null，页面显示"暂不可用"
   if (!DATA[name]) {
     var dir = SAMPLE && SAMPLE_FILES.indexOf(name) >= 0 ? 'sample/' : 'data/';
-    DATA[name] = fetch(dir + name, { cache: 'no-store' })
+    DATA[name] = fetch(dir + name, { cache: 'no-cache' })   // 本地 data/ 走 ETag 协商，未变则 304
       .then(function (r) { return r.ok ? r.json() : null; })
       .catch(function () { return null; });
     if (name === 'px.json') {        // 现价：自建数据覆盖同代码的旧值，本地有而自建没有的（退市等）继续用本地

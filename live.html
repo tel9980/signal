@@ -158,7 +158,7 @@
       var url = list[i++] + file;
       var ctl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
       var timer = ctl ? setTimeout(function () { ctl.abort(); }, ms || 6000) : null;
-      var opt = { cache: 'no-store' };
+      var opt = {};   // 允许浏览器缓存：新鲜度由 CF 边缘 TTL 控制（px/live-core 60s）
       if (ctl) opt.signal = ctl.signal;
       return fetch(url, opt).then(function (r) {
         if (timer) clearTimeout(timer);
@@ -215,6 +215,18 @@
   }
 
   var MOM = null, SIG = null, CUR = 0;
+  var CORE = null, AT = null, SIG_P = null, SIG_ERR = false;
+
+  // 逐只明细（signals.json，约 750KB）只在点「全部行情」或搜索时才拉，不进首屏
+  function ensureSignals() {
+    if (SIG && SIG.stocks) return Promise.resolve(SIG);
+    if (SIG_P) return SIG_P;
+    SIG_P = fetchAny('signals.json', 15000).then(function (s) {
+      if (s && s.stocks) { SIG = s; SIG_ERR = false; } else { SIG_ERR = true; }
+      return SIG;
+    }).catch(function () { SIG_ERR = true; SIG_P = null; return null; });
+    return SIG_P;
+  }
 
   function render() {
     var groups = MOM.groups || [];
@@ -238,7 +250,12 @@
   }
 
   function renderAll(q) {
-    if (!SIG || !SIG.stocks) { $('tablewrap').innerHTML = '<div class="empty">行情明细（signals.json）暂不可用，异动榜其余标签页仍可查看。</div>'; return; }
+    if (!SIG || !SIG.stocks) {
+      if (SIG_ERR) { $('tablewrap').innerHTML = '<div class="empty">行情明细（signals.json）暂不可用，异动榜其余标签页仍可查看。</div>'; return; }
+      $('tablewrap').innerHTML = '<div class="empty">正在加载全部行情明细…</div>';
+      ensureSignals().then(function () { renderAll(q); });
+      return;
+    }
     var arr = Object.keys(SIG.stocks).map(function (code) {
       var s = SIG.stocks[code];
       return { code: code, name: s.n, c: s.c, p: s.p, d20: s.d20, hi: s.hi, vr: s.vr, to: s.to, mn: s.mn };
@@ -270,12 +287,20 @@
 
   // 用盘中快照覆盖现价与涨跌幅（只覆盖有数据的股票，其余保留收盘值）
   function applyIntraday(intra) {
-    if (!intra || !intra.px || !SIG || !SIG.stocks) return 0;
+    if (!intra || !intra.px) return 0;
     var n = 0;
-    Object.keys(SIG.stocks).forEach(function (k) {
-      var q = intra.px[k];
-      if (q && q[0] > 0) { SIG.stocks[k].c = q[0]; SIG.stocks[k].p = q[1]; n++; }
+    ((MOM && MOM.groups) || []).forEach(function (g) {
+      (g.items || []).forEach(function (x) {
+        var q = intra.px[x.code];
+        if (q && q[0] > 0) { x.c = q[0]; x.p = q[1]; n++; }
+      });
     });
+    if (SIG && SIG.stocks) {
+      Object.keys(SIG.stocks).forEach(function (k) {
+        var q = intra.px[k];
+        if (q && q[0] > 0) { SIG.stocks[k].c = q[0]; SIG.stocks[k].p = q[1]; }
+      });
+    }
     return n;
   }
 
@@ -300,30 +325,38 @@
     main.insertBefore(d, main.firstChild);
   }
 
-  fetchAny('live.json', 8000).catch(function () { return null; }).then(function (live) {
-    if (live && live.stocks && live.momentum && live.momentum.groups) {
-      SIG = live; MOM = live.momentum;                 // 首屏单文件：一次请求拿全
-      MOM.updated = MOM.updated || live.updated;
+  // 首屏轻包 live-core.json（现价 + 指数 + 四大榜单，约 125KB），逐只明细点开才拉
+  fetchAny('live-core.json', 8000).catch(function () { return null; }).then(function (core) {
+    if (core && core.momentum && core.momentum.groups) {
+      CORE = core; MOM = core.momentum; AT = core.at || core.updated;
+      MOM.updated = MOM.updated || AT;
       return;
     }
-    return Promise.all([                              // 老数据源兜底
-      fetchAny('momentum.json', 6000).catch(function () { return null; }),
-      fetchAny('signals.json', 6000).catch(function () { return null; })
-    ]).then(function (res) { MOM = res[0]; SIG = res[1]; });
+    return fetchAny('live.json', 12000).catch(function () { return null; }).then(function (live) {
+      if (live && live.stocks && live.momentum && live.momentum.groups) {
+        SIG = live; MOM = live.momentum; AT = live.at || live.updated;
+        MOM.updated = MOM.updated || live.updated;
+        return;
+      }
+      return Promise.all([                          // 老数据源兜底
+        fetchAny('momentum.json', 6000).catch(function () { return null; }),
+        fetchAny('signals.json', 6000).catch(function () { return null; })
+      ]).then(function (res) { MOM = res[0]; SIG = res[1]; AT = MOM && MOM.updated; });
+    });
   }).then(function () {
     if (!MOM || !MOM.groups) {
       $('meta').textContent = '数据暂不可用（momentum.json 取不到），请稍后再试。';
       $('tablewrap').innerHTML = '<div class="empty">数据暂不可用。</div>';
       return;
     }
-    var total = SIG && SIG.stocks ? Object.keys(SIG.stocks).length : 0;
-    var meta = '更新于 <b>' + esc(MOM.updated || '—') + '</b>　覆盖 <b>' + total + '</b> 只 A 股　·　数据源 eltdx（通达信）';
+    var total = (SIG && SIG.stocks) ? Object.keys(SIG.stocks).length : ((CORE && CORE.stocks_ok) || 0);
+    var meta = '更新于 <b>' + esc(AT || MOM.updated || '—') + '</b>　覆盖 <b>' + total + '</b> 只 A 股　·　数据源 eltdx（通达信）';
     // 盘中快照：拿得到就用它的现价（比收盘数据新最多 10 分钟），拿不到就静默用收盘数据
     fetchAny('px.json', 5000, IMIRRORS).catch(function () { return null; }).then(function (intra) {
       var hit = applyIntraday(intra);
       if (hit) meta += '　·　盘中 <b>' + esc(String(intra.at).slice(11)) + '</b>';
       $('meta').innerHTML = meta;
-      showStale(staleMsg(hit ? intra.at : (MOM.updated || (SIG && SIG.updated))));
+      showStale(staleMsg(hit ? intra.at : (AT || (SIG && SIG.updated))));
       render();
       bindRows();
     });
