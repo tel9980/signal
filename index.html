@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <!-- 内容安全策略：只允许本站自己的脚本、样式、数据；禁止向外部发送数据。frame-ancestors 只能由服务器头设置，这里不写 -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com https://ag.1211.cc.cd https://raw.githubusercontent.com https://cdn.jsdelivr.net https://gcore.jsdelivr.net; base-uri 'self'; form-action 'self'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#f7f7f5" id="meta-theme-color">
   <!-- 加到手机主屏幕（10-31）：iPhone 用 Safari「分享 → 添加到主屏幕」，从主屏打开没有地址栏 -->
@@ -615,5 +615,6 @@
   <script src="app.js?v=20261105g"></script>
   <!-- 访问统计（11-04 用户批准）：Cloudflare Web Analytics，只数人次，不放 cookie、不认人 -->
   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "39a53ce8271447cdbaf4d97a99e20e66"}'></script>
+<script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}</script>
 </body>
 </html>
