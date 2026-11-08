@@ -131,9 +131,10 @@
 
 <script>
 (function () {
-  var BASE = 'https://raw.githubusercontent.com/tel9980/signal-data/main/out/';
-  // 国内直连 raw 经常超时，按顺序换源（都支持 CORS）；全挂则显示提示，不白屏
+  var BASE = 'https://ag.1211.cc.cd/sig/';
+  // 首选自建反代（Cloudflare Worker：signal-proxy / ag.1211.cc.cd），其余为兜底；全挂则显示提示，不白屏
   var MIRRORS = [BASE,
+    'https://raw.githubusercontent.com/tel9980/signal-data/main/out/',
     'https://cdn.jsdelivr.net/gh/tel9980/signal-data@main/out/',
     'https://gcore.jsdelivr.net/gh/tel9980/signal-data@main/out/'];
   function fetchAny(file, ms) {

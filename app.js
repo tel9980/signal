@@ -14,11 +14,12 @@ var SAMPLE = /^(127\.0\.0\.1|localhost|10\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+)$/.t
 var SAMPLE_FILES = ['market.json', 'research.json', 'themes.json', 'ledger.json', 'health.json'];
 // 行情层改由自建管线提供（tel9980/signal-data，eltdx 驱动，交易日 11:35 / 15:35 各更新一次）；
 // 取不到就静默回退到本地 data/，站点不会白屏。示例模式下不覆盖。
-var LIVE_BASE = 'https://raw.githubusercontent.com/tel9980/signal-data/main/out/';
-// 国内访问 raw.githubusercontent.com 时常被污染/超时，依次尝试三个源（都能开 CORS），
-// 第一个成功即用；全失败则静默回退本地 data/。jsDelivr 有缓存，作为兜底足够。
+// 首选自建反代（Cloudflare Worker，Worker 名 signal-proxy，域名 ag.1211.cc.cd），
+// 它是国内唯一稳定的一条路；后面三个是兜底（国内常被污染/超时，海外可用）。
+var LIVE_BASE = 'https://ag.1211.cc.cd/sig/';
 var LIVE_MIRRORS = [
   LIVE_BASE,
+  'https://raw.githubusercontent.com/tel9980/signal-data/main/out/',
   'https://cdn.jsdelivr.net/gh/tel9980/signal-data@main/out/',
   'https://gcore.jsdelivr.net/gh/tel9980/signal-data@main/out/'
 ];
