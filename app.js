@@ -15,12 +15,36 @@ var SAMPLE_FILES = ['market.json', 'research.json', 'themes.json', 'ledger.json'
 // 行情层改由自建管线提供（tel9980/signal-data，eltdx 驱动，交易日 11:35 / 15:35 各更新一次）；
 // 取不到就静默回退到本地 data/，站点不会白屏。示例模式下不覆盖。
 var LIVE_BASE = 'https://raw.githubusercontent.com/tel9980/signal-data/main/out/';
+// 国内访问 raw.githubusercontent.com 时常被污染/超时，依次尝试三个源（都能开 CORS），
+// 第一个成功即用；全失败则静默回退本地 data/。jsDelivr 有缓存，作为兜底足够。
+var LIVE_MIRRORS = [
+  LIVE_BASE,
+  'https://cdn.jsdelivr.net/gh/tel9980/signal-data@main/out/',
+  'https://gcore.jsdelivr.net/gh/tel9980/signal-data@main/out/'
+];
 var LIVE_FILES = { 'px.json': 'px.json', 'indices.json': 'indices.json' };
+function fetchAny(paths, ms) {      // 逐个试，超时/失败换下一个；返回第一个解析成功的 JSON
+  var i = 0;
+  function next(lastErr) {
+    if (i >= paths.length) return Promise.reject(lastErr || new Error('all failed'));
+    var url = paths[i++];
+    var ctl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    var timer = ctl ? setTimeout(function () { ctl.abort(); }, ms || 6000) : null;
+    var opt = { cache: 'no-store' };
+    if (ctl) opt.signal = ctl.signal;
+    return fetch(url, opt).then(function (r) {
+      if (timer) clearTimeout(timer);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).catch(function (e) { if (timer) clearTimeout(timer); return next(e); });
+  }
+  return next(null);
+}
 function loadLive(name) {
   if (SAMPLE || !LIVE_FILES[name]) return Promise.resolve(null);
-  return fetch(LIVE_BASE + LIVE_FILES[name], { cache: 'no-store' })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .catch(function () { return null; });
+  var file = LIVE_FILES[name];
+  return fetchAny(LIVE_MIRRORS.map(function (b) { return b + file; }), 6000)
+    .catch(function () { return null; });   // 数据源全挂时不影响页面，回退本地
 }
 function load(name) {               // 同一个文件只取一次；失败返回 null，页面显示"暂不可用"
   if (!DATA[name]) {
@@ -121,8 +145,11 @@ window.addEventListener('hashchange', route);
 function setHeaderH() { var h = document.querySelector('.site-header'); if (h) document.documentElement.style.setProperty('--hh', h.offsetHeight + 'px'); }
 window.addEventListener('resize', setHeaderH);
 setHeaderH();
-$('qr-reveal').onclick = function () { $('qr-pair').classList.add('open'); };
-if (SAMPLE) $('sample-banner').style.display = '';
+(function () {                     // 收款码已移除，这段做成可选，防止老缓存页面报错中断后续脚本
+  var btn = $('qr-reveal'), pair = $('qr-pair');
+  if (btn && pair) btn.onclick = function () { pair.classList.add('open'); };
+})();
+if (SAMPLE && $('sample-banner')) $('sample-banner').style.display = '';
 
 // ---------- 数据新鲜度（页头小圆点、过期提示条） ----------
 function bjToday() { return new Date(Date.now() + new Date().getTimezoneOffset() * 60000 + 8 * 3600000); }

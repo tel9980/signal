@@ -132,6 +132,27 @@
 <script>
 (function () {
   var BASE = 'https://raw.githubusercontent.com/tel9980/signal-data/main/out/';
+  // 国内直连 raw 经常超时，按顺序换源（都支持 CORS）；全挂则显示提示，不白屏
+  var MIRRORS = [BASE,
+    'https://cdn.jsdelivr.net/gh/tel9980/signal-data@main/out/',
+    'https://gcore.jsdelivr.net/gh/tel9980/signal-data@main/out/'];
+  function fetchAny(file, ms) {
+    var i = 0;
+    function next(lastErr) {
+      if (i >= MIRRORS.length) return Promise.reject(lastErr || new Error('all failed'));
+      var url = MIRRORS[i++] + file;
+      var ctl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+      var timer = ctl ? setTimeout(function () { ctl.abort(); }, ms || 6000) : null;
+      var opt = { cache: 'no-store' };
+      if (ctl) opt.signal = ctl.signal;
+      return fetch(url, opt).then(function (r) {
+        if (timer) clearTimeout(timer);
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      }).catch(function (e) { if (timer) clearTimeout(timer); return next(e); });
+    }
+    return next(null);
+  }
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) {
     return String(s == null ? '' : s).replace(/[<>&"']/g, function (c) {
@@ -233,8 +254,8 @@
   });
 
   Promise.all([
-    fetch(BASE + 'momentum.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }),
-    fetch(BASE + 'signals.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; })
+    fetchAny('momentum.json', 6000).catch(function () { return null; }),
+    fetchAny('signals.json', 6000).catch(function () { return null; })
   ]).then(function (res) {
     MOM = res[0]; SIG = res[1];
     if (!MOM || !MOM.groups) {
