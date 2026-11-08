@@ -24,6 +24,12 @@ var LIVE_MIRRORS = [
   'https://gcore.jsdelivr.net/gh/tel9980/signal-data@main/out/'
 ];
 var LIVE_FILES = { 'px.json': 'px.json', 'indices.json': 'indices.json' };
+// 盘中快照（交易日每 10 分钟刷新，独立分支，只含现价与指数，2 分钟缓存）
+var INTRADAY_MIRRORS = [
+  'https://ag.1211.cc.cd/intraday/',
+  'https://raw.githubusercontent.com/tel9980/signal-data/intraday/out/',
+  'https://cdn.jsdelivr.net/gh/tel9980/signal-data@intraday/out/'
+];
 function fetchAny(paths, ms) {      // 逐个试，超时/失败换下一个；返回第一个解析成功的 JSON
   var i = 0;
   function next(lastErr) {
@@ -40,6 +46,11 @@ function fetchAny(paths, ms) {      // 逐个试，超时/失败换下一个；�
     }).catch(function (e) { if (timer) clearTimeout(timer); return next(e); });
   }
   return next(null);
+}
+function loadIntraday() {
+  if (SAMPLE) return Promise.resolve(null);
+  return fetchAny(INTRADAY_MIRRORS.map(function (b) { return b + 'px.json'; }), 5000)
+    .catch(function () { return null; });   // 盘中数据取不到就用收盘数据，静默降级
 }
 function loadLive(name) {
   if (SAMPLE || !LIVE_FILES[name]) return Promise.resolve(null);
@@ -77,10 +88,21 @@ function load(name) {               // 同一个文件只取一次；失败返�
       .then(function (r) { return r.ok ? r.json() : null; })
       .catch(function () { return null; });
     if (name === 'px.json') {        // 现价：自建数据覆盖同代码的旧值，本地有而自建没有的（退市等）继续用本地
-      DATA[name] = Promise.all([DATA[name], loadLive('px.json')]).then(function (r) {
-        var local = r[0], live = r[1];
-        if (!live || !live.px) { showStale(staleMsg(local && local.at)); return local; }
-        var merged = { at: live.at || (local && local.at), px: Object.assign({}, (local && local.px) || {}, live.px) };
+      // 再用盘中快照覆盖一层（盘中快照更新时，页面价格最多滞后 10 分钟）
+      DATA[name] = Promise.all([DATA[name], loadLive('px.json'), loadIntraday()]).then(function (r) {
+        var local = r[0], live = r[1], intra = r[2];
+        var base = (local && local.px) || {};
+        if (!live || !live.px) {
+          if (!intra || !intra.px) { showStale(staleMsg(local && local.at)); return local; }
+          var only = { at: intra.at, px: Object.assign({}, base, intra.px) };
+          showStale(staleMsg(only.at));
+          return only;
+        }
+        var merged = { at: live.at || (local && local.at), px: Object.assign({}, base, live.px) };
+        if (intra && intra.px) {
+          merged.px = Object.assign({}, merged.px, intra.px);
+          if (String(intra.at) > String(merged.at)) merged.at = intra.at;
+        }
         showStale(staleMsg(merged.at));
         return merged;
       });

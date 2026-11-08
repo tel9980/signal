@@ -144,11 +144,17 @@
     'https://raw.githubusercontent.com/tel9980/signal-data/main/out/',
     'https://cdn.jsdelivr.net/gh/tel9980/signal-data@main/out/',
     'https://gcore.jsdelivr.net/gh/tel9980/signal-data@main/out/'];
-  function fetchAny(file, ms) {
+  // 盘中快照（交易日每 10 分钟刷新，独立分支，只含现价与指数）
+  var IBASE = 'https://ag.1211.cc.cd/intraday/';
+  var IMIRRORS = [IBASE,
+    'https://raw.githubusercontent.com/tel9980/signal-data/intraday/out/',
+    'https://cdn.jsdelivr.net/gh/tel9980/signal-data@intraday/out/'];
+  function fetchAny(file, ms, list) {
     var i = 0;
+    list = list || MIRRORS;
     function next(lastErr) {
-      if (i >= MIRRORS.length) return Promise.reject(lastErr || new Error('all failed'));
-      var url = MIRRORS[i++] + file;
+      if (i >= list.length) return Promise.reject(lastErr || new Error('all failed'));
+      var url = list[i++] + file;
       var ctl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
       var timer = ctl ? setTimeout(function () { ctl.abort(); }, ms || 6000) : null;
       var opt = { cache: 'no-store' };
@@ -261,6 +267,17 @@
     timer = setTimeout(function () { renderAll(v); }, 160);
   });
 
+  // 用盘中快照覆盖现价与涨跌幅（只覆盖有数据的股票，其余保留收盘值）
+  function applyIntraday(intra) {
+    if (!intra || !intra.px || !SIG || !SIG.stocks) return 0;
+    var n = 0;
+    Object.keys(SIG.stocks).forEach(function (k) {
+      var q = intra.px[k];
+      if (q && q[0] > 0) { SIG.stocks[k].c = q[0]; SIG.stocks[k].p = q[1]; n++; }
+    });
+    return n;
+  }
+
   function staleMsg(atStr) {                 // 数据陈旧判断：工作日 16:00 后还拿到 6 小时前的数据，或超过 3 天
     if (!atStr) return '';
     var t = Date.parse(String(atStr).replace(' ', 'T') + ':00+08:00');
@@ -299,10 +316,16 @@
       return;
     }
     var total = SIG && SIG.stocks ? Object.keys(SIG.stocks).length : 0;
-    $('meta').innerHTML = '更新于 <b>' + esc(MOM.updated || '—') + '</b>　覆盖 <b>' + total + '</b> 只 A 股　·　数据源 eltdx（通达信）';
-    showStale(staleMsg(MOM.updated || (SIG && SIG.updated)));
-    render();
-    bindRows();
+    var meta = '更新于 <b>' + esc(MOM.updated || '—') + '</b>　覆盖 <b>' + total + '</b> 只 A 股　·　数据源 eltdx（通达信）';
+    // 盘中快照：拿得到就用它的现价（比收盘数据新最多 10 分钟），拿不到就静默用收盘数据
+    fetchAny('px.json', 5000, IMIRRORS).catch(function () { return null; }).then(function (intra) {
+      var hit = applyIntraday(intra);
+      if (hit) meta += '　·　盘中 <b>' + esc(String(intra.at).slice(11)) + '</b>';
+      $('meta').innerHTML = meta;
+      showStale(staleMsg(hit ? intra.at : (MOM.updated || (SIG && SIG.updated))));
+      render();
+      bindRows();
+    });
   }).catch(function () {
     $('meta').textContent = '数据加载失败，请检查网络后刷新。';
     $('tablewrap').innerHTML = '<div class="empty">加载失败。</div>';
