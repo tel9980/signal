@@ -27,6 +27,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true        # 首次运行自动开启 Pages（无需手动去设置页点）
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
