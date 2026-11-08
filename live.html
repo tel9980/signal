@@ -88,6 +88,13 @@
   .empty { padding: 34px 14px; text-align: center; color: var(--ink-3); font-size: .88rem; }
 
   footer { color: var(--ink-3); font-size: .8rem; padding: 18px 0 40px; line-height: 1.8; }
+  .stale {
+    margin: 0 0 14px; padding: 10px 14px; border-radius: 8px; font-size: .86rem;
+    background: #fff4d6; border: 1px solid #e8c877; color: #7a5a10;
+  }
+  @media (prefers-color-scheme: dark) {
+    .stale { background: #3a2f10; border-color: #7a6420; color: #f0d79a; }
+  }
   footer code { background: var(--panel-subtle); padding: 1px 5px; border-radius: 4px; font-size: .78rem; }
   @media (max-width: 640px) {
     .hide-sm { display: none; }
@@ -254,11 +261,38 @@
     timer = setTimeout(function () { renderAll(v); }, 160);
   });
 
-  Promise.all([
-    fetchAny('momentum.json', 6000).catch(function () { return null; }),
-    fetchAny('signals.json', 6000).catch(function () { return null; })
-  ]).then(function (res) {
-    MOM = res[0]; SIG = res[1];
+  function staleMsg(atStr) {                 // 数据陈旧判断：工作日 16:00 后还拿到 6 小时前的数据，或超过 3 天
+    if (!atStr) return '';
+    var t = Date.parse(String(atStr).replace(' ', 'T') + ':00+08:00');
+    if (isNaN(t)) return '';
+    var ageH = (Date.now() - t) / 3600000;
+    var cn = new Date(Date.now() + 8 * 3600 * 1000);
+    var dow = cn.getUTCDay(), hh = cn.getUTCHours();
+    var weekday = dow >= 1 && dow <= 5;
+    if (ageH > 72) return '数据已超过 3 天没更新，管线可能中断';
+    if (weekday && hh >= 16 && ageH > 6) return '数据可能已过期（最后更新 ' + atStr + '）';
+    return '';
+  }
+  function showStale(msg) {
+    if (!msg) return;
+    var d = document.createElement('div');
+    d.className = 'stale';
+    d.textContent = '⚠ ' + msg + '，稍后刷新试试。';
+    var main = document.querySelector('main') || document.body;
+    main.insertBefore(d, main.firstChild);
+  }
+
+  fetchAny('live.json', 8000).catch(function () { return null; }).then(function (live) {
+    if (live && live.stocks && live.momentum && live.momentum.groups) {
+      SIG = live; MOM = live.momentum;                 // 首屏单文件：一次请求拿全
+      MOM.updated = MOM.updated || live.updated;
+      return;
+    }
+    return Promise.all([                              // 老数据源兜底
+      fetchAny('momentum.json', 6000).catch(function () { return null; }),
+      fetchAny('signals.json', 6000).catch(function () { return null; })
+    ]).then(function (res) { MOM = res[0]; SIG = res[1]; });
+  }).then(function () {
     if (!MOM || !MOM.groups) {
       $('meta').textContent = '数据暂不可用（momentum.json 取不到），请稍后再试。';
       $('tablewrap').innerHTML = '<div class="empty">数据暂不可用。</div>';
@@ -266,6 +300,7 @@
     }
     var total = SIG && SIG.stocks ? Object.keys(SIG.stocks).length : 0;
     $('meta').innerHTML = '更新于 <b>' + esc(MOM.updated || '—') + '</b>　覆盖 <b>' + total + '</b> 只 A 股　·　数据源 eltdx（通达信）';
+    showStale(staleMsg(MOM.updated || (SIG && SIG.updated)));
     render();
     bindRows();
   }).catch(function () {

@@ -47,6 +47,29 @@ function loadLive(name) {
   return fetchAny(LIVE_MIRRORS.map(function (b) { return b + file; }), 6000)
     .catch(function () { return null; });   // 数据源全挂时不影响页面，回退本地
 }
+var STALE_SHOWN = false;
+function staleMsg(atStr) {          // 数据陈旧判断：工作日 16:00 后还拿到 6 小时前的数据，或超过 3 天
+  if (!atStr) return '';
+  var t = Date.parse(String(atStr).replace(' ', 'T') + ':00+08:00');
+  if (isNaN(t)) return '';
+  var ageH = (Date.now() - t) / 3600000;
+  var cn = new Date(Date.now() + 8 * 3600 * 1000);
+  var dow = cn.getUTCDay(), hh = cn.getUTCHours();
+  var weekday = dow >= 1 && dow <= 5;
+  if (ageH > 72) return '行情数据已超过 3 天没更新，管线可能中断';
+  if (weekday && hh >= 16 && ageH > 6) return '行情数据可能已过期（最后更新 ' + atStr + '）';
+  return '';
+}
+function showStale(msg) {           // 顶部黄色提示条，只出现一次
+  if (!msg || STALE_SHOWN || SAMPLE) return;
+  STALE_SHOWN = true;
+  var d = document.createElement('div');
+  d.setAttribute('role', 'status');
+  d.style.cssText = 'position:sticky;top:0;z-index:9999;padding:9px 16px;font-size:.86rem;' +
+    'background:#fff4d6;border-bottom:1px solid #e8c877;color:#7a5a10;text-align:center;';
+  d.textContent = '⚠ ' + msg + '，稍后刷新试试。';
+  document.body.insertBefore(d, document.body.firstChild);
+}
 function load(name) {               // 同一个文件只取一次；失败返回 null，页面显示"暂不可用"
   if (!DATA[name]) {
     var dir = SAMPLE && SAMPLE_FILES.indexOf(name) >= 0 ? 'sample/' : 'data/';
@@ -56,8 +79,10 @@ function load(name) {               // 同一个文件只取一次；失败返�
     if (name === 'px.json') {        // 现价：自建数据覆盖同代码的旧值，本地有而自建没有的（退市等）继续用本地
       DATA[name] = Promise.all([DATA[name], loadLive('px.json')]).then(function (r) {
         var local = r[0], live = r[1];
-        if (!live || !live.px) return local;
-        return { at: live.at || (local && local.at), px: Object.assign({}, (local && local.px) || {}, live.px) };
+        if (!live || !live.px) { showStale(staleMsg(local && local.at)); return local; }
+        var merged = { at: live.at || (local && local.at), px: Object.assign({}, (local && local.px) || {}, live.px) };
+        showStale(staleMsg(merged.at));
+        return merged;
       });
     } else if (name === 'market.json') {   // 指数：只换 indices（顺带修掉北证50「距高点」那个错值），其余字段照旧
       DATA[name] = Promise.all([DATA[name], loadLive('indices.json')]).then(function (r) {
