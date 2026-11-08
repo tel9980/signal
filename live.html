@@ -293,6 +293,8 @@
   // 用盘中快照覆盖现价与涨跌幅（只覆盖有数据的股票，其余保留收盘值）
   function applyIntraday(intra) {
     if (!intra || !intra.px) return 0;
+    // 盘中快照比收盘数据旧时不许覆盖（止损：上午的价不能盖掉收盘价）
+    if (String(intra.at) <= String(AT || '')) return 0;
     var n = 0;
     ((MOM && MOM.groups) || []).forEach(function (g) {
       (g.items || []).forEach(function (x) {

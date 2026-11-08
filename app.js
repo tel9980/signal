@@ -93,15 +93,20 @@ function load(name) {               // 同一个文件只取一次；失败返�
         var local = r[0], live = r[1], intra = r[2];
         var base = (local && local.px) || {};
         if (!live || !live.px) {
-          if (!intra || !intra.px) { showStale(staleMsg(local && local.at)); return local; }
+          if (!intra || !intra.px || String(intra.at) <= String((local && local.at) || '')) {
+            // 自建行情连不上（或盘中快照反而更旧）：明确告诉用户"看的是本地备份"，不再静默
+            showStale('连不上行情服务，当前显示的是本地备份数据');
+            return local;
+          }
           var only = { at: intra.at, px: Object.assign({}, base, intra.px) };
           showStale(staleMsg(only.at));
           return only;
         }
         var merged = { at: live.at || (local && local.at), px: Object.assign({}, base, live.px) };
-        if (intra && intra.px) {
+        // 盘中快照只在「比收盘数据更新」时才覆盖，否则收盘后会用上午的价盖掉收盘价
+        if (intra && intra.px && String(intra.at) > String(merged.at || '')) {
           merged.px = Object.assign({}, merged.px, intra.px);
-          if (String(intra.at) > String(merged.at)) merged.at = intra.at;
+          merged.at = intra.at;
         }
         showStale(staleMsg(merged.at));
         return merged;
