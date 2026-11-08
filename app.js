@@ -12,12 +12,37 @@ var DATA = {};
 // 示例模式：只在本机地址加 ?sample 时，这几份从 sample/ 读（假数据，不上线），页面顶部出红条
 var SAMPLE = /^(127\.0\.0\.1|localhost|10\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+)$/.test(location.hostname) && /[?&]sample\b/.test(location.search);
 var SAMPLE_FILES = ['market.json', 'research.json', 'themes.json', 'ledger.json', 'health.json'];
+// 行情层改由自建管线提供（tel9980/signal-data，eltdx 驱动，交易日 11:35 / 15:35 各更新一次）；
+// 取不到就静默回退到本地 data/，站点不会白屏。示例模式下不覆盖。
+var LIVE_BASE = 'https://raw.githubusercontent.com/tel9980/signal-data/main/out/';
+var LIVE_FILES = { 'px.json': 'px.json', 'indices.json': 'indices.json' };
+function loadLive(name) {
+  if (SAMPLE || !LIVE_FILES[name]) return Promise.resolve(null);
+  return fetch(LIVE_BASE + LIVE_FILES[name], { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .catch(function () { return null; });
+}
 function load(name) {               // 同一个文件只取一次；失败返回 null，页面显示"暂不可用"
   if (!DATA[name]) {
     var dir = SAMPLE && SAMPLE_FILES.indexOf(name) >= 0 ? 'sample/' : 'data/';
     DATA[name] = fetch(dir + name, { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; })
       .catch(function () { return null; });
+    if (name === 'px.json') {        // 现价：自建数据覆盖同代码的旧值，本地有而自建没有的（退市等）继续用本地
+      DATA[name] = Promise.all([DATA[name], loadLive('px.json')]).then(function (r) {
+        var local = r[0], live = r[1];
+        if (!live || !live.px) return local;
+        return { at: live.at || (local && local.at), px: Object.assign({}, (local && local.px) || {}, live.px) };
+      });
+    } else if (name === 'market.json') {   // 指数：只换 indices（顺带修掉北证50「距高点」那个错值），其余字段照旧
+      DATA[name] = Promise.all([DATA[name], loadLive('indices.json')]).then(function (r) {
+        var local = r[0], live = r[1];
+        if (!local || !live || !live.items || !live.items.length) return local;
+        return Object.assign({}, local, {
+          indices: live.items.map(function (i) { return { name: i.name, chg: i.chg, from_high: i.from_high }; })
+        });
+      });
+    }
   }
   return DATA[name];
 }

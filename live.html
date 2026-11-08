@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>异动榜 · Signal</title>
+<!--
+  异动榜 · 由 tel9980/signal-data 的管线产出（eltdx 通达信行情）
+  数据：https://raw.githubusercontent.com/tel9980/signal-data/main/out/momentum.json
+       https://raw.githubusercontent.com/tel9980/signal-data/main/out/signals.json
+  与 Signal 主站同一套配色，点任意一行跳到主站个股页。
+-->
+<style>
+  :root {
+    --ground: #f7f7f5; --panel: #ffffff; --panel-subtle: #f1f0ec; --panel-hover: #ebe9e3;
+    --ink: #1f1f1d; --ink-2: #4a4843; --ink-3: #7a776f;
+    --line: #e6e3dd; --line-strong: #d4d0c8;
+    --accent: #9a5b18; --accent-bg: rgba(154, 91, 24, 0.08); --accent-border: rgba(154, 91, 24, 0.28);
+    --rise: #c9352b; --rise-bg: rgba(201, 53, 43, 0.07);
+    --fall: #1e8e5a; --fall-bg: rgba(30, 142, 90, 0.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #16150f; --panel: #1e1d18; --panel-subtle: #24231d; --panel-hover: #2b2a23;
+      --ink: #ece9e0; --ink-2: #c3bfb3; --ink-3: #918d81;
+      --line: #302e26; --line-strong: #403d33;
+      --accent: #e0a75c; --accent-bg: rgba(224, 167, 92, 0.12); --accent-border: rgba(224, 167, 92, 0.32);
+      --rise: #f0736a; --rise-bg: rgba(240, 115, 106, 0.1);
+      --fall: #4bbb84; --fall-bg: rgba(75, 187, 132, 0.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+    font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+  .t-rise { color: var(--rise); } .t-fall { color: var(--fall); } .t-muted { color: var(--ink-3); }
+
+  header { border-bottom: 1px solid var(--line); background: var(--panel); position: sticky; top: 0; z-index: 10; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 18px; }
+  .head-in { display: flex; align-items: center; gap: 14px; height: 56px; }
+  .brand { font-weight: 700; letter-spacing: .02em; color: var(--ink); }
+  .brand span { color: var(--accent); }
+  .head-in nav { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; }
+  .head-in nav a { color: var(--ink-2); font-size: .88rem; padding: 5px 9px; border-radius: 6px; }
+  .head-in nav a:hover { background: var(--panel-subtle); color: var(--ink); }
+  .head-in nav a.on { background: var(--accent-bg); color: var(--accent); }
+
+  main { padding: 26px 0 60px; }
+  h1 { font-size: 1.32rem; margin: 0 0 6px; letter-spacing: .01em; }
+  .sub { color: var(--ink-3); font-size: .86rem; margin: 0 0 20px; }
+
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tab {
+    border: 1px solid var(--line-strong); background: var(--panel); color: var(--ink-2);
+    padding: 7px 13px; border-radius: 999px; cursor: pointer; font-size: .88rem; font-family: inherit;
+  }
+  .tab:hover { background: var(--panel-hover); }
+  .tab.on { background: var(--accent-bg); border-color: var(--accent-border); color: var(--accent); font-weight: 600; }
+  .tab .cnt { font-size: .78rem; opacity: .75; margin-left: 5px; }
+
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .rule { padding: 10px 14px; font-size: .82rem; color: var(--ink-3); border-bottom: 1px solid var(--line); background: var(--panel-subtle); }
+
+  .search { display: flex; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .search input {
+    flex: 1; padding: 8px 11px; border: 1px solid var(--line-strong); border-radius: 7px;
+    background: var(--ground); color: var(--ink); font-family: inherit; font-size: .9rem;
+  }
+  .search input:focus { outline: 2px solid var(--accent-border); outline-offset: 0; border-color: var(--accent); }
+
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    text-align: right; font-weight: 500; font-size: .76rem; color: var(--ink-3);
+    padding: 9px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; background: var(--panel);
+  }
+  thead th:nth-child(-n+2) { text-align: left; }
+  tbody td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-size: .9rem; }
+  tbody td:nth-child(-n+2) { text-align: left; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: var(--panel-hover); }
+  tbody tr:last-child td { border-bottom: none; }
+  .code { color: var(--ink-3); font-size: .82rem; }
+  .name { font-weight: 500; }
+  .empty { padding: 34px 14px; text-align: center; color: var(--ink-3); font-size: .88rem; }
+
+  footer { color: var(--ink-3); font-size: .8rem; padding: 18px 0 40px; line-height: 1.8; }
+  footer code { background: var(--panel-subtle); padding: 1px 5px; border-radius: 4px; font-size: .78rem; }
+  @media (max-width: 640px) {
+    .hide-sm { display: none; }
+    tbody td, thead th { padding: 8px 7px; font-size: .84rem; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap head-in">
+    <a href="index.html" class="brand">Signal<span>·异动榜</span></a>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="index.html#research">研究榜</a>
+      <a href="index.html#theme">题材</a>
+      <a href="live.html" class="on">异动榜</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>行情异动榜</h1>
+  <p class="sub" id="meta">正在加载…</p>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="card">
+    <div class="rule" id="rule">—</div>
+    <div class="search" id="searchbar" style="display:none;">
+      <input id="q" type="search" placeholder="输入代码或名称，例如 000001 / 平安银行" autocomplete="off">
+    </div>
+    <div id="tablewrap"><div class="empty">加载中…</div></div>
+  </div>
+
+  <footer>
+    数据来自自建管线 <code>tel9980/signal-data</code>（eltdx · 通达信行情），交易日 11:35 与 15:35 各更新一次。<br>
+    指标口径：20日涨幅＝收盘价÷20 个交易日前收盘价−1；距高点＝收盘价÷近 250 交易日最高价−1；量比＝当日量÷前 5 日均量；换手＝成交量÷流通股本；主力净流入＝超大单＋大单净额。<br>
+    点任意一行进入主站个股页。<b>仅为个人研究使用，不构成投资建议。</b>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var BASE = 'https://raw.githubusercontent.com/tel9980/signal-data/main/out/';
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) {
+    return String(s == null ? '' : s).replace(/[<>&"']/g, function (c) {
+      return { '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  };
+  var num = function (v, d) { return v == null ? '—' : Number(v).toFixed(d == null ? 2 : d); };
+  var pct = function (v, d) {
+    if (v == null) return '<span class="t-muted">—</span>';
+    var cls = v > 0 ? 't-rise' : v < 0 ? 't-fall' : '';
+    return '<span class="num ' + cls + '">' + (v > 0 ? '+' : '') + Number(v).toFixed(d == null ? 2 : d) + '%</span>';
+  };
+  var yi = function (v) {                 // 万元 → 亿元显示
+    if (v == null) return '<span class="t-muted">—</span>';
+    var cls = v > 0 ? 't-rise' : v < 0 ? 't-fall' : 't-muted';
+    return '<span class="num ' + cls + '">' + (v > 0 ? '+' : '') + (v / 1e4).toFixed(2) + '亿</span>';
+  };
+  var go = function (code) { location.href = 'index.html#stock/' + code; };
+
+  function rowsHtml(list, showSearchHint) {
+    if (!list.length) return '<div class="empty">' + (showSearchHint ? '没有匹配的股票。' : '今日没有符合该规则的股票。') + '</div>';
+    var head = '<table><thead><tr><th>代码</th><th>名称</th><th>现价</th><th>涨跌</th>' +
+      '<th class="hide-sm">20日</th><th class="hide-sm">距高点</th>' +
+      '<th class="hide-sm">量比</th><th class="hide-sm">换手</th><th>主力净流入</th></tr></thead><tbody>';
+    var body = list.map(function (x) {
+      return '<tr data-code="' + esc(x.code) + '"><td class="code num">' + esc(x.code) + '</td>' +
+        '<td class="name">' + esc(x.name || '—') + '</td>' +
+        '<td class="num">' + num(x.c, 2) + '</td>' +
+        '<td>' + pct(x.p) + '</td>' +
+        '<td class="hide-sm">' + pct(x.d20) + '</td>' +
+        '<td class="hide-sm">' + pct(x.hi, 1) + '</td>' +
+        '<td class="hide-sm num">' + num(x.vr) + '</td>' +
+        '<td class="hide-sm num">' + (x.to == null ? '—' : num(x.to, 2) + '%') + '</td>' +
+        '<td>' + yi(x.mn) + '</td></tr>';
+    }).join('');
+    return head + body + '</tbody></table>';
+  }
+
+  function bindRows() {
+    var tw = $('tablewrap');
+    tw.onclick = function (e) {
+      var tr = e.target.closest ? e.target.closest('tr[data-code]') : null;
+      if (tr) go(tr.getAttribute('data-code'));
+    };
+  }
+
+  var MOM = null, SIG = null, CUR = 0;
+
+  function render() {
+    var groups = MOM.groups || [];
+    var tabs = $('tabs');
+    tabs.innerHTML = groups.map(function (g, i) {
+      return '<button class="tab' + (i === CUR ? ' on' : '') + '" data-i="' + i + '">' + esc(g.key) +
+        '<span class="cnt">' + g.count + '</span></button>';
+    }).join('') + '<button class="tab' + (CUR === -1 ? ' on' : '') + '" data-i="-1">全部行情</button>';
+
+    var allTab = CUR === -1;
+    $('searchbar').style.display = allTab ? 'flex' : 'none';
+
+    if (allTab) {
+      $('rule').textContent = '全部股票：按当日涨幅排序，可搜索代码或名称（最多显示 200 条）';
+      renderAll('');
+    } else {
+      var g = groups[CUR];
+      $('rule').textContent = '规则：' + g.rule + '　共 ' + g.count + ' 只' + (g.count > g.items.length ? '（显示前 ' + g.items.length + ' 只）' : '');
+      $('tablewrap').innerHTML = rowsHtml(g.items, false);
+    }
+  }
+
+  function renderAll(q) {
+    var arr = Object.keys(SIG.stocks).map(function (code) {
+      var s = SIG.stocks[code];
+      return { code: code, name: s.n, c: s.c, p: s.p, d20: s.d20, hi: s.hi, vr: s.vr, to: s.to, mn: s.mn };
+    });
+    q = (q || '').trim();
+    if (q) {
+      arr = arr.filter(function (x) { return x.code.indexOf(q) >= 0 || (x.name || '').indexOf(q) >= 0; });
+      arr.sort(function (a, b) { return (b.p || 0) - (a.p || 0); });
+    } else {
+      arr.sort(function (a, b) { return (b.p || 0) - (a.p || 0); });
+    }
+    $('tablewrap').innerHTML = rowsHtml(arr.slice(0, 200), !!q);
+  }
+
+  $('tabs').onclick = function (e) {
+    var b = e.target.closest ? e.target.closest('button[data-i]') : null;
+    if (!b) return;
+    CUR = parseInt(b.getAttribute('data-i'), 10);
+    render();
+  };
+
+  var timer = null;
+  document.addEventListener('input', function (e) {
+    if (e.target.id !== 'q') return;
+    clearTimeout(timer);
+    var v = e.target.value;
+    timer = setTimeout(function () { renderAll(v); }, 160);
+  });
+
+  Promise.all([
+    fetch(BASE + 'momentum.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }),
+    fetch(BASE + 'signals.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; })
+  ]).then(function (res) {
+    MOM = res[0]; SIG = res[1];
+    if (!MOM || !MOM.groups) {
+      $('meta').textContent = '数据暂不可用（momentum.json 取不到），请稍后再试。';
+      $('tablewrap').innerHTML = '<div class="empty">数据暂不可用。</div>';
+      return;
+    }
+    var total = SIG && SIG.stocks ? Object.keys(SIG.stocks).length : 0;
+    $('meta').innerHTML = '更新于 <b>' + esc(MOM.updated || '—') + '</b>　覆盖 <b>' + total + '</b> 只 A 股　·　数据源 eltdx（通达信）';
+    render();
+    bindRows();
+  }).catch(function () {
+    $('meta').textContent = '数据加载失败，请检查网络后刷新。';
+    $('tablewrap').innerHTML = '<div class="empty">加载失败。</div>';
+  });
+})();
+</script>
+</body>
+</html>
