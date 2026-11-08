@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>运行状态 · Signal</title>
+<!--
+  运行状态页 · 纯静态、自包含
+  数据源：
+    https://ag.1211.cc.cd/sig/stats.json     行情管线（tel9980/signal-data）
+    https://ag.1211.cc.cd/intraday/stats.json 盘中快照
+    https://ag.1211.cc.cd/sub/stats.json     节点订阅（tel9980/CFnodes）
+    https://api.github.com/repos/.../actions/runs  最近的 Actions 运行
+  任何一个源挂掉都只影响自己那一块，不会让整页白屏。
+-->
+<style>
+  :root {
+    --ground: #f7f7f5; --panel: #ffffff; --panel-subtle: #f1f0ec; --panel-hover: #ebe9e3;
+    --ink: #1f1f1d; --ink-2: #4a4843; --ink-3: #7a776f;
+    --line: #e6e3dd; --line-strong: #d4d0c8;
+    --accent: #9a5b18; --accent-bg: rgba(154, 91, 24, 0.08); --accent-border: rgba(154, 91, 24, 0.28);
+    --rise: #c9352b; --fall: #1e8e5a;
+    --ok: #1e8e5a; --ok-bg: rgba(30, 142, 90, 0.1);
+    --warn: #a87516; --warn-bg: rgba(168, 117, 22, 0.12);
+    --bad: #c9352b; --bad-bg: rgba(201, 53, 43, 0.1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #16150f; --panel: #1e1d18; --panel-subtle: #24231d; --panel-hover: #2b2a23;
+      --ink: #ece9e0; --ink-2: #c3bfb3; --ink-3: #918d81;
+      --line: #302e26; --line-strong: #403d33;
+      --accent: #e0a75c; --accent-bg: rgba(224, 167, 92, 0.12); --accent-border: rgba(224, 167, 92, 0.32);
+      --ok: #4bbb84; --ok-bg: rgba(75, 187, 132, 0.12);
+      --warn: #e0b45c; --warn-bg: rgba(224, 180, 92, 0.12);
+      --bad: #f0736a; --bad-bg: rgba(240, 115, 106, 0.12);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+    font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+  .t-muted { color: var(--ink-3); }
+
+  header { border-bottom: 1px solid var(--line); background: var(--panel); position: sticky; top: 0; z-index: 10; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 18px; }
+  .head-in { display: flex; align-items: center; gap: 14px; height: 56px; }
+  .brand { font-weight: 700; letter-spacing: .02em; color: var(--ink); }
+  .brand span { color: var(--accent); }
+  .head-in nav { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; }
+  .head-in nav a { color: var(--ink-2); font-size: .88rem; padding: 5px 9px; border-radius: 6px; }
+  .head-in nav a:hover { background: var(--panel-subtle); color: var(--ink); }
+  .head-in nav a.on { background: var(--accent-bg); color: var(--accent); }
+
+  main { padding: 26px 0 60px; }
+  h1 { font-size: 1.32rem; margin: 0 0 6px; }
+  .sub { color: var(--ink-3); font-size: .86rem; margin: 0 0 20px; }
+
+  .verdict {
+    display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-radius: 10px;
+    border: 1px solid var(--line-strong); background: var(--panel); margin-bottom: 18px; font-weight: 600;
+  }
+  .verdict .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .verdict.ok { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+  .verdict.warn { background: var(--warn-bg); border-color: var(--warn); color: var(--warn); }
+  .verdict.bad { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+  .verdict .why { font-weight: 400; font-size: .86rem; color: var(--ink-2); margin-left: auto; text-align: right; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .card h2 { font-size: .92rem; margin: 0; padding: 11px 14px; border-bottom: 1px solid var(--line); background: var(--panel-subtle); font-weight: 600; display: flex; gap: 8px; align-items: center; }
+  .card h2 .badge { margin-left: auto; font-size: .74rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
+  .badge.ok { color: var(--ok); background: var(--ok-bg); }
+  .badge.warn { color: var(--warn); background: var(--warn-bg); }
+  .badge.bad { color: var(--bad); background: var(--bad-bg); }
+  .badge.idle { color: var(--ink-3); background: var(--panel-hover); }
+  .rows { padding: 4px 14px 12px; }
+  .row { display: flex; gap: 12px; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: .88rem; }
+  .row:last-child { border-bottom: none; }
+  .row .k { color: var(--ink-3); flex: none; min-width: 92px; }
+  .row .v { margin-left: auto; text-align: right; }
+
+  .runs { padding: 6px 14px 12px; }
+  .run { display: flex; gap: 8px; align-items: baseline; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: .86rem; }
+  .run:last-child { border-bottom: none; }
+  .run .st { font-size: .78rem; font-weight: 600; flex: none; width: 52px; }
+  .run .st.success { color: var(--ok); }
+  .run .st.failure { color: var(--bad); }
+  .run .st.cancelled, .run .st.skipped { color: var(--warn); }
+  .run .st.in_progress, .run .st.queued { color: var(--accent); }
+  .run .t { color: var(--ink-3); margin-left: auto; flex: none; }
+
+  footer { color: var(--ink-3); font-size: .8rem; padding: 18px 0 40px; line-height: 1.8; }
+  footer code { background: var(--panel-subtle); padding: 1px 5px; border-radius: 4px; font-size: .78rem; }
+  @media (max-width: 640px) { .verdict .why { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap head-in">
+    <a href="index.html" class="brand">Signal<span>·状态</span></a>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="live.html">异动榜</a>
+      <a href="status.html" class="on">状态</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>运行状态</h1>
+  <p class="sub" id="meta">正在检查…</p>
+
+  <div class="verdict" id="verdict">
+    <span class="dot" style="background:var(--ink-3)"></span><span>检查中…</span>
+  </div>
+
+  <div class="grid">
+    <section class="card">
+      <h2>行情数据<span class="badge idle" id="b-quote">—</span></h2>
+      <div class="rows" id="r-quote"><div class="row"><span class="k t-muted">加载中…</span></div></div>
+    </section>
+
+    <section class="card">
+      <h2>盘中快照<span class="badge idle" id="b-intra">—</span></h2>
+      <div class="rows" id="r-intra"><div class="row"><span class="k t-muted">加载中…</span></div></div>
+    </section>
+
+    <section class="card">
+      <h2>节点订阅<span class="badge idle" id="b-sub">—</span></h2>
+      <div class="rows" id="r-sub"><div class="row"><span class="k t-muted">加载中…</span></div></div>
+    </section>
+
+    <section class="card">
+      <h2>行情管线 · 最近运行</h2>
+      <div class="runs" id="runs-sig"><div class="run t-muted">加载中…</div></div>
+    </section>
+
+    <section class="card">
+      <h2>节点订阅 · 最近运行</h2>
+      <div class="runs" id="runs-sub"><div class="run t-muted">加载中…</div></div>
+    </section>
+  </div>
+
+  <footer>
+    这一页直接读各条线上产物的 <code>stats.json</code>，不做二次计算。<br>
+    判定规则：<b>行情数据</b>工作日 16:00 后仍是当天即正常；<b>盘中快照</b>在交易时段内 30 分钟内、非交易时段不限；<b>节点订阅</b> 12 小时内有更新即正常。<br>
+    页面每 60 秒自动刷新一次。<b>仅为个人研究使用。</b>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) {
+    return String(s == null ? '' : s).replace(/[<>&"']/g, function (c) {
+      return { '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  };
+  var PROXY = 'https://ag.1211.cc.cd';
+  var RAW = 'https://raw.githubusercontent.com';
+
+  function fetchJson(urls, ms) {
+    var i = 0;
+    function next(lastErr) {
+      if (i >= urls.length) return Promise.reject(lastErr || new Error('all failed'));
+      var url = urls[i++];
+      var ctl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+      var timer = ctl ? setTimeout(function () { ctl.abort(); }, ms || 8000) : null;
+      var opt = { cache: 'no-store' };
+      if (ctl) opt.signal = ctl.signal;
+      return fetch(url, opt).then(function (r) {
+        if (timer) clearTimeout(timer);
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      }).catch(function (e) { if (timer) clearTimeout(timer); return next(e); });
+    }
+    return next(null);
+  }
+
+  // "2026-11-08 15:35" / "2026-11-08T07:35:26+00:00" → Date（前者按北京时间理解）
+  function parseTime(v) {
+    if (!v) return null;
+    var s = String(v).trim();
+    var m = s.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/);
+    if (!m) return null;
+    if (/[+-]\d{2}:?\d{2}|Z$/.test(s)) return new Date(s);          // 带时区，直接解析
+    return new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]);         // 不带时区 = 北京时间（浏览器本地）
+  }
+  function ago(d) {
+    if (!d) return '—';
+    var s = (Date.now() - d.getTime()) / 1000;
+    if (s < 0) return '刚刚';
+    if (s < 90) return Math.round(s) + ' 秒前';
+    if (s < 5400) return Math.round(s / 60) + ' 分钟前';
+    if (s < 36 * 3600) return (s / 3600).toFixed(1) + ' 小时前';
+    return Math.round(s / 86400) + ' 天前';
+  }
+  function hhmm(d) {
+    if (!d) return '—';
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+  function isTradingTime(now) {
+    var wd = now.getDay();
+    if (wd === 0 || wd === 6) return false;
+    var m = now.getHours() * 60 + now.getMinutes();
+    return (m >= 570 && m <= 692) || (m >= 780 && m <= 902);   // 09:30-11:32 / 13:00-15:02
+  }
+  function afterClose(now) {
+    var wd = now.getDay();
+    if (wd === 0 || wd === 6) return false;
+    return now.getHours() * 60 + now.getMinutes() >= 16 * 60;
+  }
+
+  function rows(html) { return html; }
+  function row(k, v) { return '<div class="row"><span class="k">' + esc(k) + '</span><span class="v num">' + v + '</span></div>'; }
+
+  var state = { quote: null, intra: null, sub: null };
+
+  function badge(id, level, text) {
+    var el = $(id);
+    el.className = 'badge ' + level;
+    el.textContent = text;
+  }
+
+  // ---------- 行情数据 ----------
+  function loadQuote() {
+    fetchJson([PROXY + '/sig/stats.json',
+               RAW + '/tel9980/signal-data/main/out/stats.json'], 8000).then(function (s) {
+      var gen = parseTime(s.generated_at_utc);
+      var at = gen ? hhmm(gen) : '—';
+      var bad = [];
+      if (!gen) bad.push('没有生成时间');
+      else if (isTradingTime(new Date()) && (Date.now() - gen.getTime()) > 5 * 3600 * 1000) bad.push('交易时段内数据已 ' + ago(gen));
+      else if (afterClose(new Date()) && (Date.now() - gen.getTime()) > 6 * 3600 * 1000) bad.push('收盘后未刷新（' + ago(gen) + '）');
+      if (s.gate && s.gate.ok === false) bad.push('闸门未通过：' + (s.gate.reason || ''));
+
+      $('r-quote').innerHTML =
+        row('最后更新', at + ' <span class="t-muted">(' + ago(gen) + ')</span>') +
+        row('覆盖股票', (s.quotes_ok || 0) + ' / ' + (s.universe || 0)) +
+        row('派生指标', (s.signals_ok || 0) + ' 只') +
+        row('资金流', (s.flow_ok || 0) + ' 只') +
+        row('耗时', (s.duration_s == null ? '—' : s.duration_s + ' 秒') +
+            (s.mode ? ' <span class="t-muted">(' + esc(s.mode) + (s.shards ? ' · ' + s.shards + ' 片' : '') + ')</span>' : '')) +
+        row('闸门', s.gate && s.gate.ok ? '<span style="color:var(--ok)">通过</span>'
+                                      : '<span style="color:var(--bad)">' + esc((s.gate && s.gate.reason) || '未知') + '</span>') +
+        row('版本', 'eltdx ' + esc(s.eltdx_version || '—'));
+
+      badge('b-quote', bad.length ? 'bad' : 'ok', bad.length ? '异常' : '正常');
+      state.quote = bad;
+      verdict();
+    }).catch(function () {
+      $('r-quote').innerHTML = row('状态', '<span style="color:var(--bad)">读不到 stats.json</span>');
+      badge('b-quote', 'bad', '无数据');
+      state.quote = ['statistics 拉取失败'];
+      verdict();
+    });
+  }
+
+  // ---------- 盘中快照 ----------
+  function loadIntra() {
+    fetchJson([PROXY + '/intraday/px.json',
+               RAW + '/tel9980/signal-data/intraday/out/px.json',
+               PROXY + '/sig/px.json'], 8000).then(function (p) {
+      var at = parseTime(p.at);
+      var n = p.px ? Object.keys(p.px).length : 0;
+      var bad = [];
+      if (!at) bad.push('没有数据时间');
+      else if (isTradingTime(new Date()) && (Date.now() - at.getTime()) > 30 * 60 * 1000) bad.push('交易时段内已 ' + ago(at));
+
+      $('r-intra').innerHTML =
+        row('数据时间', hhmm(at) + ' <span class="t-muted">(' + ago(at) + ')</span>') +
+        row('股票数', n + ' 只') +
+        row('刷新频率', '交易日每 10 分钟') +
+        row('用途', '首页现价覆盖（派生指标仍取收盘数据）');
+
+      badge('b-intra', bad.length ? 'warn' : 'ok', bad.length ? '偏旧' : '正常');
+      state.intra = bad;
+      verdict();
+    }).catch(function () {
+      $('r-intra').innerHTML = row('状态', '<span class="t-muted">暂无盘中快照（非交易时段正常）</span>');
+      badge('b-intra', 'idle', '待生成');
+      state.intra = [];
+      verdict();
+    });
+  }
+
+  // ---------- 节点订阅 ----------
+  function loadSub() {
+    fetchJson([PROXY + '/sub/stats.json',
+               RAW + '/tel9980/CFnodes/main/output/stats.json'], 8000).then(function (s) {
+      var gen = parseTime(s.generated_at_utc);
+      var pr = s.probe || {};
+      var bad = [];
+      if (!gen) bad.push('没有生成时间');
+      else if (Date.now() - gen.getTime() > 14 * 3600 * 1000) bad.push('已 ' + ago(gen) + '未更新（应 12 小时一轮）');
+
+      var proto = s.by_protocol || {};
+      var protoTxt = Object.keys(proto).sort(function (a, b) { return proto[b] - proto[a]; })
+        .map(function (k) { return k + ' ' + proto[k]; }).join(' · ') || '—';
+
+      $('r-sub').innerHTML =
+        row('最后更新', hhmm(gen) + ' <span class="t-muted">(' + ago(gen) + ')</span>') +
+        row('可用节点', (s.final || 0) + ' 条') +
+        row('探活率', pr.alive_ratio != null ? (pr.alive_ratio * 100).toFixed(1) + '%' +
+            ' <span class="t-muted">(' + (pr.tcp_alive || 0) + '/' + (pr.tcp_total || 0) + ')</span>' : '—') +
+        row('协议分布', protoTxt) +
+        row('去重', '整行 ' + (s.duplicate_lines || 0) + ' · 端点 ' + (s.duplicate_endpoints || 0)) +
+        row('耗时', s.duration_s == null ? '—' : s.duration_s + ' 秒');
+
+      badge('b-sub', bad.length ? 'bad' : 'ok', bad.length ? '异常' : '正常');
+      state.sub = bad;
+      verdict();
+    }).catch(function () {
+      $('r-sub').innerHTML = row('状态', '<span style="color:var(--bad)">读不到 stats.json</span>');
+      badge('b-sub', 'bad', '无数据');
+      state.sub = ['节点 stats 拉取失败'];
+      verdict();
+    });
+  }
+
+  // ---------- Actions 最近运行 ----------
+  function loadRuns(repo, wf, boxId) {
+    var url = 'https://api.github.com/repos/' + repo + '/actions/workflows/' + wf + '/runs?per_page=5';
+    fetchJson([url], 9000).then(function (d) {
+      var list = (d.workflow_runs || []).slice(0, 5);
+      if (!list.length) { $(boxId).innerHTML = '<div class="run t-muted">暂无运行记录</div>'; return; }
+      var zh = { success: '成功', failure: '失败', cancelled: '取消', skipped: '跳过', in_progress: '进行中', queued: '排队' };
+      $(boxId).innerHTML = list.map(function (r) {
+        var t = parseTime(r.created_at);
+        var dur = '';
+        if (r.run_started_at && r.updated_at && r.status === 'completed') {
+          var sec = (new Date(r.updated_at) - new Date(r.run_started_at)) / 1000;
+          dur = sec > 0 ? ' · ' + (sec < 90 ? Math.round(sec) + 's' : Math.round(sec / 60) + 'min') : '';
+        }
+        return '<div class="run"><span class="st ' + esc(r.conclusion || r.status) + '">' +
+          esc(zh[r.conclusion] || zh[r.status] || r.conclusion || r.status) + '</span>' +
+          '<span>' + esc(r.name || r.display_title || wf) + dur + '</span>' +
+          '<span class="t num">' + hhmm(t).slice(5) + '</span></div>';
+      }).join('');
+    }).catch(function () {
+      $(boxId).innerHTML = '<div class="run t-muted">读不到（GitHub API 限流或网络不通）</div>';
+    });
+  }
+
+  // ---------- 总判定 ----------
+  function verdict() {
+    var all = [];
+    ['quote', 'intra', 'sub'].forEach(function (k) { if (state[k]) all = all.concat(state[k]); });
+    var el = $('verdict');
+    var dot = '<span class="dot"></span>';
+    if (!state.quote && !state.intra && !state.sub) return;
+    if (!all.length) {
+      el.className = 'verdict ok';
+      el.innerHTML = dot + '<span>全部正常</span><span class="why">行情 / 盘中 / 节点都在正常更新</span>';
+    } else {
+      el.className = 'verdict bad';
+      el.innerHTML = dot + '<span>有项目异常</span><span class="why">' + esc(all.join('；')) + '</span>';
+    }
+  }
+
+  function refresh() {
+    $('meta').textContent = '本页检查于 ' + hhmm(new Date()) + '（每 60 秒自动刷新）';
+    loadQuote();
+    loadIntra();
+    loadSub();
+    loadRuns('tel9980/signal-data', 'update.yml', 'runs-sig');
+    loadRuns('tel9980/CFnodes', 'update.yml', 'runs-sub');
+  }
+
+  refresh();
+  setInterval(refresh, 60000);
+})();
+</script>
+</body>
+</html>
