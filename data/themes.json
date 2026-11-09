@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-09",
  "themes": [
   {
    "name": "人形机器人",
@@ -23,8 +23,8 @@
        "first_seen": "2026-03-13",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.69,
-        "from_high": -34.4,
+        "vol_ratio": 1.01,
+        "from_high": -30.8,
         "limit_ups": 0
        }
       },
@@ -42,8 +42,8 @@
        "first_seen": "2025-12-24",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.18,
-        "from_high": -45.6,
+        "vol_ratio": 1.09,
+        "from_high": -43.5,
         "limit_ups": 1
        }
       },
@@ -70,8 +70,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.5,
-        "from_high": -38.9,
+        "vol_ratio": 1.33,
+        "from_high": -35.2,
         "limit_ups": 0
        }
       },
@@ -89,8 +89,8 @@
        "first_seen": "2026-04-16",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.89,
-        "from_high": -35.8,
+        "vol_ratio": 0.8,
+        "from_high": -36.1,
         "limit_ups": 0
        }
       },
@@ -108,8 +108,8 @@
        "first_seen": "2025-12-09",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.29,
-        "from_high": -51.9,
+        "vol_ratio": 1.88,
+        "from_high": -48.6,
         "limit_ups": 0
        }
       },
@@ -127,8 +127,8 @@
        "first_seen": "2026-06-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.69,
-        "from_high": -65.4,
+        "vol_ratio": 0.73,
+        "from_high": -65.7,
         "limit_ups": 0
        }
       },
@@ -146,8 +146,8 @@
        "first_seen": "2026-03-07",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.66,
-        "from_high": -26.2,
+        "vol_ratio": 0.75,
+        "from_high": -21.1,
         "limit_ups": 0
        }
       },
@@ -165,8 +165,8 @@
        "first_seen": "2026-04-22",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.77,
-        "from_high": -52.8,
+        "vol_ratio": 0.71,
+        "from_high": -51.6,
         "limit_ups": 0
        }
       },
@@ -185,7 +185,7 @@
        "holders": [],
        "tide": {
         "vol_ratio": 0.69,
-        "from_high": -24.4,
+        "from_high": -23.9,
         "limit_ups": 0
        }
       },
@@ -203,8 +203,8 @@
        "first_seen": "2026-03-10",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.68,
-        "from_high": -21.8,
+        "vol_ratio": 1.52,
+        "from_high": -20.5,
         "limit_ups": 2
        }
       },
@@ -222,8 +222,8 @@
        "first_seen": "2025-12-11",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.42,
-        "from_high": -25.5,
+        "vol_ratio": 1.18,
+        "from_high": -24.2,
         "limit_ups": 1
        }
       },
@@ -241,7 +241,7 @@
        "first_seen": "2025-11-21",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.88,
+        "vol_ratio": 0.64,
         "from_high": -66.8,
         "limit_ups": 0
        }
@@ -260,8 +260,8 @@
        "first_seen": "2026-04-16",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.05,
-        "from_high": -49.8,
+        "vol_ratio": 1.13,
+        "from_high": -48.2,
         "limit_ups": 0
        }
       },
@@ -279,8 +279,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.64,
-        "from_high": -59.3,
+        "vol_ratio": 0.61,
+        "from_high": -59.6,
         "limit_ups": 0
        }
       },
@@ -303,8 +303,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.51,
-        "from_high": -57.2,
+        "vol_ratio": 0.62,
+        "from_high": -56.0,
         "limit_ups": 0
        }
       },
@@ -322,8 +322,8 @@
        "first_seen": "2025-12-15",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.84,
-        "from_high": -49.2,
+        "vol_ratio": 0.86,
+        "from_high": -48.3,
         "limit_ups": 0
        }
       },
@@ -358,8 +358,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.73,
-        "from_high": -55.2,
+        "vol_ratio": 0.85,
+        "from_high": -53.9,
         "limit_ups": 0
        }
       },
@@ -377,8 +377,8 @@
        "first_seen": "2026-06-11",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.92,
-        "from_high": -50.9,
+        "vol_ratio": 0.78,
+        "from_high": -50.7,
         "limit_ups": 0
        }
       },
@@ -401,8 +401,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.86,
-        "from_high": -61.6,
+        "vol_ratio": 1.77,
+        "from_high": -60.7,
         "limit_ups": 0
        }
       },
@@ -420,8 +420,8 @@
        "first_seen": "2025-11-12",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.02,
-        "from_high": -54.8,
+        "vol_ratio": 0.82,
+        "from_high": -54.9,
         "limit_ups": 0
        }
       },
@@ -439,8 +439,8 @@
        "first_seen": "2026-03-24",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.82,
-        "from_high": -47.4,
+        "vol_ratio": 1.28,
+        "from_high": -45.1,
         "limit_ups": 0
        }
       },
@@ -458,8 +458,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.18,
-        "from_high": -35.3,
+        "vol_ratio": 2.13,
+        "from_high": -28.6,
         "limit_ups": 0
        }
       },
@@ -482,9 +482,9 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.68,
-        "from_high": -52.2,
-        "limit_ups": 0
+        "vol_ratio": 1.25,
+        "from_high": -47.4,
+        "limit_ups": 1
        }
       },
       {
@@ -501,7 +501,7 @@
        "first_seen": "2026-04-27",
        "holders": [],
        "tide": {
-        "vol_ratio": 2.06,
+        "vol_ratio": 1.25,
         "from_high": -43.0,
         "limit_ups": 1
        }
@@ -520,8 +520,8 @@
        "first_seen": "2026-04-17",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.78,
-        "from_high": -34.7,
+        "vol_ratio": 0.71,
+        "from_high": -37.2,
         "limit_ups": 0
        }
       }
@@ -545,8 +545,8 @@
        "first_seen": "2025-12-24",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.18,
-        "from_high": -45.6,
+        "vol_ratio": 1.09,
+        "from_high": -43.5,
         "limit_ups": 1
        }
       },
@@ -573,8 +573,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.5,
-        "from_high": -38.9,
+        "vol_ratio": 1.33,
+        "from_high": -35.2,
         "limit_ups": 0
        }
       },
@@ -592,8 +592,8 @@
        "first_seen": "2025-12-09",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.29,
-        "from_high": -51.9,
+        "vol_ratio": 1.88,
+        "from_high": -48.6,
         "limit_ups": 0
        }
       },
@@ -611,8 +611,8 @@
        "first_seen": "2026-06-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.69,
-        "from_high": -65.4,
+        "vol_ratio": 0.73,
+        "from_high": -65.7,
         "limit_ups": 0
        }
       },
@@ -630,7 +630,7 @@
        "first_seen": "2026-02-04",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.88,
+        "vol_ratio": 0.64,
         "from_high": -66.8,
         "limit_ups": 0
        }
@@ -649,8 +649,8 @@
        "first_seen": "2026-05-22",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.68,
-        "from_high": -21.8,
+        "vol_ratio": 1.52,
+        "from_high": -20.5,
         "limit_ups": 2
        }
       },
@@ -668,8 +668,8 @@
        "first_seen": "2026-04-15",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.78,
-        "from_high": -38.1,
+        "vol_ratio": 0.98,
+        "from_high": -36.7,
         "limit_ups": 0
        }
       },
@@ -687,8 +687,8 @@
        "first_seen": "2025-11-08",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.54,
-        "from_high": -51.2,
+        "vol_ratio": 0.59,
+        "from_high": -49.9,
         "limit_ups": 0
        }
       },
@@ -706,8 +706,8 @@
        "first_seen": "2026-04-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.89,
-        "from_high": -42.5,
+        "vol_ratio": 1.02,
+        "from_high": -40.2,
         "limit_ups": 0
        }
       },
@@ -725,8 +725,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.63,
-        "from_high": -57.7,
+        "vol_ratio": 2.04,
+        "from_high": -54.1,
         "limit_ups": 0
        }
       },
@@ -744,7 +744,7 @@
        "first_seen": "2026-03-31",
        "holders": [],
        "tide": {
-        "vol_ratio": 2.14,
+        "vol_ratio": 1.56,
         "from_high": -60.2,
         "limit_ups": 0
        }
@@ -763,8 +763,8 @@
        "first_seen": "2026-03-31",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.88,
-        "from_high": -44.1,
+        "vol_ratio": 0.92,
+        "from_high": -43.2,
         "limit_ups": 0
        }
       },
@@ -782,8 +782,8 @@
        "first_seen": "2026-08-01",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.76,
-        "from_high": -60.4,
+        "vol_ratio": 0.65,
+        "from_high": -57.8,
         "limit_ups": 0
        }
       },
@@ -801,8 +801,8 @@
        "first_seen": "2026-04-21",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.8,
-        "from_high": -47.8,
+        "vol_ratio": 0.86,
+        "from_high": -46.4,
         "limit_ups": 0
        }
       },
@@ -820,8 +820,8 @@
        "first_seen": "2026-04-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.71,
-        "from_high": -30.2,
+        "vol_ratio": 0.68,
+        "from_high": -29.8,
         "limit_ups": 0
        }
       },
@@ -839,7 +839,7 @@
        "first_seen": "2025-12-31",
        "holders": [],
        "tide": {
-        "vol_ratio": 3.03,
+        "vol_ratio": 1.9,
         "from_high": -51.4,
         "limit_ups": 0
        }
@@ -858,8 +858,8 @@
        "first_seen": "2026-04-21",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.65,
-        "from_high": -28.8,
+        "vol_ratio": 0.79,
+        "from_high": -27.0,
         "limit_ups": 0
        }
       },
@@ -877,8 +877,8 @@
        "first_seen": "2025-12-09",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.85,
-        "from_high": -38.0,
+        "vol_ratio": 2.87,
+        "from_high": -33.1,
         "limit_ups": 0
        }
       },
@@ -896,8 +896,8 @@
        "first_seen": "2025-11-18",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.16,
-        "from_high": -44.9,
+        "vol_ratio": 1.13,
+        "from_high": -44.4,
         "limit_ups": 0
        }
       },
@@ -915,8 +915,8 @@
        "first_seen": "2025-12-08",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.95,
-        "from_high": -15.9,
+        "vol_ratio": 0.92,
+        "from_high": -14.3,
         "limit_ups": 0
        }
       },
@@ -947,8 +947,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.12,
-        "from_high": -11.1,
+        "vol_ratio": 1.33,
+        "from_high": -5.5,
         "limit_ups": 0
        }
       },
@@ -966,8 +966,8 @@
        "first_seen": "2026-04-10",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.25,
-        "from_high": -39.2,
+        "vol_ratio": 0.93,
+        "from_high": -38.9,
         "limit_ups": 0
        }
       },
@@ -985,8 +985,8 @@
        "first_seen": "2026-03-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.99,
-        "from_high": -30.9,
+        "vol_ratio": 0.87,
+        "from_high": -32.0,
         "limit_ups": 0
        }
       },
@@ -1004,8 +1004,8 @@
        "first_seen": "2026-01-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.91,
-        "from_high": -48.3,
+        "vol_ratio": 0.75,
+        "from_high": -47.6,
         "limit_ups": 0
        }
       },
@@ -1023,8 +1023,8 @@
        "first_seen": "2026-03-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.84,
-        "from_high": -50.9,
+        "vol_ratio": 0.85,
+        "from_high": -50.2,
         "limit_ups": 0
        }
       }
@@ -1048,8 +1048,8 @@
        "first_seen": "2026-02-26",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.18,
-        "from_high": -45.6,
+        "vol_ratio": 1.09,
+        "from_high": -43.5,
         "limit_ups": 1
        }
       },
@@ -1067,8 +1067,8 @@
        "first_seen": "2026-06-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.69,
-        "from_high": -65.4,
+        "vol_ratio": 0.73,
+        "from_high": -65.7,
         "limit_ups": 0
        }
       },
@@ -1086,8 +1086,8 @@
        "first_seen": "2025-12-15",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.84,
-        "from_high": -49.2,
+        "vol_ratio": 0.86,
+        "from_high": -48.3,
         "limit_ups": 0
        }
       },
@@ -1105,8 +1105,8 @@
        "first_seen": "2026-05-22",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.68,
-        "from_high": -21.8,
+        "vol_ratio": 1.52,
+        "from_high": -20.5,
         "limit_ups": 2
        }
       },
@@ -1133,8 +1133,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.5,
-        "from_high": -38.9,
+        "vol_ratio": 1.33,
+        "from_high": -35.2,
         "limit_ups": 0
        }
       },
@@ -1152,8 +1152,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.02,
-        "from_high": -54.8,
+        "vol_ratio": 0.82,
+        "from_high": -54.9,
         "limit_ups": 0
        }
       },
@@ -1171,8 +1171,8 @@
        "first_seen": "2025-11-24",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.66,
-        "from_high": -29.7,
+        "vol_ratio": 0.68,
+        "from_high": -28.6,
         "limit_ups": 0
        }
       },
@@ -1190,8 +1190,8 @@
        "first_seen": "2026-01-14",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.81,
-        "from_high": -47.8,
+        "vol_ratio": 0.72,
+        "from_high": -48.5,
         "limit_ups": 0
        }
       },
@@ -1222,8 +1222,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.15,
-        "from_high": -29.9,
+        "vol_ratio": 0.72,
+        "from_high": -29.6,
         "limit_ups": 0
        }
       },
@@ -1246,8 +1246,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.34,
-        "from_high": -39.8,
+        "vol_ratio": 1.39,
+        "from_high": -37.3,
         "limit_ups": 1
        }
       },
@@ -1265,8 +1265,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.93,
-        "from_high": -54.7,
+        "vol_ratio": 0.78,
+        "from_high": -54.5,
         "limit_ups": 0
        }
       },
@@ -1284,8 +1284,8 @@
        "first_seen": "2026-04-17",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.64,
-        "from_high": -30.6,
+        "vol_ratio": 0.5,
+        "from_high": -29.9,
         "limit_ups": 0
        }
       },
@@ -1303,8 +1303,8 @@
        "first_seen": "2026-04-24",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.8,
-        "from_high": -40.8,
+        "vol_ratio": 0.51,
+        "from_high": -40.3,
         "limit_ups": 0
        }
       },
@@ -1322,8 +1322,8 @@
        "first_seen": "2026-04-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.89,
-        "from_high": -42.5,
+        "vol_ratio": 1.02,
+        "from_high": -40.2,
         "limit_ups": 0
        }
       },
@@ -1354,8 +1354,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.12,
-        "from_high": -11.1,
+        "vol_ratio": 1.33,
+        "from_high": -5.5,
         "limit_ups": 0
        }
       },
@@ -1378,8 +1378,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.82,
-        "from_high": -29.6,
+        "vol_ratio": 0.54,
+        "from_high": -27.4,
         "limit_ups": 0
        }
       },
@@ -1402,7 +1402,7 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.89,
+        "vol_ratio": 0.75,
         "from_high": -50.4,
         "limit_ups": 0
        }
@@ -1421,8 +1421,8 @@
        "first_seen": "2026-04-22",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.67,
-        "from_high": -14.0,
+        "vol_ratio": 1.08,
+        "from_high": -15.7,
         "limit_ups": 0
        }
       },
@@ -1445,8 +1445,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.0,
-        "from_high": -5.8,
+        "vol_ratio": 1.22,
+        "from_high": -4.1,
         "limit_ups": 0
        }
       },
@@ -1469,8 +1469,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.91,
-        "from_high": -43.9,
+        "vol_ratio": 0.8,
+        "from_high": -43.3,
         "limit_ups": 0
        }
       },
@@ -1488,8 +1488,8 @@
        "first_seen": "2026-04-16",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.74,
-        "from_high": -39.7,
+        "vol_ratio": 0.9,
+        "from_high": -38.6,
         "limit_ups": 0
        }
       },
@@ -1507,8 +1507,8 @@
        "first_seen": "2026-03-21",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.9,
-        "from_high": -23.2,
+        "vol_ratio": 0.71,
+        "from_high": -23.1,
         "limit_ups": 0
        }
       },
@@ -1526,8 +1526,8 @@
        "first_seen": "2026-04-21",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.75,
-        "from_high": -45.0,
+        "vol_ratio": 0.87,
+        "from_high": -44.0,
         "limit_ups": 0
        }
       },
@@ -1545,8 +1545,8 @@
        "first_seen": "2026-04-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.87,
-        "from_high": -16.4,
+        "vol_ratio": 0.94,
+        "from_high": -15.3,
         "limit_ups": 0
        }
       },
@@ -1564,8 +1564,8 @@
        "first_seen": "2025-11-27",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.37,
-        "from_high": -49.5,
+        "vol_ratio": 1.01,
+        "from_high": -49.4,
         "limit_ups": 0
        }
       }
@@ -1589,8 +1589,8 @@
        "first_seen": "2026-03-31",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.42,
-        "from_high": -25.5,
+        "vol_ratio": 1.18,
+        "from_high": -24.2,
         "limit_ups": 1
        }
       },
@@ -1608,8 +1608,8 @@
        "first_seen": "2026-03-13",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.69,
-        "from_high": -34.4,
+        "vol_ratio": 1.01,
+        "from_high": -30.8,
         "limit_ups": 0
        }
       },
@@ -1627,8 +1627,8 @@
        "first_seen": "2025-12-09",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.29,
-        "from_high": -51.9,
+        "vol_ratio": 1.88,
+        "from_high": -48.6,
         "limit_ups": 0
        }
       },
@@ -1646,8 +1646,8 @@
        "first_seen": "2025-12-15",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.84,
-        "from_high": -49.2,
+        "vol_ratio": 0.86,
+        "from_high": -48.3,
         "limit_ups": 0
        }
       },
@@ -1666,7 +1666,7 @@
        "holders": [],
        "tide": {
         "vol_ratio": 0.69,
-        "from_high": -24.4,
+        "from_high": -23.9,
         "limit_ups": 0
        }
       },
@@ -1684,8 +1684,8 @@
        "first_seen": "2026-06-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.69,
-        "from_high": -65.4,
+        "vol_ratio": 0.73,
+        "from_high": -65.7,
         "limit_ups": 0
        }
       },
@@ -1703,8 +1703,8 @@
        "first_seen": "2026-06-09",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.18,
-        "from_high": -45.6,
+        "vol_ratio": 1.09,
+        "from_high": -43.5,
         "limit_ups": 1
        }
       },
@@ -1722,8 +1722,8 @@
        "first_seen": "2026-01-16",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.66,
-        "from_high": -26.2,
+        "vol_ratio": 0.75,
+        "from_high": -21.1,
         "limit_ups": 0
        }
       },
@@ -1741,8 +1741,8 @@
        "first_seen": "2026-05-22",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.68,
-        "from_high": -21.8,
+        "vol_ratio": 1.52,
+        "from_high": -20.5,
         "limit_ups": 2
        }
       },
@@ -1760,7 +1760,7 @@
        "first_seen": "2026-02-04",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.88,
+        "vol_ratio": 0.64,
         "from_high": -66.8,
         "limit_ups": 0
        }
@@ -1796,8 +1796,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.73,
-        "from_high": -55.2,
+        "vol_ratio": 0.85,
+        "from_high": -53.9,
         "limit_ups": 0
        }
       },
@@ -1815,7 +1815,7 @@
        "first_seen": "2026-04-02",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.86,
+        "vol_ratio": 0.64,
         "from_high": -32.7,
         "limit_ups": 0
        }
@@ -1834,8 +1834,8 @@
        "first_seen": "2026-01-08",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.03,
-        "from_high": -47.6,
+        "vol_ratio": 1.11,
+        "from_high": -45.6,
         "limit_ups": 0
        }
       },
@@ -1853,8 +1853,8 @@
        "first_seen": "2025-11-24",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.66,
-        "from_high": -29.7,
+        "vol_ratio": 0.68,
+        "from_high": -28.6,
         "limit_ups": 0
        }
       },
@@ -1872,8 +1872,8 @@
        "first_seen": "2025-11-27",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.37,
-        "from_high": -49.5,
+        "vol_ratio": 1.01,
+        "from_high": -49.4,
         "limit_ups": 0
        }
       },
@@ -1891,8 +1891,8 @@
        "first_seen": "2026-03-27",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.77,
-        "from_high": -32.9,
+        "vol_ratio": 0.87,
+        "from_high": -32.0,
         "limit_ups": 0
        }
       },
@@ -1910,8 +1910,8 @@
        "first_seen": "2026-04-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.96,
-        "from_high": -47.2,
+        "vol_ratio": 0.82,
+        "from_high": -46.1,
         "limit_ups": 0
        }
       },
@@ -1929,8 +1929,8 @@
        "first_seen": "2026-04-18",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.81,
-        "from_high": -46.2,
+        "vol_ratio": 1.48,
+        "from_high": -41.6,
         "limit_ups": 0
        }
       },
@@ -1961,8 +1961,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.12,
-        "from_high": -11.1,
+        "vol_ratio": 1.33,
+        "from_high": -5.5,
         "limit_ups": 0
        }
       },
@@ -1989,8 +1989,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 2.07,
-        "from_high": -42.2,
+        "vol_ratio": 0.91,
+        "from_high": -41.6,
         "limit_ups": 1
        }
       },
@@ -2008,8 +2008,8 @@
        "first_seen": "2025-12-04",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.96,
-        "from_high": -36.9,
+        "vol_ratio": 0.86,
+        "from_high": -36.0,
         "limit_ups": 0
        }
       },
@@ -2027,8 +2027,8 @@
        "first_seen": "2026-03-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.74,
-        "from_high": -24.0,
+        "vol_ratio": 0.85,
+        "from_high": -20.6,
         "limit_ups": 0
        }
       },
@@ -2046,8 +2046,8 @@
        "first_seen": "2026-04-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.71,
-        "from_high": -30.2,
+        "vol_ratio": 0.68,
+        "from_high": -29.8,
         "limit_ups": 0
        }
       },
@@ -2074,8 +2074,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.06,
-        "from_high": -75.8,
+        "vol_ratio": 0.63,
+        "from_high": -76.1,
         "limit_ups": 0
        }
       },
@@ -2098,8 +2098,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.93,
-        "from_high": -55.2,
+        "vol_ratio": 0.9,
+        "from_high": -54.0,
         "limit_ups": 0
        }
       }
@@ -2113,7 +2113,7 @@
    "segments": [
     {
      "name": "光模块与 CPO",
-     "total": 253,
+     "total": 262,
      "items": [
       {
        "code": "002463",
@@ -2129,8 +2129,8 @@
        "first_seen": "2025-11-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.35,
-        "from_high": -53.7,
+        "vol_ratio": 1.4,
+        "from_high": -51.3,
         "limit_ups": 1
        }
       },
@@ -2148,8 +2148,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.24,
-        "from_high": -64.8,
+        "vol_ratio": 1.14,
+        "from_high": -64.6,
         "limit_ups": 0
        }
       },
@@ -2172,8 +2172,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.7,
-        "from_high": -53.1,
+        "vol_ratio": 0.75,
+        "from_high": -51.7,
         "limit_ups": 0
        }
       },
@@ -2200,8 +2200,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.9,
-        "from_high": -36.2,
+        "vol_ratio": 1.09,
+        "from_high": -31.8,
         "limit_ups": 0
        }
       },
@@ -2228,8 +2228,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.85,
-        "from_high": -53.7,
+        "vol_ratio": 0.96,
+        "from_high": -52.5,
         "limit_ups": 0
        }
       },
@@ -2247,8 +2247,8 @@
        "first_seen": "2026-04-18",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.06,
-        "from_high": -64.2,
+        "vol_ratio": 0.8,
+        "from_high": -64.3,
         "limit_ups": 0
        }
       },
@@ -2266,8 +2266,8 @@
        "first_seen": "2026-04-04",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.05,
-        "from_high": -62.7,
+        "vol_ratio": 0.94,
+        "from_high": -62.3,
         "limit_ups": 0
        }
       },
@@ -2285,27 +2285,27 @@
        "first_seen": "2026-03-31",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.08,
-        "from_high": -60.2,
+        "vol_ratio": 1.23,
+        "from_high": -60.7,
         "limit_ups": 0
        }
       },
       {
-       "code": "688702",
-       "name": "盛科通信",
+       "code": "600703",
+       "name": "三安光电",
        "role": "相关业务",
        "stage": "验证",
        "evidence": {
-        "date": "2026-09-02",
-        "title": "盛科通信2026年度向特定对象发行A股股票募集资金使用的可行性分析报告",
-        "quote": "当前，公司已与国内光芯片、光模块以及先进封装测试厂商达成光电融合技术攻关的一致共识，公司作为国内领先的以太网交换芯片厂商",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-09-02/1225542795.PDF"
+        "date": "2026-08-26",
+        "title": "三安光电股份有限公司2026年半年度报告",
+        "quote": "，2家客户应用于800G/1.6T光模块的光芯片已送样测试，应用于3.2T光模块的光芯片处于研发阶段",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501696.PDF"
        },
-       "first_seen": "2026-08-27",
+       "first_seen": "2026-04-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.35,
-        "from_high": -61.3,
+        "vol_ratio": 0.54,
+        "from_high": -60.3,
         "limit_ups": 0
        }
       },
@@ -2323,8 +2323,8 @@
        "first_seen": "2026-04-18",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.41,
-        "from_high": -59.2,
+        "vol_ratio": 0.9,
+        "from_high": -58.4,
         "limit_ups": 0
        }
       },
@@ -2342,8 +2342,46 @@
        "first_seen": "2025-11-20",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.79,
-        "from_high": -49.4,
+        "vol_ratio": 0.88,
+        "from_high": -47.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688702",
+       "name": "盛科通信",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-02",
+        "title": "盛科通信2026年度向特定对象发行A股股票募集资金使用的可行性分析报告",
+        "quote": "当前，公司已与国内光芯片、光模块以及先进封装测试厂商达成光电融合技术攻关的一致共识，公司作为国内领先的以太网交换芯片厂商",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-02/1225542795.PDF"
+       },
+       "first_seen": "2026-08-27",
+       "holders": [],
+       "tide": {
+        "vol_ratio": 1.51,
+        "from_high": -60.0,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300757",
+       "name": "罗博特科",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-03-31",
+        "title": "2025年年度报告摘要",
+        "quote": "统高速晶圆测试设备、高速晶粒测试设备、高速芯片测试设备、高速硅光模组/CPO",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059371.PDF"
+       },
+       "first_seen": "2026-03-31",
+       "holders": [],
+       "tide": {
+        "vol_ratio": 0.9,
+        "from_high": -59.8,
         "limit_ups": 0
        }
       },
@@ -2361,8 +2399,8 @@
        "first_seen": "2026-04-03",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.77,
-        "from_high": -60.1,
+        "vol_ratio": 1.29,
+        "from_high": -59.3,
         "limit_ups": 0
        }
       },
@@ -2385,28 +2423,9 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.88,
-        "from_high": -70.4,
+        "vol_ratio": 0.63,
+        "from_high": -70.1,
         "limit_ups": 1
-       }
-      },
-      {
-       "code": "300757",
-       "name": "罗博特科",
-       "role": "相关业务",
-       "stage": "验证",
-       "evidence": {
-        "date": "2026-03-31",
-        "title": "2025年年度报告摘要",
-        "quote": "统高速晶圆测试设备、高速晶粒测试设备、高速芯片测试设备、高速硅光模组/CPO",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059371.PDF"
-       },
-       "first_seen": "2026-03-31",
-       "holders": [],
-       "tide": {
-        "vol_ratio": 1.12,
-        "from_high": -60.6,
-        "limit_ups": 0
        }
       },
       {
@@ -2423,8 +2442,27 @@
        "first_seen": "2026-03-11",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.45,
-        "from_high": -51.7,
+        "vol_ratio": 1.6,
+        "from_high": -49.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300394",
+       "name": "天孚通信",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-04-08",
+        "title": "2025年年度报告摘要",
+        "quote": "将各种光零组件加工组装得到光器件，光器件封装组测试成可插拔光模块和CPO等",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082704.PDF"
+       },
+       "first_seen": "2026-04-08",
+       "holders": [],
+       "tide": {
+        "vol_ratio": 0.91,
+        "from_high": -67.2,
         "limit_ups": 0
        }
       },
@@ -2447,8 +2485,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.51,
-        "from_high": -42.2,
+        "vol_ratio": 0.71,
+        "from_high": -39.4,
         "limit_ups": 0
        }
       },
@@ -2466,28 +2504,9 @@
        "first_seen": "2026-04-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.94,
-        "from_high": -51.1,
+        "vol_ratio": 0.71,
+        "from_high": -50.2,
         "limit_ups": 1
-       }
-      },
-      {
-       "code": "300394",
-       "name": "天孚通信",
-       "role": "相关业务",
-       "stage": "验证",
-       "evidence": {
-        "date": "2026-04-08",
-        "title": "2025年年度报告摘要",
-        "quote": "将各种光零组件加工组装得到光器件，光器件封装组测试成可插拔光模块和CPO等",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082704.PDF"
-       },
-       "first_seen": "2026-04-08",
-       "holders": [],
-       "tide": {
-        "vol_ratio": 1.29,
-        "from_high": -67.4,
-        "limit_ups": 0
        }
       },
       {
@@ -2509,8 +2528,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 2.38,
-        "from_high": -64.9,
+        "vol_ratio": 2.74,
+        "from_high": -64.6,
         "limit_ups": 0
        }
       },
@@ -2537,8 +2556,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.14,
-        "from_high": -47.4,
+        "vol_ratio": 0.98,
+        "from_high": -46.3,
         "limit_ups": 0
        }
       },
@@ -2556,8 +2575,8 @@
        "first_seen": "2026-08-20",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.93,
-        "from_high": -65.2,
+        "vol_ratio": 0.61,
+        "from_high": -65.8,
         "limit_ups": 0
        }
       },
@@ -2592,8 +2611,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.69,
-        "from_high": -47.1,
+        "vol_ratio": 0.91,
+        "from_high": -44.6,
         "limit_ups": 0
        }
       },
@@ -2611,7 +2630,7 @@
        "first_seen": "2026-08-31",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.45,
+        "vol_ratio": 0.76,
         "from_high": -35.6,
         "limit_ups": 0
        }
@@ -2630,40 +2649,16 @@
        "first_seen": "2026-08-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 2.06,
+        "vol_ratio": 1.25,
         "from_high": -43.0,
         "limit_ups": 1
-       }
-      },
-      {
-       "code": "003018",
-       "name": "金富科技",
-       "role": "相关业务",
-       "stage": "验证",
-       "evidence": {
-        "date": "2026-08-29",
-        "title": "2026年半年度报告",
-        "quote": "截至本报告披露日，公司已获得部分新客户的项目订单，并已实现光模块液冷板产品的小批量供货",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225533163.PDF"
-       },
-       "first_seen": "2026-08-29",
-       "holders": [
-        {
-         "h": "高盛",
-         "new": true
-        }
-       ],
-       "tide": {
-        "vol_ratio": 1.09,
-        "from_high": -53.9,
-        "limit_ups": 0
        }
       }
      ]
     },
     {
      "name": "AI 服务器",
-     "total": 314,
+     "total": 320,
      "items": [
       {
        "code": "603186",
@@ -2684,8 +2679,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.96,
-        "from_high": -47.5,
+        "vol_ratio": 0.86,
+        "from_high": -45.0,
         "limit_ups": 1
        }
       },
@@ -2703,8 +2698,8 @@
        "first_seen": "2026-07-11",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.26,
-        "from_high": -54.9,
+        "vol_ratio": 1.14,
+        "from_high": -55.2,
         "limit_ups": 0
        }
       },
@@ -2722,8 +2717,8 @@
        "first_seen": "2026-07-06",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.44,
-        "from_high": -69.9,
+        "vol_ratio": 1.09,
+        "from_high": -70.4,
         "limit_ups": 0
        }
       },
@@ -2741,8 +2736,8 @@
        "first_seen": "2026-08-20",
        "holders": [],
        "tide": {
-        "vol_ratio": 2.46,
-        "from_high": -34.0,
+        "vol_ratio": 1.37,
+        "from_high": -34.9,
         "limit_ups": 0
        }
       },
@@ -2760,8 +2755,8 @@
        "first_seen": "2026-07-14",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.13,
-        "from_high": -53.2,
+        "vol_ratio": 1.25,
+        "from_high": -50.3,
         "limit_ups": 1
        }
       },
@@ -2779,8 +2774,8 @@
        "first_seen": "2026-08-27",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.05,
-        "from_high": -62.7,
+        "vol_ratio": 0.94,
+        "from_high": -62.3,
         "limit_ups": 0
        }
       },
@@ -2803,8 +2798,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.7,
-        "from_high": -53.1,
+        "vol_ratio": 0.75,
+        "from_high": -51.7,
         "limit_ups": 0
        }
       },
@@ -2827,8 +2822,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.82,
-        "from_high": -39.4,
+        "vol_ratio": 0.91,
+        "from_high": -37.3,
         "limit_ups": 0
        }
       },
@@ -2846,8 +2841,8 @@
        "first_seen": "2026-08-11",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.06,
-        "from_high": -36.3,
+        "vol_ratio": 0.71,
+        "from_high": -37.0,
         "limit_ups": 0
        }
       },
@@ -2865,8 +2860,8 @@
        "first_seen": "2026-08-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.83,
-        "from_high": -45.1,
+        "vol_ratio": 0.58,
+        "from_high": -45.3,
         "limit_ups": 0
        }
       },
@@ -2884,7 +2879,7 @@
        "first_seen": "2026-07-20",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.93,
+        "vol_ratio": 0.63,
         "from_high": -54.7,
         "limit_ups": 0
        }
@@ -2903,8 +2898,8 @@
        "first_seen": "2026-09-11",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.83,
-        "from_high": -63.8,
+        "vol_ratio": 0.7,
+        "from_high": -63.6,
         "limit_ups": 0
        }
       },
@@ -2922,8 +2917,8 @@
        "first_seen": "2026-08-31",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.89,
-        "from_high": -55.0,
+        "vol_ratio": 0.73,
+        "from_high": -55.1,
         "limit_ups": 0
        }
       },
@@ -2941,8 +2936,8 @@
        "first_seen": "2026-08-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.03,
-        "from_high": -38.5,
+        "vol_ratio": 0.79,
+        "from_high": -39.8,
         "limit_ups": 0
        }
       },
@@ -2960,8 +2955,8 @@
        "first_seen": "2026-08-27",
        "holders": [],
        "tide": {
-        "vol_ratio": 3.12,
-        "from_high": -29.4,
+        "vol_ratio": 3.15,
+        "from_high": -35.7,
         "limit_ups": 0
        }
       },
@@ -2979,7 +2974,7 @@
        "first_seen": "2026-08-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.28,
+        "vol_ratio": 1.34,
         "from_high": -73.1,
         "limit_ups": 0
        }
@@ -2998,8 +2993,8 @@
        "first_seen": "2026-08-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.42,
-        "from_high": -58.6,
+        "vol_ratio": 0.76,
+        "from_high": -58.7,
         "limit_ups": 0
        }
       },
@@ -3017,8 +3012,8 @@
        "first_seen": "2026-08-22",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.99,
-        "from_high": -64.6,
+        "vol_ratio": 0.87,
+        "from_high": -64.8,
         "limit_ups": 0
        }
       },
@@ -3036,8 +3031,8 @@
        "first_seen": "2026-07-27",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.8,
-        "from_high": -47.2,
+        "vol_ratio": 0.71,
+        "from_high": -47.7,
         "limit_ups": 0
        }
       },
@@ -3055,7 +3050,7 @@
        "first_seen": "2026-07-08",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.45,
+        "vol_ratio": 1.16,
         "from_high": -63.2,
         "limit_ups": 0
        }
@@ -3074,8 +3069,8 @@
        "first_seen": "2026-07-03",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.53,
-        "from_high": -37.9,
+        "vol_ratio": 0.42,
+        "from_high": -37.4,
         "limit_ups": 0
        }
       },
@@ -3093,8 +3088,8 @@
        "first_seen": "2026-08-12",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.08,
-        "from_high": -64.9,
+        "vol_ratio": 0.8,
+        "from_high": -64.3,
         "limit_ups": 0
        }
       },
@@ -3117,8 +3112,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.01,
-        "from_high": -49.1,
+        "vol_ratio": 0.83,
+        "from_high": -47.5,
         "limit_ups": 1
        }
       },
@@ -3136,8 +3131,8 @@
        "first_seen": "2026-08-15",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.31,
-        "from_high": -60.0,
+        "vol_ratio": 1.04,
+        "from_high": -59.2,
         "limit_ups": 0
        }
       },
@@ -3155,8 +3150,8 @@
        "first_seen": "2026-08-20",
        "holders": [],
        "tide": {
-        "vol_ratio": 6.03,
-        "from_high": -29.3,
+        "vol_ratio": 3.94,
+        "from_high": -30.4,
         "limit_ups": 1
        }
       }
@@ -3164,7 +3159,7 @@
     },
     {
      "name": "液冷",
-     "total": 615,
+     "total": 617,
      "items": [
       {
        "code": "300547",
@@ -3180,8 +3175,8 @@
        "first_seen": "2026-04-24",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.0,
-        "from_high": -54.4,
+        "vol_ratio": 1.61,
+        "from_high": -53.1,
         "limit_ups": 0
        }
       },
@@ -3199,8 +3194,8 @@
        "first_seen": "2026-04-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.47,
-        "from_high": -62.4,
+        "vol_ratio": 0.85,
+        "from_high": -62.0,
         "limit_ups": 0
        }
       },
@@ -3218,8 +3213,8 @@
        "first_seen": "2026-06-30",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.04,
-        "from_high": -51.0,
+        "vol_ratio": 0.93,
+        "from_high": -51.4,
         "limit_ups": 0
        }
       },
@@ -3250,7 +3245,7 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.88,
+        "vol_ratio": 0.68,
         "from_high": -53.1,
         "limit_ups": 0
        }
@@ -3269,8 +3264,8 @@
        "first_seen": "2026-08-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.72,
-        "from_high": -62.3,
+        "vol_ratio": 1.06,
+        "from_high": -62.7,
         "limit_ups": 1
        }
       },
@@ -3301,8 +3296,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.79,
-        "from_high": -29.4,
+        "vol_ratio": 1.09,
+        "from_high": -29.5,
         "limit_ups": 0
        }
       },
@@ -3341,8 +3336,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.86,
-        "from_high": -66.6,
+        "vol_ratio": 0.73,
+        "from_high": -66.7,
         "limit_ups": 0
        }
       },
@@ -3360,8 +3355,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.7,
-        "from_high": -38.9,
+        "vol_ratio": 0.83,
+        "from_high": -38.4,
         "limit_ups": 0
        }
       },
@@ -3379,8 +3374,8 @@
        "first_seen": "2026-04-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.05,
-        "from_high": -55.8,
+        "vol_ratio": 1.14,
+        "from_high": -55.0,
         "limit_ups": 0
        }
       },
@@ -3398,8 +3393,8 @@
        "first_seen": "2026-04-27",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.2,
-        "from_high": -54.2,
+        "vol_ratio": 0.85,
+        "from_high": -53.6,
         "limit_ups": 0
        }
       },
@@ -3417,8 +3412,8 @@
        "first_seen": "2026-04-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.33,
-        "from_high": -47.8,
+        "vol_ratio": 1.1,
+        "from_high": -48.0,
         "limit_ups": 0
        }
       },
@@ -3436,8 +3431,8 @@
        "first_seen": "2026-06-05",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.13,
-        "from_high": -53.2,
+        "vol_ratio": 1.25,
+        "from_high": -50.3,
         "limit_ups": 1
        }
       },
@@ -3455,8 +3450,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.04,
-        "from_high": -62.1,
+        "vol_ratio": 1.2,
+        "from_high": -62.5,
         "limit_ups": 0
        }
       },
@@ -3487,8 +3482,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.15,
-        "from_high": -29.9,
+        "vol_ratio": 0.72,
+        "from_high": -29.6,
         "limit_ups": 0
        }
       },
@@ -3506,8 +3501,8 @@
        "first_seen": "2026-04-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.8,
-        "from_high": -33.4,
+        "vol_ratio": 0.83,
+        "from_high": -32.2,
         "limit_ups": 0
        }
       },
@@ -3538,27 +3533,27 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.81,
-        "from_high": -43.9,
+        "vol_ratio": 1.18,
+        "from_high": -44.6,
         "limit_ups": 0
        }
       },
       {
-       "code": "002335",
-       "name": "科华数据",
+       "code": "688531",
+       "name": "日联科技",
        "role": "相关业务",
        "stage": "验证",
        "evidence": {
-        "date": "2026-08-28",
-        "title": "广发证券股份有限公司关于科华数据股份有限公司部分募投项目产品结构及内部投资结构调",
-        "quote": "公司已自建MW级液冷测试平台，并与国内外头部互联网企业联合研发液冷CDU产品，公司具备电力及液冷等智算中心集成化产品自主生产能力",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522574.PDF"
+        "date": "2026-08-26",
+        "title": "日联科技集团股份有限公司关于发行股份、可转换公司债券及支付现金购买资产并募集配套",
+        "quote": "的机台架构，程控电源的设计技术，测试信号的生成技术，气冷独立控温技术，液冷独立温控技术等相关技术的研发和储备",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506979.PDF"
        },
-       "first_seen": "2026-04-27",
+       "first_seen": "2026-05-12",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.86,
-        "from_high": -50.3,
+        "vol_ratio": 0.8,
+        "from_high": -64.3,
         "limit_ups": 0
        }
       },
@@ -3585,27 +3580,65 @@
         }
        ],
        "tide": {
-        "vol_ratio": 1.2,
-        "from_high": -56.9,
+        "vol_ratio": 0.83,
+        "from_high": -57.5,
         "limit_ups": 1
        }
       },
       {
-       "code": "688531",
-       "name": "日联科技",
+       "code": "002335",
+       "name": "科华数据",
        "role": "相关业务",
        "stage": "验证",
        "evidence": {
-        "date": "2026-08-26",
-        "title": "日联科技集团股份有限公司关于发行股份、可转换公司债券及支付现金购买资产并募集配套",
-        "quote": "的机台架构，程控电源的设计技术，测试信号的生成技术，气冷独立控温技术，液冷独立温控技术等相关技术的研发和储备",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506979.PDF"
+        "date": "2026-08-28",
+        "title": "广发证券股份有限公司关于科华数据股份有限公司部分募投项目产品结构及内部投资结构调",
+        "quote": "公司已自建MW级液冷测试平台，并与国内外头部互联网企业联合研发液冷CDU产品，公司具备电力及液冷等智算中心集成化产品自主生产能力",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522574.PDF"
        },
-       "first_seen": "2026-05-12",
+       "first_seen": "2026-04-27",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.06,
-        "from_high": -64.2,
+        "vol_ratio": 0.68,
+        "from_high": -50.6,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "688411",
+       "name": "海博思创",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-09-11",
+        "title": "中泰证券股份有限公司关于北京海博思创科技股份有限公司2026年半年度持续督导跟踪",
+        "quote": "截至目前，公司自主研发的液冷组串式PCS产品已通过多项权威认证与测试，包括GB/T34120-2023",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-09-11/1225558150.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "holders": [],
+       "tide": {
+        "vol_ratio": 1.85,
+        "from_high": -59.1,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300322",
+       "name": "硕贝德",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-13",
+        "title": "关于2026年度向特定对象发行A股股票摊薄即期回报的风险提示、采取填补措施及相关",
+        "quote": "、气密性及热性能测试等能力，相关技术可向CPU/GPU冷板、光模块液冷组件及服务器液冷组件迁移",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-13/1225470566.PDF"
+       },
+       "first_seen": "2026-07-15",
+       "holders": [],
+       "tide": {
+        "vol_ratio": 1.0,
+        "from_high": -60.1,
         "limit_ups": 0
        }
       },
@@ -3623,8 +3656,8 @@
        "first_seen": "2026-05-12",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.64,
-        "from_high": -34.1,
+        "vol_ratio": 0.78,
+        "from_high": -32.3,
         "limit_ups": 0
        }
       },
@@ -3651,27 +3684,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.91,
-        "from_high": -66.0,
-        "limit_ups": 0
-       }
-      },
-      {
-       "code": "688411",
-       "name": "海博思创",
-       "role": "相关业务",
-       "stage": "验证",
-       "evidence": {
-        "date": "2026-09-11",
-        "title": "中泰证券股份有限公司关于北京海博思创科技股份有限公司2026年半年度持续督导跟踪",
-        "quote": "截至目前，公司自主研发的液冷组串式PCS产品已通过多项权威认证与测试，包括GB/T34120-2023",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-09-11/1225558150.PDF"
-       },
-       "first_seen": "2026-04-29",
-       "holders": [],
-       "tide": {
-        "vol_ratio": 2.22,
-        "from_high": -57.0,
+        "vol_ratio": 0.66,
+        "from_high": -66.2,
         "limit_ups": 0
        }
       },
@@ -3689,36 +3703,8 @@
        "first_seen": "2026-04-30",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.89,
-        "from_high": -55.0,
-        "limit_ups": 0
-       }
-      },
-      {
-       "code": "300375",
-       "name": "鹏翎股份",
-       "role": "相关业务",
-       "stage": "验证",
-       "evidence": {
-        "date": "2026-04-29",
-        "title": "2025年年度报告",
-        "quote": "同时，储能模组液冷管路完成技术验证并实现小批量供货，逐步拓宽非车配套场景",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225242686.PDF"
-       },
-       "first_seen": "2026-04-29",
-       "holders": [
-        {
-         "h": "高盛",
-         "new": true
-        },
-        {
-         "h": "小摩",
-         "new": true
-        }
-       ],
-       "tide": {
-        "vol_ratio": 1.06,
-        "from_high": -39.2,
+        "vol_ratio": 0.73,
+        "from_high": -55.1,
         "limit_ups": 0
        }
       },
@@ -3742,7 +3728,7 @@
        ],
        "tide": {
         "vol_ratio": 0.87,
-        "from_high": -60.4,
+        "from_high": -61.0,
         "limit_ups": 0
        }
       }
@@ -3766,8 +3752,32 @@
        "first_seen": "2026-04-30",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.82,
-        "from_high": -58.5,
+        "vol_ratio": 0.55,
+        "from_high": -58.4,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "300964",
+       "name": "本川智能",
+       "role": "相关业务",
+       "stage": "验证",
+       "evidence": {
+        "date": "2026-08-26",
+        "title": "2026年半年度报告",
+        "quote": "（3）芯片测试整机：AI服务器电源、功率半导体测试与封装设备高多层板厚铜板软硬结合板（1）高多层、",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501594.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "holders": [
+        {
+         "h": "高盛",
+         "new": true
+        }
+       ],
+       "tide": {
+        "vol_ratio": 0.71,
+        "from_high": -39.4,
         "limit_ups": 0
        }
       },
@@ -3785,32 +3795,27 @@
        "first_seen": "2026-04-30",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.89,
-        "from_high": -55.0,
+        "vol_ratio": 0.73,
+        "from_high": -55.1,
         "limit_ups": 0
        }
       },
       {
-       "code": "300964",
-       "name": "本川智能",
+       "code": "688551",
+       "name": "科威尔",
        "role": "相关业务",
        "stage": "验证",
        "evidence": {
-        "date": "2026-04-28",
-        "title": "东北证券股份有限公司关于江苏本川智能电路科技股份有限公司向不特定对象发行可转换公",
-        "quote": "板、HDI板等）产品的生产能力，并通过配置新产品试制线，具备面向如AI服务器电源",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225237116.PDF"
+        "date": "2026-08-22",
+        "title": "2026年半年度报告",
+        "quote": "公司前瞻布局AI服务器电源测试前沿赛道，依托多年大功率源载自研技术积淀，适配AI服务器电源大功率",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490739.PDF"
        },
-       "first_seen": "2026-04-28",
-       "holders": [
-        {
-         "h": "高盛",
-         "new": true
-        }
-       ],
+       "first_seen": "2026-04-24",
+       "holders": [],
        "tide": {
-        "vol_ratio": 0.51,
-        "from_high": -42.2,
+        "vol_ratio": 0.87,
+        "from_high": -64.8,
         "limit_ups": 0
        }
       },
@@ -3828,46 +3833,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.23,
-        "from_high": -60.5,
-        "limit_ups": 0
-       }
-      },
-      {
-       "code": "688551",
-       "name": "科威尔",
-       "role": "相关业务",
-       "stage": "验证",
-       "evidence": {
-        "date": "2026-08-22",
-        "title": "2026年半年度报告",
-        "quote": "公司前瞻布局AI服务器电源测试前沿赛道，依托多年大功率源载自研技术积淀，适配AI服务器电源大功率",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490739.PDF"
-       },
-       "first_seen": "2026-08-22",
-       "holders": [],
-       "tide": {
-        "vol_ratio": 0.99,
-        "from_high": -64.6,
-        "limit_ups": 0
-       }
-      },
-      {
-       "code": "000066",
-       "name": "中国长城",
-       "role": "相关业务",
-       "stage": "研发",
-       "evidence": {
-        "date": "2026-08-29",
-        "title": "关于2026年1-6月募集资金存放、管理与实际使用情况的专项报告",
-        "quote": "AI服务器电源研发项目",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225525195.PDF"
-       },
-       "first_seen": "2026-04-29",
-       "holders": [],
-       "tide": {
-        "vol_ratio": 0.84,
-        "from_high": -55.6,
+        "vol_ratio": 0.95,
+        "from_high": -59.5,
         "limit_ups": 0
        }
       },
@@ -3894,8 +3861,27 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.9,
-        "from_high": -36.2,
+        "vol_ratio": 1.09,
+        "from_high": -31.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "000066",
+       "name": "中国长城",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-29",
+        "title": "关于2026年1-6月募集资金存放、管理与实际使用情况的专项报告",
+        "quote": "AI服务器电源研发项目",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225525195.PDF"
+       },
+       "first_seen": "2026-04-29",
+       "holders": [],
+       "tide": {
+        "vol_ratio": 0.65,
+        "from_high": -55.4,
         "limit_ups": 0
        }
       },
@@ -3913,8 +3899,8 @@
        "first_seen": "2026-04-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.89,
-        "from_high": -48.8,
+        "vol_ratio": 0.79,
+        "from_high": -48.6,
         "limit_ups": 0
        }
       },
@@ -3932,8 +3918,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.08,
-        "from_high": -51.0,
+        "vol_ratio": 0.89,
+        "from_high": -49.9,
         "limit_ups": 0
        }
       },
@@ -3951,8 +3937,8 @@
        "first_seen": "2026-04-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.55,
-        "from_high": -55.5,
+        "vol_ratio": 0.59,
+        "from_high": -54.5,
         "limit_ups": 0
        }
       },
@@ -3970,8 +3956,8 @@
        "first_seen": "2026-09-19",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.72,
-        "from_high": -29.2,
+        "vol_ratio": 0.63,
+        "from_high": -28.7,
         "limit_ups": 0
        }
       },
@@ -3989,8 +3975,32 @@
        "first_seen": "2026-04-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.88,
-        "from_high": -43.4,
+        "vol_ratio": 0.67,
+        "from_high": -43.5,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "301348",
+       "name": "蓝箭电子",
+       "role": "相关业务",
+       "stage": "研发",
+       "evidence": {
+        "date": "2026-08-27",
+        "title": "2026年半年度报告",
+        "quote": "此外，公司开发新型功率器件，适配新能源电力系统、电动汽车、服务器电源等多类高端需求场景",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514294.PDF"
+       },
+       "first_seen": "2026-04-28",
+       "holders": [
+        {
+         "h": "瑞银",
+         "new": false
+        }
+       ],
+       "tide": {
+        "vol_ratio": 0.78,
+        "from_high": -50.0,
         "limit_ups": 0
        }
       },
@@ -4008,8 +4018,8 @@
        "first_seen": "2026-04-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.64,
-        "from_high": -39.9,
+        "vol_ratio": 0.73,
+        "from_high": -38.4,
         "limit_ups": 1
        }
       },
@@ -4027,8 +4037,8 @@
        "first_seen": "2026-08-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.05,
-        "from_high": -54.7,
+        "vol_ratio": 1.01,
+        "from_high": -54.2,
         "limit_ups": 0
        }
       },
@@ -4046,8 +4056,8 @@
        "first_seen": "2026-04-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.79,
-        "from_high": -52.1,
+        "vol_ratio": 0.56,
+        "from_high": -52.4,
         "limit_ups": 0
        }
       },
@@ -4065,32 +4075,8 @@
        "first_seen": "2026-08-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.19,
-        "from_high": -66.6,
-        "limit_ups": 0
-       }
-      },
-      {
-       "code": "301348",
-       "name": "蓝箭电子",
-       "role": "相关业务",
-       "stage": "研发",
-       "evidence": {
-        "date": "2026-08-27",
-        "title": "2026年半年度报告",
-        "quote": "此外，公司开发新型功率器件，适配新能源电力系统、电动汽车、服务器电源等多类高端需求场景",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514294.PDF"
-       },
-       "first_seen": "2026-08-27",
-       "holders": [
-        {
-         "h": "瑞银",
-         "new": false
-        }
-       ],
-       "tide": {
-        "vol_ratio": 1.03,
-        "from_high": -49.7,
+        "vol_ratio": 0.94,
+        "from_high": -66.4,
         "limit_ups": 0
        }
       },
@@ -4108,8 +4094,8 @@
        "first_seen": "2026-08-25",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.72,
-        "from_high": -62.3,
+        "vol_ratio": 1.06,
+        "from_high": -62.7,
         "limit_ups": 1
        }
       },
@@ -4128,7 +4114,7 @@
        "holders": [],
        "tide": {
         "vol_ratio": 0.62,
-        "from_high": -51.7,
+        "from_high": -51.5,
         "limit_ups": 0
        }
       },
@@ -4146,8 +4132,8 @@
        "first_seen": "2026-08-20",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.73,
-        "from_high": -42.3,
+        "vol_ratio": 0.59,
+        "from_high": -42.8,
         "limit_ups": 0
        }
       },
@@ -4165,8 +4151,8 @@
        "first_seen": "2026-08-15",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.31,
-        "from_high": -60.0,
+        "vol_ratio": 1.04,
+        "from_high": -59.2,
         "limit_ups": 0
        }
       },
@@ -4197,8 +4183,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.48,
-        "from_high": -28.4,
+        "vol_ratio": 0.77,
+        "from_high": -26.8,
         "limit_ups": 0
        }
       },
@@ -4216,8 +4202,8 @@
        "first_seen": "2026-04-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.8,
-        "from_high": -72.8,
+        "vol_ratio": 0.99,
+        "from_high": -72.4,
         "limit_ups": 0
        }
       },
@@ -4240,8 +4226,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.84,
-        "from_high": -46.3,
+        "vol_ratio": 0.56,
+        "from_high": -46.4,
         "limit_ups": 0
        }
       },
@@ -4259,8 +4245,8 @@
        "first_seen": "2026-05-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.91,
-        "from_high": -45.1,
+        "vol_ratio": 0.78,
+        "from_high": -44.3,
         "limit_ups": 0
        }
       }
@@ -4284,8 +4270,8 @@
        "first_seen": "2026-01-01",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.56,
-        "from_high": -19.4,
+        "vol_ratio": 1.14,
+        "from_high": -17.1,
         "limit_ups": 0
        }
       },
@@ -4303,8 +4289,8 @@
        "first_seen": "2026-04-22",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.82,
-        "from_high": -71.4,
+        "vol_ratio": 1.51,
+        "from_high": -70.9,
         "limit_ups": 0
        }
       },
@@ -4331,8 +4317,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.97,
-        "from_high": -57.6,
+        "vol_ratio": 0.92,
+        "from_high": -57.0,
         "limit_ups": 0
        }
       },
@@ -4355,7 +4341,7 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.81,
+        "vol_ratio": 0.76,
         "from_high": -40.4,
         "limit_ups": 0
        }
@@ -4374,8 +4360,8 @@
        "first_seen": "2026-04-22",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.96,
-        "from_high": -63.2,
+        "vol_ratio": 0.61,
+        "from_high": -63.1,
         "limit_ups": 0
        }
       },
@@ -4393,8 +4379,8 @@
        "first_seen": "2026-04-21",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.93,
-        "from_high": -67.9,
+        "vol_ratio": 0.78,
+        "from_high": -68.1,
         "limit_ups": 0
        }
       },
@@ -4412,8 +4398,8 @@
        "first_seen": "2026-04-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.88,
-        "from_high": -50.7,
+        "vol_ratio": 0.89,
+        "from_high": -50.9,
         "limit_ups": 0
        }
       },
@@ -4431,8 +4417,8 @@
        "first_seen": "2026-04-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.01,
-        "from_high": -39.1,
+        "vol_ratio": 0.93,
+        "from_high": -38.1,
         "limit_ups": 0
        }
       },
@@ -4450,8 +4436,8 @@
        "first_seen": "2025-12-06",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.12,
-        "from_high": -41.1,
+        "vol_ratio": 1.29,
+        "from_high": -41.6,
         "limit_ups": 0
        }
       },
@@ -4469,8 +4455,8 @@
        "first_seen": "2026-09-03",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.78,
-        "from_high": -34.7,
+        "vol_ratio": 0.71,
+        "from_high": -37.2,
         "limit_ups": 0
        }
       },
@@ -4488,8 +4474,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.38,
-        "from_high": -58.9,
+        "vol_ratio": 0.87,
+        "from_high": -58.5,
         "limit_ups": 0
        }
       },
@@ -4507,8 +4493,8 @@
        "first_seen": "2026-04-16",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.52,
-        "from_high": -43.8,
+        "vol_ratio": 0.64,
+        "from_high": -43.7,
         "limit_ups": 0
        }
       },
@@ -4526,8 +4512,8 @@
        "first_seen": "2026-01-01",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.36,
-        "from_high": -63.2,
+        "vol_ratio": 1.17,
+        "from_high": -62.1,
         "limit_ups": 0
        }
       },
@@ -4550,8 +4536,8 @@
         }
        ],
        "tide": {
-        "vol_ratio": 0.86,
-        "from_high": -61.6,
+        "vol_ratio": 1.77,
+        "from_high": -60.7,
         "limit_ups": 0
        }
       },
@@ -4569,8 +4555,8 @@
        "first_seen": "2026-04-14",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.92,
-        "from_high": -52.4,
+        "vol_ratio": 1.04,
+        "from_high": -51.6,
         "limit_ups": 0
        }
       },
@@ -4588,8 +4574,8 @@
        "first_seen": "2026-04-11",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.22,
-        "from_high": -54.6,
+        "vol_ratio": 0.89,
+        "from_high": -54.9,
         "limit_ups": 0
        }
       },
@@ -4607,8 +4593,8 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.8,
-        "from_high": -39.2,
+        "vol_ratio": 1.03,
+        "from_high": -38.7,
         "limit_ups": 0
        }
       },
@@ -4626,8 +4612,8 @@
        "first_seen": "2026-04-23",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.82,
-        "from_high": -71.0,
+        "vol_ratio": 0.68,
+        "from_high": -70.9,
         "limit_ups": 0
        }
       },
@@ -4645,8 +4631,8 @@
        "first_seen": "2026-07-10",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.88,
-        "from_high": -58.3,
+        "vol_ratio": 0.69,
+        "from_high": -57.7,
         "limit_ups": 0
        }
       },
@@ -4664,8 +4650,8 @@
        "first_seen": "2026-03-28",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.18,
-        "from_high": -60.0,
+        "vol_ratio": 1.23,
+        "from_high": -57.6,
         "limit_ups": 0
        }
       },
@@ -4683,8 +4669,27 @@
        "first_seen": "2026-04-29",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.0,
+        "vol_ratio": 0.74,
         "from_high": -67.8,
+        "limit_ups": 0
+       }
+      },
+      {
+       "code": "600522",
+       "name": "中天科技",
+       "role": "相关业务",
+       "stage": "提到",
+       "evidence": {
+        "date": "2026-08-28",
+        "title": "江苏中天科技股份有限公司2026年半年度报告",
+        "quote": "高速光模块、高速铜缆及MPO等高附加值产品需求持续攀升",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518230.PDF"
+       },
+       "first_seen": "2026-04-25",
+       "holders": [],
+       "tide": {
+        "vol_ratio": 0.98,
+        "from_high": -65.3,
         "limit_ups": 0
        }
       },
@@ -4702,7 +4707,7 @@
        "first_seen": "2025-12-17",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.06,
+        "vol_ratio": 0.7,
         "from_high": -57.7,
         "limit_ups": 0
        }
@@ -4721,27 +4726,8 @@
        "first_seen": "2026-03-31",
        "holders": [],
        "tide": {
-        "vol_ratio": 1.11,
-        "from_high": -77.5,
-        "limit_ups": 0
-       }
-      },
-      {
-       "code": "600522",
-       "name": "中天科技",
-       "role": "相关业务",
-       "stage": "提到",
-       "evidence": {
-        "date": "2026-08-28",
-        "title": "江苏中天科技股份有限公司2026年半年度报告",
-        "quote": "高速光模块、高速铜缆及MPO等高附加值产品需求持续攀升",
-        "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518230.PDF"
-       },
-       "first_seen": "2026-04-25",
-       "holders": [],
-       "tide": {
-        "vol_ratio": 0.96,
-        "from_high": -65.9,
+        "vol_ratio": 0.78,
+        "from_high": -77.6,
         "limit_ups": 0
        }
       },
@@ -4759,8 +4745,8 @@
        "first_seen": "2025-12-03",
        "holders": [],
        "tide": {
-        "vol_ratio": 0.93,
-        "from_high": -69.7,
+        "vol_ratio": 0.95,
+        "from_high": -69.4,
         "limit_ups": 0
        }
       }
