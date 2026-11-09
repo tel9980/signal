@@ -532,6 +532,9 @@
         </div>
         <div class="card build-card" id="health-empty" style="display:none;"><p>建设中。这里以后会放：</p><ul><li>每个数据源最后一次更新的时间、应该多久更新一次</li><li>正常绿、快过期黄、已停更红</li></ul></div>
         <div id="health-body" style="display:none;">
+          <h3 class="sub-h" style="margin:14px 0 6px; font-size:0.95rem;">我们的管线（自建）</h3>
+          <div id="health-live"><p style="color:var(--ink-2); font-size:0.85rem;">读取中…</p></div>
+          <h3 class="sub-h" style="margin:20px 0 6px; font-size:0.95rem;">上游数据源（zentaox 自检，标签/排雷/龙虎榜等靠它）</h3>
           <div class="pool-table-wrap">
             <table class="data-table"><thead><tr><th>数据</th><th>最后更新</th><th>应该多久更新</th><th>状态</th></tr></thead><tbody id="health-tbody"></tbody></table>
           </div>

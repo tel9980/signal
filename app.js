@@ -777,7 +777,43 @@ function healthBadge(x) {
   var h = HS[x.status] || HS.stale;
   return '<span class="health-badge" style="background:' + h[1] + '; color:' + h[2] + ';"><span class="status-dot' + h[3] + '"></span> ' + h[0] + (x.note ? '（' + esc(x.note) + '）' : '') + '</span>';
 }
+// 自建行情管线的实时体检：上游那张表只说明"上游的爬虫"，这张才说明"我们的数据"
+function drawHealthLive() {
+  var box = $('health-live'); if (!box) return;
+  function row(name, last, every, status, note) {
+    var x = { name: name, last: last, every: every, status: status, note: note };
+    return '<tr><td><strong>' + esc(name) + '</strong></td><td class="num">' + esc(last) + '</td><td>' + esc(every) + '</td><td>' + healthBadge(x) + '</td></tr>';
+  }
+  var s1 = fetchAny(LIVE_MIRRORS.map(function (b) { return b + 'stats.json'; }), 8000).catch(function () { return null; });
+  var s2 = fetchAny(LIVE_MIRRORS.map(function (b) { return b + 'history.json'; }), 8000).catch(function () { return null; });
+  var s3 = fetchAny(INTRADAY_MIRRORS.map(function (b) { return b + 'px.json'; }), 8000).catch(function () { return null; });
+  Promise.all([s1, s2, s3]).then(function (r) {
+    var st = r[0], hist = r[1], intra = r[2], out = [];
+    function hours(a) {
+      var t = Date.parse(String(a).replace(' ', 'T') + ':00+08:00');
+      return isNaN(t) ? 999 : (Date.now() - t) / 3600000;
+    }
+    if (st && st.at) {
+      var h = hours(st.at), gateOk = !(st.gate && st.gate.ok === false);
+      out.push(row('收盘行情（自建管线）', st.at, '交易日 11:45、15:45、19:45', gateOk && h < 30 ? 'ok' : (h < 60 ? 'warn' : 'stale'),
+        gateOk ? (st.quotes_ok + ' 只') : ('闸门未通过：' + ((st.gate || {}).reason || '未知'))));
+    } else {
+      out.push(row('收盘行情（自建管线）', '读不到', '交易日 11:45、15:45、19:45', 'stale', 'stats.json 取不到'));
+    }
+    if (intra && intra.at) {
+      var hi = hours(intra.at);
+      out.push(row('盘中快照（自建管线）', intra.at, '交易时段每 10 分钟', hi < 1 ? 'ok' : (hi < 27 ? 'warn' : 'stale'),
+        hi < 1 ? '新鲜' : (hi < 27 ? '非交易时段，属正常' : '超过 1 天没更新')));
+    }
+    if (hist && hist.rows && hist.rows.length) {
+      out.push(row('每日留档', hist.rows[hist.rows.length - 1].at, '每个交易日收盘后', 'ok', hist.rows.length + ' 天'));
+    }
+    box.innerHTML = '<div class="pool-table-wrap"><table class="data-table"><thead><tr><th>数据</th><th>最后更新</th><th>应该多久更新</th><th>状态</th></tr></thead><tbody>' +
+      out.join('') + '</tbody></table></div>';
+  });
+}
 function drawHealth() {
+  drawHealthLive();
   load('health.json').then(function (H) {
     ready('health', !!H); if (!H) { $('health-upd').textContent = '建设中'; return; }
     $('health-upd').textContent = '自检 ' + H.checked;
