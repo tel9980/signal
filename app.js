@@ -749,7 +749,11 @@ var LG_SORT = { '进入日期': function (a, b) { return b.found.localeCompare(a
 var LG_SORT_TXT = { '进入日期': '排序：进入日期（新→旧）', '到期日': '排序：到期日（近→远）' };
 var LG_CLS = { '看对了': ' verdict-right', '看错了': ' verdict-wrong' };
 function drawLedger() {
-  load('ledger.json').then(function (L) {
+  // 台账优先读自建管线（每交易日更新“后来怎样”），失败再退回仓库里的 data/ledger.json
+  var live = fetchAny(LIVE_MIRRORS.map(function (b) { return b + 'ledger.json'; }), 6000)
+    .catch(function () { return null; });
+  Promise.all([live, load('ledger.json').catch(function () { return null; })]).then(function (r) {
+    var L = (r[0] && r[0].v === 2) ? r[0] : r[1];
     var ok = !!(L && L.v === 2);               // 老站拷来的旧格式（里面有站主持仓）不显示
     ready('ledger', ok); if (!ok) { $('ledger-upd').textContent = '建设中'; return; }
     $('ledger-upd').textContent = '更新于 ' + L.updated;
