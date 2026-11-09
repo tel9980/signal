@@ -25,58 +25,31 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 抓取并比对上游 data/
+      - name: 抓取并比对上游 data/（浅克隆，避免 raw CDN 缓存导致误判「没变化」）
         env:
           UPSTREAM_REPO: zentaox/signal
           UPSTREAM_REF: main
         run: |
-          python3 - <<'PY'
-          import json, os, sys, urllib.request
+          set -euo pipefail
+          rm -rf /tmp/upstream
+          git clone --depth 1 --filter=blob:none --sparse \
+            "https://github.com/${UPSTREAM_REPO}" /tmp/upstream -q
+          git -C /tmp/upstream sparse-checkout set data
+          git -C /tmp/upstream rev-parse --short HEAD
 
-          repo = os.environ["UPSTREAM_REPO"]
-          ref = os.environ["UPSTREAM_REF"]
-          api = f"https://api.github.com/repos/{repo}/git/trees/{ref}?recursive=1"
-
-          def get(url, raw=False, timeout=30):
-              req = urllib.request.Request(url, headers={
-                  "User-Agent": "signal-data-sync",
-                  "Accept": "application/vnd.github+json",
-              })
-              with urllib.request.urlopen(req, timeout=timeout) as r:
-                  data = r.read()
-              return data if raw else json.loads(data)
-
-          tree = get(api)
-          paths = [t["path"] for t in tree.get("tree", [])
-                   if t.get("type") == "blob" and t["path"].startswith("data/") and t["path"].endswith(".json")]
-          print(f"上游 data/ 共 {len(paths)} 个 json")
-
-          changed, same, failed = [], 0, []
-          for p in paths:
-              url = f"https://raw.githubusercontent.com/{repo}/{ref}/{p}"
-              try:
-                  blob = get(url, raw=True)
-              except Exception as exc:
-                  failed.append(f"{p}: {exc}")
-                  continue
-              local = p if os.path.exists(p) else None
-              if local and open(local, "rb").read() == blob:
-                  same += 1
-                  continue
-              os.makedirs(os.path.dirname(p) or ".", exist_ok=True)
-              with open(p, "wb") as f:
-                  f.write(blob)
-              changed.append(p)
-
-          print(f"有变化 {len(changed)} 个，未变 {same} 个，失败 {len(failed)} 个")
-          for c in changed[:20]:
-              print("  ~", c)
-          for f in failed:
-              print("  !", f)
-
-          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
-              out.write(f"changed={len(changed)}\n")
-          PY
+          changed=0
+          same=0
+          failed=0
+          for f in /tmp/upstream/data/*.json; do
+            name="data/$(basename "$f")"
+            if [ -f "$name" ] && cmp -s "$f" "$name"; then
+              same=$((same+1))
+            else
+              cp "$f" "$name" && changed=$((changed+1)) && echo "  ~ $name"
+            fi
+          done
+          echo "有变化 $changed 个，未变 $same 个，失败 $failed 个"
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
         id: fetch
 
       - name: 提交变化
