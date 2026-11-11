@@ -5,6 +5,13 @@ name: Deploy site to Pages
 on:
   push:
     branches: [main]
+  # 关键补充（2026-11-11）：sync-upstream 用 GITHUB_TOKEN 提交，而 GitHub 的防递归规则
+  # 不让 GITHUB_TOKEN 的 push 触发其它工作流，所以数据天天在更新、站点却停在最后一次
+  # 人工提交那天的快照上（页面顶部「数据 11-09」就是这么来的）。
+  # workflow_run 是「另一个工作流跑完」事件，不受这条规则限制。
+  workflow_run:
+    workflows: ["同步上游数据"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -25,6 +32,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # sync-upstream 是 amend + force push，触发方的 sha 可能已不是主干顶端，
+          # 统一取 main 的最新提交，避免部署到被覆盖掉的旧树。
+          ref: main
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
