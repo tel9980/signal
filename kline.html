@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>专业 K 线 · 台账观察股</title>
+<!-- ECharts 5（Apache-2.0，专业蜡烛图 + 均线 + 成交量 + 缩放），走 jsDelivr CDN -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  :root{--bg:#f7f7f5;--fg:#1f2329;--sub:#6b7280;--line:#e5e7eb;--up:#e04b4b;--down:#17a673;--panel:#fff}
+  :root[data-theme=dark]{--bg:#17161a;--fg:#e8e8ea;--sub:#9ca3af;--line:#2d2c31;--panel:#1f1e23}
+  body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif}
+  main{max-width:1180px;margin:0 auto;padding:20px 16px 50px}
+  h1{font-size:1.3rem;margin:0 0 4px}
+  .sub{color:var(--sub);font-size:.86rem;margin-bottom:16px}
+  .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+  select,input{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:7px;padding:7px 10px;font:inherit}
+  #chart{width:100%;height:560px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  .note{color:var(--sub);font-size:.8rem;margin-top:14px}
+  a{color:#2563eb;text-decoration:none}
+</style>
+</head>
+<body>
+<main>
+  <h1>专业 K 线 <span style="font-weight:400;color:var(--sub);font-size:.9rem">· 台账观察股</span></h1>
+  <div class="sub">蜡烛图 + MA5/10/20 + 成交量，数据来自自建 eltdx 日 K 管线；仅个人研究使用，不构成投资建议。</div>
+  <div class="bar">
+    <label>股票 <select id="stock"></select></label>
+    <label>天数 <select id="days"><option value="60">60 日</option><option value="120">120 日</option><option value="250" selected>250 日</option></select></label>
+    <span id="meta" style="color:var(--sub)"></span>
+  </div>
+  <div id="chart">加载中…</div>
+  <div class="note">图表引擎：<a href="https://github.com/apache/echarts" target="_blank">Apache ECharts 5（Apache-2.0）</a>。日 K 为不复权价；分时量比等派生口径见异动榜页。K 线数据文件随管线每日更新，非实时逐笔。</div>
+</main>
+<script>
+(function(){
+  var BASE='https://ag.1211.cc.cd/';
+  var MIRRORS=[BASE+'sig/kline/',
+    'https://raw.githubusercontent.com/tel9980/signal-data/main/out/kline/',
+    'https://cdn.jsdelivr.net/gh/tel9980/signal-data@main/out/kline/'];
+  var $=function(id){return document.getElementById(id);};
+  var chart=echarts.init($('chart'),null,{renderer:'canvas'});
+  var cur=null, codeList=[];
+
+  function fetchAny(file,ms){
+    var i=0;
+    function next(){
+      if(i>=MIRRORS.length) return Promise.reject(new Error('all failed'));
+      var url=MIRRORS[i++]+file;
+      var ctl=typeof AbortController!=='undefined'?new AbortController():null;
+      var t=ctl?setTimeout(function(){ctl.abort();},ms||8000):null;
+      var o={cache:'no-store'}; if(ctl)o.signal=ctl.signal;
+      return fetch(url,o).then(function(r){if(t)clearTimeout(t);if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+        .catch(function(e){if(t)clearTimeout(t);return next();});
+    }
+    return next();
+  }
+  function ma(n,closes){
+    var out=[];
+    for(var i=0;i<closes.length;i++){
+      if(i<n-1){out.push('-');continue;}
+      var s=0; for(var j=i-n+1;j<=i;j++)s+=closes[j];
+      out.push(+(s/n).toFixed(2));
+    }
+    return out;
+  }
+  function draw(d,days){
+    var bars=d.bars.slice(-days);
+    var dates=bars.map(function(b){return b[0];});
+    var k=bars.map(function(b){return [b[1],b[4],b[3],b[2]];}); // [open,close,low,high]
+    var vols=bars.map(function(b,i){return {value:b[5],itemStyle:{color:b[4]>=b[1]?'#e04b4b':'#17a673'}};});
+    var closes=bars.map(function(b){return b[4];});
+    var up=dates[0]&&bars[0][4]>=bars[0][1];
+    chart.setOption({
+      animation:false,
+      tooltip:{trigger:'axis',axisPointer:{type:'cross'}},
+      legend:{data:['MA5','MA10','MA20'],top:0},
+      grid:[{left:56,right:18,top:34,height:'58%'},{left:56,right:18,top:'72%',height:'18%'}],
+      xAxis:[{type:'category',data:dates,axisLabel:{show:false}},
+             {type:'category',data:dates,gridIndex:1,axisLabel:{interval:Math.floor(dates.length/8)}}],
+      yAxis:[{scale:true,splitLine:{lineStyle:{color:'rgba(128,128,128,.15)'}}},
+             {gridIndex:1,scale:true,axisLabel:{show:false},splitLine:{show:false}}],
+      dataZoom:[{type:'inside',xAxisIndex:[0,1],start:0,end:100},{type:'slider',xAxisIndex:[0,1],bottom:0,height:18}],
+      series:[
+        {name:'K线',type:'candlestick',data:k,
+         itemStyle:{color:'#e04b4b',color0:'#17a673',borderColor:'#e04b4b',borderColor0:'#17a673'}},
+        {name:'MA5',type:'line',data:ma(5,closes),smooth:true,showSymbol:false,lineStyle:{width:1,color:'#e6a23c'}},
+        {name:'MA10',type:'line',data:ma(10,closes),smooth:true,showSymbol:false,lineStyle:{width:1,color:'#409eff'}},
+        {name:'MA20',type:'line',data:ma(20,closes),smooth:true,showSymbol:false,lineStyle:{width:1,color:'#9b59b6'}},
+        {name:'成交量',type:'bar',xAxisIndex:1,yAxisIndex:1,data:vols}
+      ]
+    },true);
+  }
+  function load(code){
+    fetchAny(code+'.json').then(function(d){
+      cur=d; $('meta').textContent=d.name+' '+d.code+' · 更新 '+d.updated+' · '+d.bars.length+' 根';
+      draw(d, parseInt($('days').value,10));
+    }).catch(function(e){
+      $('chart').innerHTML='<div style="padding:40px;text-align:center;color:var(--sub)">K 线数据暂不可用，请稍后刷新。</div>';
+    });
+  }
+  // 从台账拿观察股列表（失败则给默认）
+  var LEDGER_URLS=['https://ag.1211.cc.cd/sig/ledger.json',
+    'https://raw.githubusercontent.com/tel9980/signal-data/main/out/ledger.json'];
+  function fetchLedger(i){
+    i=i||0;
+    if(i>=LEDGER_URLS.length) return Promise.resolve(null);
+    return fetch(LEDGER_URLS[i],{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
+      .catch(function(){return null;}).then(function(l){return l||fetchLedger(i+1);});
+  }
+  fetchLedger().then(function(l){
+    var list=(l&&l.entries||[]).map(function(e){return {code:e.code,name:e.name};});
+    if(!list.length) list=[{code:'300026',name:'红日药业'}];
+    codeList=list;
+    var sel=$('stock'); sel.innerHTML='';
+    list.forEach(function(x){var o=document.createElement('option');o.value=x.code;o.textContent=x.name+' '+x.code;sel.appendChild(o);});
+    sel.onchange=function(){load(sel.value);};
+    $('days').onchange=function(){if(cur)draw(cur,parseInt(this.value,10));};
+    load(list[0].code);
+  });
+  window.addEventListener('resize',function(){chart.resize();});
+})();
+</script>
+</body>
+</html>
