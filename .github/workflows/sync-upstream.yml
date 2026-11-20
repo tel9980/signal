@@ -48,6 +48,22 @@ jobs:
               cp "$f" "$name" && changed=$((changed+1)) && echo "  ~ $name"
             fi
           done
+          # 顺带把自建台账的 ledger.json 拉来当本地兜底：
+          # 前端三个远程源全超时时会读 data/ledger.json，这份必须存在且保持较新，
+          # 否则用户会看到「建设中」。拉取失败不影响上游同步。
+          LEDGER_URL="https://raw.githubusercontent.com/tel9980/signal-data/main/out/ledger.json"
+          if curl -fsSL --max-time 30 "$LEDGER_URL" -o /tmp/ledger.json 2>/dev/null; then
+            if python3 -c "import json,sys; d=json.load(open('/tmp/ledger.json')); sys.exit(0 if d.get('v')==2 else 1)" 2>/dev/null; then
+              if ! cmp -s /tmp/ledger.json data/ledger.json 2>/dev/null; then
+                cp /tmp/ledger.json data/ledger.json && changed=$((changed+1)) && echo "  ~ data/ledger.json（自建台账兜底）"
+              fi
+            else
+              echo "  ! 台账文件 v!=2，跳过"
+            fi
+          else
+            echo "  ! 台账拉取失败，保留现有兜底"
+          fi
+
           echo "有变化 $changed 个，未变 $same 个，失败 $failed 个"
           echo "changed=$changed" >> "$GITHUB_OUTPUT"
         id: fetch
